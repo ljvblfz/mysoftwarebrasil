@@ -1,0 +1,5 @@
+F:\PROJETO\C#\View\View\bin\Debug\View.dll
+F:\PROJETO\C#\View\View\bin\Debug\View.pdb
+F:\PROJETO\C#\View\View\obj\Debug\ResolveAssemblyReference.cache
+F:\PROJETO\C#\View\View\obj\Debug\View.dll
+F:\PROJETO\C#\View\View\obj\Debug\View.pdb
