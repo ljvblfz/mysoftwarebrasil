@@ -33,13 +33,51 @@ namespace View
         ///     Helper to generate "select" list of options
         /// </summary>
         /// <param name="name">name If a string, the element name</param>
+        /// <param name="listModel">List of data to select the Peech</param>
+        /// <param name="selected">value The option value to mark as 'selected'</param>
+        /// <param name="attribs">Attributes added to the 'select' tag</param>
+        /// <returns>string The element XHTML</returns>
+        public static string Selectbox(string name,Dictionary<string, string> listModel, object selected, string[] attribs)
+        {
+            // Build the surrounding select element first.
+            string xhtml = @"<select name=""{0}"" id=""{0}"" ";
+            xhtml = String.Format(xhtml, name);
+
+            if (attribs != null)
+            {
+                int total = attribs.Length;
+                for (int i = 0; i < total; i++)
+                {
+                    xhtml += attribs[i];
+                }
+            }
+            xhtml += " >";
+
+            foreach (KeyValuePair<string,string> itemModel in listModel)
+            {
+                object valueOption = itemModel.Value;
+                object labelOption = itemModel.Key;
+                string opt = String.Format(@"<option value=""{0}"" label=""{1}"" ", valueOption, labelOption);
+                if (valueOption == selected)
+                    opt += @"selected=""selected""";
+                xhtml += String.Format(@"{0} > {1} </option>", opt, labelOption);
+            }
+
+            xhtml += " </select>";
+            return xhtml;
+        }
+
+        /// <summary>
+        ///     Helper to generate "select" list of options
+        /// </summary>
+        /// <param name="name">name If a string, the element name</param>
         /// <param name="value">value fields</param>
         /// <param name="label">label fields</param>
         /// <param name="listModel">List of data to select the Peech</param>
         /// <param name="selected">value The option value to mark as 'selected'</param>
         /// <param name="attribs">Attributes added to the 'select' tag</param>
         /// <returns>string The element XHTML</returns>
-        public static string Selectbox(string name, string value, string label, List<Model> listModel, object selected, string[] attribs)
+        public static string Selectbox(string name, string value, string label, IEnumerable<Model> listModel, object selected, string[] attribs)
         {
             // Build the surrounding select element first.
             string xhtml = @"<select name=""{0}"" id=""{0}"" ";
@@ -137,6 +175,23 @@ namespace View
                 }
             }
             xhtml += " />";
+            return xhtml;
+        }
+
+        public static string Label(string name,object value, string[] attribs)
+        {
+            string xhtml = "<label id=\"{0}\" for=\"{0}\">";
+            xhtml = String.Format(xhtml, name);
+            if (attribs != null)
+            {
+                int total = attribs.Length;
+                for (int i = 0; i < total; i++)
+                {
+                    xhtml += attribs[i];
+                }
+            }
+            xhtml += ">"+value;
+            xhtml += " </label>";
             return xhtml;
         }
 
