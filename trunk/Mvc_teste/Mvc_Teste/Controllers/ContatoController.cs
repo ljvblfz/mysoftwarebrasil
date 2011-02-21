@@ -32,8 +32,8 @@ namespace Mvc_Teste.Controllers
 
             Dictionary<string, Dictionary<string, object>> campos = new Dictionary<string, Dictionary<string, object>>();
             Dictionary<string, object> campo = new Dictionary<string, object>();
-            campo.Add("Codigo", "left");
-            campos.Add("Id", filtro);
+            campo.Add("name", "Codigo");
+            campos.Add("Id", campo);
 
             pesquisa.Set(new List<Contato>(arrayContato), filtros, campos, null);
             

@@ -207,7 +207,7 @@ namespace ViewHelper
                     xhtml += attribs[i];
                 }
             }
-            xhtml += ">"+value;
+            xhtml += value;
             xhtml += " </label>";
             return xhtml;
         }
