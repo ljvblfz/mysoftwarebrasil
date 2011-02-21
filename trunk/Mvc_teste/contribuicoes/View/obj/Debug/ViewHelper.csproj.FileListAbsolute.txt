@@ -1,0 +1,5 @@
+D:\Velp\Sistemas\Mvc_Teste\contribuicoes\View\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\Mvc_Teste\contribuicoes\View\bin\Debug\ViewHelper.dll
+D:\Velp\Sistemas\Mvc_Teste\contribuicoes\View\bin\Debug\ViewHelper.pdb
+D:\Velp\Sistemas\Mvc_Teste\contribuicoes\View\obj\Debug\ViewHelper.dll
+D:\Velp\Sistemas\Mvc_Teste\contribuicoes\View\obj\Debug\ViewHelper.pdb
