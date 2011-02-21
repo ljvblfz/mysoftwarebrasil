@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace View
+namespace ViewHelper
 {
     public class Find<Model> where Model : new()
     {
-        public static string find;
+        public  string find;
 
-        public static string filter;
+        public  string filter;
 
-        public static string field;
+        public  string field;
 
-        public static List<Model> list;
+        public  List<Model> list;
 
-        public static void Set(List<Model> listModel, Dictionary<string, Dictionary<string, object>> filters, Dictionary<string, Dictionary<string, object>> fields, Dictionary<string, object> links)
+        public  void Set(List<Model> listModel, Dictionary<string, Dictionary<string, object>> filters, Dictionary<string, Dictionary<string, object>> fields, Dictionary<string, object> links)
         {
             list = listModel;
             filter = SearchFilter(filters);
@@ -23,7 +23,7 @@ namespace View
             return;
         }
 
-        public static string SearchField(Dictionary<string, Dictionary<string, object>> fields)
+        public  string SearchField(Dictionary<string, Dictionary<string, object>> fields)
         {
             string xhtml = "";
             object page = 0;
@@ -61,7 +61,7 @@ namespace View
             return xhtml;
         }
 
-        public static string SearchFilter(Dictionary<string, Dictionary<string, object>> filters)
+        public  string SearchFilter(Dictionary<string, Dictionary<string, object>> filters)
         {
             string xhtml = "";           
             Dictionary<string, Dictionary<string, string>> logicOperatorsGroup = new Dictionary<string, Dictionary<string, string>>();
@@ -76,7 +76,7 @@ namespace View
                 contador++;
                 xhtml += "<tr bgcolor=\"" + cor + "\">\n";
                 xhtml += "<td style=\"width:25%\">\n";
-                xhtml += XForm<Model>.Label(itemFilter.Key, itemFilter.Value["DESCRICAO"],null);
+                xhtml += XForm<Model>.Label(itemFilter.Key, itemFilter.Value["descricao"],null);
                 xhtml += "</td>\n";
 
                 switch (itemFilter.Value["tipo_campo"].ToString().ToUpper())
@@ -139,7 +139,7 @@ namespace View
             return xhtml;
         }
 
-        private static Dictionary<string, Dictionary<string, string>> GetLogicOperatorsGroup()
+        private  Dictionary<string, Dictionary<string, string>> GetLogicOperatorsGroup()
         {
             Dictionary<string, string> logicOperators = new Dictionary<string, string>();
             logicOperators.Add("OPL_IGUAL", "igual a");
