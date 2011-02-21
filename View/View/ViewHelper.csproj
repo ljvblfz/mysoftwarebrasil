@@ -8,8 +8,8 @@
     <ProjectGuid>{C620A12F-4EB9-4B78-8E22-CC5F27CA467B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>View</RootNamespace>
-    <AssemblyName>View</AssemblyName>
+    <RootNamespace>ViewHelper</RootNamespace>
+    <AssemblyName>ViewHelper</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

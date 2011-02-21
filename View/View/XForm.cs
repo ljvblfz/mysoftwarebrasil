@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace View
+namespace ViewHelper
 {
     /// <summary>
     /// Class for create XHTML elements
@@ -68,8 +68,8 @@ namespace View
 			// build the list of options
             foreach (KeyValuePair<string,string> itemModel in listModel)
             {
-                object valueOption = itemModel.Value;
-                object labelOption = itemModel.Key;
+                object valueOption = itemModel.Key;
+                object labelOption = itemModel.Value;
                 string opt = String.Format(@"<option value=""{0}"" label=""{1}"" ", valueOption, labelOption);
 				
 				// selected?
