@@ -1,0 +1,14 @@
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Mvc_Teste.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Mvc_Teste.pdb
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Castle.ActiveRecord.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Castle.Components.Validator.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Castle.Core.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Castle.DynamicProxy.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\Iesi.Collections.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\log4net.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\NHibernate.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\ViewHelper.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\bin\ViewHelper.pdb
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\obj\Debug\Mvc_Teste.dll
+D:\Velp\Sistemas\Mvc_Teste\Mvc_Teste\obj\Debug\Mvc_Teste.pdb
