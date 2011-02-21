@@ -9,18 +9,30 @@ namespace View
     public class XForm<Model> where Model : new()
     {
 
-
+        /// <summary>
+        ///     Helper to generate a "textarea" element
+        /// </summary>
+        /// <param name="name">name If a string, the element name</param>
+        /// <param name="value">value The element value.</param>
+        /// <param name="row">'row' value</param>
+		/// <param name="col">'col' value</param>
+        /// <param name="attribs">Attributes added to the 'select' tag</param>
+        /// <returns>string The element XHTML</returns>
         public static string Textarea(string name, object value,int? row,int? col, string[] attribs)
         {
+			//The default number of columns for a textarea.
             string rows = "24";
             string cols = "80";
             if (row.HasValue && row.GetType() == typeof(Int32))
                 rows = row.ToString();
             if (col.HasValue && col.GetType() == typeof(Int32))
                 cols = col.ToString();
+			
+			// build the element	
             string xhtml = String.Format(@"<textarea name=""{0}"" id=""{0}"" value=""{1}"" ", name, value);
             if (attribs != null)
             {
+				// Attribute set
                 for (int i = 0; i < attribs.Length; i++)
                 {
                     xhtml += attribs[i];
@@ -45,21 +57,26 @@ namespace View
 
             if (attribs != null)
             {
-                int total = attribs.Length;
-                for (int i = 0; i < total; i++)
+				// Attribute set
+                for (int i = 0; i < attribs.Length; i++)
                 {
                     xhtml += attribs[i];
                 }
             }
             xhtml += " >";
-
+			
+			// build the list of options
             foreach (KeyValuePair<string,string> itemModel in listModel)
             {
                 object valueOption = itemModel.Value;
                 object labelOption = itemModel.Key;
                 string opt = String.Format(@"<option value=""{0}"" label=""{1}"" ", valueOption, labelOption);
+				
+				// selected?
                 if (valueOption == selected)
                     opt += @"selected=""selected""";
+					
+				// add the options to the xhtml and close the select
                 xhtml += String.Format(@"{0} > {1} </option>", opt, labelOption);
             }
 
