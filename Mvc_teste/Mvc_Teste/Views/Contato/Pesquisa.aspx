@@ -7,47 +7,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Pesquisa</h2>
-
-    <table>
-        <tr>
-            <th></th>
-            <th>
-                Id
-            </th>
-            <th>
-                Nome
-            </th>
-            <th>
-                Email
-            </th>
-        </tr>
-    <%  %>
-    <% foreach (var item in Model) { %>
+    <% using (Html.BeginForm()) {%>
     
-        <tr>
-            <td>
-                <%= Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-                <%= Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })%> |
-                <%= Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })%>
-            </td>
-            <td>
-                <%= Html.Encode(item.Id) %>
-            </td>
-            <td>
-                <%= Html.Encode(item.Nome) %>
-            </td>
-            <td>
-                <%= Html.Encode(item.Email) %>
-            </td>
-        </tr>
-    
+        <%=ViewData["pesquisa"]%>
+        <p>
+            <input type="submit" value="Pesquisar" />
+        </p>
+        
     <% } %>
-
-    </table>
-
-    <p>
-        <%= Html.ActionLink("Create New", "Create") %>
-    </p>
 
 </asp:Content>
 

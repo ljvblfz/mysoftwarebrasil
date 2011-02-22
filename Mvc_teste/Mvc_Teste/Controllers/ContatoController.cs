@@ -13,20 +13,14 @@ namespace Mvc_Teste.Controllers
         /// <summary>
         ///  Objeto da pesquisa
         /// </summary>
-        public Find<Contato> pesquisa;
+        public static Find<Contato> pesquisa;
 
-        //
-        // GET: /Contato/
-
-        public ActionResult Pesquisa()
+        public void PesquisaContato()
         {
-            pesquisa = new Find<Contato>();
-            Contato[] arrayContato = Contato.FindAll();
-
             Dictionary<string, Dictionary<string, object>> filtros = new Dictionary<string, Dictionary<string, object>>();
             Dictionary<string, object> filtro = new Dictionary<string, object>();
-            filtro.Add("tipo_campo","text");
-            filtro.Add("tipo_dado", "string");
+            filtro.Add("tipo_campo", "text");
+            filtro.Add("tipo_dado", "numerico");
             filtro.Add("descricao", "Codigo");
             filtros.Add("Id", filtro);
 
@@ -35,9 +29,38 @@ namespace Mvc_Teste.Controllers
             campo.Add("name", "Codigo");
             campos.Add("Id", campo);
 
+            pesquisa = new Find<Contato>();
+            Contato[] arrayContato = Contato.FindAll();
+
             pesquisa.Set(new List<Contato>(arrayContato), filtros, campos, null);
-            
-            return View(arrayContato);
+        }
+
+        //
+        // POST: /Contato/Create
+
+        [HttpPost]
+        public ActionResult Pesquisa(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                Contato contato = DbTable<Contato>.getCamposUteis(collection);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        //
+        // GET: /Contato/
+
+        public ActionResult Pesquisa()
+        {
+            PesquisaContato();
+            ViewData["pesquisa"] = pesquisa.filter + pesquisa.field;
+            return View();
         }
 
         //
