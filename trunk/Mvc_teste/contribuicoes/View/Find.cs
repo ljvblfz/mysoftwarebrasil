@@ -131,7 +131,8 @@ namespace ViewHelper
  
                         // campo que receberá o filtro
                         xhtml += "<td style=\"width:30%\">";
-                        xhtml += XForm<Model>.Texbox("campo[" + itemFilter.Key + "]", null, new string[] { "style=\"width:95%\"" });
+                        //xhtml += XForm<Model>.Texbox("campo[" + itemFilter.Key + "]", null, new string[] { "style=\"width:95%\"" });
+                        xhtml += XForm<Model>.Texbox(itemFilter.Key, null, new string[] { "style=\"width:95%\"" });
                         xhtml += "</td>\n"; 
 
                         // campo para verificar se o campo é Insensitive ou Sensitive Case
