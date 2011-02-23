@@ -104,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-latest.js" />
+    <Content Include="Scripts\jquery.tablesorter.js" />
+    <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Views\Contato\Pesquisa.aspx" />
     <Content Include="Views\Contato\Create.aspx" />
     <Content Include="Web.config" />
@@ -157,7 +160,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3117</DevelopmentServerPort>
+          <DevelopmentServerPort>2168</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

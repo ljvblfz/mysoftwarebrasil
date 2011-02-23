@@ -13,6 +13,10 @@ namespace ViewHelper
 
         public string field;
 
+        public int pageRegistry{ get; set; }
+
+        public int totalRegistry { get; set; }
+
         public List<Model> list;
 
         /// <summary>
@@ -47,8 +51,15 @@ namespace ViewHelper
             // html do conteudo
             string content = "";
 
+            // html da pagina
+            string pagina = "";
+
             // contador de linhas
             int contador = 0;
+            int countRegistry = 1;
+
+            if (totalRegistry == 0)
+                totalRegistry = 3;
 
             // Percorre todos os dados
             foreach (Model itemModel in list)
@@ -57,7 +68,7 @@ namespace ViewHelper
                 string cor = contador % 2 == 0?"#FFFFFF":"#F4F4F4";
 
                 // tag inicial da linha
-                content += "<tr bgcolor="+cor+"  onclick=\"location.href='{$link}'\" onMouseOver=\"this.style.background = '#CCC'\" onMouseOut=\"this.style.background = '"+cor+"'\">\n";
+                pagina += "<tr bgcolor=" + cor + "  onclick=\"location.href='{$link}'\" onMouseOver=\"this.style.background = '#CCC'\" onMouseOut=\"this.style.background = '" + cor + "'\">\n";
 
                 // percorre todas as colunas
                 foreach (KeyValuePair<string, Dictionary<string, object>> itemField in fields)
@@ -72,17 +83,43 @@ namespace ViewHelper
 
                     // valor da coluna
                     object value = itemModel.GetType().GetProperty(itemField.Key).GetValue(itemModel,null);
-                    content += "<td>\n";
-                    content += XForm<Model>.Label(itemField.Key, value, null);
-                    content += "</td>\n";
+                    pagina += "<td>\n";
+                    pagina += XForm<Model>.Label(itemField.Key, value, null);
+                    pagina += "</td>\n";
                 }
                 // fecha a linha e incrementa o contador
-                content += "</tr>\n";
+                pagina += "</tr>\n";
+
+                if (countRegistry == totalRegistry)
+                {
+                    string display = "none";
+                    if (pageRegistry == (Math.Abs(contador / totalRegistry)))
+                        display = "block";
+                    content += "<div style=\"display:" + display + "\">" + pagina + "</div>";
+                    countRegistry = 1;
+                }
+                else
+                    countRegistry++;
+
                 contador++;
             }
             
             // funde o html 
-            xhtml += "\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" class=\"tblPesquisa\" width=\"97%\">\n";
+            xhtml += "	<script type=\"text/javascript\">";
+            xhtml += "$(function() {";
+            xhtml += "	$(\"table\")";
+            xhtml += "		.tablesorter({widthFixed: true, widgets: ['zebra']})";
+            xhtml += "		.tablesorterPager({container: $(\"#pager\")});";
+            xhtml += "});";
+            xhtml += "$(document).ready(function() {";
+            xhtml += "    $(\"table\")";
+            xhtml += "   .tablesorter({widthFixed: true, widgets: ['zebra']})";
+            xhtml += "   .tablesorterPager({container: $(\"#pager\")});";
+            xhtml += "});";
+            xhtml += "</script>";
+
+
+            xhtml += "\n<table cellspacing=\"1\" cellpadding=\"0\" border=\"0\" class=\"tblPesquisa tablesorter\" width=\"97%\">\n";
             xhtml += "<thead>\n";
             xhtml += heder;
             xhtml += "</thead>\n";
@@ -91,6 +128,21 @@ namespace ViewHelper
             xhtml += content;
             xhtml += "</table>\n";
 
+            xhtml += "<div id=\"pager\" class=\"pager\">";
+            xhtml += "<form>";
+            xhtml += "<img src=\"../addons/pager/icons/first.png\" class=\"first\"/>";
+            xhtml += "<img src=\"../addons/pager/icons/prev.png\" class=\"prev\"/>";
+            xhtml += "<input type=\"text\" class=\"pagedisplay\"/>";
+            xhtml += "<img src=\"../addons/pager/icons/next.png\" class=\"next\"/>";
+            xhtml += "<img src=\"../addons/pager/icons/last.png\" class=\"last\"/>";
+            xhtml += "<select class=\"pagesize\">";
+            xhtml += "<option selected=\"selected\"  value=\"10\">10</option>";
+            xhtml += "<option value=\"20\">20</option>";
+            xhtml += "<option value=\"30\">30</option>";
+            xhtml += "<option  value=\"40\">40</option>";
+            xhtml += "</select>";
+            xhtml += "</form>";
+            xhtml += "</div>";
             return xhtml;
         }
 
@@ -117,35 +169,28 @@ namespace ViewHelper
                 xhtml += XForm<Model>.Label(itemFilter.Key, itemFilter.Value["descricao"],null);
                 xhtml += "</td>\n";
 
+                xhtml += GetOperaitor(itemFilter);
+                xhtml += "<td style=\"width:30%\">";
                 switch (itemFilter.Value["tipo_campo"].ToString().ToUpper())
                 {
-                    //case "TEXT":
-                    default: 
-                        xhtml += "<td style=\"width:25%\">\n";
-                        if (itemFilter.Value["tipo_dado"] == "string") {
-                            xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["string"], null, null);
-                        } else if (itemFilter.Value["tipo_dado"] == "numerico") {
-                            xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["string"], null, null);
-                        }
-                        xhtml += "</td>\n";
- 
-                        // campo que receberá o filtro
-                        xhtml += "<td style=\"width:30%\">";
-                        //xhtml += XForm<Model>.Texbox("campo[" + itemFilter.Key + "]", null, new string[] { "style=\"width:95%\"" });
+                    case "OPTION":
                         xhtml += XForm<Model>.Texbox(itemFilter.Key, null, new string[] { "style=\"width:95%\"" });
-                        xhtml += "</td>\n"; 
+                    break;
 
-                        // campo para verificar se o campo é Insensitive ou Sensitive Case
-                        if (itemFilter.Value["tipo_dado"] != "numerico") {
-                            xhtml += "<td style=\"width:20%\">";
-                            xhtml += XForm<Model>.Checkbox("ignoraCAb[" + itemFilter.Key + "]", false, new string[] { "class=\"radio\"" }) + "Ignorar CAb";
-                            xhtml += "</td>\n";
-                        } else {
-                            xhtml += "<td style=\"width:20%\">\n";
-                            xhtml += "</td>\n";
-                        } 
+                    case "RADIO":
+                        xhtml += XForm<Model>.Texbox(itemFilter.Key, null, new string[] { "style=\"width:95%\"" });
+                    break;
+
+                    case "DATE":
+                        xhtml += XForm<Model>.Texbox(itemFilter.Key, null, new string[] { "style=\"width:95%\"" });
+                    break;
+
+                    default: 
+                        xhtml += XForm<Model>.Texbox(itemFilter.Key, null, new string[] { "style=\"width:95%\"" });
                     break;
                 }
+                xhtml += "</td>\n";
+                xhtml += GetSensitiveCase(itemFilter);
 
                 // fecha a linha da tabela
                 xhtml += "</tr>\n";
@@ -153,31 +198,96 @@ namespace ViewHelper
  
             xhtml += "</tbody>\n";
             xhtml += "</table>\n"; 
+
             // Tabela para submeter o formulário
             xhtml += "<table  cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"97%\">\n";
-            xhtml += "<tbody>\n"; 
-            // inicio da linha
-            xhtml += "<tr>\n";
-            // Label do campo
-            xhtml += "<td width='160px'>\n";
-            xhtml += "Nº de registros por página:\n";
-            xhtml += "</td>\n";
+                xhtml += "<tbody>\n"; 
+                    // inicio da linha
+                    xhtml += "<tr>\n";
+                        // Label do campo
+                        xhtml += "<td width='160px'>\n";
+                        xhtml += "Nº de registros por página:\n";
+                        xhtml += "</td>\n";
 
-            xhtml += "<td width='70px'>\n";
-            xhtml += XForm<Model>.Texbox("numRegistrosPagina", null, new string[] { "class=\"dataTxtArea\"" });
-            xhtml += "</td>\n";
+                        xhtml += "<td width='70px'>\n";
+                        xhtml += XForm<Model>.Texbox("numRegistrosPagina", null, new string[] { "class=\"dataTxtArea\"" });
+                        xhtml += "</td>\n";
 
-            xhtml += "<td>\n";
-            //xhtml += $this->view->formSubmit('operacao', 'Pesquisar', array('id' => 'operacao', 'class' => 'btn'));
-            xhtml += "</td>\n"; 
-            // fim da linha
-            xhtml += "</tr>\n";
-            xhtml += "</tbody>\n";
+                        xhtml += "<td>\n";
+                        xhtml += "<input type=\"submit\" value=\"Pesquisar\" />";
+                        xhtml += "</td>\n"; 
+                    // fim da linha
+                    xhtml += "</tr>\n";
+                xhtml += "</tbody>\n";
             xhtml += "</table>\n";
 
             return xhtml;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="itemFilter"></param>
+        /// <returns></returns>
+        public string GetSensitiveCase(KeyValuePair<string, Dictionary<string, object>> itemFilter)
+        {
+            string xhtml = "";
+            if (itemFilter.Value["tipo_dado"] != "numerico")
+            {
+                xhtml += "<td style=\"width:20%\">";
+                xhtml += XForm<Model>.Checkbox("ignoraCAb[" + itemFilter.Key + "]", false, new string[] { "class=\"radio\"" }) + "Ignorar CAb";
+                xhtml += "</td>\n";
+            }
+            else
+            {
+                xhtml += "<td style=\"width:20%\">\n";
+                xhtml += "</td>\n";
+            }
+            return xhtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="itemFilter"></param>
+        /// <returns></returns>
+        public string GetOperaitor(KeyValuePair<string, Dictionary<string, object>> itemFilter)
+        {
+            Dictionary<string, Dictionary<string, string>> logicOperatorsGroup = new Dictionary<string, Dictionary<string, string>>();
+            logicOperatorsGroup = GetLogicOperatorsGroup();
+            string xhtml = "";
+
+            xhtml += "<td style=\"width:25%\">\n";
+            if (itemFilter.Value["tipo_dado"] != null)
+            {
+                switch (itemFilter.Value["tipo_dado"].ToString())
+                {
+                    case "string":
+                        xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["string"], null, null);
+                        break;
+
+                    case "numerico":
+                        xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["numerico"], null, null);
+                        break;
+
+                    case "option":
+                        xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["option"], null, null);
+                        break;
+
+                    case "date":
+                        xhtml += XForm<Model>.Selectbox("operadorLogico[" + itemFilter.Key + "]", logicOperatorsGroup["date"], null, null);
+                        break;
+                }
+            }
+            xhtml += "</td>\n";
+            return xhtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fields"></param>
+        /// <returns></returns>
         public string SearchPage(Dictionary<string, Dictionary<string, object>> fields)
         {
             string xhtml = "";
@@ -263,7 +373,16 @@ namespace ViewHelper
             optionD.Add("OPL_VAZIO", "está vazio");
             optionD.Add("OPL_NAO_VAZIO", "não está vazio");
 
+            Dictionary<string, string> dateD = new Dictionary<string, string>();
+            dateD.Add("OPL_IGUAL", "igual a");
+            dateD.Add("OPL_MAIOR", "maior que");
+            dateD.Add("OPL_MENOR", "menor que");
+            dateD.Add("OPL_MAIOR_IGUAL", "maior ou igual a");
+            dateD.Add("OPL_MENOR_IGUAL", "menor ou igual a");
+            dateD.Add("OPL_ENTRE", "com valores entre");
+
             Dictionary<string, Dictionary<string, string>> logicOperatorsGroup = new Dictionary<string, Dictionary<string, string>>();
+            logicOperatorsGroup.Add("date", dateD);
             logicOperatorsGroup.Add("string", stringD);
             logicOperatorsGroup.Add("option", optionD);
             logicOperatorsGroup.Add("numerico", numericoD);
