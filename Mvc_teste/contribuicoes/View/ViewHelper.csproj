@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter.cs" />
     <Compile Include="Find.cs" />
     <Compile Include="FindController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

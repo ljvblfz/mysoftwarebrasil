@@ -12,8 +12,8 @@
         <%=ViewData["pesquisa"]%>
         <p>
             <input type="submit" value="Pesquisar" />
-        </p>
-        
+            <%= Html.ActionLink("Novo", "Create") %>
+        </p>       
     <% } %>
 
 </asp:Content>

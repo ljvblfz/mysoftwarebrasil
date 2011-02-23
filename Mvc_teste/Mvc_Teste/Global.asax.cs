@@ -40,6 +40,7 @@ namespace Mvc_Teste
                                             ,typeof(Contato)
                                             , typeof(Produto)
                                            );
+            ActiveRecordStarter.CreateSchema();
         }
     }
 }
