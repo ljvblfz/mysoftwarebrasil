@@ -12,7 +12,7 @@
         <%=ViewData["pesquisa"]%>
         <p>
             <input type="submit" value="Pesquisar" />
-            <%= Html.ActionLink("Novo", "Create") %>
+            <input type="button" value="Novo"  onclick="location.href='Create'"/>
         </p>       
     <% } %>
 
