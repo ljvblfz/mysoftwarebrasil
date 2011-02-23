@@ -17,12 +17,11 @@ namespace Mvc_Teste.Controllers
 
         public void PesquisaContato()
         {
-            Dictionary<string, Dictionary<string, object>> filtros = new Dictionary<string, Dictionary<string, object>>();
-            Dictionary<string, object> filtro = new Dictionary<string, object>();
-            filtro.Add("tipo_campo", "text");
-            filtro.Add("tipo_dado", "numerico");
-            filtro.Add("descricao", "Codigo");
-            filtros.Add("Id", filtro);
+            Filter<Contato> filtros = new Filter<Contato>();
+            //filtros.addManual("Id", "text", "numerico", "Codigo");
+            //filtros.add("Id", "Nome");
+            filtros.add();
+
 
             Dictionary<string, Dictionary<string, object>> campos = new Dictionary<string, Dictionary<string, object>>();
             Dictionary<string, object> campo = new Dictionary<string, object>();
@@ -32,7 +31,7 @@ namespace Mvc_Teste.Controllers
             pesquisa = new Find<Contato>();
             Contato[] arrayContato = Contato.FindAll();
 
-            pesquisa.Set(new List<Contato>(arrayContato), filtros, campos, null);
+            pesquisa.Set(new List<Contato>(arrayContato), filtros.GetFilters(), campos, null);
         }
 
         //
@@ -41,16 +40,8 @@ namespace Mvc_Teste.Controllers
         [HttpPost]
         public ActionResult Pesquisa(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                Contato contato = DbTable<Contato>.getCamposUteis(collection);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Contato contato = DbTable<Contato>.getCamposUteis(collection);
+            return View();
         }
 
         //
@@ -85,13 +76,22 @@ namespace Mvc_Teste.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
+           try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                Contato contato = DbTable<Contato>.getCamposUteis(collection);
+                if (contato.IsValid())
+                {
+                    contato.Create();
+                    return RedirectToAction("Pesquisa");
+                }
+                else
+                {
+                    foreach (string s in contato.ValidationErrorMessages)
+                        ViewData["erro"] += s;
+                    return View(contato);
+                }
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
