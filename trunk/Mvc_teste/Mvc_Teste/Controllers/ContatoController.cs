@@ -19,14 +19,18 @@ namespace Mvc_Teste.Controllers
         {
             Filter<Contato> filtros = new Filter<Contato>();
             //filtros.addManual("Id", "text", "numerico", "Codigo");
-            //filtros.add("Id", "Nome");
-            filtros.add();
+            filtros.add("Id", "Nome");
+            //filtros.add();
 
 
             Dictionary<string, Dictionary<string, object>> campos = new Dictionary<string, Dictionary<string, object>>();
             Dictionary<string, object> campo = new Dictionary<string, object>();
             campo.Add("name", "Codigo");
             campos.Add("Id", campo);
+
+            Dictionary<string, object> campo2 = new Dictionary<string, object>();
+            campo2.Add("name", "Nome");
+            campos.Add("Nome", campo2);
 
             pesquisa = new Find<Contato>();
             Contato[] arrayContato = Contato.FindAll();
