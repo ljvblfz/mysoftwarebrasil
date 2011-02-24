@@ -136,7 +136,8 @@ namespace ViewHelper
             xhtml += "<img src=\"../addons/pager/icons/next.png\" class=\"next\"/>";
             xhtml += "<img src=\"../addons/pager/icons/last.png\" class=\"last\"/>";
             xhtml += "<select class=\"pagesize\">";
-            xhtml += "<option selected=\"selected\"  value=\"10\">10</option>";
+            xhtml += "<option selected=\"selected\"  value=\"5\">5</option>";
+            xhtml += "<option value=\"10\">10</option>";
             xhtml += "<option value=\"20\">20</option>";
             xhtml += "<option value=\"30\">30</option>";
             xhtml += "<option  value=\"40\">40</option>";
