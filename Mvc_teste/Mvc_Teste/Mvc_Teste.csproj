@@ -103,8 +103,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jq.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="image\icons\first.png" />
+    <Content Include="image\icons\last.png" />
+    <Content Include="image\icons\next.png" />
+    <Content Include="image\icons\prev.png" />
+    <Content Include="Scripts\chili-1.8b.js" />
+    <Content Include="Scripts\docs.js" />
     <Content Include="Scripts\jquery-latest.js" />
+    <Content Include="Scripts\jquery.metadata.js" />
     <Content Include="Scripts\jquery.tablesorter.js" />
     <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Views\Contato\Pesquisa.aspx" />

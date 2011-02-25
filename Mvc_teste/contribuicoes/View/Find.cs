@@ -54,6 +54,8 @@ namespace ViewHelper
             // html da pagina
             string pagina = "";
 
+            string colgroup = "";
+
             // contador de linhas
             int contador = 0;
             int countRegistry = 1;
@@ -76,6 +78,8 @@ namespace ViewHelper
                     // cria o cabeçalho (LOOP UNICO)
                     if (contador == 0)
                     {
+                        colgroup += "<col>";
+
                         heder += "<th>\n";
                         heder += itemField.Value["name"].ToString();
                         heder += "</th>\n";
@@ -89,52 +93,64 @@ namespace ViewHelper
                 }
                 // fecha a linha e incrementa o contador
                 pagina += "</tr>\n";
-
-                if (countRegistry == totalRegistry)
-                {
-                    string display = "none";
-                    if (pageRegistry == (Math.Abs(contador / totalRegistry)))
-                        display = "block";
-                    content += "<div style=\"display:" + display + "\">" + pagina + "</div>";
-                    countRegistry = 1;
-                }
-                else
-                    countRegistry++;
+                content += pagina;
+                //if (countRegistry == totalRegistry)
+                //{
+                //    string display = "none";
+                //    if (pageRegistry == (Math.Abs(contador / totalRegistry)))
+                //        display = "block";
+                //    //content += "<div style=\"display:" + display + "\">" + pagina + "</div>";
+                //    content += pagina;
+                //    countRegistry = 1;
+                //}
+                //else
+                //    countRegistry++;
 
                 contador++;
             }
             
-            // funde o html 
-            xhtml += "	<script type=\"text/javascript\">";
-            xhtml += "$(function() {";
-            xhtml += "	$(\"table\")";
-            xhtml += "		.tablesorter({widthFixed: true, widgets: ['zebra']})";
-            xhtml += "		.tablesorterPager({container: $(\"#pager\")});";
-            xhtml += "});";
-            xhtml += "$(document).ready(function() {";
-            xhtml += "    $(\"table\")";
-            xhtml += "   .tablesorter({widthFixed: true, widgets: ['zebra']})";
-            xhtml += "   .tablesorterPager({container: $(\"#pager\")});";
-            xhtml += "});";
-            xhtml += "</script>";
+            // funde o html
+            //xhtml += "<link rel=\"stylesheet\" href=\"../../Content/style.css\" type=\"text/css\" media=\"print, projection, screen\" />";
+            //xhtml += "<link rel=\"stylesheet\" href=\"../../Content/jq.css\" type=\"text/css\" media=\"print, projection, screen\" />";
+            //xhtml += "<script type=\"text/javascript\" src=\"../../Scripts/docs.js\"> \n"; 
+            //xhtml += "<script type=\"text/javascript\" src=\"../../Scripts/chili-1.8b.js\"> \n";
+            //xhtml += "<script type=\"text/javascript\"> \n";
+            //xhtml += "$(function() { \n";
+            //xhtml += "	$(\"table\")[2] \n";
+            //xhtml += "		.tablesorter({widthFixed: true, widgets: ['zebra']}) \n";
+            //xhtml += "		.tablesorterPager({container: $(\"#pager\")}); \n";
+            //xhtml += "}); \n";
+            //xhtml += "$(document).ready(function() { \n";
+            //xhtml += "$(\"table\")[2] \n";
+            //xhtml += "      .tablesorter({widthFixed: true, widgets: ['zebra']}) \n";
+            //xhtml += "      .tablesorterPager({container: $(\"#pager\")}); \n";
+            //xhtml += "}); \n";
+            //xhtml += "</script> \n";
 
 
-            xhtml += "\n<table cellspacing=\"1\" cellpadding=\"0\" border=\"0\" class=\"tblPesquisa tablesorter\" width=\"97%\">\n";
+            xhtml += "\n<table id=\"myTable\" cellspacing=\"1\" cellpadding=\"0\" border=\"0\" class=\"tablesorter\" width=\"97%\">\n";
+            //xhtml += "<colgroup>\n";
+            //xhtml += "<tr>\n";
+            //xhtml += colgroup;
+            //xhtml += "</tr>\n";
+            //xhtml += "</colgroup>\n";
             xhtml += "<thead>\n";
+            xhtml += "<tr>\n";
             xhtml += heder;
+            xhtml += "</tr>\n";
             xhtml += "</thead>\n";
-            xhtml += "<tbody class=\"trLink\">\n";
+            //xhtml += "<tbody class=\"trLink\">\n";
             xhtml += "</tbody>\n";
             xhtml += content;
             xhtml += "</table>\n";
 
             xhtml += "<div id=\"pager\" class=\"pager\">";
             xhtml += "<form>";
-            xhtml += "<img src=\"../addons/pager/icons/first.png\" class=\"first\"/>";
-            xhtml += "<img src=\"../addons/pager/icons/prev.png\" class=\"prev\"/>";
+            xhtml += "<img src=\"../../image/icons/first.png\" class=\"first\"/>";
+            xhtml += "<img src=\"../../image/icons/prev.png\" class=\"prev\"/>";
             xhtml += "<input type=\"text\" class=\"pagedisplay\"/>";
-            xhtml += "<img src=\"../addons/pager/icons/next.png\" class=\"next\"/>";
-            xhtml += "<img src=\"../addons/pager/icons/last.png\" class=\"last\"/>";
+            xhtml += "<img src=\"../../image/icons/next.png\" class=\"next\"/>";
+            xhtml += "<img src=\"../../image/icons/last.png\" class=\"last\"/>";
             xhtml += "<select class=\"pagesize\">";
             xhtml += "<option selected=\"selected\"  value=\"5\">5</option>";
             xhtml += "<option value=\"10\">10</option>";
