@@ -9,6 +9,10 @@
     <script type="text/javascript" src="../../Scripts/jquery.tablesorter.pager.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery.tablesorter.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/chili-1.8b.js"></script>
+    <script type="text/javascript" src="../../Scripts/docs.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.metadata.js"></script>
+    <asp:ContentPlaceHolder ID="ContentPlaceHead" runat="server" />
 </head>
 
 <body>
