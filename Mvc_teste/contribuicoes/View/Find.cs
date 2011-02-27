@@ -5,12 +5,25 @@ using System.Text;
 
 namespace ViewHelper
 {
+    /// <summary>
+    ///  Classe responsavel por gerar a tela de pesquisa
+    /// </summary>
+    /// <typeparam name="Model">Model principal da pesquisa</typeparam>
     public class Find<Model> where Model : new()
     {
+        /// <summary>
+        ///  
+        /// </summary>
         public string find;
 
+        /// <summary>
+        ///  XHTML dos filtros (tabela com os filtros escolhidos)
+        /// </summary>
         public string filter;
 
+        /// <summary>
+        ///  XHTML dos campos (tabela com os dados dos campos escolhidos)
+        /// </summary>
         public string field;
 
         public int pageRegistry{ get; set; }
@@ -51,17 +64,8 @@ namespace ViewHelper
             // html do conteudo
             string content = "";
 
-            // html da pagina
-            string pagina = "";
-
-            string colgroup = "";
-
             // contador de linhas
             int contador = 0;
-            int countRegistry = 1;
-
-            if (totalRegistry == 0)
-                totalRegistry = 3;
 
             // Percorre todos os dados
             foreach (Model itemModel in list)
@@ -70,7 +74,7 @@ namespace ViewHelper
                 string cor = contador % 2 == 0?"#FFFFFF":"#F4F4F4";
 
                 // tag inicial da linha
-                pagina += "<tr bgcolor=" + cor + "  onclick=\"location.href='{$link}'\" onMouseOver=\"this.style.background = '#CCC'\" onMouseOut=\"this.style.background = '" + cor + "'\">\n";
+                content += "<tr bgcolor=" + cor + "  onclick=\"location.href='{$link}'\" onMouseOver=\"this.style.background = '#CCC'\" onMouseOut=\"this.style.background = '" + cor + "'\">\n";
 
                 // percorre todas as colunas
                 foreach (KeyValuePair<string, Dictionary<string, object>> itemField in fields)
@@ -78,82 +82,55 @@ namespace ViewHelper
                     // cria o cabeçalho (LOOP UNICO)
                     if (contador == 0)
                     {
-                        colgroup += "<col>";
-
-                        heder += "<th>\n";
+                        heder += "<th  class=\"header\">\n";
                         heder += itemField.Value["name"].ToString();
                         heder += "</th>\n";
                     }
 
                     // valor da coluna
                     object value = itemModel.GetType().GetProperty(itemField.Key).GetValue(itemModel,null);
-                    pagina += "<td>\n";
-                    pagina += XForm<Model>.Label(itemField.Key, value, null);
-                    pagina += "</td>\n";
+                    content += "<td>\n";
+                    content += XForm<Model>.Label(itemField.Key, value, null);
+                    content += "</td>\n";
                 }
                 // fecha a linha e incrementa o contador
-                pagina += "</tr>\n";
-                content += pagina;
-                //if (countRegistry == totalRegistry)
-                //{
-                //    string display = "none";
-                //    if (pageRegistry == (Math.Abs(contador / totalRegistry)))
-                //        display = "block";
-                //    //content += "<div style=\"display:" + display + "\">" + pagina + "</div>";
-                //    content += pagina;
-                //    countRegistry = 1;
-                //}
-                //else
-                //    countRegistry++;
-
+                content += "</tr>\n";
                 contador++;
             }
             
             // funde o html
-            //xhtml += "<link rel=\"stylesheet\" href=\"../../Content/style.css\" type=\"text/css\" media=\"print, projection, screen\" />";
-            //xhtml += "<link rel=\"stylesheet\" href=\"../../Content/jq.css\" type=\"text/css\" media=\"print, projection, screen\" />";
-            //xhtml += "<script type=\"text/javascript\" src=\"../../Scripts/docs.js\"> \n"; 
-            //xhtml += "<script type=\"text/javascript\" src=\"../../Scripts/chili-1.8b.js\"> \n";
-            //xhtml += "<script type=\"text/javascript\"> \n";
-            //xhtml += "$(function() { \n";
-            //xhtml += "	$(\"table\")[2] \n";
-            //xhtml += "		.tablesorter({widthFixed: true, widgets: ['zebra']}) \n";
-            //xhtml += "		.tablesorterPager({container: $(\"#pager\")}); \n";
-            //xhtml += "}); \n";
-            //xhtml += "$(document).ready(function() { \n";
-            //xhtml += "$(\"table\")[2] \n";
-            //xhtml += "      .tablesorter({widthFixed: true, widgets: ['zebra']}) \n";
-            //xhtml += "      .tablesorterPager({container: $(\"#pager\")}); \n";
-            //xhtml += "}); \n";
-            //xhtml += "</script> \n";
 
+            // Script da paginação
+            xhtml += "<script type=\"text/javascript\"> \n";
+            xhtml += "$(document).ready(function() { \n";
+            xhtml += "$(\"#myTable\") \n";
+            xhtml += "      .tablesorter({widthFixed: true, widgets: ['zebra']}) \n";
+            xhtml += "      .tablesorterPager({container: $(\"#pager\")}); \n";
+            xhtml += "}); \n";
+            xhtml += "</script> \n";
 
+            // Tabela
             xhtml += "\n<table id=\"myTable\" cellspacing=\"1\" cellpadding=\"0\" border=\"0\" class=\"tablesorter\" width=\"97%\">\n";
-            //xhtml += "<colgroup>\n";
-            //xhtml += "<tr>\n";
-            //xhtml += colgroup;
-            //xhtml += "</tr>\n";
-            //xhtml += "</colgroup>\n";
             xhtml += "<thead>\n";
             xhtml += "<tr>\n";
-            xhtml += heder;
+            xhtml += heder; // Cabeçalho
             xhtml += "</tr>\n";
             xhtml += "</thead>\n";
-            //xhtml += "<tbody class=\"trLink\">\n";
             xhtml += "</tbody>\n";
-            xhtml += content;
+            xhtml += content; // Conteudo
             xhtml += "</table>\n";
 
-            xhtml += "<div id=\"pager\" class=\"pager\">";
+            // Paginação da pesquisa
+            xhtml += "<div id=\"pager\" class=\"pager\" style=\"position: inherit;\">";
             xhtml += "<form>";
             xhtml += "<img src=\"../../image/icons/first.png\" class=\"first\"/>";
             xhtml += "<img src=\"../../image/icons/prev.png\" class=\"prev\"/>";
             xhtml += "<input type=\"text\" class=\"pagedisplay\"/>";
             xhtml += "<img src=\"../../image/icons/next.png\" class=\"next\"/>";
             xhtml += "<img src=\"../../image/icons/last.png\" class=\"last\"/>";
+            xhtml += "Nº de registros por página:";
             xhtml += "<select class=\"pagesize\">";
-            xhtml += "<option selected=\"selected\"  value=\"5\">5</option>";
-            xhtml += "<option value=\"10\">10</option>";
+            xhtml += "<option selected=\"selected\"  value=\"10\">10</option>";
             xhtml += "<option value=\"20\">20</option>";
             xhtml += "<option value=\"30\">30</option>";
             xhtml += "<option  value=\"40\">40</option>";
@@ -164,7 +141,7 @@ namespace ViewHelper
         }
 
         /// <summary>
-        /// 
+        ///  Cria os filtros de pesquisa
         /// </summary>
         /// <param name="filters"></param>
         /// <returns></returns>
@@ -212,28 +189,16 @@ namespace ViewHelper
                 // fecha a linha da tabela
                 xhtml += "</tr>\n";
             }
- 
             xhtml += "</tbody>\n";
             xhtml += "</table>\n"; 
 
             // Tabela para submeter o formulário
             xhtml += "<table  cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"97%\">\n";
                 xhtml += "<tbody>\n"; 
-                    // inicio da linha
                     xhtml += "<tr>\n";
-                        // Label do campo
-                        xhtml += "<td width='160px'>\n";
-                        xhtml += "Nº de registros por página:\n";
-                        xhtml += "</td>\n";
-
-                        xhtml += "<td width='70px'>\n";
-                        xhtml += XForm<Model>.Texbox("numRegistrosPagina", null, new string[] { "class=\"dataTxtArea\"" });
-                        xhtml += "</td>\n";
-
                         xhtml += "<td>\n";
                         xhtml += "<input type=\"submit\" value=\"Pesquisar\" />";
                         xhtml += "</td>\n"; 
-                    // fim da linha
                     xhtml += "</tr>\n";
                 xhtml += "</tbody>\n";
             xhtml += "</table>\n";
@@ -249,7 +214,7 @@ namespace ViewHelper
         public string GetSensitiveCase(KeyValuePair<string, Dictionary<string, object>> itemFilter)
         {
             string xhtml = "";
-            if (itemFilter.Value["tipo_dado"] != "numerico")
+            if (itemFilter.Value["tipo_dado"].ToString() != "numerico")
             {
                 xhtml += "<td style=\"width:20%\">";
                 xhtml += XForm<Model>.Checkbox("ignoraCAb[" + itemFilter.Key + "]", false, new string[] { "class=\"radio\"" }) + "Ignorar CAb";
