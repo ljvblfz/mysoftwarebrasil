@@ -14,23 +14,22 @@ namespace ViewHelper
         /// <summary>
         ///  
         /// </summary>
-        public string find;
+        public string find { get; set; }
 
         /// <summary>
         ///  XHTML dos filtros (tabela com os filtros escolhidos)
         /// </summary>
-        public string filter;
+        public string filter { get; set; }
 
         /// <summary>
         ///  XHTML dos campos (tabela com os dados dos campos escolhidos)
         /// </summary>
-        public string field;
+        public string field { get; set; }
 
-        public int pageRegistry{ get; set; }
-
-        public int totalRegistry { get; set; }
-
-        public List<Model> list;
+        /// <summary>
+        ///  Lista contendo os dados de uma consulta SQL
+        /// </summary>
+        public List<Model> list { get; set; }
 
         /// <summary>
         ///  Helper de pesquisa
@@ -143,8 +142,8 @@ namespace ViewHelper
         /// <summary>
         ///  Cria os filtros de pesquisa
         /// </summary>
-        /// <param name="filters"></param>
-        /// <returns></returns>
+        /// <param name="filters">Dicionary contendo os filtros de pesquisa</param>
+        /// <returns>XHTML carregado com os filtros de pesquisa</returns>
         public string SearchFilter(Dictionary<string, Dictionary<string, object>> filters)
         {
             string xhtml = "";           
@@ -207,21 +206,28 @@ namespace ViewHelper
         }
 
         /// <summary>
-        /// 
+        ///  Metodo responsavel por criar a opção de case sensitive
+        ///     Verifica se o campo e diferente de numerico  
         /// </summary>
-        /// <param name="itemFilter"></param>
-        /// <returns></returns>
+        /// <param name="itemFilter">item do filtro de pesquisa</param>
+        /// <returns>XHML com a coluna de case sensitive</returns>
         public string GetSensitiveCase(KeyValuePair<string, Dictionary<string, object>> itemFilter)
         {
+            // xhtml de retorno
             string xhtml = "";
+
+            // verifica se o campo não e numerico
             if (itemFilter.Value["tipo_dado"].ToString() != "numerico")
             {
+                // adicionan um checkbox com a opção de ignorar case sensitive
+                // (Com esta opção marcada e ignorada a diferença entre maiusculo e minusculo)
                 xhtml += "<td style=\"width:20%\">";
                 xhtml += XForm<Model>.Checkbox("ignoraCAb[" + itemFilter.Key + "]", false, new string[] { "class=\"radio\"" }) + "Ignorar CAb";
                 xhtml += "</td>\n";
             }
             else
             {
+                // Caso não seja case sensitive adiciona uma coluna vazia
                 xhtml += "<td style=\"width:20%\">\n";
                 xhtml += "</td>\n";
             }
@@ -229,19 +235,24 @@ namespace ViewHelper
         }
 
         /// <summary>
-        /// 
+        ///  Metodo responsavel por carregar o Operador logico
         /// </summary>
-        /// <param name="itemFilter"></param>
-        /// <returns></returns>
+        /// <param name="itemFilter">item do filtro de pesquisa</param>
+        /// <returns>XHML com a coluna de operador logico</returns>
         public string GetOperaitor(KeyValuePair<string, Dictionary<string, object>> itemFilter)
         {
+            // Carrega o dicionario de operadores logicos
             Dictionary<string, Dictionary<string, string>> logicOperatorsGroup = new Dictionary<string, Dictionary<string, string>>();
             logicOperatorsGroup = GetLogicOperatorsGroup();
+            
+            // XHML de retorno
             string xhtml = "";
 
+            // Adiciona a coluna e verifica se o item e nulo
             xhtml += "<td style=\"width:25%\">\n";
             if (itemFilter.Value["tipo_dado"] != null)
             {
+                // Aciona o filtro de operador logico de acordo com o tipo de dado
                 switch (itemFilter.Value["tipo_dado"].ToString())
                 {
                     case "string":
@@ -266,69 +277,13 @@ namespace ViewHelper
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="fields"></param>
-        /// <returns></returns>
-        public string SearchPage(Dictionary<string, Dictionary<string, object>> fields)
-        {
-            string xhtml = "";
-            object page = 0;
-            object numPaginas = Math.Abs(list.Count / 10);
-            object numTotalRegistros = list.Count;
-            string pagination = "";
-            /**
-            * Inicio da paginação
-            */
-            pagination = "\n<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"97%\">\n";
-            pagination += "<tbody>\n";
-            pagination += "<tr>\n";
-            pagination += "<td height=\"24\">\n";
-
-            //Número total de registros
-            pagination += "<strong> N&deg; total de registros: </strong>" + numTotalRegistros;
-            pagination += "</td>\n";
-
-            //insere o conteúdo de pagination a variavel content
-            pagination += "<td>\n";
-            pagination += "<div class='pagination'>";
-
-            pagination += "<span class='pagImg'>";
-            pagination += "<a href='{$this->view->baseUrl}/{$this->view->controller}/{$this->view->action}/page/1'>";
-            pagination += "<img border=\"0\" alt=\"Primeira p&aacute;gina\" title=\"Primeira p&aacute;gina\" src=\"{$this->view->baseUrl}/public/images/pag_primeira.gif\">\n";
-            pagination += "</a>\n";
-            pagination += "</span>\n";
-
-            pagination += "<span class='pagImg'>";
-            pagination += "<a href='{$this->view->baseUrl}/{$this->view->controller}/{$this->view->action}/page/{$anterior}'>";
-            pagination += "<img border=\"0\" alt=\"P&aacute;gina anterior\" title=\"P&aacute;gina anterior\" src=\"{$this->view->baseUrl}/public/images/pag_anterior.gif\">\n";
-            pagination += "</a>\n";
-            pagination += "</span>\n";
-
-            return xhtml;
-        }
-
-        /// <summary>
         ///  Metodo que recupera os filtros para a pesquisa
         /// </summary>
         /// <returns>um dicionary de dados com os filtros</returns>
         private Dictionary<string, Dictionary<string, string>> GetLogicOperatorsGroup()
         {
-            Dictionary<string, string> logicOperators = new Dictionary<string, string>();
-            logicOperators.Add("OPL_IGUAL", "igual a");
-            logicOperators.Add("OPL_DIFERENTE", "diferente de");
-            logicOperators.Add("OPL_MAIOR", "maior que");
-            logicOperators.Add("OPL_MENOR", "menor que");
-            logicOperators.Add("OPL_MAIOR_IGUAL", "maior ou igual a");
-            logicOperators.Add("OPL_MENOR_IGUAL", "menor ou igual a");
-            logicOperators.Add("OPL_ENTRE", "com valores entre");
-            logicOperators.Add("OPL_VAZIO", "está vazio");
-            logicOperators.Add("OPL_NAO_VAZIO", "não está vazio");
-            logicOperators.Add("OPL_VALOR_LISTA", "valores da lista");
-            logicOperators.Add("OPL_COMECANDO", "começando com");
-            logicOperators.Add("OPL_TERMINANDO", "terminando com");
-            logicOperators.Add("OPL_QUALQUER_LUGAR", "em qualquer lugar");
-
+            // OPERADORES
+            // numerico
             Dictionary<string, string> numericoD = new Dictionary<string, string>();
             numericoD.Add("OPL_IGUAL", "igual a");
             numericoD.Add("OPL_DIFERENTE", "diferente de");
@@ -341,6 +296,7 @@ namespace ViewHelper
             numericoD.Add("OPL_NAO_VAZIO", "não está vazio");
             numericoD.Add("OPL_VALOR_LISTA", "valores da lista");
 
+            // string
             Dictionary<string, string> stringD = new Dictionary<string, string>();
             stringD.Add("OPL_IGUAL", "igual a");
             stringD.Add("OPL_DIFERENTE", "diferente de");
@@ -350,11 +306,13 @@ namespace ViewHelper
             stringD.Add("OPL_TERMINANDO", "terminando com");
             stringD.Add("OPL_QUALQUER_LUGAR", "em qualquer lugar");
 
+            // option
             Dictionary<string, string> optionD = new Dictionary<string, string>();
             optionD.Add("OPL_DIFERENTE", "diferente de");
             optionD.Add("OPL_VAZIO", "está vazio");
             optionD.Add("OPL_NAO_VAZIO", "não está vazio");
 
+            // data
             Dictionary<string, string> dateD = new Dictionary<string, string>();
             dateD.Add("OPL_IGUAL", "igual a");
             dateD.Add("OPL_MAIOR", "maior que");
@@ -363,6 +321,7 @@ namespace ViewHelper
             dateD.Add("OPL_MENOR_IGUAL", "menor ou igual a");
             dateD.Add("OPL_ENTRE", "com valores entre");
 
+            // GRUPO DE OPERADORES
             Dictionary<string, Dictionary<string, string>> logicOperatorsGroup = new Dictionary<string, Dictionary<string, string>>();
             logicOperatorsGroup.Add("date", dateD);
             logicOperatorsGroup.Add("string", stringD);
