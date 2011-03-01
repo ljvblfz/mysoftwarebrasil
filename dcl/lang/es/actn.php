@@ -1,0 +1,15 @@
+<?php
+	define('STR_ACTN_SELECTONE', "Selecione um");
+	define('STR_ACTN_TABLETITLE', "Ações - Ordenada por %s");
+	define('STR_ACTN_NOACTIONS', "As ações não pôde ser encontrada para mostrar! Você não pode ter qualquer ação em seu sistema ainda!");
+	define('STR_ACTN_ID', "Código");
+	define('STR_ACTN_ACTIVEABB', "A");
+	define('STR_ACTN_ACTIVE', "Ativo");
+	define('STR_ACTN_SHORT', "Short");
+	define('STR_ACTN_NAME', "Nome");
+	define('STR_ACTN_OPTIONS', "Opções");
+	define('STR_ACTN_EDIT', "Editar ação");
+	define('STR_ACTN_ADD', "Adicionar ação");
+	define('STR_ACTN_HIGHLIGHTEDNOTE', "** campos realçados são obrigatórios!");
+	define('STR_ACTN_ATTRIBUTENOTE', "Este item deverá ser associada a um conjunto de atributos a serem utilizados. Veja Admin .. Atributos item de menu.");
+?>
