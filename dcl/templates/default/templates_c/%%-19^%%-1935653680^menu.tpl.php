@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.2, created on 2011-03-01 11:17:41
+<?php /* Smarty version 2.6.2, created on 2011-03-01 21:30:02
          compiled from menu.tpl */ ?>
 <?php require_once(SMARTY_DIR . 'core' . DIRECTORY_SEPARATOR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'dcl_config', 'menu.tpl', 9, false),array('function', 'dcl_select_workspace', 'menu.tpl', 30, false),array('modifier', 'escape', 'menu.tpl', 9, false),)), $this); ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.2, created on 2011-03-01 11:14:35
+<?php /* Smarty version 2.6.2, created on 2011-03-01 21:56:58
          compiled from logout.tpl */ ?>
 <!-- $Id: logout.tpl 12 2006-12-01 01:46:51Z mdean $ -->
 <html>
