@@ -13,7 +13,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_WORKORDERS">
 			<xlt lang="de">AuftrÃƒÂ¤ge</xlt>
-			<xlt lang="en">Work Orders</xlt>
+			<xlt lang="en">Ordens de Trabalho</xlt>
 			<xlt lang="es">Work Order</xlt>
 			<xlt lang="fr">Ordres de Travail</xlt>
 			<xlt lang="it">Lavori</xlt>
@@ -23,7 +23,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_MYWOS">
 			<xlt lang="de">Meine ArbeitsauftrÃƒÂ¤ge AP</xlt>
-			<xlt lang="en">My WOs</xlt>
+			<xlt lang="en">Minhas Ordens de Trabalho</xlt>
 			<xlt lang="es">Mis Work Orders</xlt>
 			<xlt lang="fr">Mes OT</xlt>
 			<xlt lang="it">Miei Lavori</xlt>
@@ -33,7 +33,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_NEW">
 			<xlt lang="de">Addieren Neues</xlt>
-			<xlt lang="en">Add New</xlt>
+			<xlt lang="en">Adicionar Novo</xlt>
 			<xlt lang="es">Agregue Nuevo</xlt>
 			<xlt lang="fr">Add New</xlt>
 			<xlt lang="it">Add New</xlt>
@@ -43,7 +43,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_IMPORT">
 			<xlt lang="de">Importieren</xlt>
-			<xlt lang="en">Import</xlt>
+			<xlt lang="en">Importar</xlt>
 			<xlt lang="es">Importar</xlt>
 			<xlt lang="fr">Import</xlt>
 			<xlt lang="it">Importa</xlt>
@@ -53,7 +53,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_ACTIVITY">
 			<xlt lang="de">AktivitÃƒÂ¤ten</xlt>
-			<xlt lang="en">Activity</xlt>
+			<xlt lang="en">Atividade</xlt>
 			<xlt lang="es">Actividad</xlt>
 			<xlt lang="fr">ActivitÃƒÂ©</xlt>
 			<xlt lang="it">AttivitÃƒÂ </xlt>
@@ -63,7 +63,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_GRAPH">
 			<xlt lang="de">Graphik</xlt>
-			<xlt lang="en">Graph</xlt>
+			<xlt lang="en">Gráfico</xlt>
 			<xlt lang="es">Grafica</xlt>
 			<xlt lang="fr">Graphiques</xlt>
 			<xlt lang="it">Grafico</xlt>
@@ -73,7 +73,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_STATISTICS">
 			<xlt lang="de">Statistiken</xlt>
-			<xlt lang="en">Statistics</xlt>
+			<xlt lang="en">Estatísticas</xlt>
 			<xlt lang="es">Estadisticas</xlt>
 			<xlt lang="fr">Statistiques</xlt>
 			<xlt lang="it">Statistiche</xlt>
@@ -83,7 +83,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_SCHEDULE">
 			<xlt lang="de">Zeitplan</xlt>
-			<xlt lang="en">Schedule</xlt>
+			<xlt lang="en">Agenda</xlt>
 			<xlt lang="es">Plan</xlt>
 			<xlt lang="fr">Planification</xlt>
 			<xlt lang="it">Schedulazione</xlt>
@@ -93,7 +93,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_SEARCH">
 			<xlt lang="de">Suche</xlt>
-			<xlt lang="en">Search</xlt>
+			<xlt lang="en">Pesquisa</xlt>
 			<xlt lang="es">Buscar</xlt>
 			<xlt lang="fr">Recherche</xlt>
 			<xlt lang="it">Cerca</xlt>
@@ -103,7 +103,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_BROWSE">
 			<xlt lang="de">Grasen</xlt>
-			<xlt lang="en">Browse</xlt>
+			<xlt lang="en">Procurar</xlt>
 			<xlt lang="es">Hojee</xlt>
 			<xlt lang="fr">Browse</xlt>
 			<xlt lang="it">Browse</xlt>
@@ -113,7 +113,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_PROJECTS">
 			<xlt lang="de">Projekte</xlt>
-			<xlt lang="en">Projects</xlt>
+			<xlt lang="en">Projetos</xlt>
 			<xlt lang="es">Proyectos</xlt>
 			<xlt lang="fr">Projets</xlt>
 			<xlt lang="it">Progetti</xlt>
@@ -123,7 +123,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_MYPROJECTS">
 			<xlt lang="de">Meine Projekte</xlt>
-			<xlt lang="en">My Projects</xlt>
+			<xlt lang="en">Meus Projetos</xlt>
 			<xlt lang="es">Mis Proyectos</xlt>
 			<xlt lang="fr">Mes Projets</xlt>
 			<xlt lang="it">Miei Progetti</xlt>
@@ -153,7 +153,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_MYTICKETS">
 			<xlt lang="de">Meine Tickets</xlt>
-			<xlt lang="en">My Tickets</xlt>
+			<xlt lang="en">Meus Tickets</xlt>
 			<xlt lang="es">Mis Tickets</xlt>
 			<xlt lang="fr">Mes Tickets</xlt>
 			<xlt lang="it">Mie Richieste</xlt>
@@ -176,7 +176,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_CHANGEPASSWORD">
 			<xlt lang="de">Passwort ÃƒÂ¤ndern</xlt>
-			<xlt lang="en">Change Password</xlt>
+			<xlt lang="en">Alterar senha</xlt>
 			<xlt lang="es">Cambiar ContraseÃƒÂ±a</xlt>
 			<xlt lang="fr">Changer Mot de Passe</xlt>
 			<xlt lang="it">Cambia Password</xlt>
@@ -186,7 +186,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_SYSTEMSETUP">
 			<xlt lang="de">System einrichten</xlt>
-			<xlt lang="en">System Setup</xlt>
+			<xlt lang="en">Configuração do Sistema</xlt>
 			<xlt lang="es">Configurar sistema</xlt>
 			<xlt lang="fr">RÃƒÂ©glages SystÃƒÂ¨me</xlt>
 			<xlt lang="it">Configurazione</xlt>
@@ -196,7 +196,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_NEWACCOUNT">
 			<xlt lang="de">Neuer Kunde</xlt>
-			<xlt lang="en">New Organization</xlt>
+			<xlt lang="en">Nova Organização</xlt>
 			<xlt lang="es">Nueva Cuenta</xlt>
 			<xlt lang="fr">Nouveau client</xlt>
 			<xlt lang="it">Nuovo Cliente</xlt>
@@ -206,7 +206,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_VIEWACCOUNT">
 			<xlt lang="de">Suche nach Kunde</xlt>
-			<xlt lang="en">View Organizations</xlt>
+			<xlt lang="en">Ver Organizações</xlt>
 			<xlt lang="es">Ver Cuentas</xlt>
 			<xlt lang="fr">Voir clients</xlt>
 			<xlt lang="it">Vedi Clienti</xlt>
@@ -226,7 +226,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_PRODUCTS">
 			<xlt lang="de">Produkte</xlt>
-			<xlt lang="en">Products</xlt>
+			<xlt lang="en">Produtos</xlt>
 			<xlt lang="es">Productos</xlt>
 			<xlt lang="fr">Produits</xlt>
 			<xlt lang="it">Products</xlt>
@@ -246,7 +246,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_WATCHES">
 			<xlt lang="de">Beobachtungsliste</xlt>
-			<xlt lang="en">Watches</xlt>
+			<xlt lang="en">Relógios</xlt>
 			<xlt lang="es">Vistas</xlt>
 			<xlt lang="fr">Alerteurs</xlt>
 			<xlt lang="it">Allarmi</xlt>
@@ -256,7 +256,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_HELP">
 			<xlt lang="de">Hilfe</xlt>
-			<xlt lang="en">Help</xlt>
+			<xlt lang="en">Ajuda</xlt>
 			<xlt lang="es">Ayuda</xlt>
 			<xlt lang="fr">Help</xlt>
 			<xlt lang="it">Aiuto</xlt>
@@ -276,7 +276,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_CLEARSCREEN">
 			<xlt lang="de">Bildschirm lÃƒÂ¶schen</xlt>
-			<xlt lang="en">Clear Screen</xlt>
+			<xlt lang="en">Limpar tela</xlt>
 			<xlt lang="es">Limpiar pantalla</xlt>
 			<xlt lang="fr">Initialiser Ecran</xlt>
 			<xlt lang="it">Pulisci Schermo</xlt>
@@ -296,7 +296,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_LICENSEINFO">
 			<xlt lang="de">Lizenz Informationen</xlt>
-			<xlt lang="en">License Info</xlt>
+			<xlt lang="en">Informações da licença</xlt>
 			<xlt lang="es">Acerca de licencia</xlt>
 			<xlt lang="fr">Info Licence</xlt>
 			<xlt lang="it">Licenza</xlt>
@@ -306,7 +306,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_VERSIONINFO">
 			<xlt lang="de">Information zur Version</xlt>
-			<xlt lang="en">Version Info</xlt>
+			<xlt lang="en">Info versão</xlt>
 			<xlt lang="es">Acerca de version</xlt>
 			<xlt lang="fr">Info Version</xlt>
 			<xlt lang="it">Versione</xlt>
@@ -336,7 +336,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_AGGREGATESTATS">
 			<xlt lang="de">Aggregate Stats</xlt>
-			<xlt lang="en">Aggregate Stats</xlt>
+			<xlt lang="en">Agregado Stats</xlt>
 			<xlt lang="es">Aggregate Stats</xlt>
 			<xlt lang="fr">Aggregate Stats</xlt>
 			<xlt lang="it">Aggregate Stats</xlt>
@@ -346,7 +346,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_NEWWORKORDER">
 			<xlt lang="de">New Work Order</xlt>
-			<xlt lang="en">New Work Order</xlt>
+			<xlt lang="en">Nova Ordem de Trabalho</xlt>
 			<xlt lang="es">New Work Order</xlt>
 			<xlt lang="fr">New Work Order</xlt>
 			<xlt lang="it">New Work Order</xlt>
@@ -356,7 +356,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_NEWPROJECT">
 			<xlt lang="de">New Project</xlt>
-			<xlt lang="en">New Project</xlt>
+			<xlt lang="en">Novo projeto</xlt>
 			<xlt lang="es">New Project</xlt>
 			<xlt lang="fr">New Project</xlt>
 			<xlt lang="it">New Project</xlt>
@@ -366,7 +366,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_NEWTICKET">
 			<xlt lang="de">New Ticket</xlt>
-			<xlt lang="en">New Ticket</xlt>
+			<xlt lang="en">Novo Ticket</xlt>
 			<xlt lang="es">New Ticket</xlt>
 			<xlt lang="fr">New Ticket</xlt>
 			<xlt lang="it">New Ticket</xlt>
@@ -376,7 +376,7 @@
 		</phrase>
 		<phrase name="DCL_MENU_WORKORDEROPTIONS">
 			<xlt lang="de">Work Order Options</xlt>
-			<xlt lang="en">Work Order Options</xlt>
+			<xlt lang="en">Ordem opções de trabalho</xlt>
 			<xlt lang="es">Work Order Options</xlt>
 			<xlt lang="fr">Work Order Options</xlt>
 			<xlt lang="it">Work Order Options</xlt>
