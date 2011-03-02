@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.2, created on 2011-03-01 15:47:52
+<?php /* Smarty version 2.6.2, created on 2011-03-01 21:56:58
          compiled from htmlMessageWarning.tpl */ ?>
 <?php require_once(SMARTY_DIR . 'core' . DIRECTORY_SEPARATOR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'htmlMessageWarning.tpl', 27, false),)), $this); ?>
