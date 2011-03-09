@@ -47,16 +47,16 @@
 	define('STR_ADMIN_PHONETYPES', "Telefone Tipos");
 	define('STR_ADMIN_PHONETYPESDESC', "Telefone tipos são utilizados para distinguir diferentes números de telefone pertencentes a uma organização ou entre em contato.");
 	define('STR_ADMIN_PHONETYPESNOTE', "");
-	define('STR_ADMIN_NOTETYPES', "Note Types");
-	define('STR_ADMIN_NOTETYPESDESC', "Note types are used to categorize notes for an organization or contact.");
+	define('STR_ADMIN_NOTETYPES', "Tipos de Nota");
+	define('STR_ADMIN_NOTETYPESDESC', "Nota tipos são usados para categorizar as notas para uma organização ou entre em contato.");
 	define('STR_ADMIN_NOTETYPESNOTE', "");
-	define('STR_ADMIN_URLTYPES', "URL Types");
-	define('STR_ADMIN_URLTYPESDESC', "URL types are used to categorize web sites (or other resources) for an organization or contact.");
+	define('STR_ADMIN_URLTYPES', "Tipos de URL");
+	define('STR_ADMIN_URLTYPESDESC', "Tipos de URL Usados São parágrafo classificar sites da Web (Recursos Outros UO) n. Organização UMA OU Contato in empreendedorismo.");
 	define('STR_ADMIN_URLTYPESNOTE', "");
-	define('STR_ADMIN_ORGTYPES', "Organization Types");
-	define('STR_ADMIN_ORGTYPESDESC', "Organization types are used to categorize organizations.  An organization can have more than one type.");
+	define('STR_ADMIN_ORGTYPES', "Tipos de Organização");
+	define('STR_ADMIN_ORGTYPESDESC', "Organização tipos são usados para categorizar as organizações. Uma organização pode ter mais de um tipo.");
 	define('STR_ADMIN_ORGTYPESNOTE', "");
-	define('STR_ADMIN_CONTACTTYPES', "Contact Types");
-	define('STR_ADMIN_CONTACTTYPESDESC', "Contact types are used to categorize contacts.  A contact can have more than one type.");
+	define('STR_ADMIN_CONTACTTYPES', "Tipos de Contato");
+	define('STR_ADMIN_CONTACTTYPESDESC', "Tipos de contato são usadas para categorizar os contatos. Um contato pode ter mais de um tipo.");
 	define('STR_ADMIN_CONTACTTYPESNOTE', "");
 ?>
