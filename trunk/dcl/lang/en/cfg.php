@@ -1,13 +1,13 @@
 <?php
-	define('STR_CFG_TITLE', "DCL Configuration");
-	define('STR_CFG_DESC', "This screen will allow you to configure default settings and behaviors in DCL.");
-	define('STR_CFG_SYSTEMTITLE', "System Configuration");
-	define('STR_CFG_DATEFORMAT', "Date Display Format");
-	define('STR_CFG_DATEFORMATHELP', "The format to use for displaying dates.");
-	define('STR_CFG_DATEFORMATDB', "SQL Server Date Format");
-	define('STR_CFG_DATEFORMATDBHELP', "The format the database uses for storing dates.");
-	define('STR_CFG_TIMESTAMPFORMAT', "Timestamp Display Format");
-	define('STR_CFG_TIMESTAMPFORMATHELP', "The format to use for displaying timestamps.");
+	define('STR_CFG_TITLE', "DCL Configuração");
+	define('STR_CFG_DESC', "Esta tela permitirá que você definir as configurações padrão e comportamentos em DCL.");
+	define('STR_CFG_SYSTEMTITLE', "Configuração do sistema");
+	define('STR_CFG_DATEFORMAT', "Formato de data de exibição");
+	define('STR_CFG_DATEFORMATHELP', "O formato a utilizar para exibir datas.");
+	define('STR_CFG_DATEFORMATDB', "SQL Server Formato de data");
+	define('STR_CFG_DATEFORMATDBHELP', "O formato do banco de dados utiliza para armazenar datas.");
+	define('STR_CFG_TIMESTAMPFORMAT', "Timestamp Formato de exibição");
+	define('STR_CFG_TIMESTAMPFORMATHELP', "O formato a ser usado para exibir timestamps.");
 	define('STR_CFG_TIMESTAMPFORMATDB', "SQL Server Timestamp Format");
 	define('STR_CFG_TIMESTAMPFORMATDBHELP', "The format the database uses for storing timestamps.");
 	define('STR_CFG_MAXUPLOADFILESIZE', "Maximum Upload File Size");
