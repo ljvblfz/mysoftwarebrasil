@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CampionsStats</string>
+    <string name="menu_name_atualizar">Atualizar</string>
+    <string name="menu_name_atualizar2">Atualizar Campeonatos</string>
+    <string name="menu_name_atualizar3">Atualizar Este Campeonato</string>
+    <string name="menu_name_campeonato">Campeonato</string>
+    <string name="lb_secione">Selecione os campionatos que deseja Atualizar.</string>
+    <string name="jogos_prompt">Jogos</string>
+    <string name="btn_fechar"> Fechar </string>
+    
+    <string-array name="jogos_array">
+        <item>Todos</item>
+        <item>Casa</item>
+        <item>Fora</item>
+    </string-array>
+    
+    <string name="rodada_prompt">Rodadas</string>
+    <string-array name="rodada_array">
+        <item>Primeiro</item>
+        <item>Ultimo</item>
+    </string-array>
+</resources>

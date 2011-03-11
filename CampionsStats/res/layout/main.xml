@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	    <TableRow>
+		    <TextView
+		        android:layout_height="wrap_content"
+		        android:text="@string/jogos_prompt"
+		    android:layout_marginLeft="10dip" android:layout_width="fill_parent"/>
+		 	<TextView
+		        android:layout_height="wrap_content"
+		        android:text="@string/rodada_prompt"
+		    android:layout_marginLeft="10dip" android:layout_width="fill_parent"/>
+		</TableRow>
+		<TableRow>
+		    <Spinner 
+		        android:id="@+id/spinner_jogos"
+		        android:layout_height="wrap_content"
+		        android:prompt="@string/jogos_prompt" android:layout_width="fill_parent"/>
+		    
+
+		    <Spinner 
+		        android:id="@+id/spinner_rodada"
+		        android:layout_height="wrap_content"
+		        android:prompt="@string/rodada_prompt" android:layout_width="fill_parent"/>
+		</TableRow>
+	</TableLayout>
+	<GridView android:id="@+id/GridView01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+	</GridView>
+</LinearLayout>
