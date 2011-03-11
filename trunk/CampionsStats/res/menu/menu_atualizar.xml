@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">	
+	<item 
+		android:id="@+id/item01" 
+		android:title="@string/menu_name_campeonato" 
+		android:enabled="true" 
+		android:visible="true">
+	</item>
+	<item 
+		android:title="@string/menu_name_atualizar" 
+		android:id="@+id/item02" 
+		android:enabled="true" 
+		android:visible="true">
+		<menu>
+			<item 
+				android:title="@string/menu_name_atualizar2"
+				android:id="@+id/item03"
+				android:enabled="true" 
+				android:visible="true">
+			</item>
+			<item 
+				android:title="@string/menu_name_atualizar3"
+				android:id="@+id/item04"
+				android:enabled="true" 
+				android:visible="true">
+			</item>
+		</menu>
+	</item>
+</menu>
