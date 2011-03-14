@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <rd:DataSourceID>04baeaa9-762d-425d-a30c-bb32be651b4c</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="grupo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="rota">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="logotipo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="referencia">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>false</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>false</rd:SnapToGrid>
+  <RightMargin>0.1cm</RightMargin>
+  <LeftMargin>0.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox44">
+        <Top>0.29762cm</Top>
+        <Width>4.33334cm</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>23.14946cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Now()</Value>
+      </Textbox>
+      <Textbox Name="textbox43">
+        <Top>0.29762cm</Top>
+        <Width>1.06349cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>22.16534cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>Data:</Value>
+      </Textbox>
+      <Textbox Name="textbox33">
+        <Top>1.35582cm</Top>
+        <Width>1cm</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>26.45635cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox28">
+        <Top>1.35582cm</Top>
+        <Width>1.53968cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>24.89022cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>Total de:</Value>
+      </Textbox>
+      <Textbox Name="textbox26">
+        <Top>1.32936cm</Top>
+        <Width>1.96296cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>13.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>Referencia:</Value>
+      </Textbox>
+      <Textbox Name="textbox25">
+        <Top>1.31151cm</Top>
+        <Width>4.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>15.17526cm</Left>
+        <Height>0.64418cm</Height>
+        <Value>=Parameters!referencia.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <Top>1.48545cm</Top>
+        <Width>4.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.75cm</Left>
+        <Height>0.56481cm</Height>
+        <Value>=Parameters!rota.Value</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>AutoSize</Sizing>
+        <ToolTip>=Parameters!logotipo.Value</ToolTip>
+        <Top>0.25cm</Top>
+        <Width>1.75cm</Width>
+        <MIMEType>image/gif</MIMEType>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>6</ZIndex>
+        <Left>0.5cm</Left>
+        <Height>1.77381cm</Height>
+        <Value>=Parameters!logotipo.Value</Value>
+      </Image>
+      <Textbox Name="textbox36">
+        <rd:DefaultName>textbox36</rd:DefaultName>
+        <Top>0.89418cm</Top>
+        <Width>4.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.75cm</Left>
+        <Height>0.56481cm</Height>
+        <Value>=Parameters!grupo.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Top>0.25cm</Top>
+        <Width>9.75cm</Width>
+        <Style>
+          <FontSize>13pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.5cm</Left>
+        <Height>0.64418cm</Height>
+        <Value>Rol de contas para Critica</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Top>1.48545cm</Top>
+        <Width>1.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.5cm</Left>
+        <Height>0.56481cm</Height>
+        <Value>Rota:</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.89418cm</Top>
+        <Width>1.25cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.5cm</Left>
+        <Height>0.56481cm</Height>
+        <Value>Grupo:</Value>
+      </Textbox>
+      <Textbox Name="textbox38">
+        <rd:DefaultName>textbox38</rd:DefaultName>
+        <Top>1.35317cm</Top>
+        <Width>1cm</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>23.57407cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=Globals!PageNumber</Value>
+      </Textbox>
+      <Textbox Name="textbox39">
+        <rd:DefaultName>textbox39</rd:DefaultName>
+        <Top>1.35317cm</Top>
+        <Width>1.38095cm</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>22.17989cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>Pagina:</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.18254cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.1cm</BottomMargin>
+  <rd:ReportID>3a20201e-6bb9-46ab-91a4-9fb0ea7b179d</rd:ReportID>
+  <PageWidth>29cm</PageWidth>
+  <DataSets>
+    <DataSet Name="VoltaLeitura">
+      <Fields>
+        <Field Name="Grupo">
+          <DataField>Grupo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Setor">
+          <DataField>Setor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Rota">
+          <DataField>Rota</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CDC">
+          <DataField>CDC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Leitura_Ajustada">
+          <DataField>Leitura_Ajustada</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Leitura_Real">
+          <DataField>Leitura_Real</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Data_Leitura">
+          <DataField>Data_Leitura</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Consumo_Ajustado">
+          <DataField>Consumo_Ajustado</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Esgoto_Ajustado">
+          <DataField>Esgoto_Ajustado</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Dias_Consumo">
+          <DataField>Dias_Consumo</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Ocorrencia">
+          <DataField>Ocorrencia</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Ident_fraude">
+          <DataField>Ident_fraude</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Indic_cortado">
+          <DataField>Indic_cortado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Operador">
+          <DataField>Operador</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Flag_Calculo">
+          <DataField>Flag_Calculo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Flag_Emissao">
+          <DataField>Flag_Emissao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Referencia">
+          <DataField>Referencia</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Data_Emissao">
+          <DataField>Data_Emissao</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Vencimento">
+          <DataField>Vencimento</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Agua">
+          <DataField>Valor_Agua</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Esgoto">
+          <DataField>Valor_Esgoto</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Credito">
+          <DataField>Valor_Credito</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Reducao">
+          <DataField>Valor_Reducao</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_IR">
+          <DataField>Valor_IR</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_CSLL">
+          <DataField>Valor_CSLL</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_PIS">
+          <DataField>Valor_PIS</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_COFINS">
+          <DataField>Valor_COFINS</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Categoria">
+          <DataField>Categoria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Res">
+          <DataField>Eco_Res</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Com">
+          <DataField>Eco_Com</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Ind">
+          <DataField>Eco_Ind</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Pub">
+          <DataField>Eco_Pub</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Soc">
+          <DataField>Eco_Soc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Consumo_Rateado">
+          <DataField>Consumo_Rateado</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Valor_Saldo_Debito">
+          <DataField>Valor_Saldo_Debito</DataField>
+          <rd:TypeName>System.Nullable`1[System.Decimal]</rd:TypeName>
+        </Field>
+        <Field Name="Flag_Lido">
+          <DataField>Flag_Lido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Flag_Faturado">
+          <DataField>Flag_Faturado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Ocorrencia2">
+          <DataField>Ocorrencia2</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceType>Data.BFL.VoltaLeituraFlow, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceSelectMethod>ListaCritica</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceSelectMethodSignature>System.Collections.Generic.List`1[Data.Model.VoltaLeitura] ListaCritica(Int32, System.DateTime)</rd:ObjectDataSourceSelectMethodSignature>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Ligacoes1">
+      <Fields>
+        <Field Name="Codigo_Logradouro">
+          <DataField>Codigo_Logradouro</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Numero_Imovel">
+          <DataField>Numero_Imovel</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Complemento">
+          <DataField>Complemento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Inscricao">
+          <DataField>Inscricao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Grupo">
+          <DataField>Grupo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Setor">
+          <DataField>Setor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Rota">
+          <DataField>Rota</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Sequencia">
+          <DataField>Sequencia</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cachorro">
+          <DataField>Cachorro</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CDC">
+          <DataField>CDC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CDC_Pai">
+          <DataField>CDC_Pai</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Media">
+          <DataField>Media</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Medidor">
+          <DataField>Medidor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Categoria_Imovel">
+          <DataField>Categoria_Imovel</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Natureza_Ligacao">
+          <DataField>Natureza_Ligacao</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Res">
+          <DataField>Eco_Res</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Com">
+          <DataField>Eco_Com</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Ind">
+          <DataField>Eco_Ind</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Pub">
+          <DataField>Eco_Pub</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Eco_Soc">
+          <DataField>Eco_Soc</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Bloqueado">
+          <DataField>Bloqueado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Data_Bloqueio">
+          <DataField>Data_Bloqueio</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Data_DesBloqueio">
+          <DataField>Data_DesBloqueio</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Qtde_Debitos">
+          <DataField>Qtde_Debitos</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Mensagem1">
+          <DataField>Mensagem1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Mensagem2">
+          <DataField>Mensagem2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qtde_Registros_Fraude">
+          <DataField>Qtde_Registros_Fraude</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Clas_Imovel">
+          <DataField>Clas_Imovel</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Ident_Consumidor">
+          <DataField>Ident_Consumidor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Ident_Calculo">
+          <DataField>Ident_Calculo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Emite_Conta">
+          <DataField>Emite_Conta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Data_Inst_HD">
+          <DataField>Data_Inst_HD</DataField>
+          <rd:TypeName>System.Nullable`1[System.DateTime]</rd:TypeName>
+        </Field>
+        <Field Name="Leitura_Inicial_HD">
+          <DataField>Leitura_Inicial_HD</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Qtde_Ponteiros">
+          <DataField>Qtde_Ponteiros</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Cortar">
+          <DataField>Cortar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Agencia">
+          <DataField>Agencia</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Banco">
+          <DataField>Banco</DataField>
+          <rd:TypeName>System.Nullable`1[System.Int32]</rd:TypeName>
+        </Field>
+        <Field Name="Data_Vencimento">
+          <DataField>Data_Vencimento</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Calcula_Imposto">
+          <DataField>Calcula_Imposto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Endereco_Entrega">
+          <DataField>Endereco_Entrega</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Calcula_Conta">
+          <DataField>Calcula_Conta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dias_Bloqueio_Tarifa_Ant">
+          <DataField>Dias_Bloqueio_Tarifa_Ant</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Dias_Bloqueio_Tarifa_Atual">
+          <DataField>Dias_Bloqueio_Tarifa_Atual</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Ident_Ligacao_Nova">
+          <DataField>Ident_Ligacao_Nova</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceType>Data.BFL.LigacoesFlow, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceSelectMethod>RetornaLigacoes</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceSelectMethodSignature>System.Collections.Generic.List`1[Data.Model.Ligacoes] RetornaLigacoes(System.Collections.Generic.List`1[Data.Model.VoltaLeitura])</rd:ObjectDataSourceSelectMethodSignature>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>28cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="list4">
+        <ZIndex>3</ZIndex>
+        <Left>0.25cm</Left>
+        <DataSetName>Ligacoes1</DataSetName>
+        <ReportItems>
+          <Line Name="line9">
+            <Top>3.45899cm</Top>
+            <Width>10.25cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>20</ZIndex>
+          </Line>
+          <Line Name="line4">
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>19</ZIndex>
+            <Left>10.25cm</Left>
+            <Height>3.40608cm</Height>
+          </Line>
+          <Textbox Name="textbox8">
+            <Top>1.17063cm</Top>
+            <Width>8.05291cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Complemento.Value.ToString().Trim()+", "+Fields!Numero_Imovel.Value.ToString()</Value>
+          </Textbox>
+          <Textbox Name="textbox7">
+            <Top>2.14418cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>17</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Categoria_Imovel.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Top>1.17063cm</Top>
+            <Width>1.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Endereço:</Value>
+          </Textbox>
+          <Line Name="line2">
+            <Width>10.25cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="textbox4">
+            <Top>2.64418cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Natureza:</Value>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Top>1.67063cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Medidor.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Top>1.67063cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Hidrômetro:</Value>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Top>2.17064cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Consumidor:</Value>
+          </Textbox>
+          <Textbox Name="textbox13">
+            <Top>2.17064cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Ident_Consumidor.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox14">
+            <Top>2.67063cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Media.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox30">
+            <Top>2.67063cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Média:</Value>
+          </Textbox>
+          <Textbox Name="textbox31">
+            <Top>2.64418cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Natureza_Ligacao.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox32">
+            <Top>2.14418cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Categoria:</Value>
+          </Textbox>
+          <Textbox Name="textbox24">
+            <Top>0.67063cm</Top>
+            <Width>1.25cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Nome:</Value>
+          </Textbox>
+          <Textbox Name="CDC">
+            <rd:DefaultName>CDC</rd:DefaultName>
+            <Top>0.17063cm</Top>
+            <Width>3.5cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!CDC.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox29">
+            <Top>0.17063cm</Top>
+            <Width>2.31746cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Sequencia:</Value>
+          </Textbox>
+          <Textbox Name="Sequencia">
+            <rd:DefaultName>Sequencia</rd:DefaultName>
+            <Top>0.17063cm</Top>
+            <Width>2.45899cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.59392cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Sequencia.Value</Value>
+          </Textbox>
+          <Textbox Name="Nome">
+            <rd:DefaultName>Nome</rd:DefaultName>
+            <Top>0.67063cm</Top>
+            <Width>8.56349cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Nome.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Top>0.17063cm</Top>
+            <Width>1.25cm</Width>
+            <Style>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>CDC:</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>10.27646cm</Width>
+        <Style>
+          <Color>White</Color>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+        </Style>
+      </List>
+      <List Name="list2">
+        <ZIndex>2</ZIndex>
+        <Left>10.5cm</Left>
+        <DataSetName>Ligacoes1</DataSetName>
+        <ReportItems>
+          <Line Name="line10">
+            <Top>3.45899cm</Top>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>23</ZIndex>
+          </Line>
+          <Textbox Name="textbox23">
+            <Top>2.48545cm</Top>
+            <Width>3.51323cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>22</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.73809cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=format(Fields!Data_DesBloqueio.Value, "dd/MM/yyyy")</Value>
+          </Textbox>
+          <Textbox Name="textbox22">
+            <Top>1.98545cm</Top>
+            <Width>3.51323cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>21</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.71429cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=format(Fields!Data_Bloqueio.Value, "dd/MM/yyyy")</Value>
+          </Textbox>
+          <Textbox Name="textbox9">
+            <Top>1.48545cm</Top>
+            <Width>3.51323cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>20</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.72884cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=format(Fields!Data_Inst_HD.Value, "dd/MM/yyyy")</Value>
+          </Textbox>
+          <Line Name="line8">
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>19</ZIndex>
+            <Height>3.37963cm</Height>
+          </Line>
+          <Line Name="line3">
+            <Width>0.00001cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <Left>7.75cm</Left>
+            <Height>3.40609cm</Height>
+          </Line>
+          <Line Name="line11">
+            <Width>7.75001cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>17</ZIndex>
+            <Height>0cm</Height>
+          </Line>
+          <Line Name="line12">
+            <Top>1.2619cm</Top>
+            <Width>7.75001cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="textbox34">
+            <Top>0.67063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Eco_Pub.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox35">
+            <Top>0.67063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Eco_Com.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox40">
+            <Top>0.67063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.75cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Eco_Ind.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox41">
+            <Top>0.67063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Eco_Soc.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox42">
+            <Top>0.67063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Eco_Res.Value</Value>
+          </Textbox>
+          <Line Name="line13">
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <Height>3.34127cm</Height>
+          </Line>
+          <Textbox Name="textbox60">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Soc</Value>
+          </Textbox>
+          <Textbox Name="textbox61">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Res</Value>
+          </Textbox>
+          <Textbox Name="textbox62">
+            <Top>2.48545cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Desbloqueio:</Value>
+          </Textbox>
+          <Textbox Name="textbox63">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.75cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Ind</Value>
+          </Textbox>
+          <Textbox Name="textbox64">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Com</Value>
+          </Textbox>
+          <Textbox Name="textbox65">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.24999cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Pub</Value>
+          </Textbox>
+          <Textbox Name="textbox66">
+            <Top>0.17063cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>6.49999cm</Left>
+            <Height>0.5cm</Height>
+            <Value>EA</Value>
+          </Textbox>
+          <Line Name="line14">
+            <Width>0.00001cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <Left>7.75cm</Left>
+            <Height>3.34127cm</Height>
+          </Line>
+          <Textbox Name="textbox67">
+            <Top>1.48545cm</Top>
+            <Width>1.5cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Troca:</Value>
+          </Textbox>
+          <Textbox Name="textbox68">
+            <Top>1.98545cm</Top>
+            <Width>1.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Bloqueio:</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>7.77647cm</Width>
+        <Style>
+          <Color>White</Color>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+        </Style>
+      </List>
+      <Line Name="line7">
+        <Width>10.25cm</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>0.25cm</Left>
+        <Height>0cm</Height>
+      </Line>
+      <List Name="list1">
+        <Left>18.24999cm</Left>
+        <DataSetName>VoltaLeitura</DataSetName>
+        <ReportItems>
+          <Textbox Name="textbox27">
+            <Top>2.51125cm</Top>
+            <Width>1.74999cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25398cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Round((Fields!Leitura_Real.Value)/(Fields!Dias_Consumo.Value),2)</Value>
+          </Textbox>
+          <Line Name="line15">
+            <Top>3.45899cm</Top>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>17</ZIndex>
+          </Line>
+          <Line Name="line5">
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <Height>3.32672cm</Height>
+          </Line>
+          <Textbox Name="Leitura_Ajustada">
+            <rd:DefaultName>Leitura_Ajustada</rd:DefaultName>
+            <Top>1.5119cm</Top>
+            <Width>1.5cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Leitura_Real.Value</Value>
+          </Textbox>
+          <Line Name="line1">
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <Left>0.00001cm</Left>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="Ocorrencia2">
+            <rd:DefaultName>Ocorrencia2</rd:DefaultName>
+            <Top>2.5119cm</Top>
+            <Width>1cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Ocorrencia2.Value</Value>
+          </Textbox>
+          <Textbox Name="Ocorrencia">
+            <rd:DefaultName>Ocorrencia</rd:DefaultName>
+            <Top>2.5119cm</Top>
+            <Width>0.99999cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Ocorrencia.Value</Value>
+          </Textbox>
+          <Textbox Name="Consumo_Ajustado">
+            <rd:DefaultName>Consumo_Ajustado</rd:DefaultName>
+            <Top>1.5119cm</Top>
+            <Width>1.74999cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Consumo_Ajustado.Value</Value>
+          </Textbox>
+          <Line Name="line6">
+            <Top>1.2619cm</Top>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="Dias_Consumo">
+            <rd:DefaultName>Dias_Consumo</rd:DefaultName>
+            <Top>0.64418cm</Top>
+            <Width>6cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Dias_Consumo.Value</Value>
+          </Textbox>
+          <Textbox Name="Consumo_Rateado">
+            <rd:DefaultName>Consumo_Rateado</rd:DefaultName>
+            <Top>2.0119cm</Top>
+            <Width>1.74999cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=Fields!Consumo_Rateado.Value</Value>
+          </Textbox>
+          <Textbox Name="Data_Leitura">
+            <rd:DefaultName>Data_Leitura</rd:DefaultName>
+            <Top>0.14418cm</Top>
+            <Width>6.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.5cm</Left>
+            <Height>0.5cm</Height>
+            <Value>=format(Fields!Data_Leitura.Value, "dd/MM/yyyy")</Value>
+          </Textbox>
+          <Textbox Name="textbox18">
+            <Top>2.5119cm</Top>
+            <Width>2cm</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Ocorrência:</Value>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Top>1.5119cm</Top>
+            <Width>1.97619cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>5</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.27381cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Leitura:</Value>
+          </Textbox>
+          <Textbox Name="textbox15">
+            <Top>0.64418cm</Top>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Dias de consumo:</Value>
+          </Textbox>
+          <Textbox Name="textbox16">
+            <Top>0.14418cm</Top>
+            <Width>2.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Data Leitura:</Value>
+          </Textbox>
+          <Textbox Name="textbox21">
+            <Top>1.5119cm</Top>
+            <Width>3cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Cons. Ajustado:</Value>
+          </Textbox>
+          <Textbox Name="textbox20">
+            <Top>2.0119cm</Top>
+            <Width>3cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Cons. Rateado:</Value>
+          </Textbox>
+          <Textbox Name="textbox19">
+            <Top>2.5119cm</Top>
+            <Width>3cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>4.25001cm</Left>
+            <Height>0.5cm</Height>
+            <Value>Cons. Medio:</Value>
+          </Textbox>
+        </ReportItems>
+        <PageBreakAtEnd>true</PageBreakAtEnd>
+        <Style>
+          <Color>White</Color>
+        </Style>
+        <PageBreakAtStart>true</PageBreakAtStart>
+      </List>
+    </ReportItems>
+    <Height>3.459cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>0.1cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

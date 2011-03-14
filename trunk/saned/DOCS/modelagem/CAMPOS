@@ -1,0 +1,32 @@
+
+	categoria_imovel
+
+	1 - RESIDENCIAL
+	2 - COMERCIAL
+	3 - INDUSTRIAL
+	4 - PUBLICA
+	5 - MISTA
+	6 - SOCIAL
+	
+	
+	ind_situacao_movimento
+	
+	S - SIM
+	N - NÃO
+	
+	val_fraudes e ident_fraude
+	
+	1 - SIM		  S - SIM
+	0 - NÂO		  N - NÂO
+	
+	des_parametro (Valores fixos)
+	
+		PH
+		CLORO RESIDUAL
+		COR APARENTE
+		TURBIDEZ
+		FLUORETO
+		COLIF. TOTAIS
+		E. COLI
+
+	

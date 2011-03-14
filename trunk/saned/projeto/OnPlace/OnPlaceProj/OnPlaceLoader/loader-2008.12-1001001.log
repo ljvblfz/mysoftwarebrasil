@@ -1,0 +1,125 @@
+OnPlaceLoader.exe Information: 0 : >>> INICIO <<<
+
+OnPlaceLoader.exe Information: 0 : ================================
+OnPlaceLoader.exe Information: 0 : Descarga: False
+OnPlaceLoader.exe Information: 0 : Cliente: Diadema
+OnPlaceLoader.exe Information: 0 : Servidor: dailleon
+OnPlaceLoader.exe Information: 0 : Database: 
+OnPlaceLoader.exe Information: 0 : Username: sa
+OnPlaceLoader.exe Information: 0 : Password: ******
+OnPlaceLoader.exe Information: 0 : Roteiro: 1001001
+OnPlaceLoader.exe Information: 0 : Referência: 2008.12
+OnPlaceLoader.exe Information: 0 : Target: 
+OnPlaceLoader.exe Information: 0 : ================================
+
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de origem (SqlConnection)
+OnPlaceLoader.exe Information: 0 : Criando base do onplace com script 'metadados.sql'
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de destino (SqlCeConnection)
+OnPlaceLoader.exe Information: 0 : Carregando 'ONP_AGENTE'
+OnPlaceLoader.exe Error: 0 : Invalid object name 'ONP_AGENTE'.
+   em OnPlaceLoader.Controladores.Controlador.ExecutarCommand(String tabela, IDbCommand command) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 216
+   em OnPlaceLoader.Controladores.ControladorDownloader.CarregarTabela(String tabela) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 212
+   em OnPlaceLoader.Controladores.ControladorDownloader.ExecutarOutros() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 222
+   em OnPlaceLoader.Controladores.Controlador.Executar() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 67
+OnPlaceLoader.exe Information: 0 : >>> FIM <<<
+
+
+OnPlaceLoader.exe Information: 0 : >>> INICIO <<<
+
+OnPlaceLoader.exe Information: 0 : ================================
+OnPlaceLoader.exe Information: 0 : Descarga: False
+OnPlaceLoader.exe Information: 0 : Cliente: Diadema
+OnPlaceLoader.exe Information: 0 : Servidor: dailleon
+OnPlaceLoader.exe Information: 0 : Database: 
+OnPlaceLoader.exe Information: 0 : Username: sa
+OnPlaceLoader.exe Information: 0 : Password: ******
+OnPlaceLoader.exe Information: 0 : Roteiro: 1001001
+OnPlaceLoader.exe Information: 0 : Referência: 2008.12
+OnPlaceLoader.exe Information: 0 : Target: 
+OnPlaceLoader.exe Information: 0 : ================================
+
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de origem (SqlConnection)
+OnPlaceLoader.exe Information: 0 : Criando base do onplace com script 'metadados.sql'
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de destino (SqlCeConnection)
+OnPlaceLoader.exe Information: 0 : Adicionando usuario padrão
+OnPlaceLoader.exe Information: 0 : >>> FIM <<<
+
+
+OnPlaceLoader.vshost.exe Information: 0 : >>> INICIO <<<
+
+OnPlaceLoader.vshost.exe Information: 0 : ================================
+OnPlaceLoader.vshost.exe Information: 0 : Descarga: False
+OnPlaceLoader.vshost.exe Information: 0 : Cliente: Diadema
+OnPlaceLoader.vshost.exe Information: 0 : Servidor: dailleon
+OnPlaceLoader.vshost.exe Information: 0 : Database: 
+OnPlaceLoader.vshost.exe Information: 0 : Username: sa
+OnPlaceLoader.vshost.exe Information: 0 : Password: ******
+OnPlaceLoader.vshost.exe Information: 0 : Roteiro: 1001001
+OnPlaceLoader.vshost.exe Information: 0 : Referência: 2008.12
+OnPlaceLoader.vshost.exe Information: 0 : Target: 
+OnPlaceLoader.vshost.exe Information: 0 : ================================
+
+OnPlaceLoader.vshost.exe Information: 0 : Configurando conexão do banco de dados de origem (SqlConnection)
+OnPlaceLoader.vshost.exe Information: 0 : Criando base do onplace com script 'metadados.sql'
+OnPlaceLoader.vshost.exe Information: 0 : Configurando conexão do banco de dados de destino (SqlCeConnection)
+OnPlaceLoader.vshost.exe Information: 0 : Carregando 'ONP_AGENTE'
+OnPlaceLoader.vshost.exe Error: 0 : Invalid object name 'ONP_AGENTE'.
+   em OnPlaceLoader.Controladores.Controlador.ExecutarCommand(String tabela, IDbCommand command) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 216
+   em OnPlaceLoader.Controladores.ControladorDownloader.CarregarTabela(String tabela) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 212
+   em OnPlaceLoader.Controladores.ControladorDownloader.ExecutarOutros() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 222
+   em OnPlaceLoader.Controladores.Controlador.Executar() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 67
+OnPlaceLoader.vshost.exe Information: 0 : >>> FIM <<<
+
+
+OnPlaceLoader.exe Information: 0 : >>> INICIO <<<
+
+OnPlaceLoader.exe Information: 0 : ================================
+OnPlaceLoader.exe Information: 0 : Descarga: False
+OnPlaceLoader.exe Information: 0 : Cliente: Diadema
+OnPlaceLoader.exe Information: 0 : Servidor: dailleon
+OnPlaceLoader.exe Information: 0 : Database: 
+OnPlaceLoader.exe Information: 0 : Username: sa
+OnPlaceLoader.exe Information: 0 : Password: ******
+OnPlaceLoader.exe Information: 0 : Roteiro: 1001001
+OnPlaceLoader.exe Information: 0 : Referência: 2008.12
+OnPlaceLoader.exe Information: 0 : Target: 
+OnPlaceLoader.exe Information: 0 : ================================
+
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de origem (SqlConnection)
+OnPlaceLoader.exe Information: 0 : Criando base do onplace com script 'metadados.sql'
+OnPlaceLoader.exe Information: 0 : Configurando conexão do banco de dados de destino (SqlCeConnection)
+OnPlaceLoader.exe Information: 0 : Carregando 'ONP_AGENTE'
+OnPlaceLoader.exe Error: 0 : Invalid object name 'ONP_AGENTE'.
+   em OnPlaceLoader.Controladores.Controlador.ExecutarCommand(String tabela, IDbCommand command) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 216
+   em OnPlaceLoader.Controladores.ControladorDownloader.CarregarTabela(String tabela) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 212
+   em OnPlaceLoader.Controladores.ControladorDownloader.ExecutarOutros() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 222
+   em OnPlaceLoader.Controladores.Controlador.Executar() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 67
+OnPlaceLoader.exe Information: 0 : >>> FIM <<<
+
+
+OnPlaceLoader.vshost.exe Information: 0 : >>> INICIO <<<
+
+OnPlaceLoader.vshost.exe Information: 0 : ================================
+OnPlaceLoader.vshost.exe Information: 0 : Descarga: False
+OnPlaceLoader.vshost.exe Information: 0 : Cliente: Diadema
+OnPlaceLoader.vshost.exe Information: 0 : Servidor: dailleon
+OnPlaceLoader.vshost.exe Information: 0 : Database: 
+OnPlaceLoader.vshost.exe Information: 0 : Username: sa
+OnPlaceLoader.vshost.exe Information: 0 : Password: ******
+OnPlaceLoader.vshost.exe Information: 0 : Roteiro: 1001001
+OnPlaceLoader.vshost.exe Information: 0 : Referência: 2008.12
+OnPlaceLoader.vshost.exe Information: 0 : Target: 
+OnPlaceLoader.vshost.exe Information: 0 : ================================
+
+OnPlaceLoader.vshost.exe Information: 0 : Configurando conexão do banco de dados de origem (SqlConnection)
+OnPlaceLoader.vshost.exe Information: 0 : Criando base do onplace com script 'metadados.sql'
+OnPlaceLoader.vshost.exe Information: 0 : Configurando conexão do banco de dados de destino (SqlCeConnection)
+OnPlaceLoader.vshost.exe Information: 0 : Carregando 'ONP_AGENTE'
+OnPlaceLoader.vshost.exe Error: 0 : Invalid object name 'ONP_AGENTE'.
+   em OnPlaceLoader.Controladores.Controlador.ExecutarCommand(String tabela, IDbCommand command) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 216
+   em OnPlaceLoader.Controladores.ControladorDownloader.CarregarTabela(String tabela) na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 212
+   em OnPlaceLoader.Controladores.ControladorDownloader.ExecutarOutros() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\ControladorDownloader.cs:linha 222
+   em OnPlaceLoader.Controladores.Controlador.Executar() na D:\Velp\Sistemas\SANED\projeto\OnPlaceProj\OnPlaceLoader\Controladores\Controlador.cs:linha 67
+OnPlaceLoader.vshost.exe Information: 0 : >>> FIM <<<
+
+

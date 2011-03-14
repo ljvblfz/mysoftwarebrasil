@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Saned_DATA.Model.AgenteONP" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="0.812" />
+        <Point X="11.5" Y="0.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAEAAAAAAAAAAhAAAAAAACAAAAAAgAAA=</HashCode>
+      <FileName>Model\AgenteONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.AvisoDebito" Collapsed="true">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.353" Y="7.625" />
+        <Point X="13.353" Y="7.438" />
+        <Point X="13.75" Y="7.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEABAEAAAAAAAAgABAAAgIgAAABAQASAAAQAI=</HashCode>
+      <FileName>Model\AvisoDebito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.CategoriaONP" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="0.875" />
+        <Point X="13.75" Y="0.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEABAAAAAA=</HashCode>
+      <FileName>Model\CategoriaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.Critica" Collapsed="true">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="1.565" />
+        <Point X="13.75" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>Y4otkhSrQoGRJOHuuIn1N8qBM4pFvIUyPRYyMJEVpH0=</HashCode>
+      <FileName>Model\Critica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.DescontoDiademaONP" Collapsed="true">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="2.315" />
+        <Point X="13.75" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAACAAEABAAAAAAAAAAAABgAAAAAAIAgAEAAAAAAAA=</HashCode>
+      <FileName>Model\DescontodiademaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDA.Persistent" Collapsed="true">
+    <Position X="4.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Saned_DATA.Model.Distribuicao" Collapsed="true">
+    <Position X="13.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="3.065" />
+        <Point X="13.75" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAQCACAAIQAAAHAAAAAAAAAAAQAQAQAABAAAAI=</HashCode>
+      <FileName>Model\Distribuicao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.DistribuicaoGrid" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="3.815" />
+        <Point X="13.75" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAiAAQAAIAEIAAAADAAAAAAAAAAABAAACAAAAAAAA=</HashCode>
+      <FileName>Model\DistribuicaoGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.FaturaCategoriaONP" Collapsed="true">
+    <Position X="13.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="4.565" />
+        <Point X="13.75" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAIAAAABAIACAAAAAIAAAAAEAAgQAAgAYACBAAAAA=</HashCode>
+      <FileName>Model\FaturaCategoriaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.FaturaONP" Collapsed="true">
+    <Position X="13.75" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="5.315" />
+        <Point X="13.75" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EBLAiAEhURACBCDA9AIMgAAAAAiJhQIYxBYIiDBACA8=</HashCode>
+      <FileName>Model\FaturaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.FaturasAvisoONP" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="6.065" />
+        <Point X="13.75" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAARAAAAAAAAAIAQAAAAAAgAAAAAYACAAAAAI=</HashCode>
+      <FileName>Model\FaturasAvisoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.FaturaServicoONP" Collapsed="true">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAZAAAAIAAIAIAAAAAgABgQQAgAYACAAQAAA=</HashCode>
+      <FileName>Model\FaturaServicoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.FaturaTaxaONP" Collapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="6.815" />
+        <Point X="13.75" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACALAAAABAIACgIAQCIAABAAEAAgQAQgAYACBAAAIA=</HashCode>
+      <FileName>Model\FaturaTaxaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.GrupoFaturaONP" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="1.565" />
+        <Point X="11.5" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAIAgAAAAAAAAAAQgAAAFAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GrupoFaturaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.GrupoONP" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="2.315" />
+        <Point X="11.5" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAEAgAAAACCgIQAAABBABIAAAAAQAQQBAAAAAAAAAA=</HashCode>
+      <FileName>Model\GrupoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.HidrometroONP" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="3.815" />
+        <Point X="11.5" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EBAgAAAAQAACBAABAEEEWAAAAAQAgAAAABQAAAAIAAg=</HashCode>
+      <FileName>Model\HidrometroONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.HistoricoConsumoIDA" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="3.065" />
+        <Point X="11.5" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAgAAIAAAAKgAAABRAAAAAQAAFAQAAAIAECABAAg=</HashCode>
+      <FileName>Model\HistoricoConsumoIDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.HistoricoONP" Collapsed="true">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="4.565" />
+        <Point X="11.5" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIEAAAEBAAAAAAAAAAIAAAAAAAAgAAAAAYAAAAAAAA=</HashCode>
+      <FileName>Model\Historicoonp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.ImpostoDiademaONP" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="5.315" />
+        <Point X="11.5" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAACIAAAAAA=</HashCode>
+      <FileName>Model\ImpostodiademaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.Ligacoes" Collapsed="true">
+    <Position X="11.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="6.065" />
+        <Point X="11.5" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>YootgBSjQIAAJKFouInlJ4CAMYhBvIAwJRISIJEUgFU=</HashCode>
+      <FileName>Model\Ligacoes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.LocalizacaoHidrometroONP" Collapsed="true">
+    <Position X="11.5" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="11.17" Y="7.625" />
+        <Point X="11.17" Y="6.812" />
+        <Point X="11.5" Y="6.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAQAAAAAAAAAACAIAAA=</HashCode>
+      <FileName>Model\LocalizacaohidrometroONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.LogradouroIDA" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="6.815" />
+        <Point X="9.25" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAQAAAIAAAABAIAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\LogradouroIDA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.LogradouroONP" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="6.065" />
+        <Point X="9.25" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAIAAQAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\LogradouroONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MatriculaCargaONP" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="5.315" />
+        <Point X="9.25" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAgAAAAAAAQIAAAgAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Model\MatriculaCargaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MatriculaDiademaONP" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="4.565" />
+        <Point X="9.25" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>MEIIAQEABAAIACQQAAAgAABgEAEAjAA0ADRAIAAAAAE=</HashCode>
+      <FileName>Model\MatriculaDiademaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MatriculaONP" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="3.815" />
+        <Point X="9.25" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAEAECCABAEAIAAAAIAgkAxkQAAgRAAQIAAAA=</HashCode>
+      <FileName>Model\MatriculaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MensagemMovimentoONP" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="3.065" />
+        <Point X="9.25" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBOAAAAAAAAIAASAEAAAAgQAAgAQABgAAAIA=</HashCode>
+      <FileName>Model\MensagemMovimentoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MovimentoCategoriaONP" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="2.315" />
+        <Point X="9.25" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAIAAAAAAIACAAAAAIAAAAAEAAgQAAgAYAABAAAAA=</HashCode>
+      <FileName>Model\MovimentoCategoriaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MovimentoONP" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="1.565" />
+        <Point X="9.25" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EADAiAEBEQAABEQAtAIMAAAABBgphQAAxAYVAAAQCAI=</HashCode>
+      <FileName>Model\MovimentoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.MovimentoTaxaONP" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="8.875" Y="7.625" />
+        <Point X="8.875" Y="0.815" />
+        <Point X="9.25" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQCQBgAAAAAIAAgAAQAICAAAAAAAgQAAgAaAAAAAAIA=</HashCode>
+      <FileName>Model\MovimentoTaxaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.TaxaTarifaONP" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="0.815" />
+        <Point X="7" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>RAGABCAAAEAIGAAAABAwEAAQAGAAAAAEAAAAAgAYAIA=</HashCode>
+      <FileName>Model\TaxaTarifaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.TaxaTarifaFaixaONP" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="1.565" />
+        <Point X="7" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>RACABAAAQkAIBAAAAAEQAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\TaxaTarifaFaixaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.TipoEntregaONP" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="2.315" />
+        <Point X="7" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABgAAAgAAAAAA=</HashCode>
+      <FileName>Model\TipoEntregaONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.UsuarioIda" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="3.065" />
+        <Point X="7" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AABAEAAAASAAAAAAAAAAIAAAACAAAAAAAAAQAAEAAAA=</HashCode>
+      <FileName>Model\UsuarioIda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.UtilizacaoLigacaoONP" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="3.815" />
+        <Point X="7" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAkAAAAAAgAAAAAA=</HashCode>
+      <FileName>Model\UtilizacaoLigacaoONP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.VoltaAlteracao" Collapsed="true">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="4.565" />
+        <Point X="7" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAKEACABAIoAAAAACMAAAAAIGAAAAAAA=</HashCode>
+      <FileName>Model\VoltaAlteracao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.VoltaLeitura" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="5.315" />
+        <Point X="7" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>YgApEhCLAgGRIODmgIlxEEoBIwpEnAUCGAYgEJARJCg=</HashCode>
+      <FileName>Model\VoltaLeitura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.VoltaLogAtendimento" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="6.065" />
+        <Point X="7" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AwAAAAAAAAAAIKAAAABAAAAAAAAAAAQAAAIAAAAAJCQ=</HashCode>
+      <FileName>Model\VoltaLogAtendimento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.VoltaNovoRegistro" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="6.625" Y="7.625" />
+        <Point X="6.625" Y="6.815" />
+        <Point X="7" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAKEAAAFCIoAAAAACQAAIAAEEABEACAA=</HashCode>
+      <FileName>Model\VoltaNovoRegistro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.Model.VoltaRoteiro" Collapsed="true">
+    <Position X="13.75" Y="8" Width="1.5" />
+    <InheritanceLine Type="GDA.Persistent" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="6.25" Y="7.625" />
+        <Point X="13.376" Y="7.625" />
+        <Point X="13.376" Y="8.315" />
+        <Point X="13.75" Y="8.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAAAIAAAACAEIAAAAFkABAQAEACQBQARCAAABAAAAA=</HashCode>
+      <FileName>Model\VoltaRoteiro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

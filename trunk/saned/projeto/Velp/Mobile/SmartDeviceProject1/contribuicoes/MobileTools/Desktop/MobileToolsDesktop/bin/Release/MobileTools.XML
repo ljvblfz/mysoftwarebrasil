@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MobileTools</name>
+    </assembly>
+    <members>
+        <member name="T:MobileTools.Serialize.BFormatterNavigate">
+            <summary>
+            Navegador de registros serializados.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.baseType">
+            <summary>
+            Tipo base do navegador.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.sizeCurrentItem">
+            <summary>
+            Tamanho do atual item.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.coreSupports">
+            <summary>
+            Informações dos dados de suporte para trabalhar a os dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.memberAllowNullCount">
+            <summary>
+            Númer de membros da tipo que permite valores nulos.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.#ctor(System.IO.Stream,System.Type)">
+            <summary>
+            Construtor padrão.
+            </summary>
+            <param name="stream">Stream onde os dados estão armazenados.</param>
+            <param name="baseType">Tipo base do navegador.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Initialize">
+            <summary>
+            Inicializa a instância.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Reset">
+            <summary>
+            Reseta a navegação.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.GetItem">
+            <summary>
+            Recupera o item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Read">
+            <summary>
+            Lê o próximo registro.
+            </summary>
+            <returns>True caso o registro tenha sido lido.</returns>
+        </member>
+        <member name="P:MobileTools.Serialize.BFormatterNavigate.Count">
+            <summary>
+            Quantidade de itens contidos no navegador.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.BNonSerializeAttribute">
+            <summary>
+            Atributo para identifica que aquele campo ou método não será serializado.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.SerializableMaxLenghtAttribute">
+            <summary>
+            Atribute que identifica o tamanho máximo em byte que o campo pode conter.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.SerializableMaxLenghtAttribute.#ctor(System.Int32)">
+            <summary>
+            Construtor padrão.
+            </summary>
+            <param name="maxLenght">Tamanho máximo para serializar.</param>
+        </member>
+        <member name="P:MobileTools.Serialize.SerializableMaxLenghtAttribute.MaxLenght">
+            <summary>
+            Gets a quantidade máxima de byte que o campo suporta.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatter">
+            <summary>
+            Serializa e deserializa um objeto em um junto de dados binários.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.coreTypes">
+            <summary>
+            Tipos básico suportados para serialização
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.IsStruct(System.Type)">
+            <summary>
+            Verifica se o tipo informado é uma estrutura.
+            </summary>
+            <param name="type">Tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.IsCoreType(System.Type)">
+            <summary>
+            Verifica se é um tipo básico aceitável para serialização.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Support(System.Type)">
+            <summary>
+            Verifica se o tipo é suportado pela serialização.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>
+            <list type="bool">
+            <item>True: o tipo é suportado.</item>
+            <item>False: o tipo não é suportado.</item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.WriteData(System.IO.Stream,System.Object,System.Type,System.Int32)">
+            <summary>
+            Escreve o valor do objeto na stream.
+            </summary>
+            <param name="stream">Stream aonde serão salvos os dados do objeto.</param>
+            <param name="o">Objeto contendo os dados.</param>
+            <param name="type">Tipo do valor a ser serializado.</param>
+            <param name="maxLenght">Tamanho máximo a ser serializado.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.ReadData(System.IO.Stream,System.Type,System.Int32)">
+            <summary>
+            Lê os dados da stream e salva no objeto
+            </summary>
+            <param name="stream"></param>
+            <param name="type">Tipo de dado a ser lido.</param>
+            <return>Valor lido.</return>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Export(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Object)">
+            <summary>
+            Extrai os dados do objeto.
+            </summary>
+            <param name="streamOut">Stream onde será armazenado os dados extraídos.</param>
+            <param name="supports">Informações dos membros onde estão os dados.</param>
+            <param name="membersAllowNullCount">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="graph">Objeto de onde será estraído os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Import(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Object)">
+            <summary>
+            Importa os dados do objeto contidos na stream.
+            </summary>
+            <param name="streamIn">Stream onde estão os dados a serem importados.</param>
+            <param name="supports">Informações dos membros que mapeam os dados.</param>
+            <param name="memberAllowNullCount">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="graph">Objeto onde os dados importados serão salvos.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.LoadTypeInformation(System.Type,System.Int16@)">
+            <summary>
+            Carrega as informações sobre o tipo.
+            </summary>
+            <param name="type">Tipo a ser examinado.</param>
+            <param name="membersAllowNullCount">Númeor de membros que permite valores nulos.</param>
+            <returns>Informações de suporte.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.DeserializeBase(System.IO.Stream,System.Type,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Int32,System.Object)">
+            <summary>
+            Deserializa os dados.
+            </summary>
+            <param name="stream">Stream onde os dados estão armazenados.</param>
+            <param name="type">Tipo que será recuperado.</param>
+            <param name="supports">Membros mapeados.</param>
+            <param name="memberAllowNull">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="maxLenght">Tamanho máximo aceito.</param>
+            <param name="graph">Objeto onde a deserialização será salva.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.SerializeBase(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Int32,System.Object)">
+            <summary>
+            Serializa os dados.
+            </summary>
+            <param name="stream">Stream onde será salvo os dados.</param>
+            <param name="supports">Membros mapeados.</param>
+            <param name="membersAllowNull">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="maxLenght">Tamanho máximo aceito.</param>
+            <param name="graph">Objeto que será serializado.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.ReadArrayLenght(System.IO.Stream,System.Int32)">
+            <summary>
+            Lê o tamanho do vetor serializado no stream.
+            </summary>
+            <param name="stream">Stream onde está armazenada os dados.</param>
+            <param name="maxLenght">Tamanho máximo do vetor.</param>
+            <returns>Tamanho do vetor salvo no arquivo.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Serialize(System.Object)">
+            <summary>
+            Serializa o objeto passado, e armazena os dados na stream.
+            </summary>
+            <param name="graph">Objeto a serializado.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MobileTools.Serialize.BFormatter.Serialize(System.IO.Stream,System.Object)" -->
+        <member name="M:MobileTools.Serialize.BFormatter.Deserialize(System.IO.Stream,System.Type)">
+            <summary>
+            Deseriliza os dados contidos na stream e retorna o objeto do tipo passado com os dados preenchidos.
+            </summary>
+            <param name="serializationStream">Stream onde estão os dados para serem deserializados.</param>
+            <param name="typeReturn">Tipo de retorno do elemento.</param>
+            <returns>Objeto com os dados dados preenchidos.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>
+            Deseriliza os dados contidos no buffer e retorna o objeto do tipo passado com os dados preenchidos.
+            </summary>
+            <param name="buffer">Buffer onde estão os dados para serem deserializados.</param>
+            <param name="typeReturn">Tipo de retorno do elemento.</param>
+            <returns>Objeto com os dados dados preenchidos.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.CopyInstance``1(``0)">
+            <summary>
+            Copia os dados de uma instância para a outra sem
+            nenhum vinculo de ponteiro.
+            </summary>
+            <typeparam name="T">Tipo que será usado para cópia.</typeparam>
+            <param name="source">Objeto contendo a fonte dos dados.</param>
+            <returns>Objeto para onde dados foram copiados.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.CopyInstance``1(``0,``0)">
+            <summary>
+            Copia os dados de uma instância para a outra sem
+            nenhum vinculo de ponteiro.
+            </summary>
+            <typeparam name="T">Tipo que será usado para cópia.</typeparam>
+            <param name="source">Objeto contendo a fonte dos dados.</param>
+            <param name="destination">Objeto para onde será copiado os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.BytesToDecimal(System.Byte[])">
+            <summary>
+            Converte um array de bytes para decimal.
+            </summary>
+            <param name="bytes">O array de bytes que será convertido.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.DecimalToBytes(System.Decimal)">
+            <summary>
+            Converte um decimal para um array de bytes.
+            </summary>
+            <param name="d">O decimal que será convertido.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatter.InfoCoreSupport">
+            <summary>
+            Armazena as informações sobre os tipos suportados.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="coreTypeSupported">Identifica se é um tipo básico suportado.</param>
+            <param name="allowNullValue">Permite valores nulos.</param>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.coreTypeSupported">
+            <summary>
+            Identifica se o tipo do paramentro é suportado
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.allowNullValue">
+            <summary>
+            Identifica se o tipo do paramentro suporta valor nulos.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.fieldInfo">
+            <summary>
+            Informações sobre o campo.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.propertyInfo">
+            <summary>
+            Informações sobre a propriedade.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.maxLenght">
+            <summary>
+            Tamanho máximo do membro.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.GetValue(System.Object)">
+            <summary>
+            Recupera o valor do membro do objeto informado. 
+            </summary>
+            <param name="graph"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.GetMemberType">
+            <summary>
+            Recupera o tipo do membro.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatterSource">
+            <summary>
+            Representa uma fonte de dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.source">
+            <summary>
+            Stream onde os dados serão salvos.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.localStream">
+            <summary>
+            Identifica se a stream foi criada na atual instância.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.coreSupports">
+            <summary>
+            Informações dos dados de suporte para trabalhar a os dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.memberAllowNullCount">
+            <summary>
+            Númer de membros da tipo que permite valores nulos.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.#ctor(System.IO.Stream,System.Type)">
+            <summary>
+            Instancia uma fonte que será salva na stream informada.
+            </summary>
+            <param name="stream">Stream onde os dados serão salvos.</param>
+            <param name="baseType">Tipo base trabalhado pela fonte.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Flush">
+            <summary>
+            Força o salvamento da informação na stream.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Add(System.Object)">
+            <summary>
+            Adiciona um item na fonte.
+            </summary>
+            <param name="item">Item contendo os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Dispose">
+            <summary>
+            Libera a instancia.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Serialize.BFormatterSource.Count">
+            <summary>
+            Quantidade de itens contidos na fonte.
+            </summary>
+        </member>
+    </members>
+</doc>

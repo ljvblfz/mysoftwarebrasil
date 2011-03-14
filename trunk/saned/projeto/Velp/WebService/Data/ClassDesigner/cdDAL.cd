@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Saned_DATA.DAL.AgenteDAO" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="0.815" />
+        <Point X="3.75" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAA=</HashCode>
+      <FileName>DAL\AgenteDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GDA.BaseDAO&lt;Model&gt;" Collapsed="true">
+    <Position X="1.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Saned_DATA.DAL.AvisoDebitoDAO" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="1.565" />
+        <Point X="3.75" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAEAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\AvisoDebitoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.CategoriaDAO" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="2.315" />
+        <Point X="3.75" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAEAAAAAAAAAAAAAAAAAACAAAAAAAAAACAAA=</HashCode>
+      <FileName>DAL\CategoriaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.CriticaDAO" Collapsed="true">
+    <Position X="3.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="3.065" />
+        <Point X="3.75" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAEQAAAAAAAAEAgAAAAAAAABCAKAAEAAAAAA=</HashCode>
+      <FileName>DAL\CriticaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.DescontoDiademaDAO" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="3.815" />
+        <Point X="3.75" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAQ=</HashCode>
+      <FileName>DAL\DescontodiademaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.DistribuicaoDAO" Collapsed="true">
+    <Position X="3.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="4.565" />
+        <Point X="3.75" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAEAIAAAAAAAABAAAACABAAAAAAAAA=</HashCode>
+      <FileName>DAL\DistribuicaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.DistribuicaoGridDAO" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="5.315" />
+        <Point X="3.75" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIAAAAAAAAAAAQAAAAAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DistribuicaoGridDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.FaturaCategoriaDAO" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="6.065" />
+        <Point X="3.75" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FaturaCategoriaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.FaturaDAO" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="6.812" />
+        <Point X="3.75" Y="6.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FaturaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.FaturasAvisoDAO" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="0.815" />
+        <Point X="6.25" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FaturasavisoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.FaturaServicoDAO" Collapsed="true">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="1.565" />
+        <Point X="6.25" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FaturaServicoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.FaturaTaxaDAO" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="2.315" />
+        <Point X="6.25" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\FaturaTaxaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.GrupoDAO" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="3.065" />
+        <Point X="6.25" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAAA=</HashCode>
+      <FileName>DAL\GrupoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.GrupoFaturaDAO" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="3.815" />
+        <Point X="6.25" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\GrupoFaturaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.HidrometroDAO" Collapsed="true">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="4.565" />
+        <Point X="6.25" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\HidrometroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.HistoricoConsumoIDADAO" Collapsed="true">
+    <Position X="6.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="5.315" />
+        <Point X="6.25" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>DAL\HistoricoConsumoIDADAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.HistoricoDAO" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="6.065" />
+        <Point X="6.25" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\HistoricoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.ImpostoDiademaDAO" Collapsed="true">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="6.815" />
+        <Point X="6.25" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>DAL\ImpostodiademaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.LigacoesDAO" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="0.815" />
+        <Point X="8.75" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAEAAAEAAAAAAAAAAAAAAACAAAAQAAAAAAAAACAA=</HashCode>
+      <FileName>DAL\LigacoesDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.LocalizacaoHidrometroDAO" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="1.565" />
+        <Point X="8.75" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAQAAAAAAAQAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>DAL\LocalizacaohidrometroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.LogradouroDAO" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="2.315" />
+        <Point X="8.75" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\LogradouroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.LogradouroIDADAO" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="3.065" />
+        <Point X="8.75" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\LogradouroIDADAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MatriculaCargaDAO" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="3.815" />
+        <Point X="8.75" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MatriculaCargaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MatriculaDAO" Collapsed="true">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="4.565" />
+        <Point X="8.75" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MatriculaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MatriculaDiademaDAO" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="5.315" />
+        <Point X="8.75" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MatriculaDiademaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MensagemMovimentoDAO" Collapsed="true">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="6.065" />
+        <Point X="8.75" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MensagemMovimentoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MovimentoCategoriaDAO" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="6.815" />
+        <Point X="8.75" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MovimentoCategoriaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MovimentoDAO" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="0.815" />
+        <Point X="11" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MovimentoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.MovimentoTaxaDAO" Collapsed="true">
+    <Position X="11" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="1.565" />
+        <Point X="11" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MovimentoTaxaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.OcorrenciaDAO" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="2.315" />
+        <Point X="11" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\OcorrenciaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.OcorrenciaTDAO" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="3.065" />
+        <Point X="11" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>DAL\OcorrenciaTDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.ParametroDAO" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="3.815" />
+        <Point X="11" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAKAAAAAAA=</HashCode>
+      <FileName>DAL\ParametroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.ParametroRentencaoDAO" Collapsed="true">
+    <Position X="11" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="4.565" />
+        <Point X="11" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAA=</HashCode>
+      <FileName>DAL\ParametrorentencaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.QualidadeAguaDAO" Collapsed="true">
+    <Position X="11" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="5.315" />
+        <Point X="11" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABBAAARAAAAAAgAgAAAAACAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\QualidadeAguaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.ReferenciaPendenteDAO" Collapsed="true">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="6.065" />
+        <Point X="11" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\ReferenciapendenteDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.RoteiroDAO" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="6.815" />
+        <Point X="11" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\RoteiroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.SegundaViaIDADAO" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="0.815" />
+        <Point X="13.25" Y="0.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\SegundaViaIDADAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.ServicoFaturaDAO" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="1.565" />
+        <Point X="13.25" Y="1.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\ServicofaturaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.TabelaCargaONPDAO" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="2.315" />
+        <Point X="13.25" Y="2.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\TabelaCargaONPDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.TaxaDAO" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="3.065" />
+        <Point X="13.25" Y="3.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAEAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>DAL\TaxaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.TaxaTarifaDAO" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="3.815" />
+        <Point X="13.25" Y="3.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\TaxaTarifaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.TaxaTarifaFaixaDAO" Collapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="4.565" />
+        <Point X="13.25" Y="4.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\TaxaTarifaFaixaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.TipoEntregaDAO" Collapsed="true">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="5.315" />
+        <Point X="13.25" Y="5.315" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAMAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\TipoentregaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.UsuarioIdaDAO" Collapsed="true">
+    <Position X="13.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="6.065" />
+        <Point X="13.25" Y="6.065" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAEAAAAAAAAQAAAAAACEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\UsuarioIdaDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.UtilizacaoLigacaoDAO" Collapsed="true">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="6.815" />
+        <Point X="13.25" Y="6.815" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAEAAAAAAAAAAABAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\UtilizacaoLigacaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.VoltaAlteracaoDAO" Collapsed="true">
+    <Position X="3.75" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="3.125" Y="8.312" />
+        <Point X="3.125" Y="7.565" />
+        <Point X="3.75" Y="7.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\VoltaAlteracaoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.VoltaLeituraDAO" Collapsed="true">
+    <Position X="6.25" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="5.875" Y="8.312" />
+        <Point X="5.875" Y="7.565" />
+        <Point X="6.25" Y="7.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAEQAAAAAAQAEAAAAAAAAAABCCIAAMAAAAAA=</HashCode>
+      <FileName>DAL\VoltaLeituraDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.VoltaLogAtendimentoDAO" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="8.375" Y="8.312" />
+        <Point X="8.375" Y="7.565" />
+        <Point X="8.75" Y="7.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\VoltaLogAtendimentoDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.VoltaNovoRegistroDAO" Collapsed="true">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="10.625" Y="8.312" />
+        <Point X="10.625" Y="7.565" />
+        <Point X="11" Y="7.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\VoltaNovoRegistroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saned_DATA.DAL.VoltaRoteiroDAO" Collapsed="true">
+    <Position X="13.25" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="GDA.BaseDAO&lt;Model&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="2.75" Y="8.312" />
+        <Point X="12.875" Y="8.312" />
+        <Point X="12.875" Y="7.565" />
+        <Point X="13.25" Y="7.565" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\VoltaRoteiroDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
