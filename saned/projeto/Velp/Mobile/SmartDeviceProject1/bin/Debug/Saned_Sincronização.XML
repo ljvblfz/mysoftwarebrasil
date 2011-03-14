@@ -1,0 +1,2863 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Saned_Sincronização</name>
+    </assembly>
+    <members>
+        <member name="T:DeviceProject.Sincronizacao.Sincronizar">
+            <summary>
+             Classe de controle da tela de sicronização
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.UserPdaCurrent">
+            <summary>
+             Dados de identificação
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.sicronizacaoIni">
+            <summary>
+            Variavel de inicio da sincronização
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.userCurrent">
+            <summary>
+            Variavel de usuario 
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.senha">
+            <summary>
+            Senha do Usuario
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar._webService">
+            <summary>
+            Objeto de comunicação com web server
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.status">
+            <summary>
+            Identifica a localização do processo
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.distribuicao">
+            <summary>
+            Objeto da classe distribuicao
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.autoSyncTime">
+            <summary>
+             Tempo da thead
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.#ctor">
+            <summary>
+            Metodo construtor da classse
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.menuItem3_Click(System.Object,System.EventArgs)">
+            <summary>
+             Sair do aplicativo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.menuItem1_Click(System.Object,System.EventArgs)">
+            <summary>
+             Metodo que redireciona para a rotina especifica
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.ReceberBox_CheckStateChanged(System.Object,System.EventArgs)">
+            <summary>
+            Altera o estado o check Box 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.enviarBox_CheckStateChanged(System.Object,System.EventArgs)">
+            <summary>
+            Altera o estado o check Box 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.ReceberDados">
+            <summary>
+            Metodo responsavel por receber os dados do web server
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.EnviarDados">
+            <summary>
+            Metodo responsavel por Realizar a descarga do dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.VoltaLeituraUpload">
+            <summary>
+             Metodo ivocado pela thread para enviar os dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.setMensagem(System.Int32,System.String)">
+            <summary>
+            Metodo responsavel pela animação da tela (barra de progresso e listbox)
+            </summary>
+            <param name="mensagem"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.ValidacaoCorretaReceber">
+            <summary>
+            Validação para realizar a trasmissão dos dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.ValidacaoCorretaEnvio">
+            <summary>
+            Validação para realizar o envio dos dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.ValidaVersao">
+            <summary>
+            Comparar duas versoes
+            </summary>
+            <param name="versao1"></param>
+            <param name="versao2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.menuItem4_Click(System.Object,System.EventArgs)">
+            <summary>
+             Abre o aplicativo ONPLACE
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.pictureBox1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Abre a tela de configuração
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Sincronizar.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Sincronizar.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DeviceProject.Sincronizacao.Receber">
+            <summary>
+             Classe responsavel por receber os dados do webService
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber._webService">
+            <summary>
+            Objeto de comunicação com web server
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.cmd">
+            <summary>
+            Objeto do SQLCE
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.grupo">
+            <summary>
+             Grupo
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.rota">
+            <summary>
+             Rota
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.referencia">
+            <summary>
+             Referencia
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.numeroTentativasCarga">
+            <summary>
+             Numero de tentativas para a carga
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.UserPdaCurrent">
+            <summary>
+             Usuario corrente
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Receber.indiceFatura">
+            <summary>
+             Variavel para recuperar a quantidade de dados de fatura
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.#ctor">
+            <summary>
+            Contrutor
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Limpeza">
+            <summary>
+             Limpa os dados dos banco de dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.GetDistribuicao">
+            <summary>
+            Carrega os dados da distribuição
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.AtualizaDistribuicao">
+            <summary>
+            Atualiza a tabela de distribuição no web_server macando como enviado
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.RetornaDados(System.String,System.Object[])">
+            <summary>
+             Metodo generico para consumir o we service
+            </summary>
+            <param name="metodo">nome do metodo a ser chamado</param>
+            <param name="paramtros">array de parametros do metodo</param>
+            <returns>um objeto de dados retornado do web service</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.RetornaDadosPaginacao(System.String,System.Object[])">
+            <summary>
+             Metodo que retorna os dados atraves de paginação
+            </summary>
+            <param name="metodo">Nome do metodo</param>
+            <param name="paramtros">Parametro recebidos</param>
+            <returns>Um objeto do web service</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Categoria">
+            <summary>
+            Retorna os dados de categoria
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.TipoEntrega">
+            <summary>
+            Retorna os dados de tipo entrega
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.DescontoDiadema">
+            <summary>
+            Retorna os dados de desconto diadema
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.ImpostoDiadema">
+            <summary>
+            Retorna os dados de imposto diadema
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.LocalizacaoHidrometro">
+            <summary>
+            Retorna os dados de localização hidrometro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Ocorrencia">
+            <summary>
+            Retorna os dados de ocorrencia
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Parametro">
+            <summary>
+            Retorna os dados de parametro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.ParametroRetencao">
+            <summary>
+            Retorna os dados de parametro retenção
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Taxa">
+            <summary>
+            Retorna os dados de taxa
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Agente">
+            <summary>
+            Retorna os dados de agente
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.GrupoFatura">
+            <summary>
+            Retorna os dados de grupo fatura
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.MatriculaCarga">
+            <summary>
+            Retorna os dados de matricula carga
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Movimento">
+            <summary>
+            Retorna os dados de movimento
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.QualidadeAgua">
+            <summary>
+            Retorna os dados de qualizade da agua
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Roteiro">
+            <summary>
+            Retorna os dados de roteiro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Fatura">
+            <summary>
+            Retorna os dados de fatura
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.AvisoDebito">
+            <summary>
+            Retorna os dados de Aviso Debito
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.FaturaCategoria">
+            <summary>
+            Retorna os dados de fatura categoria
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.FaturaAviso">
+            <summary>
+            Retorna os dados de fatura aviso
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Hidrometro">
+            <summary>
+            Retorna os dados de hidrometro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Historico">
+            <summary>
+            Retorna os dados de historico
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Logradouro">
+            <summary>
+            Retorna os dados de logradouro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.Matricula">
+            <summary>
+            Retorna os dados de matricula
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.MovimentoCategoria">
+            <summary>
+            Retorna os dados de movimento categoria
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.MovimentoTaxa">
+            <summary>
+            Retorna os dados de movimento taxa
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.MatriculaDiadema">
+            <summary>
+            Retorna os dados de matricula diadema
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.MensagemMovimento">
+            <summary>
+            Retorna os dados de mensagem movimento
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.TaxaTarifa">
+            <summary>
+            Retorna os dados de taxa tarifa
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.ReferenciaPendente">
+            <summary>
+            Retorna os dados de referencia pendente
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.TaxaTarifaFaixa">
+            <summary>
+            Retorna os dados de taxa tarifa faixa
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.ServicoFatura">
+            <summary>
+            Retorna os dados de Serviço fatura
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Receber.UtilizacaoLigacao">
+            <summary>
+            Retorna os dados de utilização ligação
+            </summary>
+        </member>
+        <member name="T:DeviceProject.referencia.Service1">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.testar(System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.Begintestar(System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.Endtestar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.teste">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.Beginteste(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.Endteste(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.TimeSyncAutomatic">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginTimeSyncAutomatic(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndTimeSyncAutomatic(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ExibeVersao">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginExibeVersao(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndExibeVersao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ValidaCarga(System.Int32,System.Int32,System.DateTime,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginValidaCarga(System.Int32,System.Int32,System.DateTime,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndValidaCarga(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.AtualizaDistribuicaoDescarga(System.Int32,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginAtualizaDistribuicaoDescarga(System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndAtualizaDistribuicaoDescarga(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.AtualizaDistribuicao(System.Int32,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginAtualizaDistribuicao(System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndAtualizaDistribuicao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.AutenticaUsusario(System.String,System.String,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginAutenticaUsusario(System.String,System.String,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndAutenticaUsusario(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.AutenticaAgent(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginAutenticaAgent(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndAutenticaAgent(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ExibeConfiguracaoAmbiente">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginExibeConfiguracaoAmbiente(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndExibeConfiguracaoAmbiente(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.RetornaSetor(System.Int32,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginRetornaSetor(System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndRetornaSetor(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.Distribuicao(System.Int32,System.String,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginDistribuicao(System.Int32,System.String,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndDistribuicao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaAgente(System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaAgente(System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaAgente(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaFaturaCategoria(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaFaturaCategoria(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaFaturaCategoria(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.RetornaAvisoDebito(System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginRetornaAvisoDebito(System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndRetornaAvisoDebito(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaFatura(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaFatura(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaFatura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaServicoFatura(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaServicoFatura(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaServicoFatura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaFaturaServico(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaFaturaServico(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaFaturaServico(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaFaturaTaxa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaFaturaTaxa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaFaturaTaxa(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaGrupo(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaGrupo(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaGrupo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaHidrometro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaHidrometro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaHidrometro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaLogradouro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaLogradouro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaLogradouro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMatriculaDiadema(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMatriculaDiadema(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMatriculaDiadema(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaReferenciaPendente(System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaReferenciaPendente(System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaReferenciaPendente(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMatricula(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMatricula(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMatricula(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMensagemMovimento(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMensagemMovimento(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMensagemMovimento(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMovimento(System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMovimento(System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMovimento(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMovimentoCategoria(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMovimentoCategoria(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMovimentoCategoria(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMovimentoTaxa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMovimentoTaxa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMovimentoTaxa(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaQualidadeAgua(System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaQualidadeAgua(System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaQualidadeAgua(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaRoteiro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaRoteiro(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaRoteiro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaTaxaTarifaFaixa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaTaxaTarifaFaixa(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaTaxaTarifaFaixa(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaTaxaTarifa(System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaTaxaTarifa(System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaTaxaTarifa(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaGrupoFatura(System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaGrupoFatura(System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaGrupoFatura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaMatriculaCarga(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaMatriculaCarga(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaMatriculaCarga(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaFaturasAviso(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaFaturasAviso(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaFaturasAviso(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaHistorico(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaHistorico(System.Int32,System.DateTime,System.Int32,System.Int32,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaHistorico(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaCategoria(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaCategoria(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaCategoria(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaDescontoDiadema(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaDescontoDiadema(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaDescontoDiadema(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaImpostoDiadema(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaImpostoDiadema(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaImpostoDiadema(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaLocalizacaoHidrometro(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaLocalizacaoHidrometro(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaLocalizacaoHidrometro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaOcorrencia(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaOcorrencia(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaOcorrencia(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaParametro(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaParametro(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaParametro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaParametroRentencao(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaParametroRentencao(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaParametroRentencao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaTaxa(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaTaxa(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaTaxa(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaTipoEntrega(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaTipoEntrega(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaTipoEntrega(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaTabelasCarga(DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaTabelasCarga(DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaTabelasCarga(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertVoltaAlteracao(DeviceProject.referencia.VoltaAlteracao,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertVoltaAlteracao(DeviceProject.referencia.VoltaAlteracao,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertVoltaAlteracao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertVoltaLeitura(DeviceProject.referencia.VoltaLeitura,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertVoltaLeitura(DeviceProject.referencia.VoltaLeitura,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertVoltaLeitura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertListaVoltaLeitura(DeviceProject.referencia.VoltaLeitura[],DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertListaVoltaLeitura(DeviceProject.referencia.VoltaLeitura[],DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertListaVoltaLeitura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertVoltaLogAtendimento(DeviceProject.referencia.VoltaLogAtendimento,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertVoltaLogAtendimento(DeviceProject.referencia.VoltaLogAtendimento,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertVoltaLogAtendimento(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertVoltaNovoRegistro(DeviceProject.referencia.VoltaNovoRegistro,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertVoltaNovoRegistro(DeviceProject.referencia.VoltaNovoRegistro,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertVoltaNovoRegistro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.InsertVoltaRoteiro(DeviceProject.referencia.VoltaRoteiro,DeviceProject.referencia.Identificacao)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginInsertVoltaRoteiro(DeviceProject.referencia.VoltaRoteiro,DeviceProject.referencia.Identificacao,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndInsertVoltaRoteiro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaUtilizacaoLigacao">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaUtilizacaoLigacao(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaUtilizacaoLigacao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaVoltaAlteracao">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaVoltaAlteracao(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaVoltaAlteracao(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaVoltaLeitura">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaVoltaLeitura(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaVoltaLeitura(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaVoltaLogAtendimento">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaVoltaLogAtendimento(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaVoltaLogAtendimento(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaVoltaNovoRegistro">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaVoltaNovoRegistro(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaVoltaNovoRegistro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.ListaVoltaRoteiro">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.BeginListaVoltaRoteiro(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:DeviceProject.referencia.Service1.EndListaVoltaRoteiro(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.Identificacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Identificacao.usuario">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Identificacao.coletor">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.FaturaServicoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.seq_item_servico">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.des_servico">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.val_parcela">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaServicoONP.ind_credito">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.Persistent">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.UtilizacaoLigacaoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.UtilizacaoLigacaoONP.seq_utilizacao_ligacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.UtilizacaoLigacaoONP.des_utilizacao_ligacao">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.VoltaRoteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Rota">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Data_Inicial">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Data_Final">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Data_Envio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Data_Processamento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Aparelho">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Data_Problema">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaRoteiro.Chuva">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.VoltaNovoRegistro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.Rota">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.Complemento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.Medidor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.Nome">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.OBS">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.logradouro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaNovoRegistro.numero">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.VoltaLogAtendimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.CDC">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.Tipo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.Referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.Data_Emissao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLogAtendimento.Operador">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.VoltaLeitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Setor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Rota">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.CDC">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Leitura_Ajustada">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Leitura_Real">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Data_Leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Consumo_Ajustado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Esgoto_Ajustado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Dias_Consumo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Ocorrencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Ident_fraude">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Indic_cortado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Operador">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Calculo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Emissao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Data_Emissao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Vencimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_Agua">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_Esgoto">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_Credito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_Reducao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_IR">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_CSLL">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_PIS">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_COFINS">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Eco_Res">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Eco_Com">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Eco_Ind">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Eco_Pub">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Eco_Soc">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Consumo_Rateado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Valor_Saldo_Debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Lido">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Faturado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Ocorrencia2">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Situacao_Movimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaLeitura.Flag_Repasse">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.VoltaAlteracao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.CDC">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.Numero_Imovel">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.Complemento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.Medidor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.Nome_Consumidor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.observacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.VoltaAlteracao.referencia">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.TabelaCargaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TabelaCargaONP.nom_tabela">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TabelaCargaONP.ind_carga">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TabelaCargaONP.ind_descarga">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.TipoEntregaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TipoEntregaONP.des_tipo_entrega">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TipoEntregaONP.seq_tipo_entrega">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.TaxaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaONP.des_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaONP.seq_taxa">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.ParametroRentencaoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.val_media_inicial">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.val_media_final">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.val_variacao_aviso">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.val_variacao_retencao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.ind_unidade_variacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.ind_retencao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroRentencaoONP.seq_faixa">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.ParametroONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroONP.des_valor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ParametroONP.des_nome">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.OcorrenciaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.des_ocorrencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.des_mensagem">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.ind_grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.ind_leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.ind_consumo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.ind_emite">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.OcorrenciaONP.cod_ocorrencia">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.LocalizacaoHidrometroONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.LocalizacaoHidrometroONP.des_local">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.LocalizacaoHidrometroONP.seq_local">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.ImpostoDiademaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ImpostoDiademaONP.val_porcentagem">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ImpostoDiademaONP.cod_imposto">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.DescontoDiademaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.DescontoDiademaONP.seq_desconto">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.DescontoDiademaONP.ind_tipo_desconto">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.DescontoDiademaONP.val_limite_inicial">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.DescontoDiademaONP.val_valor_desconto">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.CategoriaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.CategoriaONP.des_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.CategoriaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.HistoricoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HistoricoONP.val_consumo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HistoricoONP.cod_ocorrencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HistoricoONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HistoricoONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.FaturasAvisoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturasAvisoONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturasAvisoONP.dat_vencimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturasAvisoONP.val_valor_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturasAvisoONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturasAvisoONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MatriculaCargaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaCargaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaCargaONP.ind_carga">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaCargaONP.ind_descarga">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.GrupoFaturaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoFaturaONP.seq_grupo_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoFaturaONP.ind_tipo_vencimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoFaturaONP.num_dias">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoFaturaONP.des_dias_vencimento">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.TaxaTarifaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.seq_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.seq_taxa_tarifa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.seq_taxa_base">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.dat_inicio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.ind_tipo_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.ind_escalonada">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.ind_dias_consumo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.ind_proporcional">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.ind_minimo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.val_valor_tarifa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaONP.val_percentual">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.TaxaTarifaFaixaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.seq_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.seq_taxa_tarifa_faixa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.seq_taxa_tarifa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.val_limite_consumo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.TaxaTarifaFaixaONP.val_valor_tarifa">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.RoteiroONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.seq_grupo_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.ind_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.dat_base">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.dat_servidor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.RoteiroONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.QualidadeAguaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.dat_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.seq_zona_abastecimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.seq_parametro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.des_parametro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.val_previstas">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.val_realizadas">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.val_fora_limite">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.QualidadeAguaONP.val_media">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MovimentoTaxaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.seq_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.val_economias">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.val_consumo_fixo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.val_consumo_estimado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.ind_situacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoTaxaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MovimentoCategoriaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.val_numero_economia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoCategoriaONP.val_valor_faturado">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MovimentoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_impressoes">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.ind_fatura_emitida">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.ind_leitura_divergente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.ind_situacao_movimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.cod_agente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.cod_hidrometro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_numero_leituras">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.dat_vencimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_consumo_medio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.des_banco_debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.des_banco_agencia_debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.ind_entrega_especial">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.dat_leitura_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.dat_proxima_leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_leitura_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.dat_troca">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_consumo_troca">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MovimentoONP.val_quantidade_pendente">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MensagemMovimentoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.seq_mensagem_movimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.seq_grupo_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.des_mensagem_movimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.dat_inicio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.dat_final">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MensagemMovimentoONP.seq_tipo_documento">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MatriculaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_rota">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_logradouro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.val_numero_imovel">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_utilizacao_ligacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.seq_zona_abastecimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.des_inscricao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.des_complemento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.nom_cliente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.ind_processado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaONP.ind_impresso">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.ReferenciaPendenteONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ReferenciaPendenteONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ReferenciaPendenteONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ReferenciaPendenteONP.dat_vencimento">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.MatriculaDiademaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.seq_matricula_pai">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.val_fraudes">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.seq_desconto">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.val_dias_bloqueio_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.val_dias_bloqueio_atual">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_cachorro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_corta_ligacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_retencao_impostos">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_bloqueio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_tipo_consumidor">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_calcula_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.ind_emite_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.des_mensagem_1">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.des_mensagem_2">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.MatriculaDiademaONP.dat_bloqueio">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.LogradouroONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.LogradouroONP.seq_logradouro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.LogradouroONP.des_logradouro">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.HidrometroONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.cod_hidrometro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.seq_local">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.cod_marca">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.seq_tamanho_hidrometro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.val_numero_digitos">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.seq_diametro_ligacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.dat_fabricacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.dat_aquisicao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.HidrometroONP.des_classe">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.GrupoONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Data_Envio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Data_Processamento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Data_Retorno">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Data_Leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Data_Proxima_Leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Qtde_Registros">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.GrupoONP.Grupo">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.FaturaTaxaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.seq_taxa">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.val_numero_economia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.val_consumo_faturado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.val_valor_calculado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.val_valor_faturado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.ind_situacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaTaxaONP.ind_tipo_consumo">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.ServicoFaturaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.seq_item_servico">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.des_servico">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.seq_plano">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.seq_parcela">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.val_parcela">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.ind_credito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.ServicoFaturaONP.val_diferenca_fatura">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.FaturaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.seq_tipo_entrega">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.cod_hidrometro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.ind_fatura_emitida">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.dat_vencimento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_arredonda_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_arredonda_atual">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.dat_hora_emissao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_valor_faturado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.dat_leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.dat_leitura_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.ind_entrega_especial">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.des_banco_debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.des_banco_agencia_debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_quantidade_pendente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_consumo_medio">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_desconto">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.des_linha_digitavel">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.des_codigo_barras">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_consumo_medido">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_consumo_atribuido">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_consumo_rateado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_leitura_anterior">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_leitura_real">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_leitura_atribuida">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_impressoes">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.dat_proxima_leitura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaONP.val_valor_credito">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.AvisoDebito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.dat_emissao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.ind_documento">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.ind_pagavel">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.val_quantidade_debito">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.val_impressoes">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.ind_protocolado">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AvisoDebito.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.FaturaCategoriaONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.seq_categoria">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.seq_fatura">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.cod_referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.seq_roteiro">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.seq_matricula">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.val_numero_economia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.FaturaCategoriaONP.val_valor_faturado">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.AgenteONP">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AgenteONP.cod_agente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AgenteONP.nom_agente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.AgenteONP.des_senha">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.referencia.Distribuicao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Codigo_Agente">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Situacao">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Referencia">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Grupo">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Rota">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Data_Carga">
+            <remarks/>
+        </member>
+        <member name="P:DeviceProject.referencia.Distribuicao.Data_Descarga">
+            <remarks/>
+        </member>
+        <member name="T:DeviceProject.Util.SQLHelper">
+            <summary>
+             Classe responsavel pelo controle do banco de dados
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Util.SQLHelper.con">
+            <summary>
+             Objeto de conexão com o banco de dados
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Util.SQLHelper.cmd">
+            <summary>
+             Abre um execute command
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Util.SQLHelper.cmdOrigem">
+            <summary>
+             Command padrão do banco
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Util.SQLHelper.instancia">
+            <summary>
+             Instancia da classe de banco de dados onplace
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.Conectar">
+            <summary>
+             Metodo que abre uma conecxão com o banco de dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.TestCon">
+            <summary>
+             Testa a conecxão com o banco movel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.GetLocalPath">
+            <summary>
+            Captura o diretório raiz da aplicação.
+            </summary>
+            <returns>Caminho do diretorio raíz da aplicação.</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.GetConnection">
+            <summary>
+            Retorna a string de conexão
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.VerificaBanco">
+            <summary>
+            Verifica se o banco movel existe
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.BackpBanco">
+            <summary>
+             Faz um backp do banco
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SQLHelper.copyFiles(System.String,System.String)">
+            <summary>
+            Copiar Banco de dados para o aplicativo onplayce
+            </summary>
+            <param name="fileOrigem">caminho origem + arquivo </param>
+            <param name="fileDestino"> caminho destino + arquivo </param>
+        </member>
+        <member name="P:DeviceProject.Util.SQLHelper.Instance">
+            <summary>
+             Metodo que implementa o Singleton
+            </summary>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.Flow.LogErroFlow">
+            <summary>
+             Flow da log de erro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogErroFlow.Insert(DeviceProject.DATA.dataSaned.Model.LogErro)">
+            <summary>
+             Insere o log de erro
+            </summary>
+            <param name="obj">LogErro Model com os dados a inserir</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogErroFlow.SetErro(System.Exception,System.String,System.String)">
+            <summary>
+             Gera o Objeto de erro
+            </summary>
+            <param name="ex">Exception exeção a ser inserida </param>
+            <param name="tabela">string ,nome da tabela</param>
+            <param name="rotina">string ,tipo de rotina</param>
+        </member>
+        <member name="T:DeviceProject.DATA.SqlVolta">
+            <summary>
+             Classe que contem os comandos SQL do envio dos dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.SqlVolta.Query(System.String)">
+            <summary>
+             Metodo que recuperao SQL da tabela informada
+             (os SQL são somente da descarga)
+            </summary>
+            <param name="TableName">string nome da tabela</param>
+            <returns>string ,query a ser executada</returns>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.Model.LogErro">
+            <summary>
+             Classe de mapeamento da tabela TBLOGERRO
+            </summary>
+        </member>
+        <member name="F:DeviceProject.DATA.dataSaned.Model.LogErro.TableName">
+            <summary>
+             Nome da tabela no banco de dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Model.LogErro.GetTable">
+            <summary>
+             Metodo responsavel por retorna o nome da tabela
+            </summary>
+            <returns>string nome da tabela</returns>
+        </member>
+        <member name="P:DeviceProject.DATA.dataSaned.Model.LogErro.id">
+            <summary>
+             Campos 
+            </summary>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow">
+            <summary>
+             Classe Flow da model logSync
+            </summary>
+        </member>
+        <member name="F:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow._logSyncDao">
+            <summary>
+             Objeto DAO
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow.Insert(DeviceProject.DATA.dataSaned.Model.LogSync)">
+            <summary>
+             Insere os dados na tabela 
+            </summary>
+            <param name="logSync">LogSync ,Model contendo os dados</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow.Delete(DeviceProject.DATA.dataSaned.Model.LogSync)">
+            <summary>
+            Deleta os dados
+            </summary>
+            <param name="logSync">objeto model</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow.DeleteAll">
+            <summary>
+            Deleta todos os dados da tabela
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Flow.LogSyncFlow.GetListMatricula">
+            <summary>
+            Lista dados
+            </summary>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.ConectDBSabed">
+            <summary>
+             Classe de conexão ao banco de controle da aplicação
+            </summary>
+        </member>
+        <member name="F:DeviceProject.DATA.dataSaned.ConectDBSabed.con">
+            <summary>
+             objeto de conexão
+            </summary>
+        </member>
+        <member name="F:DeviceProject.DATA.dataSaned.ConectDBSabed.cmd">
+            <summary>
+             Objeto de commando
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.ConectDBSabed.#ctor">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name='transaction'>Define o uso de transaction. true = Usa transaction</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.ConectDBSabed.CloseConection">
+            <summary>
+             Fecha a conexão com o banco de dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.ConectDBSabed.GetLocalPath">
+            <summary>
+            Captura o diretório raiz da aplicação.
+            </summary>
+            <returns>Caminho do diretorio raíz da aplicação.</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.ConectDBSabed.GetConnection">
+            <summary>
+            Retorna a string de conexão
+            </summary>
+            <returns>string caminho do banco de dados (FIXO)</returns>
+        </member>
+        <member name="T:DeviceProject.Util.Convert`1">
+            <summary>
+             Classe responsavel por conversão de tipos
+            </summary>
+            <typeparam name="T">T objeto generico</typeparam>
+        </member>
+        <member name="M:DeviceProject.Util.Convert`1.convertObjectToModel(System.Object[])">
+            <summary>
+             Convert um array do tipo object de models e uma lista do tipo model comtendo as models
+            </summary>
+            <param name="arrayDados">array (ATENÇÃO O ARRAY DEVERA CONTER O TIPO DA MODEL "T")</param>
+            <returns>uma lista de models</returns>
+        </member>
+        <member name="T:DeviceProject.Config.ConfiguracaoPDA">
+            <summary>
+             Classe de configuração da aplicação
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoPDA.#ctor">
+            <summary>
+            Define um construtor privado.
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Config.ConfiguracaoPDA._current">
+            <summary>
+            Instancia do elemento geral de configuração.
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoPDA.RefreshCurrent">
+            <summary>
+            Atualiza as informações da atual configuração.
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoPDA.SaveCurrent">
+            <summary>
+            Salva o arquivo de configuração.
+            </summary>
+            <exception cref="T:System.Exception">Quando ocorre algum erro ao salvar o arquivo de configuração.</exception>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoPDA.GetDeviceID">
+            <summary>
+            Retorna o identificador do dispositivo.
+            </summary>
+            <returns>O ID do dispositivo.</returns>
+        </member>
+        <member name="P:DeviceProject.Config.ConfiguracaoPDA.WebServiceAddress">
+            <summary>
+            Endereço do WebService.
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Config.ConfiguracaoPDA.Username">
+            <summary>
+            Usuário de acesso no WebService.
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Config.ConfiguracaoPDA.Password">
+            <summary>
+            Senha de acesso do WebService.
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Config.ConfiguracaoPDA.CurrentInstance">
+            <summary>
+            Configurações atuais
+            </summary>
+        </member>
+        <member name="T:DeviceProject.Config.ConfiguracaoWeb">
+            <summary>
+             Classe de controle da tela de configuração
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Config.ConfiguracaoWeb.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.#ctor">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.menuItem1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Salvar as configurações
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.menuItem2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fecha a aplicação
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.Config.ConfiguracaoWeb.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Faz um teste no web server
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogSyncDao.Insert(DeviceProject.DATA.dataSaned.Model.LogSync)">
+            <summary>
+            Insere um registro
+            </summary>
+            <param name="obj">Objeto da model</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogSyncDao.Delete(DeviceProject.DATA.dataSaned.Model.LogSync)">
+            <summary>
+            Deleta o registro especifico
+            </summary>
+            <param name="obj">Objeto da model</param>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogSyncDao.DeleteAll">
+            <summary>
+            Deleta todos os dados da tabela
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogSyncDao.Select">
+            <summary>
+            Retorna uma lista com todos os dados
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogSyncDao.Exist(System.Int64)">
+            <summary>
+             Verifica se a matricula existe
+            </summary>
+            <param name="matricula">numero da matricula</param>
+            <returns>quantidade de matriculas cadastradas (1 ou 0)</returns>
+        </member>
+        <member name="T:DeviceProject.Sincronizacao.Envio">
+            <summary>
+             Classe responsavel por eviar os dados para o web Service
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio._webService">
+            <summary>
+            Objeto de comunicação com web server
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio.grupo">
+            <summary>
+             Grupo
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio.rota">
+            <summary>
+             Rota
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio.referencia">
+            <summary>
+             Referencia
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio.numeroTentativasCarga">
+            <summary>
+             Numero de tentativas para a carga
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Sincronizacao.Envio.UserPdaCurrent">
+            <summary>
+             Usuario corrente
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.#ctor">
+            <summary>
+             Construtor
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.EnviaDados(System.String,System.Object[])">
+            <summary>
+             Metodo generico para consumir o we service
+            </summary>
+            <param name="metodo">nome do metodo a ser chamado</param>
+            <param name="paramtros">array de parametros do metodo</param>
+            <returns>um objeto de dados retornado do web service</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.VoltaRoteiro">
+            <summary>
+             Envia volta roteiro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.VoltaLeitura">
+            <summary>
+             Envia volta leitura
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.VoltaAlteracao">
+            <summary>
+             Envia volta alteração
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.VoltaNovoRegistro">
+            <summary>
+             Envia volta novo registro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.VoltaLogAtendimento">
+            <summary>
+             Envia volta log atendimento
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.AtualizaDistribuicao">
+            <summary>
+            Atualiza a tabela de distribuição
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.Envio.ValidaCarga(System.Int32,System.Int32,System.DateTime,System.String,System.Int32)">
+            <summary>
+             Valida se todos os registros foram descarregados
+                Metodo faz uma comparação entre os registro no webService e o PDA
+            </summary>
+            <param name="grupo">grupo</param>
+            <param name="rota">rota</param>
+            <param name="referencia"></param>
+            <param name="tipo">tipo da validação: 
+                                -ROTEIRO
+                                -LEITURA
+                                -ATENDIMENTO
+            </param>
+            <param name="quantidadePDA">Quatidade retornada do PDA</param>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:DeviceProject.Sincronizacao.InsertCarga`1">
+            <summary>
+            Classe responsavel por fazer o insert somente da carga dos dados no PDA
+            </summary>
+            <typeparam name="T">Tipo generico</typeparam>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.#ctor">
+            <summary>
+             Construtor
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.InsereTabelaCarga(System.String)">
+            <summary>
+             Metodo para inserir os dados na tabela de carga
+            </summary>
+            <param name="tabela">nome da tabela</param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.Gravar(System.String,`0[],System.String)">
+            <summary>
+             Metodo responsavel por fazer o insert generico
+            </summary>
+            <param name="tabela">nome da tabela</param>
+            <param name="dados">array de dados</param>
+            <param name="chave">campo chave para auto incremento</param>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.GetFatura(System.Int32)">
+            <summary>
+             Metodo que recupera os dados de fatura para atulização do campos SEQ_FATURA
+            </summary>
+            <param name="quant">quantidade retornada</param>
+            <returns>rertorna o array de fatura</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.AvisoDebito(DeviceProject.referencia.AvisoDebito[],System.Int32)">
+            <summary>
+             Metodo insert exclusivo para inserir o aviso debito
+            </summary>
+            <param name="avisoDebito"></param>
+            <param name="quant">quantidade de registros de fatura</param>
+            <returns>quantidade de registros de fatura atualizado</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.FaturaCategoria(DeviceProject.referencia.FaturaCategoriaONP[],System.Int32)">
+            <summary>
+             Metodo exclusivo para inserir a fatura categoria
+            </summary>
+            <param name="faturaCategoria"> array de dados de fatura categoria</param>
+            <param name="quant">quantidade de registros de fatura</param>
+            <returns>quantidade de registros de fatura atualizado</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.FaturaAviso(DeviceProject.referencia.FaturasAvisoONP[],System.Int32)">
+            <summary>
+            Metodo exclusivo para inserir a fatura aviso
+            </summary>
+            <param name="faturaAviso">array de dados de fatura aviso</param>
+            <param name="quant">quantidade de registros de fatura</param>
+            <returns>quantidade de registros de fatura atualizados</returns>
+        </member>
+        <member name="M:DeviceProject.Sincronizacao.InsertCarga`1.ReferenciaPendente(DeviceProject.referencia.ReferenciaPendenteONP[],System.Int32)">
+            <summary>
+            Metodo exclusivo para inserir a referencia pendente
+            </summary>
+            <param name="faturaAviso">array de dados de referencia pendnete</param>
+            <param name="quant">quantidade de registros de referencia pendnete</param>
+            <returns>quantidade de registros de fatura atualizados</returns>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.Dao.LogErroDao">
+            <summary>
+             Classe DAO da log de erro
+            </summary>
+        </member>
+        <member name="M:DeviceProject.DATA.dataSaned.Dao.LogErroDao.Insert(DeviceProject.DATA.dataSaned.Model.LogErro)">
+            <summary>
+                Insert na tabela de erro
+            </summary>
+            <param name="obj">Objeto de erro</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:DeviceProject.DATA.GenericDAO`1" -->
+        <member name="M:DeviceProject.DATA.GenericDAO`1.GetMaiorReferencia">
+            <summary>
+             Recupera a referencia corrente
+            </summary>
+            <returns>string contendo a maior referencia encontrada</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.SelectVoltaNovoRegistro">
+            <summary>
+             Metodo que retorna uma lista com os dados de novo registro
+            </summary>
+            <returns>lista de dados da tabela novo registro</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.SelectVoltaAlteracao">
+            <summary>
+             Metodo que retorna uma lista de dados de alteração
+            </summary>
+            <returns>lista da model voltaAlteração</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DeviceProject.DATA.GenericDAO`1.SelectVoltaLeitura(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:DeviceProject.DATA.GenericDAO`1.SelectVoltaRoteiro" -->
+        <!-- Badly formed XML comment ignored for member "M:DeviceProject.DATA.GenericDAO`1.SelectVoltaLodAtendimento" -->
+        <member name="M:DeviceProject.DATA.GenericDAO`1.GetAgenteCadastrador">
+            <summary>
+            Recupera o agente que efetuou as leituras
+            </summary>
+            <returns>string ,retorna o codigo do agente</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.SelectFatura(System.Int32)">
+            <summary>
+             Metodo que retorna os dados de fatura
+            </summary>
+            <param name="indice">int quantidade de registro em fatura</param>
+            <returns>FaturaONP[] array de dados de fatura</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.VerficaCarga">
+            <summary>
+             Metodo que verifica a quantidade de leituras realizadas
+            </summary>
+            <returns>numero de matriculas com leitura realizadas</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.Insert(`0[],System.String,System.String)">
+            <summary>
+             Metodo de insert Generico
+            </summary>
+            <param name="values">T[] , array de Model</param>
+            <param name="tableName">string ,nome da tabela mapeada</param>
+            <param name="campoChave">string ,nome do campo chave</param>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.LimpaBanco">
+            <summary>
+             Metodo responsavel por Apagar a base de dados
+            </summary>
+            <returns>Boolean , verifica se o banco esta limpado</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.InsertFaturaCategoria(DeviceProject.referencia.FaturaCategoriaONP[],DeviceProject.referencia.FaturaONP[])">
+            <summary>
+             Insere os dados na tabela de fatura categoria - ONP_FATURA_CATEGORIA
+            </summary>
+            <param name="faturaCategoria">FaturaCategoriaONP[] , array de dados de fatura categoria</param>
+            <param name="fatura">FaturaONP[] , array de dados de fatura</param>
+            <returns>bool ,verificador se os dados foram inseridos</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.InsertFaturaAviso(DeviceProject.referencia.FaturasAvisoONP[],DeviceProject.referencia.FaturaONP[])">
+            <summary>
+             Insere os dados na tabela de fatura aviso - ONP_FATURAS_AVISO
+            </summary>
+            <param name="faturaCategoria">FaturasAvisoONP[] , array de dados </param>
+            <param name="fatura">FaturaONP[] , array de dados de fatura</param>
+            <returns>bool ,verificador se os dados foram inseridos</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.InsertReferenciaPendente(DeviceProject.referencia.ReferenciaPendenteONP[],DeviceProject.referencia.FaturaONP[])">
+            <summary>
+            Insere os dados na tabela de referencia pendente - ONP_REFERENCIA_PENDENTE
+            </summary>
+            <param name="faturaCategoria">ReferenciaPendenteONP[] , array de dados </param>
+            <param name="fatura">FaturaONP[] , array de dados de fatura</param>
+            <returns>bool ,verificador se os dados foram inseridos</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DeviceProject.DATA.GenericDAO`1.InsertAvisoDebito(DeviceProject.referencia.AvisoDebito[],DeviceProject.referencia.FaturaONP[])" -->
+        <member name="M:DeviceProject.DATA.GenericDAO`1.setEconomiaMista(System.Collections.Generic.List{DeviceProject.referencia.VoltaLeitura})">
+            <summary>
+             Implementa a regra de valor faturado da economia mista
+            </summary>
+            <param name="listaVoltaLeitura">lita de dados retornados do banco</param>
+            <returns>uma lista com os valores setados</returns>
+        </member>
+        <member name="M:DeviceProject.DATA.GenericDAO`1.getValValorFatorado(DeviceProject.referencia.VoltaLeitura)">
+            <summary>
+             Retorna o valor da agua e do esgoto
+            </summary>
+            <param name="model">objeto modelo de volta_leitura</param>
+            <returns>objeto modelo de volta_leitura (ALTERADO VALOR DE AGUA E ESGOTO)</returns>
+        </member>
+        <member name="T:DeviceProject.Util.SqlCeCommandEx">
+            <summary>
+             Classe extendida da SqlCeCommand
+             Responsaveis por execução de comandos no banco de dados
+            </summary>
+        </member>
+        <member name="F:DeviceProject.Util.SqlCeCommandEx.cmd">
+            <summary>
+             Command padrão do banco
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.#ctor">
+            <summary>
+             Construtor
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.CreateParameter">
+            <summary>
+             Cria um objeto de parametros
+            </summary>
+            <returns>objeto de parametros do SQL</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.ExecuteReader">
+            <summary>
+             Metodo sobreescrito do SqlCeCommand
+            </summary>
+            <returns>Retorna um objeto IDataReader</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.ExecuteNonQuery">
+            <summary>
+             Metodo que executa um comando no banco sem retorno
+            </summary>
+            <returns>retorna a quantidade de linhas afetadas</returns>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.ExecuteScalar">
+            <summary>
+             Metodo que retorna um unico dado do banco
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DeviceProject.Util.SqlCeCommandEx.isExecute">
+            <summary>
+             Metodo que verifica se e possivel executar o comando no banco
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Util.SqlCeCommandEx.Connection">
+            <summary>
+             Seta a conexão com o banco de dados
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Util.SqlCeCommandEx.Parameters">
+            <summary>
+             Retorna o objeto de parametros do SQL
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Util.SqlCeCommandEx.CommandText">
+            <summary>
+             Comando SQL
+            </summary>
+        </member>
+        <member name="T:DeviceProject.DATA.dataSaned.Model.LogSync">
+            <summary>
+             Classe de mapeamento da tabela tblogsync
+            </summary>
+        </member>
+        <member name="P:DeviceProject.DATA.dataSaned.Model.LogSync.Matricula">
+            <summary>
+             Campos
+            </summary>
+        </member>
+        <member name="T:DeviceProject.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DeviceProject.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:DeviceProject.Util.ExtensionMethods">
+            <summary>
+             Classe composta de metodos com varias funcionalidades
+            </summary>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.CheckConnected(System.String)">
+            <summary>
+            Verifica se a conexão com o servidor pode ser estabelecida.
+            </summary>
+            <param name="targetAddress">Endereço do servidor.</param>
+            <returns>True se o a conexão foi estabelecida.</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.MsgInfomation(System.String,System.String)">
+            <summary>
+            Exibe uma Message box com o símbolo de informação "i"
+            </summary>
+            <param name="message">Texto da MsgBox</param>
+            <param name="caption">Título da MsgBox</param>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.MsgExclamation(System.String,System.String)">
+            <summary>
+            Exibe uma Message box com o símbolo de atenção "!"
+            </summary>
+            <param name="message">Texto da MsgBox</param>
+            <param name="caption">Título da MsgBox</param>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.MsgQuestion(System.String,System.String)">
+            <summary>
+            Exibe uma Message box com o símbolo de erro "x"
+            </summary>
+            <param name="message">Texto da MsgBox</param>
+            <param name="caption">Título da MsgBox</param>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.MsgError(System.String,System.String)">
+            <summary>
+            Exibe uma Message box com o símbolo de erro "x"
+            </summary>
+            <param name="message">Texto da MsgBox</param>
+            <param name="caption">Título da MsgBox</param>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.ConvertToHASH(System.String)">
+            <summary>
+            Criptografa a string recebida
+            </summary>
+            <param name="value">string valor a ser convertido</param>
+            <returns>String criptografada</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.ValidacaoCorreta(System.Boolean[])">
+            <summary>
+             Verefica entre varias validações se existe uma falsa
+            </summary>
+            <param name="listaValidacoes">bool[] , array de validações</param>
+            <returns>bool , retorna o resultado se todas as validações estão corretas</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.GetTime(System.DateTime)">
+            <summary>
+             Metodo que retorna o tempo decorrido
+            </summary>
+            <param name="sicronizacaoIni">data inicial</param>
+            <returns>tempo decorrido apartir da data inicial</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.GetTimeWebService(System.String,System.DateTime)">
+            <summary>
+             Metodo que retorna o tempo decorrido
+            </summary>
+            <param name="sicronizacaoIni">data inicial</param>
+            <returns>tempo decorrido apartir da data inicial</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.GetTimeDataBase(System.String,System.DateTime)">
+            <summary>
+             Metodo que retorna o tempo decorrido
+            </summary>
+            <param name="sicronizacaoIni">data inicial</param>
+            <returns>tempo decorrido apartir da data inicial</returns>
+        </member>
+        <member name="M:DeviceProject.Util.ExtensionMethods.ValidaURL(System.String,System.Int32)">
+            <summary>
+             Valida uma URL
+            </summary>
+            <param name="URL">string URL</param>
+            <param name="tipo"> existem dois tipos 1: WEB 2: REDE defaut FISICO</param>
+            <returns>bool ,verificação se o endereço e valido</returns>
+        </member>
+    </members>
+</doc>

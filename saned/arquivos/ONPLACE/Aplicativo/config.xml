@@ -1,0 +1,26 @@
+<xml>
+	<opcao nome="classecarga"		valor="OnPlaceMovel.Source.Diadema.CargaDiadema"/>
+	<opcao nome="classedescarga"		valor="OnPlaceMovel.Source.Diadema.DescargaDiadema"/>
+	<opcao nome="classeleitura"		valor="OnPlaceMovel.Source.Diadema.LeituraDiadema"/>
+	<opcao nome="classecodigobarras"	valor="OnPlaceMovel.Source.Diadema.CodigoBarrasDiadema"/>
+	<opcao nome="classeimpressao"		valor="OnPlaceMovel.Source.Diadema.ImpressaoDiadema"/>
+	<opcao nome="classeimpressao_D"		valor="OnPlaceMovel.Source.Impressao.ImpressaoPadrao"/>
+	<opcao nome="classecalculotaxa" 	valor="OnPlaceMovel.Source.Diadema.CalculaTaxasDiadema"/>
+	<opcao nome="classeanaliseconta"	valor="OnPlaceMovel.Source.Diadema.AnaliseContaDiadema"/>
+	<opcao nome="classeimpressora"		valor="OnPlaceMovel.Source.Impressao.ZebraRw420"/>
+	<opcao nome="impressaocontroller"	valor="OnPlaceMovel.Source.Diadema.ImpressaoControllerDiadema"/>
+	<opcao nome="leiturahd"			valor="OnPlaceMovel.Source.Diadema.LeituraHDControllerDiadema"/>
+	<opcao nome="classetestecontroller"			valor="OnPlaceMovel.Source.Diadema.TesteControllerDiadema"/>
+	<opcao nome="calculoconsumo"			valor="OnPlaceMovel.Source.Diadema.CalculoConsumoDiadema"/>
+	<opcao nome="log4cs.level"		valor="none"/>
+	<opcao nome="tentativasleitura"		valor="6"/>
+	<opcao nome="AutoDescarga"		valor="false"/>
+	<opcao nome="printerport"		valor="COM6"/>
+	<opcao nome="administrador"		valor="1001"/>
+	<opcao nome="senhaAdm"			valor="310895"/>
+	<opcao nome="senhaColeta"		valor="socoleta"/>
+	<opcao nome="carga"			valor="http://192.168.1.10:8084/OnPlaceWebservices/WebServices/br/com/strategos/acquacorporate/faturamento/movimento/webservice/carga/Carga"/>
+	<opcao nome="descarga"			valor="http://192.168.1.10:8084/OnPlaceWebservices/WebServices/br/com/strategos/acquacorporate/faturamento/movimento/webservice/descarga/Descarga"/>
+	<opcao nome="autodescargaurl"		valor="http://192.168.1.10:8084/OnPlaceWebservices/WebServices/br/com/strategos/acquacorporate/faturamento/movimento/webservice/descarga/Descarga"/>
+</xml>
+

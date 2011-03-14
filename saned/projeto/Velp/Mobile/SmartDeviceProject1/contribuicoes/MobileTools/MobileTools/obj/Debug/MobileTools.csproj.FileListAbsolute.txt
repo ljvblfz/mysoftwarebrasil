@@ -1,0 +1,10 @@
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\bin\Debug\MobileTools.XML
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\bin\Debug\MobileTools.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\bin\Debug\MobileTools.pdb
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\bin\Debug\System.Data.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\bin\Debug\System.Data.xml
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\obj\Debug\MobileTools.Controls.Resources.resources
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\obj\Debug\MobileTools.csproj.GenerateResource.Cache
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\obj\Debug\MobileTools.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\Mobile\SmartDeviceProject1\contribuicoes\MobileTools\MobileTools\obj\Debug\MobileTools.pdb

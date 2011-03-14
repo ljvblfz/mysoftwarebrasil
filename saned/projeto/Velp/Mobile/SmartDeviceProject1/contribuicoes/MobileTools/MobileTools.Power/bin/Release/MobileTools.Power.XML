@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MobileTools.Power</name>
+    </assembly>
+    <members>
+        <member name="T:MobileTools.Power.PowerPolicy">
+            <summary>
+            Representa o controle da política de controle de enercia do dispositivo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerPolicy.EnableUnattendedMode">
+            <summary>
+            Habilita para a aplicação trabalhar em modo autônomo.
+            Essa opção possibilita que a aplicação continue rodando 
+            mesmo com o dispositivo em modo suspenso.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerPolicy.DisableUnattendedMode">
+            <summary>
+            Desabilita o modo autônomo da aplicação.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerRequirement._handle">
+            <summary>
+            Instância do requerimento.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerRequirement._device">
+            <summary>
+            Nome do dipositivo que foi feito o requerimento.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerRequirement._power">
+            <summary>
+            Estado de energia do dispositivo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerRequirement.#ctor(System.String,MobileTools.Power.PowerState)">
+            <summary>
+            Inicializa um requerimento de energia para o dispositivo.
+            </summary>
+            <param name="device">Nome de dispositivo.</param>
+            <param name="power">Estado de energia.</param>
+        </member>
+        <member name="M:MobileTools.Power.PowerRequirement.ReleasePowerRequirement">
+            <summary>
+            Libera o requerimento.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerRequirement.Dispose(System.Boolean)">
+            <summary>
+            Libera a instância do objeto.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:MobileTools.Power.PowerRequirement.Dispose">
+            <summary>
+            Libera a instância do objeto.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerRequirement.PowerState">
+            <summary>
+            Estado de energia do dispositivo.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.DevicePowerState.BASE_POWER_HIVE">
+            <summary>
+            Endereço onde o estão os dados do estados no registro.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.#ctor(System.String)">
+            <summary>
+            Construtor interno.
+            </summary>
+            <param name="name">Nome do estado de energia.</param>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.Refresh">
+            <summary>
+            Atualiza as informações do estado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.PowerStates">
+            <summary>
+            Recupera os possíveis estados de energia do PDA.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.DevicesName">
+            <summary>
+            Recupera as lista de todos os hardwares ativos no PDA.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.GetPowerState(System.String)">
+            <summary>
+            Recupera o estado do dispositivo.
+            </summary>
+            <param name="device">Nome do dispositivo.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.SetDevicePower(System.String,MobileTools.Power.PowerState)">
+            <summary>
+            Define o estado do dispositivo.
+            </summary>
+            <param name="device">Nome do dispositivo.</param>
+            <param name="state">Estado que ele deve assumir.</param>
+            <returns>True caso a operação tenha sido efetuada com sucesso.</returns>
+        </member>
+        <member name="M:MobileTools.Power.DevicePowerState.SetPowerStateInfoValue(MobileTools.Power.PowerStateInfo,MobileTools.Power.PowerState)">
+            <summary>
+            Define o valor para o estado do dispositivo.
+            </summary>
+            <param name="info"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:MobileTools.Power.DevicePowerState.Name">
+            <summary>
+            Nome do estado.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.DevicePowerState.StatesInfo">
+            <summary>
+            Lista as informações dos estados relacionados.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.PowerLineStatus">
+            <summary>
+            Power line status.
+            <para><b>New in v1.3</b></para>
+            </summary>
+            <remarks>Used by <see cref="T:MobileTools.Power.PowerStatus"/> class.</remarks>
+        </member>
+        <member name="F:MobileTools.Power.PowerLineStatus.Offline">
+            <summary>
+            AC power is offline.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerLineStatus.Online">
+            <summary>
+            AC power is online.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerLineStatus.BackupPower">
+            <summary>
+            Unit is on backup power.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerLineStatus.Unknown">
+            <summary>
+            AC line status is unknown.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.BatteryChargeStatus">
+            <summary>
+            Defines identifiers that indicate the current battery charge level or charging state information.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.High">
+            <summary>
+            Indicates a high level of battery charge.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.Low">
+            <summary>
+            Indicates a low level of battery charge.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.Critical">
+            <summary>
+            Indicates a critically low level of battery charge.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.Charging">
+            <summary>
+            Indicates a battery is charging.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.NoSystemBattery">
+            <summary>
+            Indicates that no battery is present.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.BatteryChargeStatus.Unknown">
+            <summary>
+            Indicates an unknown battery condition.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.PowerStatus">
+            <summary>
+            Indicates current system power status information.
+            <para><b>New in v1.3</b></para>
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.PowerLineStatus">
+            <summary>
+            AC power status.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BatteryChargeStatus">
+            <summary>
+            Gets the current battery charge status.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BatteryLifePercent">
+            <summary>
+            Gets the approximate percentage of full battery time remaining.
+            </summary>
+            <remarks>TThe approximate percentage, from 0 to 100, of full battery time remaining, or 255 if the percentage is unknown.</remarks>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BatteryLifeRemaining">
+            <summary>
+            Gets the approximate number of seconds of battery time remaining.
+            </summary>
+            <value>The approximate number of seconds of battery life remaining, or -1 if the approximate remaining battery life is unknown.</value>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BatteryFullLifeTime">
+            <summary>
+            Gets the reported full charge lifetime of the primary battery power source in seconds.
+            </summary>
+            <value>The reported number of seconds of battery life available when the battery is fullly charged, or -1 if the battery life is unknown.</value>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BackupBatteryChargeStatus">
+            <summary>
+            Gets the backup battery charge status.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BackupBatteryLifePercent">
+            <summary>
+            Percentage of full backup battery charge remaining. Must be in the range 0 to 100.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BackupBatteryLifeRemaining">
+            <summary>
+            Number of seconds of backup battery life remaining.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStatus.BackupBatteryFullLifeTime">
+            <summary>
+            Number of seconds of backup battery life when at full charge. Or -1 If unknown.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.PowerState">
+            <summary>
+            Possíveis valores que o estado pode assumir.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerState.FullPower">
+            <summary>
+            Esse é o estado que o dispositivo está ligado e funcionando.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerState.PowerSavings">
+            <summary>
+            Esse é o estado que o dispositivo é totalmente funcional porém com
+            menor pontência e desempenho que o estado <see cref="!:PowerStateValue.FullPower"/>.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerState.Standby">
+            <summary>
+            Esse é o estado em que o dispositivo é parcialmente alimentado.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Power.PowerState.PowerOff">
+            <summary>
+            Esse é o estado que o dipositivo não está ligado.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.PowerStateInfo">
+            <summary>
+            Representa as informações dos dispositivo no estado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerStateInfo.#ctor(System.String,MobileTools.Power.PowerState,MobileTools.Power.DevicePowerState)">
+            <summary>
+            Construtor interno.
+            </summary>
+            <param name="name">Nome do dispositivo.</param>
+            <param name="value">Valor do estado.</param>
+            <param name="devicePowerState">Estado de energia relacionado.</param>
+        </member>
+        <member name="P:MobileTools.Power.PowerStateInfo.Name">
+            <summary>
+            Nome do dispositivo.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStateInfo.Value">
+            <summary>
+            Valor que assume.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Power.PowerStateInfo.DevicePowerState">
+            <summary>
+            Estado de energia relacinado.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Power.PowerManage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MobileTools.Power.PowerManage.SetOn">
+            <summary>
+            Define que o dispositivo deve ficar ligado.
+            </summary>
+        </member>
+    </members>
+</doc>

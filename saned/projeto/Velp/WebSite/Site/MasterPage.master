@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage"  EnableViewState = "true"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=4" />   <!-- IE5 mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=7.5" /> <!-- IE7 mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=100" /> <!-- IE8 mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=a" />   <!-- IE5 mode --> 
+
+    <title><asp:ContentPlaceHolder ID="Title" runat="server" /></title>
+
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+    <link id="Link1"  runat="server" href="style/saned.css" rel="stylesheet" type="text/css" />
+    <link id="Link2"  runat="server" href="Style/mensagem.css" rel="stylesheet" type="text/css" />
+    <link id="Link3"  runat="server" href="~/Style/dialogo.css" rel="stylesheet" type="text/css" />
+    <script src="<%= Page.ResolveUrl("~/Script/jquery-1.4.2.min.js") %>" language="javascript" type="text/javascript"></script>
+    <script type="text/javascript">
+        function vertical() {
+
+            var navItems = document.getElementById("nav").getElementsByTagName("li");
+
+            for (var i = 0; i < navItems.length; i++) {
+                if (navItems[i].className == "submenu") {
+                    navItems[i].onmouseover = function() { this.getElementsByTagName('ul')[0].style.display = "block"; this.style.backgroundColor = "#f9f9f9"; }
+                    navItems[i].onmouseout = function() { this.getElementsByTagName('ul')[0].style.display = "none"; this.style.backgroundColor = "#FFFFFF"; }
+                }
+            }
+
+        }
+
+        function horizontal() {
+
+            var navItems = document.getElementById("barra").getElementsByTagName("li");
+
+            for (var i = 0; i < navItems.length; i++) {
+                if ((navItems[i].className == "menuvertical") || (navItems[i].className == "submenu")) {
+                    if (navItems[i].getElementsByTagName('ul')[0] != null) {
+                        navItems[i].onmouseover = function() { this.getElementsByTagName('ul')[0].style.display = "block"; this.style.backgroundColor = "#ff9900"; }
+                        navItems[i].onmouseout = function() { this.getElementsByTagName('ul')[0].style.display = "none"; this.style.backgroundColor = "#f0f0f0"; }
+                    }
+                }
+            }
+
+        }
+        
+    </script>
+</head>
+<style type="text/css">
+    #preload {
+        display:none;
+        position:fixed;
+        _position:absolute;
+        z-index:100;
+        top:50%;
+        left:50%;
+    }
+
+</style>
+<div id="preload">
+    <img src="../images/loading.gif" alt="carregando" name="imgcarregando" id="imgcarregando" title="O conte&uacute;do est&aacute; sendo carregado." />
+</div>
+<body onload="horizontal();">
+<form id="form1" runat="server">
+    <center>
+        <div class="fioLateral">
+                <div class="top">
+                    <div class="logo">
+                    </div>
+                    <div class="foto">
+                    </div>
+                </div>
+                <ul class="menubar" id="barra">
+                    <li class="ctLeft">&nbsp;</li>
+                    <li class="menuvertical" style="background-color: rgb(240, 240, 240);"><a href="#">Cadastro</a>
+                        <ul class="menu" id="nav2" style="display: none;">
+                            <li style="background-color: rgb(240, 240, 240);">
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Cadastro/Categoria.aspx">Categoria</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl="~/Cadastro/Coletor.aspx">Coletor</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Cadastro/Descontodiadema.aspx">Desconto Diadema</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Cadastro/ImpostoDiadema.aspx">Imposto Diadema</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Cadastro/LocalizacaoHidrometro.aspx">Localizacao Hidrometro</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Cadastro/Ocorrencia.aspx">Ocorrencia</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Cadastro/Parametro.aspx">Parametro</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Cadastro/ParametroRetencao.aspx">Parametro Retencao</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Cadastro/Taxa.aspx">Taxa</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Cadastro/TipoEntrega.aspx">Tipo Entrega</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Cadastro/UsuarioIda.aspx">Usuario</asp:HyperLink>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divisaoMenu">&nbsp;</li>
+                    <li class="menuvertical" style="background-color: rgb(240, 240, 240);">
+                        <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Gestao/Distribuicao.aspx">Distribuição</asp:HyperLink>
+                    </li>
+                    <li class="divisaoMenu">&nbsp;</li>
+                    <li class="menuvertical" style="background-color: rgb(240, 240, 240);">
+                        <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Relatorio/Critica/Index.aspx">Contas para critica</asp:HyperLink>
+                    </li>
+                    <li class="divisaoMenu">&nbsp;</li>
+                    <li class="menuvertical" style="background-color: rgb(240, 240, 240);">
+                        <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="Login.aspx?valor=sair">Logout</asp:HyperLink>
+                    </li>
+                    <li class="ctRight">&nbsp;</li>
+                </ul>
+         </div>
+         <div class="fioLateralInterno">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>    
+    </center>
+    </form>
+</body>
+</html>

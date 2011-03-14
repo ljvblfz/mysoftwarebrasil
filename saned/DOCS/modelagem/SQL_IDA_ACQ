@@ -1,0 +1,1912 @@
+
+      INSERT INTO Carga
+      (
+		  cg_matricula,
+		  cg_matricula_pai,
+		  cg_referencia,
+		  cg_grupo,
+		  cg_setor,
+		  cg_rota,
+		  cg_sequencia,
+		  cg_endereco,
+		  cg_num_imovel,
+		  cg_complemento,
+		  cg_inscricao,
+		  cg_nome,
+		  cg_numero_hd,
+		  cg_capacidade_hidrometro,
+		  cg_leitura_ant,
+		  cg_ocorrencia_ant,
+		  cg_data_leit_ant,
+		  cg_consumo_medio,
+		  cg_economia_res,
+		  cg_economia_com,
+		  cg_economia_ind,
+		  cg_economia_pub,
+		  cg_economia_soc,
+		  cg_economia_ea,
+		  cg_categoria,
+		  cg_qtde_debito_ant,
+		  cg_data_vencto,
+		  cg_mensagem1,
+		  cg_mensagem2,
+		  cg_codigo_banco,
+		  cg_agencia,
+		  cg_flag_troca,
+		  cg_leitura_inicial,
+		  cg_data_instalacao_hd,
+		  cg_consumo_anterior,
+		  cg_cachorro,
+		  cg_natureza_ligacao,
+		  cg_bloqueado,
+		  cg_qtde_registros_fraude,
+		  cg_desconto,
+		  cg_ident_consumidor,
+		  cg_ident_calculo,
+		  cg_flag_emite_conta,
+		  cg_flag_cortar,
+		  cg_flag_calcula_imposto,
+		  cg_entrega_alternativa,
+		  cg_flag_calcula_conta,
+		  cg_dias_bloqueio_tarifa_ant,
+		  cg_dias_bloqueio_tarifa_atual,
+		  cg_virtual,
+		  cg_cod_logradouro,
+          cg_data_bloqueio,
+          cg_proxima_leitura
+      )
+      (
+      select
+		  L.cdc,
+		  isnull(L.cdc_pai,0),
+		  G.referencia,
+		  L.grupo,
+		  L.setor,
+		  L.rota,
+		  L.sequencia,
+		  E.nome,
+		  L.numero_imovel,
+		  L.complemento,
+		  L.inscricao,
+		  L.nome,
+		  L.medidor,
+		  L.qtde_ponteiros,
+        case when H.data_leitura is null then isnull(L.leitura_inicial +_hd,0) else isnull(H.leitura,0) end,
+        case when H.data_leitura is null then 71 else H.ocorrencia end +,
+        case when H.data_leitura is null then IsNull(L.Data_Inst_HD, ( + G.data_leitura-30)) else H.data_leitura end,
+		L.media,
+		CASE L.categoria_imovel WHEN 8 THEN 0 ELSE L.eco_res END,
+		CASE L.categoria_imovel WHEN 8 THEN 0 ELSE L.eco_com END,
+		CASE L.categoria_imovel WHEN 8 THEN 0 ELSE L.eco_ind END,
+		CASE L.categoria_imovel WHEN 8 THEN 0 ELSE L.eco_pub END,
+		CASE L.categoria_imovel WHEN 8 THEN 0 ELSE L.eco_soc END,
+		CASE L.categoria_imovel WHEN 8 THEN (L.eco_res + L.eco_com + L.eco_ind + L.eco_pub +  +L.eco_soc) ELSE 0 END,
+		L.categoria_imovel,
+		isnull(L.qtde_debitos,0),
+		L.data_vencimento,
+		isnull(L.mensagem1,) as cg_mensagem1,
+		isnull(L.mensagem2,) as cg_mensagem2,
+		L.banco,
+		L.agencia,
+		CASE WHEN ((L.Data_Inst_HD > isnull(H.data_leitura,getdate())) and +(IsNull(Ident_Ligacao_Nova,) != '#39S#39')) THEN '#39S#39' ELSE END as cg_flag_troca,
+		L.leitura_inicial_hd,
+		CASE WHEN ((L.Data_Inst_HD > isnull(H.data_leitura,getdate())) and +(IsNull(Ident_Ligacao_Nova,) != '#39S#39')) THEN L.data_inst_hd ELSE null END as cg_data_instalacao_hd,
+		IsNull(H.consumo,0),
+		L.cachorro,
+		L.natureza_ligacao,
+		L.bloqueado,
+		isnull(L.qtde_registros_fraude,0) as cg_qtde_registros_fraude,
+        case when (L.clas_imovel in (4, 64)) and (isnull(L.cdc_pai,0)  + = 0) then 0 else L.clas_imovel end,
+        
+		/*EMITE_CONTA*/
+      
+        case when (isnull(L.cdc_pai,0) = 0) and (L.ident_consumidor =  + 3) then 1 else L.ident_consumidor end,
+		L.ident_calculo,
+		CASE /*EMITE_CONTA*/
+			  WHEN (L.ident_consumidor = 1)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 2) and (L.cdc <> L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 3) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 4) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 5) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 6) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 7) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 8) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 9) and (L.cdc <> L.cdc_pai)
+			  THEN L.emite_conta
+			  WHEN (L.ident_consumidor = 10) and (L.cdc = L.cdc_pai)
+			  THEN L.emite_conta
+			  ELSE
+			  
+			  END,
+		CASE
+			WHEN isnull(L.cortar,) = 
+			  THEN '#39'
+			ELSE
+			  L.cortar
+		 END,
+		L.calcula_imposto,
+		isnull(L.endereco_entrega, ) as cg_entrega_alternativa,
+		CASE /*CALCULA_CONTA*/
+			WHEN (L.ident_consumidor = 1)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 2) and (L.cdc <> L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 3) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 4) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 5) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 6) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 7) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 8) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 9) and (L.cdc <> L.cdc_pai)
+			THEN L.calcula_conta
+			WHEN (L.ident_consumidor = 10) and (L.cdc = L.cdc_pai)
+			THEN L.calcula_conta
+		ELSE '#39'
+		END,
+		dias_bloqueio_tarifa_ant,
+		dias_bloqueio_tarifa_atual,
+		CASE  /*VIRTUAL*/
+			WHEN (L.ident_consumidor = 1) 
+			THEN '#39'
+			WHEN (L.ident_consumidor = 2) and (L.cdc = L.cdc_pai) 
+			THEN '#39'
+			WHEN (L.ident_consumidor = 9) 
+			THEN '#39'
+			WHEN (L.ident_consumidor <> 1) and (L.ident_consumidor <> 2) and(L.ident_consumidor <> 9) and(L.cdc <> L.cdc_pai)
+			THEN '#39'
+		ELSE '#39'
+      
+		END,
+          L.codigo_logradouro,
+          CASE
+            WHEN L.bloqueado <> 
+              THEN L.data_bloqueio
+            ELSE
+              null
+          END,
+          G.data_proxima_leitura
+      from 
+		DIADEMA_IV.dbo.IDA_GRUPOS G, 
+		DIADEMA_IV.dbo.IDA_LOGRADOUROS E, 
+		DIADEMA_IV.dbo.IDA_LIGACOES L
+      LEFT OUTER JOIN DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUMO H ON L.cdc = H.cdc 
+															and L.grupo = H.grupo 
+															and H.referencia = (
+																					select MAX(referencia)
+																					from DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUMO H2
+																					where H2.GRUPO = L.GRUPO
+																					AND	H2.cdc = L.cdc
+																				)
+      where 
+		L.grupo = :Grupo
+		AND L.grupo = G.grupo
+        and E.grupo = L.grupo
+		and L.codigo_logradouro = E.codigo
+		and G.Data_Processamento is null
+      )
+    
+------------------------------------------------------------------------------	
+	
+      insert into debitos
+      (
+		  db_matricula,
+		  db_grupo,
+		  db_rota,
+		  db_referencia,
+		  db_tipo,
+		  db_qtde_debitos,
+		  db_valor_total,
+		  db_data_vencimento,
+		  db_codigo_barras
+      )
+      (
+		  select
+			  D.cdc,
+			  L.grupo,
+			  L.rota,
+			  (
+				select referencia
+					from DIADEMA_IV.dbo.IDA_GRUPOS
+					where grupo = L.grupo
+					and data_processamento is null
+			  ),
+			  D.tipo,
+			  D.qtde_debitos,
+			  D.valor_total,
+			  D.data_vencimento,
+			  D.codigo_barras
+		  from
+			  DIADEMA_IV.dbo.IDA_LIGACOES L,
+			  DIADEMA_IV.dbo.IDA_DEBITOS D
+		  where 
+			L.cdc = D.cdc
+			and L.grupo = :grupo
+			and D.grupo = :grupo
+      )
+	  
+-----------------------------------------------------------------------------------
+	  
+	  
+      insert into debitos_itens
+      (
+		  di_matricula,
+		  di_grupo,
+		  di_referencia,
+		  di_referencia_debito,
+		  di_valor,
+		  di_sequencia
+      )
+      (
+		  select
+			  DI.cdc,
+			  :grupo,
+			  (
+				select referencia
+				from DIADEMA_IV.dbo.IDA_GRUPOS
+				where 
+					grupo = :grupo
+					and data_processamento is null
+			  ),
+			  DI.referencia,
+			  DI.valor,
+			  (
+				select count(*) + 1
+				from DIADEMA_IV.dbo.IDA_DEBITOS_ITENS DI2
+				where 
+					DI.cdc = DI2.cdc
+					and DI.grupo = DI2.grupo
+					and DI2.referencia < DI.referencia
+			   ) as sequencia
+		  from DIADEMA_IV.dbo.IDA_DEBITOS_ITENS DI
+			where
+			  DI.grupo = :grupo
+      )
+	  
+---------------------------------------------------------------------------------------------
+
+	insert into descontos
+      (
+		  de_grupo,
+		  de_referencia,
+		  de_codigo,
+		  de_percentual,
+		  de_limite_inicial,
+		  de_tipo_desconto
+      )
+      (
+		  select
+		  grupo,
+		  (
+			select referencia
+			  from DIADEMA_IV.dbo.IDA_GRUPOS
+			    where grupo = :grupo
+				and data_processamento is null
+		   ),
+		  codigo,
+		  percentual,
+		  limite_inicial,
+		  indicativo_desconto
+		  from DIADEMA_IV.dbo.IDA_CLASSIFICACAO_IMOVEIS
+		  where grupo = :grupo
+      )
+	  
+---------------------------------------------------------------------------------------------------
+					--PROBLEMA
+					
+      insert into HISTORICO_CONSUMO
+      (
+		hc_matricula,
+		hc_grupo,
+		hc_referencia,
+		hc_setor_leitura,
+		hc_consumo,
+		hc_ocorrencia_leitura,
+		hc_dias_consumo,
+		hc_ref_historico,
+		hc_leitura,
+		hc_data_leitura,
+		hc_leitura_real,
+		hc_sequencia
+      )
+      (
+		  select
+			H.cdc,
+			L.grupo,
+			G.referencia,
+			L.setor,
+			H.consumo,
+			H.ocorrencia,
+			H.dias_consumo,
+			H.referencia,
+			H.leitura,
+			H.data_leitura,
+			H.leitura_real,
+			(
+				select count(*) + 1 
+				from  DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUMO H2 
+				where H2.cdc = H.cdc
+					and H2.grupo = H.grupo
+					and H2.referencia < H.referencia) as sequencia
+				from
+					DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUMO H,
+					DIADEMA_IV.dbo.IDA_LIGACOES L,
+					DIADEMA_IV.dbo.IDA_GRUPOS G
+				where
+					L.cdc = H.cdc
+					and L.grupo = G.grupo
+					and G.data_processamento is null
+					and L.grupo = :grupo
+					and H.grupo = :grupo
+			)
+      )
+	  
+----------------------------------------------------------------------------------------
+
+      insert into impostos
+      (
+		  ip_grupo,
+		  ip_referencia,
+		  ip_data_inicial,
+		  ip_ir,
+		  ip_csll,
+		  ip_pis,
+		  ip_cofins
+      )
+      (
+		  select
+		  grupo,
+		  (select referencia
+				from DIADEMA_IV.dbo.IDA_GRUPOS
+				where grupo = :grupo
+				and data_processamento is null),
+		  data_inicial,
+		  ir,
+		  csll,
+		  pis,
+		  cofins
+		  from
+		  DIADEMA_IV.dbo.IDA_IMPOSTOS I
+			where
+			  I.grupo = :grupo
+      )
+      
+---------------------------------------------------------------------------------------------------
+    (
+      insert into agentes
+      (
+      ag_grupo,
+      ag_referencia,
+      ag_codigo,
+      ag_nome,
+      ag_senha
+      )
+      (
+      select
+      grupo,
+      (select referencia
+            from DIADEMA_IV.dbo.IDA_GRUPOS
+            where grupo = :grupo
+            and data_processamento is null),
+      codigo,
+      nome,
+      senha
+      from
+      DIADEMA_IV.dbo.IDA_AGENTES
+        where
+          grupo = :grupo
+      ))
+	  
+---------------------------------------------------------------------------------
+	  
+	  (
+      insert into mensagens
+      (
+      mg_grupo,
+      mg_referencia,
+      mg_data_inicial,
+      mg_descricao1,
+      mg_descricao2,
+      mg_descricao3
+      
+      )
+      (
+      select
+      grupo,
+      (select referencia
+            from DIADEMA_IV.dbo.IDA_GRUPOS
+            where grupo = :grupo
+            and data_processamento is null),
+      M.data_inicial,
+      M.mensagem1,
+      M.mensagem2,
+      M.mensagem3
+      from
+      DIADEMA_IV.dbo.IDA_MENSAGENS M
+        where
+          M.grupo = :grupo
+      ))
+	  
+----------------------------------------------------------------------------------------------------------------
+	  
+	  (
+      insert into ocorrencias
+      (
+      oc_grupo,
+      oc_referencia,
+      oc_codigo,
+      oc_descricao,
+      oc_calculo,
+      oc_mensagem,
+      oc_acesso
+      )
+      (
+      grupo,
+      (select referencia
+            from DIADEMA_IV.dbo.IDA_GRUPOS
+            where grupo = :grupo
+            and data_processamento is null),
+      codigo,
+      descricao,
+      calculo,
+      mensagem,
+      acesso
+      from
+      DIADEMA_IV.dbo.IDA_OCORRENCIAS
+        where
+          grupo = :grupo
+      )
+      
+      
+      )
+
+-----------------------------------------------------------------------------------------------------	  
+	  
+	  (
+      insert into roteiros
+      (                               
+      rt_grupo,
+      rt_rota,
+      rt_referencia,
+      rt_data_vencto,
+        rt_data_recepcao,
+      rt_ordem_inicial,
+      rt_ordem_final,
+      rt_ind_leitura,
+      rt_leitura_prev,
+      rt_maleta,
+      rt_data_carga,
+      rt_data_descarga,
+      rt_data_transmissao,
+        rt_data_prox_leitura
+      )
+      (
+      select distinct
+      L.grupo,
+      L.rota,
+      G.referencia,
+      (select MIN(data_vencimento) from
+      (select COUNT(*) as total, data_vencimento
+      from DIADEMA_IV.dbo.IDA_LIGACOES
+            where grupo = :grupo
+      group by data_vencimento) as totais) as data_vencimento,
+      G.data_envio,
+      (select MIN(sequencia)
+      from DIADEMA_IV.dbo.IDA_LIGACOES L2
+      where L2.grupo = L.grupo
+      and L2.rota = L.rota) as sequencia_inicial,
+      (select MAX(sequencia)
+      from DIADEMA_IV.dbo.IDA_LIGACOES L2
+      where L2.grupo = L.grupo
+      and L2.rota = L.rota) as sequencia_final,
+      1 ,
+      G.data_leitura,
+      null ,
+      null ,
+      null ,
+          null ,
+          G.data_proxima_leitura
+      from
+      DIADEMA_IV.dbo.IDA_GRUPOS G,
+          DIADEMA_IV.dbo.IDA_LIGACOES L
+      where
+      L.grupo = G.grupo
+      and L.grupo = :grupo
+      ))
+	  
+---------------------------------------------------------------------------------------------	  
+	  
+	  (
+      insert into segundas_vias
+      (
+      sv_matricula,
+      sv_grupo,
+        sv_rota,
+      sv_referencia,
+      sv_referencia_seg_via,
+      sv_data_vencimento,
+      sv_data_leitura,
+      sv_data_leitura_anterior,
+      sv_leitura_atual,
+      sv_leitura_anterior,
+      sv_dias_consumo,
+      sv_consumo_faturado,
+      sv_media,
+      sv_ref_cons_1,
+      sv_cons_1,
+      sv_ref_cons_2,
+      sv_cons_2,
+      sv_ref_cons_3,
+      sv_cons_3,
+      sv_ref_cons_4,
+      sv_cons_4,
+      sv_ref_cons_5,
+      sv_cons_5,
+      sv_ref_cons_6,
+      sv_cons_6,
+      sv_servico_01,
+      sv_valor_01,
+      sv_servico_02,
+      sv_valor_02,
+      sv_servico_03,
+      sv_valor_03,
+      sv_servico_04,
+      sv_valor_04,
+      sv_servico_05,
+      sv_valor_05,
+      sv_servico_06,
+      sv_valor_06,
+      sv_servico_07,
+      sv_valor_07,
+      sv_servico_08,
+      sv_valor_08,
+      sv_servico_09,
+      sv_valor_09,
+      sv_valor_total,
+      sv_codigo_barras,
+      sv_ocorrencia
+      
+      )
+      
+      (
+      select
+      SV.cdc,
+      L.grupo,
+          L.rota,
+      (select referencia
+          from DIADEMA_IV.dbo.IDA_GRUPOS
+          where grupo = L.grupo
+          and data_processamento is null),
+      SV.referencia,
+      SV.data_vencimento,
+      SV.data_leitura,
+      SV.data_leitura_anterior,
+      SV.leitura_atual,
+      SV.leitura_anterior,
+      SV.dias_consumo,
+      SV.consumo_faturado,
+      SV.media,
+      isnull(SV.ref_cons_1,getdate()),
+      isnull(SV.cons_1,0),
+      isnull(SV.ref_cons_2,getdate()),
+      isnull(SV.cons_2,0),
+      isnull(SV.ref_cons_3,getdate()),
+      isnull(SV.cons_3,0),
+      isnull(SV.ref_cons_4,getdate()),
+      isnull(SV.cons_4,0),
+      isnull(SV.ref_cons_5,getdate()),
+      isnull(SV.cons_5,0),
+      isnull(SV.ref_cons_6,getdate()),
+      isnull(SV.cons_6,0),
+      isnull(SV.servico_01,),
+      isnull(SV.valor_01,0),
+      isnull(SV.servico_02,),
+      isnull(SV.valor_02,0),
+      isnull(SV.servico_03,),
+      isnull(SV.valor_03,0),
+      isnull(SV.servico_04,),
+      isnull(SV.valor_04,0),
+      isnull(SV.servico_05,),
+      isnull(SV.valor_05,0),
+      isnull(SV.servico_06,),
+      isnull(SV.valor_06,0),
+      isnull(SV.servico_07,),
+      isnull(SV.valor_07,0),
+      isnull(SV.servico_08,),
+      isnull(SV.valor_08,0),
+      isnull(SV.servico_09,),
+      isnull(SV.valor_09,0),
+      isnull(SV.valor_total,0),
+      
+        isnull(SV.codigo_barras,#390000000000000000000000000000000000000 +
+        0000000#39),
+      isnull(SV.ocorrencia,0)
+      from
+      DIADEMA_IV.dbo.IDA_LIGACOES L, 
+      DIADEMA_IV.dbo.IDA_SEGUNDAS_VIAS SV
+      where L.cdc = SV.cdc
+      and L.grupo = :grupo
+            and SV.grupo = :grupo
+      
+      ))
+	  
+--------------------------------------------------------------------------------------------------	  
+	  
+	  (
+      insert into servicos
+      (
+      sr_matricula,
+      sr_grupo,
+        sr_rota,
+      sr_referencia,
+      sr_sequencia,
+      sr_descricao,
+      sr_valor,
+      sr_ind_credito
+      )
+      (
+      select
+      C.cdc,
+      G.grupo,
+          L.rota,
+      G.referencia,
+      isnull(
+                  (select MAX(sr_sequencia) + 1
+                  from servicos
+                  where sr_matricula = C.cdc)
+                  ,1) as sequencia,
+      #39CR#201DITO#39,
+          CASE
+            WHEN C.valor >= 0 THEN C.valor
+            ELSE ( -1 *(C.valor))
+          END,
+          #39S#39
+      from DIADEMA_IV.dbo.IDA_CREDITOS C,
+          DIADEMA_IV.dbo.IDA_LIGACOES L,
+          DIADEMA_IV.dbo.IDA_GRUPOS G
+      where C.cdc = L.cdc
+      and L.grupo = G.grupo
+      and L.grupo = :grupo
+            and G.data_processamento is null
+            and C.grupo = :grupo
+      
+      )
+      
+-----------------------------------------------------------------------------------------------------------------------
+      
+      insert into servicos
+      (
+      sr_matricula,
+      sr_grupo,
+        sr_rota,
+      sr_referencia,
+      sr_sequencia,
+      sr_descricao,
+      sr_valor,
+      sr_ind_credito
+      )
+      (
+      select
+      S.cdc,
+      L.grupo,
+          L.rota,
+      G.referencia,
+      CASE
+      
+        WHEN EXISTS (select sr_sequencia from servicos where sr_matri +
+        cula = S.cdc)
+      THEN S.sequencia + 1
+      ELSE S.sequencia
+      END,
+      S.descricao,
+          CASE
+            WHEN S.valor >= 0 THEN S.valor
+            ELSE ( -1 *(S.valor))
+          END,
+          CASE
+            WHEN S.valor >= 0 THEN 
+            ELSE #39S#39
+          END
+      from
+      DIADEMA_IV.dbo.IDA_SERVICOS S,
+          DIADEMA_IV.dbo.IDA_LIGACOES L,
+          DIADEMA_IV.dbo.IDA_GRUPOS G
+      where
+      L.grupo *= G.grupo
+      and S.cdc = L.cdc
+      and L.grupo = :grupo
+          and G.data_processamento is null
+          and S.grupo = :grupo
+      
+      
+      )
+      
+ --------------------------------------------------------------------------------------------------------     
+      /*
+      select * from DIADEMA_IV.dbo.IDA_CREDITOS
+      */)
+	(
+      insert into tarifas
+      (
+      tr_grupo,
+      tr_referencia,
+      tr_categoria,
+      tr_data_inicial,
+      tr_faixa_inicial,
+      tr_faixa_final,
+      tr_agua,
+      tr_esgoto,
+      tr_sequencia
+      )
+      (
+      select
+      grupo,
+      (select referencia
+            from DIADEMA_IV.dbo.IDA_GRUPOS
+            where grupo = :grupo
+      and data_processamento is null
+      and data_retorno is null),
+      T.categoria,
+      T.data_vigencia,
+      CASE
+      WHEN (
+      select count(*) 
+      from DIADEMA_IV.dbo.IDA_TARIFAS T2 
+      where T2.data_vigencia = T.data_vigencia
+      and T2.categoria = T.categoria
+              and T2.data_vigencia = T.data_vigencia
+      and T2.limite_consumo < T.limite_consumo
+              and T2.grupo = T.grupo
+      ) = 0
+      THEN 0
+      ELSE
+      (
+      select TOP 1 T2.limite_consumo + 1
+      from DIADEMA_IV.dbo.IDA_TARIFAS T2
+      where T2.data_vigencia = T.data_vigencia
+      and T2.categoria = T.categoria
+              and T2.data_vigencia = T.data_vigencia
+      and T2.limite_consumo < T.limite_consumo
+              and T2.grupo = T.grupo
+      order by limite_consumo desc
+      )
+      END,
+      T.limite_consumo,
+      T.agua,
+      T.esgoto,
+      (select count(*) + 1
+      from  DIADEMA_IV.dbo.IDA_TARIFAS T2
+      where T2.categoria = T.categoria
+              and T2.data_vigencia = T.data_vigencia
+      and T2.limite_consumo < T.limite_consumo
+              and T2.data_vigencia = T.data_vigencia
+              and T2.grupo = T.grupo) as sequencia
+      from
+      DIADEMA_IV.dbo.IDA_TARIFAS T
+        where T.grupo = :grupo
+      
+      )
+      
+      )
+	  
+-------------------------------------------------------------------------------------------------------
+	(
+      insert into qualidades_agua
+      (
+      qa_grupo,
+      qa_referencia,
+      qa_data,
+      qa_turbidez,
+      qa_cloro,
+      qa_coliformes_totais,
+      qa_coliformes_termotolerantes,
+      qa_ph,
+      qa_cor,
+      qa_fluoreto,
+      qa_turbidez_Amostras,
+      qa_turbidez_Nao_Conformes,
+      qa_cloro_Amostras,
+      qa_cloro_Nao_Conformes,
+      qa_coliformes_Totais_Amostras,
+      qa_coliformes_Totais_Nao_Conformes,
+      qa_coliformes_Termotolerantes_Amostras,
+      qa_coliformes_Termotolerantes_Nao_Conformes,
+      qa_pH_Amostras,
+      qa_pH_Nao_Conformes,
+      qa_cor_Amostras,
+      qa_cor_Nao_Conformes,
+      qa_fluoreto_Amostras,
+      qa_fluoreto_Nao_Conformes
+      
+      )
+      (
+      select
+      grupo,
+      (select referencia
+            from DIADEMA_IV.dbo.IDA_GRUPOS
+            where grupo = :grupo
+            and data_processamento is null),
+      data,
+      turbidez,
+      cloro,
+      coliformes_totais,
+      coliformes_termotolerantes,
+      ph,
+      cor,
+      fluoreto,
+      isnull(Turbidez_Amostras, 150),
+      isnull(Turbidez_Nao_Conformes, 0),
+      isnull(Cloro_Amostras, 150),
+      isnull(Cloro_Nao_Conformes, 0),
+      isnull(Coliformes_Totais_Amostras, 150),
+      isnull(Coliformes_Totais_Nao_Conformes, 0),
+      isnull(Coliformes_Termotolerantes_Amostras, 150),
+      isnull(Coliformes_Termotolerantes_Nao_Conformes, 0),
+      isnull(pH_Amostras, 150),
+      isnull(pH_Nao_Conformes, 0),
+      isnull(Cor_Amostras, 150),
+      isnull(Cor_Nao_Conformes, 0),
+      isnull(Fluoreto_Amostras, 150),
+      isnull(Fluoreto_Nao_Conformes, 0)
+      from
+      DIADEMA_IV.dbo.IDA_QUALIDADE_AGUA
+        where grupo = :grupo
+        and data = 
+                (  select max(data)
+                   from DIADEMA_IV.dbo.IDA_QUALIDADE_AGUA
+                   where grupo = :grupo
+                )
+      ))
+	  
+--------------------------------------------------------------------------------------------------------------------------
+      
+      -- apaga as ocorr#234ncias existentes
+      delete from dbo.report_ocorrencia
+      where ro_grupo = :grupo
+      and ro_referencia = :referencia
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_GRUPO
+      select 
+			@nQtde = count(*)
+		from DIADEMA_IV.dbo.IDA_GRUPOS
+		where Referencia = :referencia
+		and Grupo = :grupo
+		
+      if @nQtde = 0 begin
+	  
+		  insert into dbo.report_ocorrencia
+		  
+			(ro_grupo, ro_referencia, ro_tabela, ro_matricula, ro_descric +
+			ao)
+		  
+			values(:grupo, :referencia, #39IDA_GRUPOS#39, null, #39INEXISTE REG +
+			ISTROS#39)
+      end
+      
+      
+     -- VALIDA A DATA DE PREVIS#195O LEITURA N#195O PODE SER INFERIOR Dia + atual - 5 dias
+      
+		insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descrica + o
+		)
+      
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_GRUPOS#39, 
+			null, 
+			#39DATA PREVIS#195O + LEITURA INFERIOR A DATA LIMITE#39
+        from diadema_iv.dbo.ida_grupos
+		where	Referencia = :referencia
+		and	Grupo = :grupo
+        and	Data_Leitura < (getdate()-5)
+      
+      
+     -- VALIDA A DATA DE PROXIMA LEITURA N#195O PODE SER INFERIOR Di + a Atual + 15 dias
+		
+		insert into dbo.report_ocorrencia
+		(
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descrica +o
+		)
+      
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_GRUPOS#39, 
+			null, 
+			#39DATA PREVIS#195O+PR#211XIMA LEITURA INFERIOR A DATA LIMITE#39
+        from diadema_iv.dbo.ida_grupos
+		where Referencia = :referencia
+		and Grupo = :grupo
+        and Data_Proxima_Leitura < (getdate()+15)
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_AGENTES
+      
+		select @nQtde = count(*)
+		from DIADEMA_IV.dbo.IDA_AGENTES
+		where Grupo = :grupo
+      
+	  if @nQtde = 0 begin
+      
+		insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descric +ao
+		)
+		values
+	    (
+			:grupo, 
+			:referencia, 
+			#39IDA_AGENTES#39, 
+			null, 
+			#39INEXISTE RE + GISTROS#39
+		)
+	
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_TARIFAS
+      
+	  select @nQtde = count(*)
+		from DIADEMA_IV.dbo.IDA_TARIFAS
+		where Grupo = :grupo
+      
+	  if @nQtde = 0 begin
+		insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descric +ao
+		)
+        values
+		(
+			:grupo, 
+			:referencia, 
+			#39IDA_TARIFAS#39, 
+			null, 
+			#39INEXISTE RE + GISTROS#39
+		)
+		
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_QUALIDADE_AGUA
+	  
+      select @nQtde = count(*)
+		from DIADEMA_IV.dbo.IDA_QUALIDADE_AGUA
+		where Grupo = :grupo
+      if @nQtde = 0 begin
+      
+		  insert into dbo.report_ocorrencia
+			(
+				ro_grupo, 
+				ro_referencia, 
+				ro_tabela, 
+				ro_matricula, 
+				ro_descric +ao
+			)
+		  values
+		   (
+				:grupo, 
+				:referencia, 
+				#39IDA_QUALIDADE_AGUA#39, 
+				null, 
+				#39INEX +ISTE REGISTROS#39
+			)
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_OCORRENCIAS
+	  
+      select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_OCORRENCIAS
+      where Grupo = :grupo
+	  
+      if @nQtde = 0 begin
+		  insert into dbo.report_ocorrencia
+			(
+				ro_grupo, 
+				ro_referencia, 
+				ro_tabela, 
+				ro_matricula, 
+				ro_descric +ao
+			)
+			values
+			(
+				:grupo, 
+				:referencia, 
+				#39IDA_OCORRENCIAS#39, 
+				null, 
+				#39INEXIST +E 
+				REGISTROS#39
+			)
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_LOGRADOUROS
+	  
+      select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_LOGRADOUROS
+      where Grupo = :grupo
+	  
+      if @nQtde = 0 begin
+		  insert into dbo.report_ocorrencia
+			(
+				ro_grupo, 
+				ro_referencia, 
+				ro_tabela, 
+				ro_matricula, 
+				ro_descric +ao
+			)
+		  values
+		  (
+				:grupo, 
+				:referencia, 
+				#39IDA_LOGRADOUROS#39, 
+				null, 
+				#39INEXIST +E 
+				REGISTROS#39
+			)
+      end
+      
+      
+        -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_CLASSIFICACAO_IMOVEIS
+      
+	  select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_CLASSIFICACAO_IMOVEIS
+      where Grupo = :grupo
+      if @nQtde = 0 begin
+		  insert into dbo.report_ocorrencia
+		  (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descric +ao
+		  )
+		  values
+		 (
+			:grupo, 
+			:referencia, 
+			#39IDA_CLASSIFICACAO_IMOVEIS#39, 
+			null, 
+			#39INEXISTE REGISTROS#39
+		 )
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_IMPOSTOS
+	  
+      select @nQtde = count(*)
+      fromDIADEMA_IV.dbo.IDA_IMPOSTOS
+      whereGrupo = :grupo
+      if @nQtde = 0 begin
+		  insert into dbo.report_ocorrencia
+		  (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descric+ao
+		  )
+		  values
+		  (
+			:grupo, 
+			:referencia, 
+			#39IDA_IMPOSTOS#39, 
+			null, 
+			#39INEXISTER+EGISTROS#39
+		  )
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_IDENT_CONSUMIDOR
+	  
+      select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_IDENT_CONSUMIDOR
+      where Grupo = :grupo
+      if @nQtde = 0 begin
+		  insert into dbo.report_ocorrencia
+		  (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		  )
+		  values(:grupo, :referencia, #39IDA_IDENT_CONSUMIDOR#39, null, #39IN +
+			EXISTE REGISTROS#39)
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_MENSAGENS
+	  
+      select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_MENSAGENS
+      where Grupo = :grupo
+      if @nQtde = 0 begin
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        values
+		(
+			:grupo, 
+			:referencia, 
+			#39IDA_MENSAGENS#39, 
+			null, 
+			#39INEXISTEREGISTROS#39
+		)
+      end
+      
+      -- VALIDA A QUANTIDA DE REGISTRO NA TABELA IDA_LIGACOES
+	  
+      select @nQtde = count(*)
+      from DIADEMA_IV.dbo.IDA_LIGACOES
+      where Grupo = :grupo
+      if @nQtde = 0 begin
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        values
+		(
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			null, 
+			#39INEXISTE REGISTROS#39
+		)
+      end
+      
+      -- -------------------------
+      -- VALIDA TABELA DE LIGA#199#213ES
+      
+      -- Verifica Emite Conta
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+		  select
+				:grupo, 
+				:referencia, 
+				#39IDA_LIGACOES#39, 
+				CDC, 
+				#39FLAG EMITE CONTA DIFERENTE DE S OU N#39
+		  from DIADEMA_IV.dbo.IDA_LIGACOES
+		  where Grupo = :grupo
+		  and is null(emite_conta,#39X#39) not in (#39S#39,)
+      
+      -- Verifica Calcula Conta
+		
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39FLAG CALCULA CONTA DIFERENTE DE S OU N#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and is null(emite_conta,#39X#39) not in (#39S#39,)
+      
+      -- Verifica Calcula Imposto
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39FLAG CALCULA IMPOSTO DIFERENTE DE S OU N#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and is null(calcula_imposto,#39X#39) not in (#39S#39,)
+      
+      -- Verifica Economias igual a ZERO
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM ECONOMIAS IGUAL A ZERO#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+        and(IsNull(Eco_Res, 0) + IsNull(Eco_Com, 0) + IsNull(Eco_Ind, 0) + IsNull(Eco_Pub, 0) + IsNull(Eco_Soc, 0)) = 0
+      
+      -- Verifica M#233dia de Consumo NULA ou inferior a Zero
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+      
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM M#201DIA DE CONSUMO INV#193LIDA#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and (Media is null or Media < 0)
+      
+      -- Verifica Categoria
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM CATEGORIA INEXISTENTE: #39 + RTRIM(CONVERT(CHAR, Categoria_Imovel))
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+        where Grupo = :grupo
+		and IsNull(Categoria_Imovel,0) not in (1, 2, 3, 4, 5, 6, 7, 8)
+      
+        -- Verifica Categoria Entidade Assistencial = 8 n#227o pode ser mista
+      
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM CATEGORIA 8 E ECONOMIAS MISTAS#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and Categoria_Imovel = 8
+        and((case when IsNull(Eco_Res, 0) > 0 then 1 else 0 end) 
+			(case when IsNull(Eco_Com, 0) > 0 then 1 else 0 end) 
+			(case when IsNull(Eco_Ind, 0) > 0 then 1 else 0 end) 
+			(case when IsNull(Eco_Pub, 0) > 0 then 1 else 0 end) 
+			(case when IsNull(Eco_Soc, 0) > 0 then 1 else 0 end)) > 1
+      
+      
+        -- Verifica Categoria Grandes Consumidores = 7 n#227o pode ter economia diferente de 1
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM CATEGORIA 8 E ECONOMIAS MISTAS#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and Categoria_Imovel = 7
+        and(IsNull(Eco_Res, 0) + IsNull(Eco_Com, 0) + IsNull(Eco_Ind, 0) + IsNull(Eco_Pub, 0) + IsNull(Eco_Soc, 0)) != 1
+      
+      
+      -- Verifica Natureza da Liga#231#227o
+      
+	  
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM NATUREZA INEXISTENTE: #39, 
+			RTRIM(CONVERT(CHAR, Natureza_Ligacao))
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and Is Null(Natureza_Ligacao,0) not in (1, 2, 3)
+      
+      -- Verifica Data de Vencimento
+	  
+      insert into dbo.report_ocorrencia
+      
+        (ro_grupo, ro_referencia, ro_tabela, ro_matricula, ro_descrica +
+        o)
+      
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM DATA DE VENCIMENTO NULA OU INFERIOR A REFERENCIA#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and(Data_Vencimento is null
+		or Data_Vencimento < :referencia)
+      
+      -- Verifica Data de Vencimento
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC COM DATA DE VENCIMENTO SUPERIORES A 90 DIAS#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where Grupo = :grupo
+		and(Data_Vencimento > (CAST(:referencia AS Datetime) + 90))
+      
+      -- Verifica CDC inexistente ou fora do Roteiro
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			CDC, 
+			#39CDC PAI #39 + R +
+        TRIM(CONVERT(CHAR, CDC_Pai)) + #39 INEXISTENTE NO ROTEIRO#39
+		from DIADEMA_IV.dbo.IDA_LIGACOES P
+		where Grupo = :grupo
+		and CDC_Pai is not null
+		and CDC_Pai > 0
+		and 0 = (
+					selectcount(*)
+					from DIADEMA_IV.dbo.IDA_LIGACOES C
+					where C.Grupo = P.Grupo
+					and C.Rota = P.Rota
+					and C.CDC = P.CDC_Pai
+				)
+      
+      -- -------------------------------------------------
+      -- Valida a exist#234ncia de CDC na tabela IDA_LIGACOES
+      -- Valida IDA_HISTORICOS_CONSUMO
+      
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_HISTORICOS_CONSUMO#39, 
+			CDC, 
+			#39CDC +
+			N#195O ENVIADO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUMO P
+		where Grupo = :grupo
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_SERVICOS
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		) 
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_SERVICOS#39, 
+			CDC, 
+			#39CDC N#195O ENVIA DO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_SERVICOS P
+		where Grupo = :grupo
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_CREDITOS
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_CREDITOS#39, 
+			CDC, 
+			#39CDC N#195O ENVIA DO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_CREDITOS P
+		where Grupo = :grupo
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_SEGUNDAS_VIAS
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_SEGUNDAS_VIAS#39, 
+			CDC, 
+			#39CDC N#195O ENVIADO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_SEGUNDAS_VIAS P
+		where Grupo = :grupo 
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_SEGUNDAS_VIAS
+	  
+      insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+      select
+		:grupo, 
+		:referencia, 
+		#39IDA_SEGUNDAS_VIAS#39, 
+		CDC, 
+		#39CDC COM VALOR MENOR QUE ZERO#39
+      from	DIADEMA_IV.dbo.IDA_SEGUNDAS_VIAS P
+      where	Grupo = :grupo
+      and Valor_Total < 0
+      
+      -- Valida IDA_DEBITOS
+      
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_DEBITOS#39, 
+			CDC, 
+			#39CDC N#195O ENVIADO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_DEBITOS P
+		where Grupo = :grupo 
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_DEBITOS
+      
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_DEBITOS#39, 
+			CDC, 
+			#39CDC COM VALOR MENOR QUE ZERO#39
+		from DIADEMA_IV.dbo.IDA_DEBITOS P
+		where Grupo = :grupo
+		and Valor_Total < 0
+      
+      -- Valida IDA_DEBITOS_ITENS
+      
+	  insert into dbo.report_ocorrencia 
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_DEBITOS_ITENS#39, 
+			CDC, 
+			#39CDC N#195O ENVIADO NO TABELA DE LIGA#199#213ES#39
+		from DIADEMA_IV.dbo.IDA_DEBITOS_ITENS P
+        where Grupo = :grupo  
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida IDA_DEBITOS_ITENS
+      
+	  insert into dbo.report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select
+			:grupo, 
+			:referencia, 
+			#39IDA_DEBITOS_ITENS#39, 
+			CDC, 
+			#39CDC N#195O ENVIADO NO TABELA DE D#201BITOS#39
+		from DIADEMA_IV.dbo.IDA_DEBITOS_ITENS P
+		where Grupo = :grupo 
+        and 0 = (select count(*) from DIADEMA_IV.dbo.IDA_LIGACOES C where C.Grupo = P.Grupo and C.CDC = P.CDC)
+      
+      -- Valida SEQUENCIALIZACAO DO GRUPO
+      
+	  insert into report_ocorrencia
+      (
+		ro_grupo, 
+		ro_referencia, 
+		ro_tabela, 
+		ro_descricao
+	  )
+      select 
+		  grupo, 
+		  :referencia, 
+		  #39IDA_LIGACOES#39, 
+		  '#39Sequ#234ncia repetida:#39' rtrim(convert(char, Sequencia))
+		from DIADEMA_IV.dbo.IDA_LIGACOES
+		where grupo = :grupo 
+        group by grupo, #39Sequ#234ncia repetida: #39 + rtrim(convert(char, Sequencia))
+		having count(*) > 1
+      
+      -- Valida Conjuntos (Subnormal/Compostos) em rotas diferentes
+      
+	  insert into report_ocorrencia
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		) 
+        select 
+			grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			cdc_pai, 
+			#39Conjunto com CDC Filho em Rotas distintas#39
+		from DIADEMA_IV.dbo.ida_ligacoes
+		where grupo = :grupo
+		and cdc_pai <> 0
+		group by grupo, cdc_pai
+		having count(distinct rota) > 1
+      
+        -- Valida Pais cortados
+      
+	  insert into report_ocorrencia      
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		) 
+        select 
+			grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			cdc_pai, 
+			#39CDC Pai n#227o pode estar cortado#39
+		from DIADEMA_IV.dbo.ida_ligacoes
+		where grupo = :grupo
+		and cdc_pai <> 0
+		and cdc_pai = cdc
+		and ident_calculo = #39B#39
+      
+      -- Valida filhos do subnormal cortado
+      
+	  insert into report_ocorrencia 
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)
+        select 
+			grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			cdc_pai, 
+			#39CDC Filho de Subnormal n#227o pode estar cortado#39
+		from DIADEMA_IV.dbo.ida_ligacoes
+		where grupo = :grupo
+		and cdc_pai <> 0
+		and cdc_pai <> cdc
+		and ident_calculo = #39B#39
+		and ident_consumidor = 2
+      
+      -- valida servicos apenas em CDCs que tem fatura
+      
+	  insert into report_ocorrencia 
+        (
+			ro_grupo, 
+			ro_referencia, 
+			ro_tabela, 
+			ro_matricula, 
+			ro_descricao
+		)   
+        select 
+			L.grupo, 
+			:referencia, 
+			#39IDA_LIGACOES#39, 
+			L.cdc, 
+			#39CDC com servi#231o indevido#39
+		from DIADEMA_IV.dbo.ida_ligacoes L,
+			 DIADEMA_IV.dbo.ida_servicos S
+		where L.cdc = S.cdc
+		and   L.grupo = S.grupo
+		and   L.grupo = :grupo 
+        and  ((L.ident_consumidor in (2,9) and L.cdc = L.cdc_pai) or /*pai de subnormal*/ /*pai de apartamento*/ (L.ident_consumidor in (3,8) and L.cdc <> L.cdc_pai and cdc_pa i <> 0)) /*filho de composto*/
+      
+      -- valida segundas vias apenas em CDCs que tem fatura
+      
+	  insert into report_ocorrencia
+      
+        (ro_grupo, ro_referencia, ro_tabela, ro_matricula, ro_descrica +
+        o)
+      
+        select L.grupo, :referencia, #39IDA_LIGACOES#39, L.cdc, #39CDC com s +
+        egunda via indevida#39
+      from DIADEMA_IV.dbo.ida_ligacoes L,
+      DIADEMA_IV.dbo.ida_segundas_vias S
+      where L.cdc = S.cdc
+      and   L.grupo = S.grupo
+      and   L.grupo = S.grupo
+      and   L.grupo = :grupo
+      
+        and  ((L.ident_consumidor in (2,9) and L.cdc = L.cdc_pai) or / +
+        *pai de subnormal*/ /*pai de apartamento*/
+      
+        (L.ident_consumidor in (3,8) and L.cdc <> L.cdc_pai and cdc_pa +
+        i <> 0)) /*filho de composto*/
+      
+      -- valida cr#233ditos apenas em CDCs que tem fatura
+      insert into report_ocorrencia
+      
+        (ro_grupo, ro_referencia, ro_tabela, ro_matricula, ro_descrica +
+        o)
+      
+        select L.grupo, :referencia, #39IDA_LIGACOES#39, L.cdc, #39CDC com c +
+        r#233dito indevido#39
+      from DIADEMA_IV.dbo.ida_ligacoes L,
+      DIADEMA_IV.dbo.ida_creditos S
+      where L.cdc = S.cdc
+      and   L.grupo = S.grupo
+      and   L.grupo = :grupo
+      
+        and  ((L.ident_consumidor in (2,9) and L.cdc = L.cdc_pai) or / +
+        *pai de subnormal*/ /*pai de apartamento*/
+      
+        (L.ident_consumidor in (3,8) and L.cdc <> L.cdc_pai and cdc_pa +
+        i <> 0)) /*filho de composto*/
+      
+      -- valida d#233bitos apenas em CDCs que tem fatura
+      insert into report_ocorrencia
+      
+        (ro_grupo, ro_referencia, ro_tabela, ro_matricula, ro_descrica +
+        o)
+      
+        select L.grupo, :referencia, #39IDA_LIGACOES#39, L.cdc, #39CDC com n +
+        otifica#231#227o/aviso de d#233bito indevida#39
+      from  DIADEMA_IV.dbo.ida_ligacoes L,
+      DIADEMA_IV.dbo.ida_debitos S
+      where L.cdc = S.cdc 
+      and L.grupo = S.grupo
+      and   L.grupo = :grupo
+      
+        and  ((L.ident_consumidor in (2,9) and L.cdc = L.cdc_pai) or / +
+        *pai de subnormal*/ /*pai de apartamento*/
+      
+        (L.ident_consumidor in (3,8) and L.cdc <> L.cdc_pai and cdc_pa +
+        i <> 0)) /*filho de composto*/
+              )
+
+    DatabaseName = dbMain
+    SQL.Strings = (
+      -- valida liga#231#245es
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_LIGACOES#39, #39Diferen#231a na qu +
+        antidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and(select  count(*) from DIADEMA_IV.dbo.IDA_LIGACOES where gr +
+        upo = RT_GRUPO)  <>
+      (select  count(*) from CARGA where cg_grupo = RT_GRUPO)
+      group by rt_grupo, rt_referencia
+      -- valida hist#243ricos de consumo
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_HISTORICOS_CONSUMO#39, #39Difer +
+        en#231a na quantidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and(select  count(*) from DIADEMA_IV.dbo.IDA_HISTORICOS_CONSUM +
+        O where grupo = RT_GRUPO) <>
+      
+        (select  count(*) from HISTORICO_CONSUMO where hc_grupo = RT_G +
+        RUPO)
+      group by rt_grupo, rt_referencia
+      -- valida d#233bitos
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_DEBITOS#39, #39Diferen#231a na qua +
+        ntidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and(select  count(*) from DIADEMA_IV.dbo.IDA_DEBITOS where gru +
+        po = RT_GRUPO) <>
+      (select  count(*) from DEBITOS where db_grupo = RT_GRUPO)
+      group by rt_grupo, rt_referencia
+      -- valida d#233bitos itens
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_DEBITOS_ITENS#39, #39Diferen#231a  +
+        na quantidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and(select  count(*) from DIADEMA_IV.dbo.IDA_DEBITOS_ITENS whe +
+        re grupo = RT_GRUPO) <>
+      
+        (select  count(*) from DEBITOS_ITENS where di_grupo = RT_GRUPO +
+        )
+      group by rt_grupo, rt_referencia
+      -- valida segundas vias
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_SEGUNDAS_VIAS#39, #39Diferen#231a  +
+        na quantidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and(select  count(*) from DIADEMA_IV.dbo.IDA_SEGUNDAS_VIAS whe +
+        re grupo = RT_GRUPO) <>
+      
+        (select  count(*) from SEGUNDAS_VIAS where sv_grupo = RT_GRUPO +
+        )
+      group by rt_grupo, rt_referencia
+      -- valida servicos
+      insert into report_ocorrencia
+      (ro_grupo, ro_referencia, ro_tabela, ro_descricao)
+      
+        selectrt_grupo, rt_referencia, #39IDA_SERVICOS OU IDA_CREDITOS#39,  +
+        #39Diferen#231a na quantidade de registro importados#39
+       FROMROTEIROS R1
+      WHERE RT_GRUPO = :grupo
+      
+        ANDRT_ROTA = (SELECT MAX(RT_ROTA) FROM ROTEIROS R2 WHERE R1.RT +
+        _GRUPO = R2.RT_GRUPO)
+      
+        and((select  count(*) from DIADEMA_IV.dbo.IDA_SERVICOS where g +
+        rupo = RT_GRUPO) +
+      
+         (select  count(*) from DIADEMA_IV.dbo.IDA_CREDITOS where grup +
+        o = RT_GRUPO)) <>
+      ((select  count(*) from SERVICOS where sr_grupo = RT_GRUPO) + 
+       (select  count(*) from CREDITOS where cr_grupo = RT_GRUPO))
+      group by rt_grupo, rt_referencia)

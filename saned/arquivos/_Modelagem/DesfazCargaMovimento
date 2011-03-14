@@ -1,0 +1,591 @@
+
+-- exec dbo.sp_desfaz_carga_movimento 14
+ CREATE  procedure dbo.sp_desfaz_carga_movimento (@parGrupo int)
+ 
+ AS
+begin
+
+	declare @nTeste     	int,
+		@hrInicio   	datetime,
+		@hrInicioGeral 	datetime,
+		@hrAnterior 	datetime
+	set 	@nTeste = 0
+
+	-- Para teste
+--	declare @parGrupo int
+--	select @parGrupo = 1
+--	select @nTeste = 1
+
+	if @nTeste = 1 begin
+		select	@hrInicio = getdate()
+		select	@hrInicioGeral = @hrInicio
+		Print ' -- Inicio em ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108)
+	end	
+	-- ---------------------------
+	-- Apaga as Mensagens
+	delete	from OnPlaceSANED_movimento..acq_mensagem_movimento
+	from	OnPlaceSANED..carga
+	where 	cg_grupo = @parGrupo
+	and	cg_matricula = seq_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar acq_mensagem_movimento ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga Alteração Cadastral
+	delete	from OnPlaceSANED_movimento..ACQ_ALTERACAO_CADASTRAL
+	from	OnPlaceSANED..carga
+	where 	cg_grupo = @parGrupo
+	and	cg_matricula = seq_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_ALTERACAO_CADASTRAL ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga Qualidade da Água
+	delete	from OnPlaceSANED_movimento..ACQ_QUALIDADE_AGUA
+	where 	seq_zona_abastecimento = @parGrupo
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_QUALIDADE_AGUA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga Mensagem movimento
+	delete	from OnPlaceSANED_movimento..ACQ_MENSAGEM_MOVIMENTO
+	where 	OnPlaceSANED_movimento..ACQ_MENSAGEM_MOVIMENTO.seq_grupo_fatura = @parGrupo
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MENSAGEM_MOVIMENTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MENSAGEM_MOVIMENTO
+	from	OnPlaceSANED_movimento..ACQ_MATRICULA
+	where 	seq_rota = @parGrupo
+	and	OnPlaceSANED_movimento..ACQ_MENSAGEM_MOVIMENTO.seq_matricula = OnPlaceSANED_movimento..ACQ_MATRICULA.seq_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MENSAGEM_MOVIMENTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados da Notificação
+	delete	from OnPlaceSANED_movimento..ACQ_AVISO_FATURA
+	from	OnPlaceSANED_movimento..ACQ_AVISO, OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	and	OnPlaceSANED_movimento..ACQ_AVISO_FATURA.seq_aviso = OnPlaceSANED_movimento..ACQ_AVISO.seq_aviso
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_AVISO_FATURA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_PROCESSO_CORTE
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_PROCESSO_CORTE ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_AVISO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_AVISO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados do retorno do MCP
+	-- Aviso de Débito
+	delete	from OnPlaceSANED_movimento..ONP_AVISO_DEBITO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_AVISO_DEBITO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Serviços
+	delete	from OnPlaceSANED_movimento..ONP_MATRICULA_SERVICO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MATRICULA_SERVICO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Diadema
+	delete	from OnPlaceSANED_movimento..ONP_MATRICULA_DIADEMA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MATRICULA_DIADEMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Diadema
+	delete	from OnPlaceSANED_movimento..ONP_MATRICULAS_CARGA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MATRICULAS_CARGA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Alteração cadastra
+	delete	from OnPlaceSANED_movimento..ONP_MATRICULA_ALTERACAO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MATRICULA_ALTERACAO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Faturas
+	delete	from OnPlaceSANED_movimento..ONP_FATURA_TAXA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_FATURA_TAXA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_FATURA_CATEGORIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_FATURA_CATEGORIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_FATURA_SERVICO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_FATURA_SERVICO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_FATURA_IMPOSTO_DIADEMA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_FATURA_IMPOSTO_DIADEMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_FATURA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_FATURA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- Movimento
+	delete	from OnPlaceSANED_movimento..ONP_MOVIMENTO_TAXA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MOVIMENTO_TAXA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_MOVIMENTO_CATEGORIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MOVIMENTO_CATEGORIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_MOVIMENTO_FOTO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MOVIMENTO_FOTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_MOVIMENTO_OCORRENCIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MOVIMENTO_OCORRENCIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ONP_MOVIMENTO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ONP_MOVIMENTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados da Faturas
+	delete	from OnPlaceSANED_movimento..ACQ_FATURA_TAXA
+	from	OnPlaceSANED_movimento..ACQ_FATURA, OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	and	OnPlaceSANED_movimento..ACQ_FATURA_TAXA.seq_fatura = OnPlaceSANED_movimento..ACQ_FATURA.seq_fatura
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_FATURA_TAXA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_FATURA_CATEGORIA
+	from	OnPlaceSANED_movimento..ACQ_FATURA, OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	and	OnPlaceSANED_movimento..ACQ_FATURA_CATEGORIA.seq_fatura = OnPlaceSANED_movimento..ACQ_FATURA.seq_fatura
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_FATURA_CATEGORIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_FATURA_SERVICO
+	from	OnPlaceSANED_movimento..ACQ_FATURA, OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	and	OnPlaceSANED_movimento..ACQ_FATURA_SERVICO.seq_fatura = OnPlaceSANED_movimento..ACQ_FATURA.seq_fatura
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_FATURA_SERVICO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_FATURA_IMPOSTO_DIADEMA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_FATURA_IMPOSTO_DIADEMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_FATURA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_FATURA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados da Taxas das Matriculas
+	delete	from OnPlaceSANED_movimento..ACQ_TAXA_MATRICULA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_TAXA_MATRICULA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados do Movimento
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO_SERVICO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO_SERVICO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO_TAXA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO_TAXA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO_CATEGORIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO_CATEGORIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO_FOTO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO_FOTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO_OCORRENCIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO_OCORRENCIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MOVIMENTO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MOVIMENTO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados da Matricula
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_LEITURAS
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_LEITURAS ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_DEB_AUTOMATICO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_DEB_AUTOMATICO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_HIDROMETRO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_HIDROMETRO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_SERVICO_PARCELA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_SERVICO_PARCELA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_ENTREGA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_ENTREGA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_DIADEMA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_DIADEMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_CATEGORIA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_CATEGORIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_ESPECIAL
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_ESPECIAL ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA_LIGACAO
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA_LIGACAO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	isnull(cg_matricula_pai,0) > 0
+	and	cg_matricula_pai = cg_matricula
+	and	seq_matricula_principal = cg_matricula_pai
+	and	seq_matricula != isnull(seq_matricula_principal,0)
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA - FILHOS ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_MATRICULA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_MATRICULA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_PESSOA
+	from	OnPlaceSANED..CARGA
+	where 	cg_grupo = @parGrupo
+	and	seq_pessoa = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_PESSOA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados do HIDROMETRO
+	delete	from OnPlaceSANED_movimento..ACQ_HIDROMETRO_DIADEMA
+	from	OnPlaceSANED..carga
+	where	cg_grupo = @parGrupo
+	and	seq_matricula = cg_matricula
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_HIDROMETRO_DIADEMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_HIDROMETRO
+	from	OnPlaceSANED..carga
+	where	cg_grupo = @parGrupo
+	and	cod_hidrometro = cg_numero_hd
+	and	ltrim(rtrim(isnull(cg_numero_hd,''))) != ''
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_HIDROMETRO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	-- ---------------------------
+	-- Apaga dados do GRUPO
+	delete	from OnPlaceSANED_movimento..ACQ_GRUPO_FATURA_CRONOGRAMA
+	from	OnPlaceSANED..ROTEIROS
+	where	rt_grupo = @parGrupo
+	and	seq_roteiro = convert(numeric, '1'+OnPlaceSANED.dbo.fc_completa_zeros(rt_grupo, 3)+OnPlaceSANED.dbo.fc_completa_zeros(rt_rota,3))
+	and	cod_referencia = convert(varchar(7), rt_referencia, 102 )
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_GRUPO_FATURA_CRONOGRAMA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+	
+	delete	from OnPlaceSANED_movimento..ACQ_GRUPO_REFERENCIA		
+	where	seq_grupo_fatura = @parGrupo
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_GRUPO_REFERENCIA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+	
+	delete	from OnPlaceSANED_movimento..ACQ_ROTEIRO		
+	where	seq_grupo_fatura = @parGrupo
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_ROTEIRO ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	delete	from OnPlaceSANED_movimento..ACQ_GRUPO_FATURA		
+	where	seq_grupo_fatura = @parGrupo
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicio 
+		select	@hrInicio = getdate()
+		Print ' -- Apagar ACQ_GRUPO_FATURA ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+
+	if @nTeste = 1 begin
+		select	@hrAnterior = @hrInicioGeral
+		select	@hrInicio = getdate()
+		Print ' -- FIM ' + convert(varchar, getdate(), 103) + ' ' + convert(varchar, @hrInicio, 108) + ' Tempo: ' + convert(varchar, datediff(s, @hrAnterior, @hrInicio )) + ' segundos.'
+	end	
+end
+
+GO

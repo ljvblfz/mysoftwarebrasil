@@ -1,0 +1,188 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2025E2FB-1F55-453F-BBB3-29367FE971CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileTools</RootNamespace>
+    <AssemblyName>MobileTools</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>MobileTools</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\Release\MobileTools.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckList\ChangeAnswerArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckList\GroupQuestions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckList\ItemQuestion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckList\MultipleOptions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckList\Question.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckList\SimpleQuestion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Collections\ImageSourceCollection.cs" />
+    <Compile Include="Controls\Collections\ObjectCollection.cs" />
+    <Compile Include="Controls\IImageSource.cs" />
+    <Compile Include="Controls\ImageListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MaskEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NotificationMessageWindow.cs" />
+    <Compile Include="Controls\NotificationSoftKey.cs" />
+    <Compile Include="Controls\NotificationWithSoftKeys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RadioButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RadioButtonGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SignalIntensityControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SignatureControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Structs\SHNOTIFICATIONDATA.cs" />
+    <Compile Include="Controls\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Title.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TypeTextAlign.cs" />
+    <Compile Include="Controls\UltraButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FullScreen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GPS\DegreesMinutesSeconds.cs" />
+    <Compile Include="GPS\DeviceStateChangedEventArgs.cs" />
+    <Compile Include="GPS\Ellipsoid.cs" />
+    <Compile Include="GPS\Gps.cs" />
+    <Compile Include="GPS\GpsDeviceState.cs" />
+    <Compile Include="GPS\GpsPosition.cs" />
+    <Compile Include="GPS\LocationChangedEventArgs.cs" />
+    <Compile Include="Controls\LabelAutoResize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Led.cs" />
+    <Compile Include="Mathematics\Arrow.cs" />
+    <Compile Include="Mathematics\PointF.cs" />
+    <Compile Include="Net\Helper.cs" />
+    <Compile Include="PlatformDetection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PowerManagement\PowerManage.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mathematics\Transformations2D.cs" />
+    <Compile Include="Controls\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Serialize\BFormatter.cs" />
+    <Compile Include="Serialize\BFormatterNavigate.cs" />
+    <Compile Include="Serialize\BFormatterSource.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="SystemTimeInfo.cs" />
+    <Compile Include="ThreadSafe.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="VibrateUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CheckList\DiagramCheckList.cd" />
+    <None Include="DesignTimeAttributes1.xmta" />
+    <None Include="GPS\GPSClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Resources\PreviousButton.gif" />
+    <EmbeddedResource Include="Controls\Resources\NextButton.gif" />
+    <EmbeddedResource Include="Controls\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

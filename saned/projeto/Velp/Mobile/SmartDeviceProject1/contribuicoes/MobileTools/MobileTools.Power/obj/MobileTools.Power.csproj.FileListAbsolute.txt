@@ -1,0 +1,11 @@
+D:\Velp\SISTEMAS\MT\MobileTools.Power\bin\Debug\MobileTools.Power.dll
+D:\Velp\SISTEMAS\MT\MobileTools.Power\bin\Debug\MobileTools.Power.pdb
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Debug\MobileTools.Power.dll
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Debug\MobileTools.Power.pdb
+D:\Velp\SISTEMAS\MT\MobileTools.Power\bin\Release\MobileTools.Power.dll
+D:\Velp\SISTEMAS\MT\MobileTools.Power\bin\Release\MobileTools.Power.pdb
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Release\MobileTools.Power.dll
+D:\Velp\SISTEMAS\MT\MobileTools.Power\obj\Release\MobileTools.Power.pdb
+D:\Velp\SISTEMAS\MT\MobileTools.Power\bin\Release\MobileTools.Power.XML

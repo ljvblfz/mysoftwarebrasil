@@ -1,0 +1,8 @@
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\bin\SANEDWebService.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\bin\SANEDWebService.pdb
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\bin\Data.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\bin\GDA.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\bin\Data.pdb
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\obj\Debug\SANEDWebService.dll
+D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Service\obj\Debug\SANEDWebService.pdb
