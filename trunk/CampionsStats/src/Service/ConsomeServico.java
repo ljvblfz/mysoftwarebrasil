@@ -76,13 +76,14 @@ public class ConsomeServico extends Activity {
 	        	InputStreamReader input = new InputStreamReader(entity.getContent(),"UTF-8");
 				document = db.parse(new InputSource(input));
 			}
-        } catch (IOException ex) {  
+        } catch (IOException ex) {
+        	
             ex.printStackTrace();  
         } catch (SAXException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
