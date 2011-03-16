@@ -10,7 +10,9 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import br.CampionsStats.R;
+import View.Inicial;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -26,7 +28,7 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import View.*;
+
 
 public class Principal extends Activity {
 	
@@ -45,7 +47,7 @@ public class Principal extends Activity {
     	//List<Carro> lista = carrosDB.buscarCarroPorNome("");
 		//ConsomeServico sev = new ConsomeServico();
 		//sev.getWebService();
-    	
+   	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
@@ -61,7 +63,7 @@ public class Principal extends Activity {
         ArrayAdapter<CharSequence> adapterRodada = ArrayAdapter.createFromResource(
                 this, R.array.rodada_array, android.R.layout.simple_spinner_item);
         adapterRodada.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapterRodada);
+        spinner2.setAdapter(adapterRodada);	
     }
     
     
@@ -80,7 +82,7 @@ public class Principal extends Activity {
         case R.id.item01:
             atualiar();
             return true;
-        case R.id.item03:
+        case R.id.item02:
             atualizarCampionatos();
             return true;
         default:
@@ -89,57 +91,12 @@ public class Principal extends Activity {
     }
 
 	private void atualizarCampionatos() {
-		
-		String URL = "http://www.aragon.ws/soccerdb/export/liveupdateleagues.php";
-		String xmlString = null;
 
-		HttpClient httpClient = new DefaultHttpClient();
-		  try
-		  {
-		    HttpGet method = new HttpGet( new URI(URL) );
-		    HttpResponse response = httpClient.execute(method);
-		    if ( response != null )
-		    {
-		    	xmlString = getResponse(response.getEntity());
-		    }
-		    else
-		    {
-		      Log.i( "login", "got a null response" );
-		    }
-		    //InputStreamReader isr = new InputStreamReader(response.getEntity().getContent(),"UTF-8");
-		  } catch (IOException e) {
-		    Log.e( "error", e.getMessage() );
-		  } catch (URISyntaxException e) {
-		    Log.e( "error", e.getMessage() );
-		  }
-		  
-		  
-		  
-		  
 		String[] paises = {"Italiano","Brasileirão"} ;
 		TableLayout layout = createTable(paises);
         super.setContentView(layout);
 	}
-	
-	private String getResponse(HttpEntity entity) {
-		
-		  String response = "";
 
-		  try
-		  {
-			  InputStreamReader isr = new InputStreamReader(entity.getContent(),"UTF-8");
-			  int charRead;
-			  char[] inputBuffer = new char[2048];
-			  while((charRead = isr.read(inputBuffer))>0){
-				  String readString = String.copyValueOf(inputBuffer,0,charRead);
-				  response += readString;
-			  }
-		  } catch ( IOException ioe ) {
-		    ioe.printStackTrace();
-		  }
-
-		  return response;
-	}
 
 	private TableLayout createTable(String[] ligas)
 	{
@@ -172,8 +129,9 @@ public class Principal extends Activity {
 	}
 
 	private void atualiar() {
-        //setContentView(R.layout.atualizarCampionatos);
-		
+		Intent myIntent = new Intent();
+		myIntent.setClassName("View", "Inicial");
+		startActivity(myIntent);
 	}
 	
     public void onClick(View view) {
