@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO.Compression;
+using System.IO;
+using Sinc_DATA;
+using Sinc_DATA.BFL;
+
+namespace Sinc_DATA.Sinc
+{
+    public class Importacao
+    {
+        public static string Envio(int grupo, int rotaInicial, int rotaFinal)
+        {
+            string sqlImportacao = "";
+
+            try
+            {
+                sqlImportacao += AgenteFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += FaturaCategoriaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += AvisoDebitoFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += FaturaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += ServicoFaturaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += FaturaServicoFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += FaturaTaxaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += HidrometroFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += LogradouroFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += MatriculaImpostoDiademaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += ReferenciaPendenteFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += MatriculaFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += MensagemMovimentoFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+                sqlImportacao += MovimentoFlow.getImpotacao(grupo, rotaInicial, rotaFinal);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Compacta(sqlImportacao);
+        }
+
+
+        public static string Compacta(string text)
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(text);
+            MemoryStream ms = new MemoryStream();
+            using (GZipStream zip = new GZipStream(ms, CompressionMode.Compress, true))
+            {
+                zip.Write(buffer, 0, buffer.Length);
+            }
+
+            ms.Position = 0;
+            MemoryStream outStream = new MemoryStream();
+
+            byte[] compressed = new byte[ms.Length];
+            ms.Read(compressed, 0, compressed.Length);
+
+            byte[] gzBuffer = new byte[compressed.Length + 4];
+            System.Buffer.BlockCopy(compressed, 0, gzBuffer, 4, compressed.Length);
+            System.Buffer.BlockCopy(BitConverter.GetBytes(buffer.Length), 0, gzBuffer, 0, 4);
+            return Convert.ToBase64String(gzBuffer);
+        }
+
+
+        public static string Descompacta(string compressedText)
+        {
+            byte[] gzBuffer = Convert.FromBase64String(compressedText);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                int msgLength = BitConverter.ToInt32(gzBuffer, 0);
+                ms.Write(gzBuffer, 4, gzBuffer.Length - 4);
+
+                byte[] buffer = new byte[msgLength];
+
+                ms.Position = 0;
+                using (GZipStream zip = new GZipStream(ms, CompressionMode.Decompress))
+                {
+                    zip.Read(buffer, 0, buffer.Length);
+                }
+                return Encoding.UTF8.GetString(buffer);
+            }
+        }
+
+    }
+}
