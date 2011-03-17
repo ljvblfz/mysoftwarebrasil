@@ -80,6 +80,33 @@ namespace Data.Model
 					
 		#endregion
 
+
+        #region Query Importacao
+
+        public string __ToSQL
+        {
+            get
+            {
+                return String.Format(@"
+                                        INSERT INTO ONP_AGENTE
+                                            ind_tipo_desconto
+                                            ,val_limite_inicial
+                                            ,val_valor_desconto
+                                            ,seq_desconto
+                                        VALUES
+                                            '{0}'
+                                            ,{1}
+                                            ,{2}
+                                            ,{3}"
+                                        , this.ind_tipo_desconto
+                                        , this.val_limite_inicial
+                                        , this.val_valor_desconto
+                                        , this.seq_desconto
+                                    );
+            }
+        }
+
+        #endregion
     }
 }
 

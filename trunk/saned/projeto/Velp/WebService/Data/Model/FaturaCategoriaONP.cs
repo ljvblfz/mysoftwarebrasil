@@ -50,6 +50,43 @@ namespace Data.Model
 
 
         #endregion
+
+        #region Query Importacao
+
+        public string __ToSQL
+        {
+            get
+            {
+                return String.Format(@"
+                                        INSERT INTO ONP_AGENTE
+                                            seq_categoria
+                                            ,seq_fatura
+                                            ,cod_referencia
+                                            ,seq_roteiro
+                                            ,seq_matricula
+                                            ,val_numero_economia
+                                            ,val_valor_faturado
+
+                                        VALUES
+                                            {0}
+                                            ,{1}
+                                            ,'{2}'
+                                            ,{3}
+                                            ,{4}
+                                            ,{5}"
+
+                                    , this.seq_categoria
+                                    , this.seq_fatura
+                                    , this.cod_referencia
+                                    , this.seq_roteiro
+                                    , this.seq_matricula
+                                    , this.val_numero_economia
+                                    , this.val_valor_faturado
+                                    );
+            }
+        }
+
+        #endregion
     }
 }
 

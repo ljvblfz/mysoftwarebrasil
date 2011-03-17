@@ -27,14 +27,34 @@ namespace Data.Model
         [PersistenceProperty("cod_agente", PersistenceParameterType.Key)]
         public int? cod_agente { get; set; }
 
-        //[PersistenceProperty("Grupo")]
-        //public int Grupo { get; set; }
-
         [PersistenceProperty("nom_agente")]
         public string nom_agente { get; set; }
 
         [PersistenceProperty("des_senha")]
         public string des_senha { get; set; }
+
+        #endregion
+
+        #region Query Importacao
+
+        public string __ToSQL
+        {
+            get
+            {
+                return String.Format(@"
+                                        INSERT INTO ONP_AGENTE
+                                            cod_agente
+                                            ,nom_agente
+                                            ,des_senha
+                                        VALUES
+                                            {0}
+                                            ,'{1}'
+                                            ,'{2}'"
+                                    , this.cod_agente
+                                    , this.nom_agente
+                                    , this.des_senha);
+            }
+        }
 
         #endregion
     }
