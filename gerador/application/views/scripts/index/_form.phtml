@@ -1,0 +1,88 @@
+<script type="text/javascript" src="<?php echo $this->baseUrl;?>/public/scripts/moeda.js"></script>
+<script language="javascript" type="text/javascript">
+
+</script>
+<div id="container">
+    <h2><?php echo $this->escape($this->title);?></h2>
+    <div id="mid">
+        <form enctype="multipart/form-data" name="veiculo" id="veiculo" action="<?php echo  $this->baseUrl ?>/index/<?php echo  $this->action;?>" method="post" >
+        <fieldset>
+            <?php if($this->action=="index"){?>
+                <div class="fieldLinha2">
+                    <?=$this->label("host","Host");?><br>
+                    <?=$this->formText('host', $this->host, array("class"=>"bigTxtArea"));?>
+                </div><!--/fieldLinha -->
+
+                <div class="fieldLinha2">
+                    <?=$this->label("banco","Banco de Dados");?><br>
+                    <?=$this->formText('banco', $this->banco, array("class"=>"bigTxtArea"));?>
+                </div><!--/fieldLinha -->
+
+                <div class="fieldLinha2">
+                    <?=$this->label("usuario","Usuario");?><br>
+                    <?=$this->formText('usuario', $this->usuario, array("class"=>"bigTxtArea"));?>
+                </div><!--/fieldLinha -->
+
+                <div class="fieldLinha2">
+                    <?=$this->label("senha","Senha");?><br>
+                    <?=$this->formText('senha', $this->senha, array("class"=>"bigTxtArea"));?>
+                </div><!--/fieldLinha -->
+            <?php }else{?>
+	            <fieldset>
+	                <div class="fieldLinha2">
+	                    <?=$this->label("host","Host");?><br>
+	                    <?=$this->formText('host', $this->host, array("class"=>"bigTxtAreaRO","readonly"=>"readonly"));?>
+	                </div><!--/fieldLinha -->
+
+	                <div class="fieldLinha2">
+	                    <?=$this->label("banco","Banco de Dados");?><br>
+	                    <?=$this->formText('banco', $this->banco, array("class"=>"bigTxtAreaRO","readonly"=>"readonly"));?>
+	                </div><!--/fieldLinha -->
+
+	                <div class="fieldLinha2">
+	                    <?=$this->label("usuario","Usuario");?><br>
+	                    <?=$this->formText('usuario', $this->usuario, array("class"=>"bigTxtAreaRO","readonly"=>"readonly"));?>
+	                </div><!--/fieldLinha -->
+
+	                <div class="fieldLinha2">
+	                    <?=$this->label("senha","Senha");?><br>
+	                    <?=$this->formText('senha', $this->senha, array("class"=>"bigTxtAreaRO","readonly"=>"readonly"));?>
+	                </div><!--/fieldLinha -->
+				</fieldset>
+                <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label("projeto","Nome do projeto");?><br>
+                    <?=$this->formText('projeto', $this->projeto, array("class"=>"bigTxtArea"));?>
+                </div><!--/fieldLinha -->
+                    <div class="fieldLinha2">
+                    <?=$this->label("projetoWeb","Adicionar projeto Web");?><br>
+                    <?=$this->formCheckbox("projetoWeb");?>
+                </div><!--/fieldLinha -->
+                </fieldset>
+                <fieldset>
+                    <table border=0>
+                            <th>TABELA</th>
+                            <th>SELECIONE</th>
+                            <th>NOME DA CLASSE</th>
+                            <tr>
+                                <td></td>
+                                <td style="text-align:center;"><?=$this->formCheckbox("check");?></td>
+                                <td></td>
+                            </tr>
+                    <?php foreach((Array)$this->dados as $key=>$value){?>
+                            <tr bgcolor="#FFFFEE">
+                                <td><?=$this->formText("tabela[$value]", $value, array("class"=>"bigTxtAreaRO","readonly"=>"readonly"));?></td>
+                                <td style="text-align:center;"><?=$this->formCheckbox("data[$value]");?></td>
+                                <td><?=$this->formText("classe[$value]",$value, array("class"=>"medTxtArea"));?></td>
+                            </tr>
+                    <?php }?>
+                    </table>
+                </fieldset>
+            <?php }?>
+            <div id="fieldBtn">
+                 <?php echo $this->acao($this->botao_submit);?>
+            </div><!--/fieldBtn -->
+        </fieldset>
+        </form>
+    </div><!--/mid -->
+</div><!--/container -->

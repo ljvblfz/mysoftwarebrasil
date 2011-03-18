@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+
+form {
+	border:none;
+}
+
+	label {
+		font-weight:700;
+		margin-right:7px;
+		margin-bottom:4px;
+		float:none;
+		clear:both;
+	}
+
+input, select, textarea, button {
+	background-color:#FFF;
+	border:1px solid;
+	font-size:10px;
+	height:15px;
+	padding:0 4px;
+	margin-top:1px;
+}
+
+input:disabled, select:disabled, textarea:disabled, button:disabled {
+	border-color:#DDD;
+	background-color:#F4F4F4;
+	margin-right:13px;
+	padding:0 4px;
+}
+
+    table.item input, table.item td, table.item tr {
+        border:1px solid #2E6AB1;
+        margin:0 !important;
+        padding:0 !important;
+    }
+
+    table.item td {
+        border:none !important;
+    }
+
+.radio {
+	border:none;
+	margin-bottom:-2px;
+	width:20px;
+}
+
+select {
+	padding:0;
+	margin-bottom:-2px;
+	min-width:auto;
+	*height:18px;
+}
+
+.multi_select {
+	padding:0;
+	margin-bottom:-2px;
+	min-width:auto;
+	height:150px;
+	width: 260px;
+	padding: 4px;
+}
+
+.select_associacao {
+	padding:0;
+	margin-bottom:-2px;
+	min-width:auto;
+	height:150px;
+	width: 220px;
+	padding: 4px;
+}
+
+textarea {
+	font-size:12px;
+	height:auto;
+	margin-top:5px;
+	width:480px;
+}
+
+.btn {
+	background:url(../images/btnBg.jpg) left repeat-x;
+	border:1px solid #C8C8C8;
+	cursor:pointer;
+	height:24px;
+	width:110px;
+	margin-right:2px;
+}
+
+
+.numRight, .numRightMed {
+    text-align:right;
+}
+
+.numRightMed {
+    width:110px;
+}
+
+
+/*option {
+    /*width:500px;*//*
+}
+
+.btnImg {
+	display:inline;
+	width:22px;
+}
+
+.btnImg img {
+	cursor:pointer;
+	margin:0 8px -2px -6px;
+}
+*/
+.inputImg {
+	border:none;
+	background:none;
+	height:auto;
+	margin-top:2px;
+	width:auto;
+	margin-left: 10px;
+}
+
+/*OUTROS TAMANHOS*/
+.minTxtArea, .minTxtAreaRO { /*máximo de 2 caracteres*/
+	width:20px;
+}
+
+.miniTxtArea, .miniTxtAreaRO { /*máximo de 5 caracteres*/
+	width:50px;
+}
+
+.mini2TxtArea, .mini2TxtAreaRO { /*máximo de 10 caracteres*/
+	width:80px;
+}
+
+.medTxtArea, .medTxtAreaRO {
+	width:150px;
+}
+
+.med2TxtArea, .med2TxtAreaRO {
+	width:200px;
+}
+
+.med3TxtArea, .med2TxtAreaRO {
+	width:300px;
+}
+
+
+.bigTxtArea, .bigTxtAreaRO {
+	width:300px;
+}
+
+.dataTxtArea, .dataTxtAreaRO { /*máximo de 10 caracteres*/
+	width:60px;
+}
+
+.dataHoraTxtArea, .dataHoraTxtAreaRO {
+    width:90px;
+}
+
+
+.numRightMedRO {
+    text-align:right;
+}
+
+/*DEFINE O CSS DAS ABAS*/
+.botaoAbaInativo, .botaoAbaAtivo {
+	width:110px;
+	height:24px;
+	border:1px solid #43757E;
+	margin-left:0px;
+	margin-bottom:-1px;
+	margin-right:2px;
+}
+
+.abas {
+	margin:10px;
+}
+
+.botaoAbaInativo{
+	background:#F0F0F0;
+	color: #000;
+}
+
+.botaoAbaAtivo {
+	background:#43757E;
+	color: #FFF;
+}
+
+.corpoAbas {
+	border:1px solid #43757E;
+	margin-bottom:13px;
+	padding:0 7px 7px 7px;
+}
+
+/*DESABILITADOS - READONLY*/
+.minTxtAreaRO, .min2TxtAreaRO, .miniTxtAreaRO, .medTxtAreaRO, .med2TxtAreaRO, .bigTxtAreaRO, .dataTxtAreaRO, .dataHoraTxtAreaRO, .txtAreaRO, .numRightMedRO {
+	border-color:#DDD;
+	background-color:#F4F4F4;
+    color:#000;
+}
+
+/*COR PADRAO*/
+input, select, textarea {
+	border-color:#2E6AB1;
+	text-aling:left;
+}
+
+/*IMG PADRAO*//*
+.btnDetail {
+	background-image:url(../img/btnDetail.jpg);
+}
