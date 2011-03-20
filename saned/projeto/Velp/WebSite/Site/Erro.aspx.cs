@@ -16,7 +16,10 @@ public partial class Erro : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Exception ex = (Exception)Application["TheException"];
-        string url = Request.UrlReferrer.OriginalString;
+        string url = null;
+        if(Request != null)
+            if(Request.UrlReferrer != null)
+                url = Request.UrlReferrer.OriginalString;
         string msg = "";
         string mensagem = "";
 

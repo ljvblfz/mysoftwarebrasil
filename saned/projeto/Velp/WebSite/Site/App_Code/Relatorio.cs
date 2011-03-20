@@ -60,7 +60,7 @@ public static class Relatorio
     /// <returns></returns>
     public static string GetReportLogo(HttpContext contexto)
     {
-        return "file:///" + contexto.Request.PhysicalApplicationPath.Replace('\\', '/') + System.Configuration.ConfigurationSettings.AppSettings["logoRelatorio"].Replace('\\', '/');
+        return "file:///" + contexto.Request.PhysicalApplicationPath.Replace('\\', '/') + Config.Ambiente.logoRelatorio.Replace('\\', '/');
     }
 
 }

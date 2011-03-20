@@ -18,10 +18,7 @@ public partial class Login : System.Web.UI.Page
     /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
-        // Instacia o Objeto de configurações
-        InformacoesAmbiente objInfo = (InformacoesAmbiente)ConfigurationManager.GetSection("ConfigAmbiente");
-
-        lbVersao.Text = "Versão :"+objInfo.versao;
+        lbVersao.Text = "Versão :" + Config.Ambiente.versao;
         if (!String.IsNullOrEmpty(Request.QueryString["valor"]) && !IsPostBack)
         {
             FormsAuthentication.SignOut();

@@ -10,11 +10,13 @@ using Data.DAL;
 using System.Data;
 using System.Collections;
 using GDA.Sql;
+using GeraBase;
 
 public partial class Gestao_CriarDistribuicao : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (!IsPostBack && !String.IsNullOrEmpty(Request.QueryString["Grupo"]))
         {
             ClientScript.RegisterStartupScript(typeof(string), "", "document.getElementById('titulo').innerHTML = 'Distribuição do grupo " + Request.QueryString["Grupo"].ToString() + "';", true);
@@ -108,7 +110,27 @@ public partial class Gestao_CriarDistribuicao : System.Web.UI.Page
                 distribuiçãoAUX.Referencia = DateTime.Parse(TextBoxReferencia.Text.ToString());
                 distribuiçãoAUX.Situacao = "L";
                 listaDistribuicao.Add(distribuiçãoAUX);
-            }
+
+                string dataBaseName = "OnPlace_" 
+                                        + "_" + distribuiçãoAUX.Grupo
+                                        + "_" + distribuiçãoAUX.Rota
+                                        + "_" + String.Format("{0:dd_MM_yyyy}", distribuiçãoAUX.Referencia)
+                                        + ".sdf";
+                SQLHelper.copyFiles(
+                                        Config.Ambiente.bancoMovel
+                                        , Config.Ambiente.pastaTemporaria
+                                        ,dataBaseName
+                                   );
+                GeraBase.Config.conectionString = Config.Ambiente.pastaTemporaria + dataBaseName;
+                GeraBase.Model.Identificacao pda = new GeraBase.Model.Identificacao();
+                DataBase bancoMovel = new DataBase();
+
+
+                List<GeraBase.Model.AgenteONP> agente = bancoMovel.ListaAgente(distribuiçãoAUX.Grupo, pda);
+                GenericDAO<GeraBase.Model.AgenteONP> objAgente = new GenericDAO<GeraBase.Model.AgenteONP>();
+                objAgente.LimpaBanco();
+                objAgente.Insert(agente.ToArray(), "ONP_AGENTE", null);
+             }
             try
             {
                 DistribuicaoFlow.UpdateList(listaDistribuicao);
@@ -120,29 +142,6 @@ public partial class Gestao_CriarDistribuicao : System.Web.UI.Page
             }
 
         }
-
-        //if (distribuicao.Rota == rota)
-        //{
-        //    string where = String.Format("grupo = {0} AND rota = {1} AND referencia = '{2}'", distribuicao.Grupo, distribuicao.Rota, distribuicao.Referencia);
-        //    Query  query = new Query(where);
-        //    List<Distribuicao> distribuicaoExistente = new DistribuicaoDAO().Select(query);
-        //    try
-        //    {
-        //        if (distribuicaoExistente.Count > 0)
-        //        {
-        //            distribuicao.Update();
-        //        }
-        //        else
-        //        {
-        //            distribuicao.Insert();
-        //        }
-        //        ClientScript.RegisterStartupScript(typeof(string), "", "document.getElementById('titulo').innerHTML = 'Distribuição liberada para carga';", true);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
     }
 
 }
