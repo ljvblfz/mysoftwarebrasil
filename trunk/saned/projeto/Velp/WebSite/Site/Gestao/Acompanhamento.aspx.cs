@@ -28,7 +28,7 @@ public partial class Gestao_Acompanhamento : System.Web.UI.Page
             if (!IsPostBack && !String.IsNullOrEmpty(Request.QueryString["Referencia"]) && !String.IsNullOrEmpty(Request.QueryString["Grupo"]))
             {
                 // Instacia o Objeto de configurações
-                InformacoesAmbiente objInfo = getInfoAmbiente();
+                InformacoesAmbiente objInfo = Config.Ambiente;
 
                 // Retorna a lista com os dados 
                 DataTable lista = DistribuicaoFlow.RetornaAcompanhamento(int.Parse(Request.QueryString["Grupo"]));
@@ -69,32 +69,6 @@ public partial class Gestao_Acompanhamento : System.Web.UI.Page
         DataTable lista = DistribuicaoFlow.RetornaAcompanhamento(codGrupo);
         html = retornaPesquisa(lista);
         return html;
-    }
-
-    /// <summary>
-    ///  Retorna as informações de configuração de acompanhamento
-    /// </summary>
-    /// <param name="login"></param>
-    /// <param name="senha"></param>
-    /// <returns></returns>
-    public InformacoesAmbiente getInfoAmbiente()
-    {
-        //Instancio a classe InformacoesAmbiente
-        InformacoesAmbiente objInfo = new InformacoesAmbiente();
-
-        try
-        {
-            //Faço um Cast(conversão) em meu objeto instanciado e uso o método GetSection
-            //para recuperar os dados da seção ConfigAmbiente que foi criada no Web.Config
-            objInfo = (InformacoesAmbiente)ConfigurationManager.GetSection("ConfigAmbiente");
-        }
-        catch (Exception ex)
-        {
-            //Mail.SendErro(ex, (Request.Url != null ? Request.Url.ToString() : ""));
-            throw new Exception(ex.Message);
-        }
-
-        return objInfo;
     }
 
     /// <summary>
