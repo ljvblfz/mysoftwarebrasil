@@ -6,7 +6,7 @@
     <script type="text/javascript">
 
         function VoltarPagina() {
-            var referencia = document.getElementById('ctl00_ContentPlaceHolder2_TextBoxReferencia').value;
+            var referencia = document.getElementById('<%=TextBoxReferencia.ClientID %>').value;
             location.href = 'Distribuicao.aspx?Referencia=' + referencia;
         }
 

@@ -107,7 +107,7 @@ namespace GeraBase
         /// <param name="fileDestino"> caminho destino + arquivo </param>
         public static void copyFiles(string fileOrigem, string diretorioDestino, string fileDestino)
         {
-            DirectoryInfo dir = new DirectoryInfo(fileDestino);
+            DirectoryInfo dir = new DirectoryInfo(diretorioDestino);
             if (!dir.Exists)
                 dir.Create();
 

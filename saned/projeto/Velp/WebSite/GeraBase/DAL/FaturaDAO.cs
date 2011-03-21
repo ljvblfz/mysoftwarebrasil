@@ -17,7 +17,7 @@ DECLARE @pagina INT
 DECLARE @ultimoRegistro INT
 DECLARE @primeiroRegistro INT
 DECLARE @totalPagina INT
-SET @totalPagina = 50
+SET @totalPagina = 50000
 SET @pagina = ?numeroPagina
 SET @ultimoRegistro = (@pagina*@totalPagina)-1
 SET @primeiroRegistro = ((@pagina*@totalPagina) - (@totalPagina))

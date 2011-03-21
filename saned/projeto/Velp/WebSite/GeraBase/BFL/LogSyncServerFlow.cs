@@ -17,7 +17,7 @@ namespace GeraBase.BFL
         {
             try
             {
-                _logSyncServerDAO.Insert(logSyncServer);
+                //_logSyncServerDAO.InsertOrUpdate(logSyncServer);
             }
             catch (Exception ex)
             {
