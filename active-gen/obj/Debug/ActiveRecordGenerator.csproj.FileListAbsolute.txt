@@ -1,0 +1,11 @@
+D:\Velp\ARQUITETURA\active-record-gen\bin\Debug\ActiveRecordGenerator.exe.config
+D:\Velp\ARQUITETURA\active-record-gen\bin\Debug\ActiveRecordGenerator.exe
+D:\Velp\ARQUITETURA\active-record-gen\bin\Debug\ActiveRecordGenerator.pdb
+D:\Velp\ARQUITETURA\active-record-gen\bin\Debug\NVelocity.dll
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.FileExistsForm.resources
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.GeneratorForm.resources
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.Properties.Resources.resources
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.csproj.GenerateResource.Cache
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.exe
+D:\Velp\ARQUITETURA\active-record-gen\obj\Debug\ActiveRecordGenerator.pdb

@@ -1,0 +1,1 @@
+this directory is intended as a staging area for generated code, so you don't accidentally over-write tweaked code.  On that subject, I would encourage you to make use of the partial class attribute and split out hand-written code from generated code where AT ALL possible.
