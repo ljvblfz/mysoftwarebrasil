@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ActiveRecordGenerator">
+</Property><Property Name="Solution File" Value="D:\Velp\ARQUITETURA\active-record-gen\ActiveRecordGenerator.sln">
+</Property><Property Name="Date" Value="terça-feira, 22 de março de 2011">
+</Property><Property Name="Time" Value="17:13:56">
+</Property></Properties><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="ActiveRecordGenerator.csproj" Description="Project file successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\ActiveRecordGenerator.csproj">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\CodeGenFactory.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\CodeGenFactory.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\DbForeignKeyInfo.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\DbForeignKeyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\DbRelatedTableInfo.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\DbRelatedTableInfo.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="FileExistsForm.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\FileExistsForm.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="FileExistsForm.Designer.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\FileExistsForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="FileHandlingResult.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\FileHandlingResult.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="GeneratorForm.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\GeneratorForm.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="GeneratorForm.Designer.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\GeneratorForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\ModelGenerator.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\ModelGenerator.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\DbTableInfo.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\DbTableInfo.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Program.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Program.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Properties\Resources.Designer.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Properties\Settings.Designer.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="CodeGen\DbFieldInfo.cs" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\CodeGen\DbFieldInfo.cs">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Properties\Settings.settings" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\BizTemplate.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\BizTemplate.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\SqlUpdate.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\SqlUpdate.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\ModelTemplate.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\ModelTemplate.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\SqlInsert.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\SqlInsert.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="App.config" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\App.config">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\ASP_WebForm.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\ASP_WebForm.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\ModelTemplate_with_IList.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\ModelTemplate_with_IList.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\NHibernate_XML_Mapping.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\NHibernate_XML_Mapping.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\Poco.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\Poco.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\SqlAuditTrigger.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\SqlAuditTrigger.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\SqlDataInsertBuilder.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\SqlDataInsertBuilder.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\SqlDelete.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\SqlDelete.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Templates\WinGridSupport.vm" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Templates\WinGridSupport.vm">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="FileExistsForm.resx" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\FileExistsForm.resx">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="GeneratorForm.resx" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\GeneratorForm.resx">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="Properties\Resources.resx" Description="File successfully backed up as D:\Velp\ARQUITETURA\active-record-gen\Backup\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="ActiveRecordGenerator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ActiveRecordGenerator" Source="ActiveRecordGenerator.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ActiveRecordGenerator" Source="ActiveRecordGenerator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
