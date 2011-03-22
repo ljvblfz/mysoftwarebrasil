@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCadDesktop", "SPCadDesktop\SPCadDesktop.csproj", "{7A9FF57B-769F-4391-88AD-5D835344692C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39A9D4EC-B063-46D2-82FF-0431E652B47E} = {39A9D4EC-B063-46D2-82FF-0431E652B47E}
+		{149C46FC-9C4B-4A33-83D0-6F9071CBE75D} = {149C46FC-9C4B-4A33-83D0-6F9071CBE75D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCadDesktopData", "SPCadDesktopData\SPCadDesktopData.csproj", "{0FA8DD00-3364-4D19-828F-A13C06BDC954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonHelpDesktop", "..\..\..\..\Laboratorio\CommonHelpDeskTop\CommonHelpDesktop.csproj", "{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCadToPDA", "SPCadToPDA\SPCadToPDA.csproj", "{39A9D4EC-B063-46D2-82FF-0431E652B47E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCadMobileData", "SPCadMobileData\SPCadMobileData.csproj", "{50D666F3-CA6E-4933-9D80-905281A55565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonHelpMobile", "CommonHelpMobile\CommonHelpMobile.csproj", "{9CDB19BE-45A3-4F3C-98AE-506FE472D70D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A9FF57B-769F-4391-88AD-5D835344692C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9FF57B-769F-4391-88AD-5D835344692C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9FF57B-769F-4391-88AD-5D835344692C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9FF57B-769F-4391-88AD-5D835344692C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA8DD00-3364-4D19-828F-A13C06BDC954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA8DD00-3364-4D19-828F-A13C06BDC954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA8DD00-3364-4D19-828F-A13C06BDC954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA8DD00-3364-4D19-828F-A13C06BDC954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A9D4EC-B063-46D2-82FF-0431E652B47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A9D4EC-B063-46D2-82FF-0431E652B47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A9D4EC-B063-46D2-82FF-0431E652B47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A9D4EC-B063-46D2-82FF-0431E652B47E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D666F3-CA6E-4933-9D80-905281A55565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D666F3-CA6E-4933-9D80-905281A55565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D666F3-CA6E-4933-9D80-905281A55565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D666F3-CA6E-4933-9D80-905281A55565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDB19BE-45A3-4F3C-98AE-506FE472D70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDB19BE-45A3-4F3C-98AE-506FE472D70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDB19BE-45A3-4F3C-98AE-506FE472D70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDB19BE-45A3-4F3C-98AE-506FE472D70D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A9FF57B-769F-4391-88AD-5D835344692C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCadDesktop</RootNamespace>
+    <AssemblyName>SPCadDesktop</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationIcon>copasa.ico</ApplicationIcon>
+    <PublishUrl>http://localhost/SPCadDesktop/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CustomComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Laboratorio\CustomComponents\bin\Debug\CustomComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="GDA, Version=1.3.0.27065, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Contribuicoes\GDA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls.UI, Version=8.0.0.0, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CADEP\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelIrregularidade.resx">
+      <DependentUpon>frmRelIrregularidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmDisplayReport.resx">
+      <DependentUpon>frmDisplayReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\frmRelCadastrosExecutados.resx">
+      <DependentUpon>frmRelCadastrosExecutados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\Reports\relIrregularidadeDetalhe.rdlc" />
+    <EmbeddedResource Include="Relatorios\Reports\relIrregularidades.rdlc" />
+    <EmbeddedResource Include="Relatorios\Reports\relAlteracaoCadastral.rdlc" />
+    <EmbeddedResource Include="Relatorios\Reports\relFonteAlternativaNaoCadastrada.rdlc" />
+    <EmbeddedResource Include="Relatorios\Reports\relCadastrosExecutados.rdlc" />
+    <EmbeddedResource Include="Views\frmControleUsuario.resx">
+      <DependentUpon>frmControleUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmImportacao.resx">
+      <DependentUpon>frmImportacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmListAuxChecked.resx">
+      <DependentUpon>frmListAuxChecked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadastro.resx">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmDistribuincao.resx">
+      <DependentUpon>frmDistribuincao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmListAuxPesquisa.resx">
+      <DependentUpon>frmListAuxPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmPesquisaCadastral.resx">
+      <DependentUpon>frmPesquisaCadastral.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Relatorios\frmRelIrregularidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelIrregularidade.Designer.cs">
+      <DependentUpon>frmRelIrregularidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmDisplayReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmDisplayReport.Designer.cs">
+      <DependentUpon>frmDisplayReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmRelCadastrosExecutados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmRelCadastrosExecutados.Designer.cs">
+      <DependentUpon>frmRelCadastrosExecutados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmControleUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmControleUsuario.designer.cs">
+      <DependentUpon>frmControleUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmImportacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmImportacao.Designer.cs">
+      <DependentUpon>frmImportacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmListAuxChecked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmListAuxChecked.Designer.cs">
+      <DependentUpon>frmListAuxChecked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadastro.Designer.cs">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmDistribuincao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmDistribuincao.Designer.cs">
+      <DependentUpon>frmDistribuincao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmListAuxPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmListAuxPesquisa.Designer.cs">
+      <DependentUpon>frmListAuxPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmPesquisaCadastral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmPesquisaCadastral.Designer.cs">
+      <DependentUpon>frmPesquisaCadastral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmVisualizarFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmVisualizarFoto.Designer.cs">
+      <DependentUpon>frmVisualizarFoto.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VELP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Laboratorio\CommonHelpDeskTop\CommonHelpDesktop.csproj">
+      <Project>{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}</Project>
+      <Name>CommonHelpDesktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPCadDesktopData\SPCadDesktopData.csproj">
+      <Project>{0FA8DD00-3364-4D19-828F-A13C06BDC954}</Project>
+      <Name>SPCadDesktopData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marca_Velp2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copasa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\CommonHelpDesktop.ItemCombo.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Cadastro.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Distribuicao.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Distribuido.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.HistoricoConsumo.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Ocorrencia.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Rota.datasource" />
+    <None Include="Resources\play2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConsultasPersonalizadas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmVisualizarFoto.resx">
+      <DependentUpon>frmVisualizarFoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="copasa.ico" />
+    <Content Include="Resources\Adicionar.png" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Distrito.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Funcionario.datasource" />
+    <None Include="Properties\DataSources\SPCadDesktopData.Data.Model.Relatorio.AlteracaoCadastral.datasource" />
+    <None Include="Resources\back.PNG" />
+    <None Include="Resources\backCinza.PNG" />
+    <None Include="Resources\Camera15x15.png" />
+    <None Include="Resources\excel_16x16.png" />
+    <None Include="Resources\book_open_16x16.png" />
+    <Content Include="Resources\copasa.ico" />
+    <Content Include="Resources\Limpar.png" />
+    <None Include="Resources\play2Cinza.png" />
+    <None Include="Resources\lupa21x21.png" />
+    <None Include="Resources\print_16x16.png" />
+    <Content Include="Resources\Remover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>IF NOT EXIST "$(TargetDir)Resources" GOTO NEXISTEDIR
+rmdir "$(TargetDir)Resources" /s /q
+:NEXISTEDIR
+mkdir "$(TargetDir)Resources"
+XCopy "$(TargetDir)..\..\..\SPCadToPDA\bin\Release\*.*" "$(TargetDir)Resources\"  /e</PreBuildEvent>
+  </PropertyGroup>
+</Project>

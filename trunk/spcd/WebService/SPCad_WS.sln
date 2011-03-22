@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCad_WS", "SPCad_WS\SPCad_WS.csproj", "{057136C9-FB63-4ECF-8307-9B8CCA617880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCadMobileDataWeb", "SPCadMobileDataWeb\SPCadMobileDataWeb.csproj", "{C64610BF-4221-4793-A629-0CC93EB40862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{057136C9-FB63-4ECF-8307-9B8CCA617880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057136C9-FB63-4ECF-8307-9B8CCA617880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057136C9-FB63-4ECF-8307-9B8CCA617880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057136C9-FB63-4ECF-8307-9B8CCA617880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64610BF-4221-4793-A629-0CC93EB40862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64610BF-4221-4793-A629-0CC93EB40862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64610BF-4221-4793-A629-0CC93EB40862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64610BF-4221-4793-A629-0CC93EB40862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

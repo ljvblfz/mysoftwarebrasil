@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Consulta>
+  <ConsutasPersonalizadas>
+    <Digitacao>
+      <Filtro name="Vazamento" label="Vazamento" value="((charindex('21',VETOR_OCORRC,0) + charindex('23',VETOR_OCORRC,0) + charindex('28',VETOR_OCORRC,0) + charindex('76',VETOR_OCORRC,0)) > 0)"/>
+      <Filtro name="Impedimento" label="Impedimento de execução" value="(STATUS_EXEC = 2)"/>
+    </Digitacao>
+  </ConsutasPersonalizadas>
+
+</Consulta>

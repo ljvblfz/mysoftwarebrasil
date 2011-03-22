@@ -1,0 +1,11 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\SPCadMobileDataWeb.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\SPCadMobileDataWeb.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\CommonHelpMobile.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\GDA.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\MobileTools.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\CommonHelpMobile.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\MobileTools.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\bin\Release\MobileTools.xml
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\obj\Release\SPCadMobileDataWeb.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileDataWeb\obj\Release\SPCadMobileDataWeb.pdb

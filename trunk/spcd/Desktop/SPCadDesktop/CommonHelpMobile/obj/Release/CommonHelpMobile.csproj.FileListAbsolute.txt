@@ -1,0 +1,8 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\bin\Release\CommonHelpMobile.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\bin\Release\CommonHelpMobile.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\bin\Release\GDA.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\bin\Release\GDA.Provider.SqlServerCE.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\bin\Release\System.Data.SqlServerCe.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\obj\Release\CommonHelpMobile.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\CommonHelpMobile\obj\Release\CommonHelpMobile.pdb

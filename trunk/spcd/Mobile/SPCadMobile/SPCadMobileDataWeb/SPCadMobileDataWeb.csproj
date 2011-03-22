@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C64610BF-4221-4793-A629-0CC93EB40862}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCadMobileDataWeb</RootNamespace>
+    <AssemblyName>SPCadMobileDataWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GDA, Version=1.3.0.27065, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Contribuições\GDA_Desktop\GDA.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\BFL\CadastroFlow.cs" />
+    <Compile Include="Data\BFL\CondicaoImovelFlow.cs" />
+    <Compile Include="Data\BFL\DistribuicaoFlow.cs" />
+    <Compile Include="Data\BFL\DistritoFlow.cs" />
+    <Compile Include="Data\BFL\FonteAlternativaFlow.cs" />
+    <Compile Include="Data\BFL\FotoFlow.cs" />
+    <Compile Include="Data\BFL\FuncionarioFlow.cs" />
+    <Compile Include="Data\BFL\HistoricoConsumoFlow.cs" />
+    <Compile Include="Data\BFL\LocalizacaoPadraoFlow.cs" />
+    <Compile Include="Data\BFL\OcorrenciaFlow.cs" />
+    <Compile Include="Data\BFL\RamoAtividadeFlow.cs" />
+    <Compile Include="Data\BFL\RotaFlow.cs" />
+    <Compile Include="Data\BFL\TipoComplementoFlow.cs" />
+    <Compile Include="Data\BFL\TipoPadraoFlow.cs" />
+    <Compile Include="Data\DAL\Dao.cs" />
+    <Compile Include="Data\DAL\DaoFactory.cs" />
+    <Compile Include="Data\Model\AuditoriaSuper.cs" />
+    <Compile Include="Data\Model\Cadastro.cs" />
+    <Compile Include="Data\Model\CondicaoImovel.cs" />
+    <Compile Include="Data\Model\Distribuicao.cs" />
+    <Compile Include="Data\Model\Distrito.cs" />
+    <Compile Include="Data\Model\FonteAlternativa.cs" />
+    <Compile Include="Data\Model\Foto.cs" />
+    <Compile Include="Data\Model\Funcionario.cs" />
+    <Compile Include="Data\Model\HistoricoConsumo.cs" />
+    <Compile Include="Data\Model\LocalizacaoPadrao.cs" />
+    <Compile Include="Data\Model\Ocorrencia.cs" />
+    <Compile Include="Data\Model\RamoAtividade.cs" />
+    <Compile Include="Data\Model\Rota.cs" />
+    <Compile Include="Data\Model\TipoComplemento.cs" />
+    <Compile Include="Data\Model\TipoPadrao.cs" />
+    <Compile Include="Data\RotaLiberada.cs" />
+    <Compile Include="Data\SingletonFlow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonHelpMobile\CommonHelpMobile.csproj">
+      <Project>{149C46FC-9C4B-4A33-83D0-6F9071CBE75D}</Project>
+      <Name>CommonHelpMobile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sincronismo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SPCadMobileData.Data.Model.Cadastro" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lYVa4wALlOAFBBAHv4IVJABAEwFFwgMgACAgCGsDHAA=</HashCode>
+      <FileName>Data\Model\Cadastro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.TipoPadrao" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\TipoPadrao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.Distribuicao" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEKAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Distribuicao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.Distrito" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Distrito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.FonteAlternativa" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\FonteAlternativa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.Funcionario" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAAAAAAAAAAAACAAAAAAAAAQAAEAAAQ=</HashCode>
+      <FileName>Data\Model\Funcionario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.HistoricoConsumo" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAAAAAAAAAAAAAAAAAAACEAAQAAAAAQAAA=</HashCode>
+      <FileName>Data\Model\HistoricoConsumo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.LocalizacaoPadrao" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\LocalizacaoPadrao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.Ocorrencia" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Ocorrencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.RamoAtividade" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Data\Model\RamoAtividade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.Rota" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICSAAAAAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Rota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.SituacaoImovel" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\SituacaoImovel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SPCadMobileData.Data.Model.TipoComplemento" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\TipoComplemento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
