@@ -1,0 +1,13 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\Database\SPCad.sdf
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\SPCadMobileData.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\SPCadMobileData.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\CommonHelpMobile.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\GDA.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\GDA.Provider.SqlServerCE.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\MobileTools.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\CommonHelpMobile.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\MobileTools.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\bin\Release\MobileTools.xml
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\obj\Release\SPCadMobileData.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\SPCadMobile\SPCadMobileData\obj\Release\SPCadMobileData.pdb

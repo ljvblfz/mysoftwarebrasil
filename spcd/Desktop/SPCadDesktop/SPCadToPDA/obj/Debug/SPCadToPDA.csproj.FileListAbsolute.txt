@@ -1,0 +1,14 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\SPCadToPDA.FrmExportToPDA.resources
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\SPCadToPDA.Properties.Resources.resources
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\SPCadToPDA.csproj.GenerateResource.Cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\SPCadToPDA.exe.config
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\SPCadToPDA.exe
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\SPCadToPDA.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\CommonHelpMobile.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\GDA.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\SPCadMobileData.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\CommonHelpMobile.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\bin\Debug\SPCadMobileData.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\SPCadToPDA.exe
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadToPDA\obj\Debug\SPCadToPDA.pdb

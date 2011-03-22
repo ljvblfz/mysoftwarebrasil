@@ -1,0 +1,8 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Release\SPCadDesktopData.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Release\SPCadDesktopData.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Release\CommonHelpDesktop.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Release\GDA.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Release\CommonHelpDesktop.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Release\SPCadDesktopData.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Release\SPCadDesktopData.pdb

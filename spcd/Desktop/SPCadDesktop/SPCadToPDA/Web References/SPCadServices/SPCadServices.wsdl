@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDateDBServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Autenticantion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUser" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpPDA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="parcial" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDateDBServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getDateDBServerResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFuncionario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFuncionarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFuncionarioResult" type="tns:ArrayOfFuncionario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFuncionario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Funcionario" nillable="true" type="tns:Funcionario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Funcionario">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Telefone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Senha" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AuditoriaSuper">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Versao" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuMovimentacao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtMovimentacao" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpMovimentacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Qtd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListOcorrencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOcorrenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOcorrenciaResult" type="tns:ArrayOfOcorrencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOcorrencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ocorrencia" nillable="true" type="tns:Ocorrencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ocorrencia">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ImpedimentoBool" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="DanificBool" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlagLeitura" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListRamoAtividade">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListRamoAtividadeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListRamoAtividadeResult" type="tns:ArrayOfRamoAtividade" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRamoAtividade">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RamoAtividade" nillable="true" type="tns:RamoAtividade" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RamoAtividade">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListCondicaoImovel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListCondicaoImovelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCondicaoImovelResult" type="tns:ArrayOfCondicaoImovel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCondicaoImovel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CondicaoImovel" nillable="true" type="tns:CondicaoImovel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CondicaoImovel">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListTipoComplemento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListTipoComplementoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListTipoComplementoResult" type="tns:ArrayOfTipoComplemento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoComplemento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoComplemento" nillable="true" type="tns:TipoComplemento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoComplemento">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListLocalizacaoPadrao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListLocalizacaoPadraoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListLocalizacaoPadraoResult" type="tns:ArrayOfLocalizacaoPadrao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLocalizacaoPadrao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LocalizacaoPadrao" nillable="true" type="tns:LocalizacaoPadrao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LocalizacaoPadrao">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListTipoPadrao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListTipoPadraoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListTipoPadraoResult" type="tns:ArrayOfTipoPadrao" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoPadrao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoPadrao" nillable="true" type="tns:TipoPadrao" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoPadrao">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListFonteAlternativa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListFonteAlternativaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListFonteAlternativaResult" type="tns:ArrayOfFonteAlternativa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFonteAlternativa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FonteAlternativa" nillable="true" type="tns:FonteAlternativa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FonteAlternativa">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListDistrito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListDistritoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListDistritoResult" type="tns:ArrayOfDistrito" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDistrito">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Distrito" nillable="true" type="tns:Distrito" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Distrito">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomeDistrito" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListRota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListRotaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListRotaResult" type="tns:ArrayOfRota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRota">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Rota" nillable="true" type="tns:Rota" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Rota">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="CodigoRota" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodigoDistrito" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Setor" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataDistribuicao" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataPrevisao" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataExportacao" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdCad" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdHist" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListRotaLibQtdCad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListRotaLibQtdCadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListRotaLibQtdCadResult" type="tns:ArrayOfRota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListRotaLiberada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListRotaLiberadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListRotaLiberadaResult" type="tns:ArrayOfRota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListCadastro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotLib" type="tns:Rota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListCadastroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListCadastroResult" type="tns:ArrayOfCadastro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCadastro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cadastro" nillable="true" type="tns:Cadastro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cadastro">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodigoRota" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodigoDistrito" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Setor" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Matricula" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomeCliente" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomeLogradouro" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumeroImovel" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumeroImovelAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoComplemento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TipoComplementoAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InformacaoComplementar" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="InformacaoComplementarAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomeBairro" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomeCidade" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CondicaoImovel" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CondicaoImovelAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PrevisaoFimObra" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Face" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Sequencia" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Observacao_complementar" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasResidencial" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasComercial" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasIndustrial" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasPublica" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasResidencialAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasComercialAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasIndustrialAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeEconomiasPublicaAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade1" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade2" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade3" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade4" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade1Alter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade2Alter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade3Alter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RamoAtividade4Alter" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarifaSocial" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarifaSocialIncompativel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TarifaSocialIncompativelObs" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FonteAlternativa" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FonteAlternativaAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Piscina" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PiscinaAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Reservatorio" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReservatorioAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SituacaoImovel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SituacaoImovelAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SituacaoPontoServico" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SituacaoPontoServicoAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObservacaoVisita" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumeroPontoServico" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LocalizacaoPadrao" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LocalizacaoPadraoAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TipoPadrao" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="TipoPadraoAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="PadraoLacrado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EliminadorAr" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PossuiTorneiraPadrao" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExisteMedidor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumeroMedidor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumeroMedidorAlter" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Leitura" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeDigitosMedidor" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeDigitosMedidorAlter" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClasseMetrologica" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClasseMetrologicaAlter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedidorLacrado" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SegundaLigacao" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NumeroMedidor2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Leitura2" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="QtdeDigitosMedidor2" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClasseMetrologica2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MedidorLacrado2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataInstalacao" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="VetorOcorrencia" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ObservacaoImpedimento" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuspeitaFraude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuspeitaFraudeObs" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExpectativaConsumo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CodigoFuncionario" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CoordenadaX" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CoordenadaY" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataVisita" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="StatusExecucao" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataGPS" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetListHistoricoConsumo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="rotaLib" type="tns:Rota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListHistoricoConsumoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListHistoricoConsumoResult" type="tns:ArrayOfHistoricoConsumo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHistoricoConsumo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HistoricoConsumo" nillable="true" type="tns:HistoricoConsumo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HistoricoConsumo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Matricula" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="Cadastro" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="MesReferencia" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ocorrencia1" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Ocorrencia2" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Criterio" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="VolumeMedido" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FlgHistconsumo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LeituraApuracao" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="DatLeituraFat" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SetListHistoricoConsumo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrib" type="tns:ArrayOfHistoricoConsumo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetListHistoricoConsumoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetListHistoricoConsumoResult" type="tns:ArrayOfRespostaWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRespostaWS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RespostaWS" nillable="true" type="tns:RespostaWS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespostaWS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="errorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idRecord" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="aux" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetListCadastro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrib" type="tns:ArrayOfCadastro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetListCadastroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetListCadastroResult" type="tns:ArrayOfRespostaWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetListFoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="foto" type="tns:Foto" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Foto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AuditoriaSuper">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="idCadast" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="codOcorrc" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="sequencia" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="descFoto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="nomFoto" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="numPontoServc" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Data" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="CoordenadaX" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CoordenadaY" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DataGPS" nillable="true" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SetListFotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetListFotoResult" type="tns:RespostaWS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSituacaoCargaRota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rota" type="tns:Rota" />
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+            <s:element minOccurs="0" maxOccurs="1" name="situacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSituacaoCargaRotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRotasFinalizadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listRota" type="tns:ArrayOfRota" />
+            <s:element minOccurs="0" maxOccurs="1" name="auth" type="tns:Autenticantion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRotasFinalizadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRotasFinalizadasResult" type="tns:ArrayOfRota" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDateDBServerSoapIn">
+    <wsdl:part name="parameters" element="tns:getDateDBServer" />
+  </wsdl:message>
+  <wsdl:message name="getDateDBServerSoapOut">
+    <wsdl:part name="parameters" element="tns:getDateDBServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFuncionarioSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFuncionario" />
+  </wsdl:message>
+  <wsdl:message name="GetListFuncionarioSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFuncionarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOcorrenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOcorrencia" />
+  </wsdl:message>
+  <wsdl:message name="GetListOcorrenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOcorrenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListRamoAtividadeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListRamoAtividade" />
+  </wsdl:message>
+  <wsdl:message name="GetListRamoAtividadeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListRamoAtividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCondicaoImovelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCondicaoImovel" />
+  </wsdl:message>
+  <wsdl:message name="GetListCondicaoImovelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCondicaoImovelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListTipoComplementoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListTipoComplemento" />
+  </wsdl:message>
+  <wsdl:message name="GetListTipoComplementoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListTipoComplementoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListLocalizacaoPadraoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListLocalizacaoPadrao" />
+  </wsdl:message>
+  <wsdl:message name="GetListLocalizacaoPadraoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListLocalizacaoPadraoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListTipoPadraoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListTipoPadrao" />
+  </wsdl:message>
+  <wsdl:message name="GetListTipoPadraoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListTipoPadraoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListFonteAlternativaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListFonteAlternativa" />
+  </wsdl:message>
+  <wsdl:message name="GetListFonteAlternativaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListFonteAlternativaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListDistritoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListDistrito" />
+  </wsdl:message>
+  <wsdl:message name="GetListDistritoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListDistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListRota" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListRotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaLibQtdCadSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListRotaLibQtdCad" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaLibQtdCadSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListRotaLibQtdCadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaLiberadaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListRotaLiberada" />
+  </wsdl:message>
+  <wsdl:message name="GetListRotaLiberadaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListRotaLiberadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListCadastroSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListCadastro" />
+  </wsdl:message>
+  <wsdl:message name="GetListCadastroSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListCadastroResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListHistoricoConsumoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListHistoricoConsumo" />
+  </wsdl:message>
+  <wsdl:message name="GetListHistoricoConsumoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListHistoricoConsumoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetListHistoricoConsumoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetListHistoricoConsumo" />
+  </wsdl:message>
+  <wsdl:message name="SetListHistoricoConsumoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetListHistoricoConsumoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetListCadastroSoapIn">
+    <wsdl:part name="parameters" element="tns:SetListCadastro" />
+  </wsdl:message>
+  <wsdl:message name="SetListCadastroSoapOut">
+    <wsdl:part name="parameters" element="tns:SetListCadastroResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetListFotoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetListFoto" />
+  </wsdl:message>
+  <wsdl:message name="SetListFotoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetListFotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSituacaoCargaRotaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSituacaoCargaRota" />
+  </wsdl:message>
+  <wsdl:message name="SetSituacaoCargaRotaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSituacaoCargaRotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRotasFinalizadasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRotasFinalizadas" />
+  </wsdl:message>
+  <wsdl:message name="GetRotasFinalizadasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRotasFinalizadasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SPCadServicesSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDateDBServer">
+      <wsdl:input message="tns:getDateDBServerSoapIn" />
+      <wsdl:output message="tns:getDateDBServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFuncionario">
+      <wsdl:input message="tns:GetListFuncionarioSoapIn" />
+      <wsdl:output message="tns:GetListFuncionarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOcorrencia">
+      <wsdl:input message="tns:GetListOcorrenciaSoapIn" />
+      <wsdl:output message="tns:GetListOcorrenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListRamoAtividade">
+      <wsdl:input message="tns:GetListRamoAtividadeSoapIn" />
+      <wsdl:output message="tns:GetListRamoAtividadeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCondicaoImovel">
+      <wsdl:input message="tns:GetListCondicaoImovelSoapIn" />
+      <wsdl:output message="tns:GetListCondicaoImovelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoComplemento">
+      <wsdl:input message="tns:GetListTipoComplementoSoapIn" />
+      <wsdl:output message="tns:GetListTipoComplementoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListLocalizacaoPadrao">
+      <wsdl:input message="tns:GetListLocalizacaoPadraoSoapIn" />
+      <wsdl:output message="tns:GetListLocalizacaoPadraoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoPadrao">
+      <wsdl:input message="tns:GetListTipoPadraoSoapIn" />
+      <wsdl:output message="tns:GetListTipoPadraoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFonteAlternativa">
+      <wsdl:input message="tns:GetListFonteAlternativaSoapIn" />
+      <wsdl:output message="tns:GetListFonteAlternativaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListDistrito">
+      <wsdl:input message="tns:GetListDistritoSoapIn" />
+      <wsdl:output message="tns:GetListDistritoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListRota">
+      <wsdl:input message="tns:GetListRotaSoapIn" />
+      <wsdl:output message="tns:GetListRotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLibQtdCad">
+      <wsdl:input message="tns:GetListRotaLibQtdCadSoapIn" />
+      <wsdl:output message="tns:GetListRotaLibQtdCadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLiberada">
+      <wsdl:input message="tns:GetListRotaLiberadaSoapIn" />
+      <wsdl:output message="tns:GetListRotaLiberadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCadastro">
+      <wsdl:input message="tns:GetListCadastroSoapIn" />
+      <wsdl:output message="tns:GetListCadastroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListHistoricoConsumo">
+      <wsdl:input message="tns:GetListHistoricoConsumoSoapIn" />
+      <wsdl:output message="tns:GetListHistoricoConsumoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetListHistoricoConsumo">
+      <wsdl:input message="tns:SetListHistoricoConsumoSoapIn" />
+      <wsdl:output message="tns:SetListHistoricoConsumoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetListCadastro">
+      <wsdl:input message="tns:SetListCadastroSoapIn" />
+      <wsdl:output message="tns:SetListCadastroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetListFoto">
+      <wsdl:input message="tns:SetListFotoSoapIn" />
+      <wsdl:output message="tns:SetListFotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSituacaoCargaRota">
+      <wsdl:input message="tns:SetSituacaoCargaRotaSoapIn" />
+      <wsdl:output message="tns:SetSituacaoCargaRotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRotasFinalizadas">
+      <wsdl:input message="tns:GetRotasFinalizadasSoapIn" />
+      <wsdl:output message="tns:GetRotasFinalizadasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SPCadServicesSoap" type="tns:SPCadServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateDBServer">
+      <soap:operation soapAction="http://tempuri.org/getDateDBServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFuncionario">
+      <soap:operation soapAction="http://tempuri.org/GetListFuncionario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOcorrencia">
+      <soap:operation soapAction="http://tempuri.org/GetListOcorrencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRamoAtividade">
+      <soap:operation soapAction="http://tempuri.org/GetListRamoAtividade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCondicaoImovel">
+      <soap:operation soapAction="http://tempuri.org/GetListCondicaoImovel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoComplemento">
+      <soap:operation soapAction="http://tempuri.org/GetListTipoComplemento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListLocalizacaoPadrao">
+      <soap:operation soapAction="http://tempuri.org/GetListLocalizacaoPadrao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoPadrao">
+      <soap:operation soapAction="http://tempuri.org/GetListTipoPadrao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFonteAlternativa">
+      <soap:operation soapAction="http://tempuri.org/GetListFonteAlternativa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDistrito">
+      <soap:operation soapAction="http://tempuri.org/GetListDistrito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRota">
+      <soap:operation soapAction="http://tempuri.org/GetListRota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLibQtdCad">
+      <soap:operation soapAction="http://tempuri.org/GetListRotaLibQtdCad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLiberada">
+      <soap:operation soapAction="http://tempuri.org/GetListRotaLiberada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCadastro">
+      <soap:operation soapAction="http://tempuri.org/GetListCadastro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHistoricoConsumo">
+      <soap:operation soapAction="http://tempuri.org/GetListHistoricoConsumo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListHistoricoConsumo">
+      <soap:operation soapAction="http://tempuri.org/SetListHistoricoConsumo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListCadastro">
+      <soap:operation soapAction="http://tempuri.org/SetListCadastro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListFoto">
+      <soap:operation soapAction="http://tempuri.org/SetListFoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSituacaoCargaRota">
+      <soap:operation soapAction="http://tempuri.org/SetSituacaoCargaRota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRotasFinalizadas">
+      <soap:operation soapAction="http://tempuri.org/GetRotasFinalizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SPCadServicesSoap12" type="tns:SPCadServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDateDBServer">
+      <soap12:operation soapAction="http://tempuri.org/getDateDBServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFuncionario">
+      <soap12:operation soapAction="http://tempuri.org/GetListFuncionario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOcorrencia">
+      <soap12:operation soapAction="http://tempuri.org/GetListOcorrencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRamoAtividade">
+      <soap12:operation soapAction="http://tempuri.org/GetListRamoAtividade" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCondicaoImovel">
+      <soap12:operation soapAction="http://tempuri.org/GetListCondicaoImovel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoComplemento">
+      <soap12:operation soapAction="http://tempuri.org/GetListTipoComplemento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListLocalizacaoPadrao">
+      <soap12:operation soapAction="http://tempuri.org/GetListLocalizacaoPadrao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTipoPadrao">
+      <soap12:operation soapAction="http://tempuri.org/GetListTipoPadrao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFonteAlternativa">
+      <soap12:operation soapAction="http://tempuri.org/GetListFonteAlternativa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListDistrito">
+      <soap12:operation soapAction="http://tempuri.org/GetListDistrito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRota">
+      <soap12:operation soapAction="http://tempuri.org/GetListRota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLibQtdCad">
+      <soap12:operation soapAction="http://tempuri.org/GetListRotaLibQtdCad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRotaLiberada">
+      <soap12:operation soapAction="http://tempuri.org/GetListRotaLiberada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCadastro">
+      <soap12:operation soapAction="http://tempuri.org/GetListCadastro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListHistoricoConsumo">
+      <soap12:operation soapAction="http://tempuri.org/GetListHistoricoConsumo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListHistoricoConsumo">
+      <soap12:operation soapAction="http://tempuri.org/SetListHistoricoConsumo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListCadastro">
+      <soap12:operation soapAction="http://tempuri.org/SetListCadastro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetListFoto">
+      <soap12:operation soapAction="http://tempuri.org/SetListFoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSituacaoCargaRota">
+      <soap12:operation soapAction="http://tempuri.org/SetSituacaoCargaRota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRotasFinalizadas">
+      <soap12:operation soapAction="http://tempuri.org/GetRotasFinalizadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SPCadServices">
+    <wsdl:port name="SPCadServicesSoap" binding="tns:SPCadServicesSoap">
+      <soap:address location="http://192.168.1.10/SPCadWS/SPCadServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SPCadServicesSoap12" binding="tns:SPCadServicesSoap12">
+      <soap12:address location="http://192.168.1.10/SPCadWS/SPCadServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

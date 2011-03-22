@@ -1,0 +1,10 @@
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\bin\Release\MobileTools.XML
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\bin\Release\MobileTools.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\bin\Release\MobileTools.pdb
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\bin\Release\System.Data.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\bin\Release\System.Data.xml
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\obj\Release\ResolveAssemblyReference.cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\obj\Release\MobileTools.Controls.Resources.resources
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\obj\Release\MobileTools.csproj.GenerateResource.Cache
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\obj\Release\MobileTools.dll
+D:\Velp\Sistemas\SPCad\Desenvolvimento\Mobile\Contribuições\MobileTools\MobileTools\obj\Release\MobileTools.pdb

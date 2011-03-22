@@ -1,0 +1,2221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MobileTools</name>
+    </assembly>
+    <members>
+        <member name="M:MobileTools.Utils.FormatText(System.String,System.Int32)">
+            <summary>
+            Formata o texto passado com quebra de linhas de acordo com o número máximo de caracteres por linha.
+            </summary>
+            <param name="text">Texto a ser formatado.</param>
+            <param name="maxLengthPerLine">Número máximo de caracteres por linha.</param>
+            <returns>Texto formatado.</returns>
+        </member>
+        <member name="M:MobileTools.Utils.IsNumber(System.Char)">
+            <summary>
+            Verifica se o caracter é um número.
+            </summary>
+            <param name="keyChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.IsNumber(System.Windows.Forms.Keys)">
+            <summary>
+            Verifica se o código informado é um número.
+            </summary>
+            <param name="keyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.IsCurrencyDecimalSeparator(System.Char)">
+            <summary>
+            Verifica se o caracter informado é um separador decimal.
+            </summary>
+            <param name="keyChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.HashMD5(System.String)">
+            <summary>
+            Criptografa a string recebida
+            </summary>
+            <param name="value"></param>
+            <returns>String criptografada</returns>
+        </member>
+        <member name="M:MobileTools.Utils.GetBits(System.Int32)">
+            <summary>
+            Recupera um string com a relação dos bits contidos no número inteiro.
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.IsContainCurrencyDecimalSeparator(System.String)">
+            <summary>
+            Verifica se o texto informado contem algum separador decimal.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.ConvertToDecimal(System.String)">
+            <summary>
+            Converte o texto para um valor decimal.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.ConvertToString(System.Decimal)">
+            <summary>
+            Converto o valor decimal para uma string.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.LocalAlloc(System.Int32)">
+            <summary>
+            Aloca um espaço de memória.
+            </summary>
+            <param name="byteCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Utils.StayConnected">
+            <summary>
+            Mante o dispositivo ligado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Utils.HardReset">
+            <summary>
+            Executa uma HardReset no dispositivo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Text.Base128.Encode(System.Byte[])">
+            <summary>
+            Códifica os dados do buffer.
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Text.Base128.Decode(System.Byte[])">
+            <summary>
+            Decodifica os dados do buffer.
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="F:MobileTools.Controls.Title.heightProportion">
+            <summary>
+            Proporção da altura com a tela.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Title.widthProportion">
+            <summary>
+            Proporção da largura com a tela.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.Title.Draw">
+            <summary>
+            Desenhao componente.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.Title.DrawLine">
+            <summary>
+            Desenha a linha.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.Title.CreateGraphicObject">
+            <summary>
+             Cria as instancias graficas para o objeto
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.Title.CreateMemoryBitmap">
+            <summary>
+             Cria um bitmap na memoria. Isso evita cria um duplo buffer
+             para previnir que o imagem não fique piscando
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.Text">
+            <summary>
+            Sobrescreve propriedade text para garantir
+            que quando for setada, o objeto seja 
+            redesenhado
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.TextAlign">
+            <summary>
+            Alinhamento do texto.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.TextColor">
+            <summary>
+             Define a cor do texto
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.HeightLine">
+            <summary>
+             Define a altura da linha
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.WidthInclination">
+            <summary>
+             Define a largura do ponto de inclinação da linha
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.ColorLine">
+            <summary>
+             Define a cor da linha
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Title.DistanceWordLine">
+            <summary>
+             Define a distância entre a titulo e a linha
+            </summary>
+        </member>
+        <member name="T:MobileTools.PowerManagement.PowerManage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MobileTools.PowerManagement.PowerManage.SetOn">
+            <summary>
+            Define que o dispositivo deve ficar ligado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.FullScreen.GetCapture">
+            <summary>
+            The GetCapture function retrieves a handle to the window 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.SetCapture(System.IntPtr)">
+            <summary>
+            The SetCapture function sets the mouse capture to
+            the specified window belonging to the current thread
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.SHFullScreen(System.IntPtr,System.Int32)">
+            <summary>
+            This function can be used to take over certain areas of the screen
+             It is used to modify the taskbar, Input Panel button,
+            or Start menu icon.
+            </summary>
+            <param name="hwnd"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.FindWindowW(System.String,System.String)">
+            <summary>
+            The function retrieves the handle to the top-level 
+            window whose class name and window name match 
+            the specified strings. This function does not search child windows.
+            </summary>
+            <param name="lpClass"></param>
+            <param name="lpWindow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.MoveWindow(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            changes the position and dimensions of the specified window
+            </summary>
+            <param name="hwnd"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="w"></param>
+            <param name="l"></param>
+            <param name="repaint"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.SetWindowPos(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="hwnd"></param>
+            <param name="hWndInsertAfter"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="cx"></param>
+            <param name="cy"></param>
+            <param name="wFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.SetWindowOnTop(System.IntPtr)">
+            <summary>
+            Coloca a janela no topo.
+            </summary>
+            <param name="hwnd"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.SetWindowOnTop(System.Windows.Forms.Form)">
+            <summary>
+            Coloca a janela no topo.
+            </summary>
+            <param name="frm"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.GetHWnd(System.Windows.Forms.Control)">
+            <summary>
+            obtain the window handle of a .Net window or control
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.FullScreen.StartFullScreen(System.Windows.Forms.Form)">
+            <summary>
+            Set Full Screen Mode
+            </summary>
+            <param name="form"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.MoveForm(System.Windows.Forms.Form,System.Int32,System.Int32)">
+            <summary>
+            Move o form na tela.
+            </summary>
+            <param name="frm"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.ResizeForm(System.Windows.Forms.Form,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Redimenciona o form.
+            </summary>
+            <param name="frm"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.StopFullScreen(System.Windows.Forms.Form)">
+            <summary>
+            Stop Full Screen Mode
+            </summary>
+            <param name="form"></param>
+        </member>
+        <member name="M:MobileTools.FullScreen.HeightTaskBar">
+            <summary>
+            Recupera altura da barra de tarefas.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MobileTools.Controls.NumericTextBox.CurrentCultureInfo">
+            <summary>
+            <see cref="!:CultureInfo"/> usado para formatar o número.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NumericTextBox.ValueFormat">
+            <summary>
+            Formatação para o valor do campo.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NumericTextBox.IsDecimal">
+            <summary>
+            Identifica se o campo aceita valores decimais.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NumericTextBox.Value">
+            <summary>
+            Valor do campo de texto.
+            </summary>
+        </member>
+        <member name="T:MobileTools.GPS.GpsDeviceState">
+            <summary>
+            GpsDeviceState holds the state of the gps device and the friendly name if the 
+            gps supports them.
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.GpsDeviceState.#ctor(System.IntPtr)">
+            <summary>
+            Constructor of GpsDeviceState.  It copies values from the native pointer 
+            passed in. 
+            </summary>
+            <param name="pGpsDevice">Native pointer to memory that contains
+            the GPS_DEVICE data</param>
+        </member>
+        <member name="P:MobileTools.GPS.GpsDeviceState.ServiceState">
+            <summary>
+            State of the GPS Intermediate Driver service
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsDeviceState.DeviceState">
+            <summary>
+            Status of the actual GPS device driver.
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsDeviceState.FriendlyName">
+            <summary>
+            Friendly name of the real GPS device we are currently using.
+            </summary>
+        </member>
+        <member name="T:MobileTools.GPS.Gps">
+            <summary>
+            Summary description for GPS.
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.Open">
+            <summary>
+            Opens the GPS device and prepares to receive data from it.
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.Close">
+            <summary>
+            Closes the gps device.
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.GetPosition">
+            <summary>
+            Get the position reported by the GPS receiver
+            </summary>
+            <returns>GpsPosition class with all the position details</returns>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.GetPosition(System.TimeSpan)">
+            <summary>
+            Get the position reported by the GPS receiver that is no older than
+            the maxAge passed in
+            </summary>
+            <param name="maxAge">Max age of the gps position data that you want back. 
+            If there is no data within the required age, null is returned.  
+            if maxAge == TimeSpan.Zero, then the age of the data is ignored</param>
+            <returns>GpsPosition class with all the position details</returns>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.GetDeviceState">
+            <summary>
+            Queries the device state.
+            </summary>
+            <returns>Device state information</returns>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.CreateGpsEventThread">
+            <summary>
+            Creates our event thread that will receive native events
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.Gps.WaitForGpsEvents">
+            <summary>
+            Method used to listen for native events from the GPS. 
+            </summary>
+        </member>
+        <member name="E:MobileTools.GPS.Gps.LocationChanged">
+            <summary>
+            Event that is raised when the GPS locaction data changes
+            </summary>
+        </member>
+        <member name="E:MobileTools.GPS.Gps.DeviceStateChanged">
+            <summary>
+            Event that is raised when the GPS device state changes
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.Gps.Opened">
+            <summary>
+            True: The GPS device has been opened. False: It has not been opened
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.UltraButton">
+            <summary>
+             Button customizado para aplicações em Windows CE ou PocketPC
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.UltraButton.Draw">
+            <summary>
+            Desenha o botão.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.UltraButton.Draw(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Desenha o botão.
+            </summary>
+            <param name="bgColor">Cor de fundo do botão.</param>
+            <param name="textColor">Cor do texto do botão.</param>
+        </member>
+        <member name="M:MobileTools.Controls.UltraButton.CreateMemoryBitmap">
+            <summary>
+             Cria um bitmap na memoria. Isso evita cria um duplo buffer
+             para previnir que o imagem não fique piscando
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.UltraButton.DrawRoundRectangle(System.Drawing.Color)">
+            <summary>
+             Essa função tem como objetivo desenhar um retangulo
+             com os lados arredondados
+            </summary>
+            <param name="bgColor">Cor de fundo do botão.</param>
+        </member>
+        <member name="P:MobileTools.Controls.UltraButton.Radius">
+            <summary>
+            Gets ou sets o raio dos vertices.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.SignalIntensityControl">
+            <summary>
+            Controle usado para mostrar intensidade de sinal.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SignalIntensityControl._mainBmp">
+            <summary>
+            Bitmap usado no controle.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SignalIntensityControl._mainGraphics">
+            <summary>
+            Graphics usado no controle.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SignalIntensityControl._fillBarBrush">
+            <summary>
+            Brush usado para desenhar o fundo da barra quando ela estiver preenchida.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SignalIntensityControl._emptyBarBrush">
+            <summary>
+            Brush usado para desenhar o fundo da barra quando ela não estiver preenchida.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.SignalIntensityControl.FillBarBackColor">
+            <summary>
+            Cor de fundo da barra quando ela estiver preenchida.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.SignalIntensityControl.EmptyBarBackColor">
+            <summary>
+            Cor de fundo da barra quando ela não estiver preenchida.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.SignalIntensityControl.BarCount">
+            <summary>
+            Quantidade de barras que serão usadas.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.SignalIntensityControl.Value">
+            <summary>
+            Valor do sinal.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SoftKeyType.Dismiss">
+            <summary>
+            Remove the notification when the softkey is pressed
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SoftKeyType.Hide">
+            <summary>
+             Hide the notification when the softkey is pressed (but do not dismiss)
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SoftKeyType.StayOpen">
+            <summary>
+            Do not dismiss or hide the notification when the softkey is pressed.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SoftKeyType.Submit">
+            <summary>
+            Submit the HTML form in the associated notification instead of sending WM_COMMAND to the sink
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.SoftKeyType.Disabled">
+            <summary>
+            This softkey is disabled
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:MobileTools.Controls.MaskEdit" -->
+        <member name="F:MobileTools.Controls.MaskEdit._mask">
+            <summary>
+            Mascara do campo de texto.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.MaskEdit.Mask">
+            <summary>
+            Mascara a ser utilizada
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.MaskEdit.SelectionLength">
+            <summary>
+            Trava selection lenght
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.IImageSource.CreateSource">
+            <summary>
+            Fonte da imagem.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.IImageSource.CloseSource">
+            <summary>
+            Fecha a  fonte se ela estiver aberta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.IImageSource.Name">
+            <summary>
+            Nome da image.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.ImageSource.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="name">Nome da imagem.</param>
+            <param name="imageStream">Stream onde a imagem está inserida.</param>
+        </member>
+        <member name="M:MobileTools.Controls.ImageSource.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name">Nome da imagem.</param>
+            <param name="filename">Caminho do arquivo da imagem.</param>
+        </member>
+        <member name="T:MobileTools.VibrateUtility">
+            <summary>
+            Representa um utilitário que gerencia a vibração do dispositivo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.VibrateUtility.Play">
+            <summary>
+            Inicializa a vibração do dispositivo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.VibrateUtility.Stop">
+            <summary>
+            Paraliza a vibração do dispositivo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MobileTools.Controls.Collections.ImageSourceCollection._mainCollection">
+            <summary>
+            Coleção onde será armazenado as fontes de imagem.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.Collections.ImageSourceCollection.ListChanged">
+            <summary>
+            Evento acionado quando a lista é alterada.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.#ctor">
+            <summary>
+            Construtor
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.BuildItems">
+            <summary>
+            Constroí o itens no grupo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.DestroyItensCheckList">
+            <summary>
+            Destroí o itens.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.MoveNext">
+            <summary>
+            Posiciona o próximo item do grupo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.MovePrevious">
+            <summary>
+            Posiciona o grupo no item anterior.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.MoveLast">
+            <summary>
+            Move para o ultimo item do grupo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.MoveFirst">
+            <summary>
+            Move para o primeiro item do grupo.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.GroupQuestions.GetIndexCurrentQuestionPosition">
+            <summary>
+            Recupera a posiação do atual item no grupo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MobileTools.CheckList.GroupQuestions.Questions">
+            <summary>
+            Lista dos itens do checklist.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.Collections.ObjectCollection">
+            <summary>
+            Coleção de objetos generica.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatterNavigate">
+            <summary>
+            Navegador de registros serializados.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.baseType">
+            <summary>
+            Tipo base do navegador.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.sizeCurrentItem">
+            <summary>
+            Tamanho do atual item.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.coreSupports">
+            <summary>
+            Informações dos dados de suporte para trabalhar a os dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterNavigate.memberAllowNullCount">
+            <summary>
+            Númer de membros da tipo que permite valores nulos.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.#ctor(System.IO.Stream,System.Type)">
+            <summary>
+            Construtor padrão.
+            </summary>
+            <param name="stream">Stream onde os dados estão armazenados.</param>
+            <param name="baseType">Tipo base do navegador.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Initialize">
+            <summary>
+            Inicializa a instância.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Reset">
+            <summary>
+            Reseta a navegação.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.GetItem">
+            <summary>
+            Recupera o item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterNavigate.Read">
+            <summary>
+            Lê o próximo registro.
+            </summary>
+            <returns>True caso o registro tenha sido lido.</returns>
+        </member>
+        <member name="P:MobileTools.Serialize.BFormatterNavigate.Count">
+            <summary>
+            Quantidade de itens contidos no navegador.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Distance(MobileTools.Mathematics.PointF,MobileTools.Mathematics.PointF)">
+            <summary>
+            Calcula a distância entre 2 pontos.
+            </summary>
+            <param name="point1">Ponto 1.</param>
+            <param name="point2">Ponto 2.</param>
+            <returns>Distância entre os dois pontos.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.DegreesToRadius(System.Double)">
+            <summary>
+            Converte graus para radianos.
+            </summary>
+            <param name="degrees">Valor em graus.</param>
+            <returns>Valor em radianos.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.RadiusToDegrees(System.Double)">
+            <summary>
+            Converte radianos para graus.
+            </summary>
+            <param name="radius">Valor em radianos.</param>
+            <returns>Valor em graus.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.GetAngle(MobileTools.Mathematics.PointF,MobileTools.Mathematics.PointF)">
+            <summary>
+            Obtem o angulo de inclinação entre dois pontos.
+            </summary>
+            <param name="point1"></param>
+            <param name="point2"></param>
+            <returns>Ângulo entre os dois pontos.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Rotate(System.Double,MobileTools.Mathematics.PointF,MobileTools.Mathematics.PointF[])">
+            <summary>
+            Rotaciona um conjunto de pontos em um determinado ângulo apartir de um ponto de referência.
+            </summary>
+            <param name="angle">Ângulo de Rotação.</param>
+            <param name="pointRef">Ponto de referência.</param>
+            <param name="points">Conjunto de pontos a serem rotacionados.</param>
+            <returns>Novo pontos já rotacionados.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Rotate(System.Double,MobileTools.Mathematics.PointF,MobileTools.Mathematics.PointF)">
+            <summary>
+            Rotaciona um ponto em um determinado ângulo apartir de um ponto de referência.
+            </summary>
+            <param name="angle">Ângulo de Rotação.</param>
+            <param name="pointRef">Ponto de referência.</param>
+            <param name="point">Ponto a ser rotacionado.</param>
+            <returns>Novo ponto rotacionado.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Rotate(System.Double,MobileTools.Mathematics.PointF)">
+            <summary>
+            Rotaciona um ponto apartir do ponto (0,0) em um determinado ângulo.
+            </summary>
+            <param name="angle">Ângulo de Rotação.</param>
+            <param name="point">Ponto a ser rotacionado.</param>
+            <returns>Novo ponto rotacionado.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Rotate(System.Double,System.Drawing.Point)">
+            <summary>
+            Rotaciona um ponto apartir do ponto (0,0) em um determinado ângulo.
+            </summary>
+            <param name="angle">Ângulo de Rotação.</param>
+            <param name="point">Ponto a ser rotacionado.</param>
+            <returns>Novo ponto rotacionado.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Scale(System.Single,MobileTools.Mathematics.PointF[])">
+            <summary>
+            Define uma nova escala para um conjunto de pontos.
+            </summary>
+            <param name="scale">Escala</param>
+            <param name="points">Conjunto de pontos.</param>
+            <returns>Novos ponto com a nova escala.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.Scale(System.Single,MobileTools.Mathematics.PointF)">
+            <summary>
+            Define uma nova escala para o ponto.
+            </summary>
+            <param name="scale">Nova escala.</param>
+            <param name="point">Ponto usado.</param>
+            <returns>Ponto com as nova coordendas.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.CalculateTriangleArea(System.Drawing.Point,System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Calcula a área do tringulo que é composto pelo 3 pontos
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+            <param name="p3"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Transformations2D.CalculatePolygonoArea(System.Drawing.Point[])">
+            <summary>
+            Calcula a área do poligono.
+            </summary>
+            <param name="points">Pontos do poligono.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.GPS.Ellipsoid">
+            <summary>
+            Trabalha com conversões de coordenadas geograficas.
+            Essa classe foi importada apartir de um código VISUALBASIC.
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.Ellipsoid.#ctor(System.Int32,System.String,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="iid">Identificador da elipsoid.</param>
+            <param name="sname">Nome.</param>
+            <param name="radius">Raio polar em metros</param>
+            <param name="ecc"></param>
+        </member>
+        <member name="T:MobileTools.Text.Base32">
+            <summary>
+            Encodes and decodes 'Canonical' base32 format.
+            </summary>
+        </member>
+        <member name="T:MobileTools.CheckList.QuestionType">
+            <summary>
+            Tipos de Perguntas.
+            </summary>
+        </member>
+        <member name="T:MobileTools.CheckList.Question">
+            <summary>
+            Representa uma questão do checklist.
+            </summary>
+            
+        </member>
+        <member name="F:MobileTools.CheckList.Question._identification">
+            <summary>
+            Objeto usado na identificação da questão.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.#ctor">
+            <summary>
+            Construtor padrão.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.CreateSimpleQuestion">
+            <summary>
+            Cria a questão simples.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.itemRadioButton_CheckStateChanged(System.Object,System.EventArgs)">
+            <summary>
+            Método acionado quando a resposta da questão simples é alterada.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.mo_ItemCheckStateChanged(System.Object,MobileTools.CheckList.ItemQuestion)">
+            <summary>
+            Método acionado quando um item é marcado ou não na multipla escolha.
+            </summary>
+            <param name="sender"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.itemsComboBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Método acionado quando o item da combobox é selecionado.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MobileTools.CheckList.Question.Build">
+            <summary>
+            Constrói a questão.
+            </summary>
+        </member>
+        <member name="E:MobileTools.CheckList.Question.AnswerChanged">
+            <summary>
+            Evento acionado quando a resposta é alterada.
+            </summary>
+        </member>
+        <member name="E:MobileTools.CheckList.Question.AnswerChanging">
+            <summary>
+            Evento acionado quando a resposta está sendo alterada.
+            </summary>
+        </member>
+        <member name="E:MobileTools.CheckList.Question.OptionStateChanged">
+            <summary>
+            Evento acionado quando os estado de uma opção é alterado.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.VisibleComboOptions">
+            <summary>
+            Identifica se a combobox de opções deve ficar visível
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.VisibleMultipleOptions">
+            <summary>
+            Identifica se a combobox de multiplas opções deve ficar visível
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.AdditionalsControls">
+            <summary>
+            Lista dos controles adicionais da questão.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.VisibleCommentButton">
+            <summary>
+            Identifica se o botão de comentário é para ficar visível ou não.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.VisibleComment">
+            <summary>
+            Identifica se o comentário é para ficar visível ou não.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.CommentText">
+            <summary>
+            Texto da caixa de comentário.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.CommentButton">
+            <summary>
+            Botão de comentário.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.Identification">
+            <summary>
+            Campo para identificar a pergunta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.SimpleQuestionAnswer">
+            <summary>
+            Resposta da questão simples.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.CurrentSimpleQuestion">
+            <summary>
+            Questão simples relacionada.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.ItemsMultipleOptions">
+            <summary>
+            Itens da lista de questões.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.SelectedIndex">
+            <summary>
+            Index do item selecionado.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.SelectedItem">
+            <summary>
+            Item selecionado.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.SelectedItems">
+            <summary>
+            Itens selecinados.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.CurrentQuestionType">
+            <summary>
+            Tipo de pergunta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.Question.Warning">
+            <summary>
+            Define que a pergunta deve receber mais atenção.
+            </summary>
+        </member>
+        <member name="T:MobileTools.CheckList.QuestionCollection">
+            <summary>
+            Coleção de perguntas.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.ItemQuestionCollection.Add(System.String,System.Object)">
+            <summary>
+            Adiciona uma novo item na coleção.
+            </summary>
+            <param name="description"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MobileTools.Sound.#ctor(System.String)">
+            <summary>
+            Construct the Sound object to play sound data from the specified file.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Sound.#ctor(System.IO.Stream)">
+            <summary>
+            Construct the Sound object to play sound data from the specified stream.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Sound.Play">
+            <summary>
+            Play the sound
+            </summary>
+        </member>
+        <member name="M:MobileTools.Sound.MessageBeep(MobileTools.Sound.BeepType)">
+            <summary>
+            Aciona o beep do dispositivo.
+            </summary>
+            <param name="type">Tipo do beep que será acionado.</param>
+        </member>
+        <member name="T:MobileTools.Sound.BeepType">
+            <summary>
+            Possíveis tipos de beep do sistema.
+            </summary>
+        </member>
+        <member name="T:MobileTools.GPS.DeviceStateChangedEventArgs">
+            <summary>
+            Event args used for DeviceStateChanged event.
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.DeviceStateChangedEventArgs.DeviceState">
+            <summary>
+            Gets the new device state when the GPS reports a new device state.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Mathematics.PointF.op_Implicit(MobileTools.Mathematics.PointF)~System.Drawing.Point">
+            <summary>
+            Converte o PointF especificado para um Point.
+            </summary>
+            <param name="p">PointF a ser convertido.</param>
+            <returns>Point do resultado da conversão.</returns>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.Rotate(System.Double)">
+            <summary>
+            Rotaciona os pontos da seta.
+            </summary>
+            <param name="radius">Ângulo de rotação em radianos.</param>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.RotateDegrees(System.Double)">
+            <summary>
+            Rotaciona os pontos da seta.
+            </summary>
+            <param name="degrees">Ângulo de rotação em graus.</param>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.#ctor(MobileTools.Mathematics.PointF,MobileTools.Mathematics.PointF,System.Single,System.Single)">
+            <summary>
+            Construtor.
+            </summary>
+            <param name="beginPoint">Ponto inicial.</param>
+            <param name="endPoint">Ponto final.</param>
+            <param name="width">Largura da seta.</param>
+            <param name="height">Altura da seta.</param>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.#ctor(System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="width">Largura da seta.</param>
+            <param name="height">Altura da seta.</param>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.GeneratePoints">
+            <summary>
+            Gera os pontos.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Mathematics.Arrow.BuildPointsArrow">
+            <summary>
+            Constroi os pontos da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.Size">
+            <summary>
+            Tamanho da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.Width">
+            <summary>
+            Larguta da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.Heigth">
+            <summary>
+            Altura da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.Location">
+            <summary>
+            Localização da Seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.BeginPoint">
+            <summary>
+            Ponto inicial da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.EndPoint">
+            <summary>
+            Ponto final da seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.PointFs">
+            <summary>
+            Pontos que montam a seta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Mathematics.Arrow.Points">
+            <summary>
+            Pontos que montam a seta.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.NotificationWithSoftKeys">
+            <summary>
+            Implements Windows CE functionality for displaying and responding to user notifications.
+            <para><b>New in v1.3</b></para>
+            </summary>
+            <remarks>This class provides a managed implementation of the Windows CE notification functions.
+            This class is supported only on the Pocket PC.
+            <para>You can create notifications and then display them as needed using the <see cref="P:MobileTools.Controls.NotificationWithSoftKeys.Visible"/> property.
+            The <see cref="P:MobileTools.Controls.NotificationWithSoftKeys.InitialDuration"/> property sets the time the message balloon initially displays.
+            If you set <see cref="P:MobileTools.Controls.NotificationWithSoftKeys.InitialDuration"/> to zero and Visible to true, the message balloon does not appear but its icon is available in the title bar for reactivation when clicked.
+            The <see cref="E:MobileTools.Controls.NotificationWithSoftKeys.BalloonChanged"/> event occurs whenever the balloon is shown or hidden, either programmatically using the <see cref="P:MobileTools.Controls.NotificationWithSoftKeys.Visible"/> property or through user interaction.
+            In addition to plain text, you can create a user notification with HTML content in the message balloon.
+            The HTML is rendered by the Pocket PC HTML control, and you can respond to values in an HTML form by parsing a response string provided by the <see cref="T:Microsoft.WindowsCE.Forms.ResponseSubmittedEventArgs"/> class, through the <see cref="P:Microsoft.WindowsCE.Forms.ResponseSubmittedEventArgs.Response"/> property.</para>
+            <b>Cmd:2 Identifier</b>
+            <para>The identifier "cmd:2" has a special purpose in Windows CE and is used to dismiss notifications.
+            If cmd:2 is the name of an HTML button or other element in a message balloon, the <see cref="E:MobileTools.Controls.NotificationWithSoftKeys.ResponseSubmitted"/> event is not raised.
+            The notification is dismissed, but its icon is placed on the title bar to be responded to at a later time.</para></remarks>
+        </member>
+        <member name="M:MobileTools.Controls.NotificationWithSoftKeys.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.WindowsCE.Forms.Notification"/> class.
+            </summary>
+            <remarks>This class is not supported on the Smartphone or other Windows CE devices that are not Pocket PCs.
+            You can create multiple notifications, such as an array of notifications, and display them as needed with the Visible property.</remarks>
+        </member>
+        <member name="M:MobileTools.Controls.NotificationWithSoftKeys.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Caption">
+            <summary>
+            Gets or sets a string specifying the title text for the message balloon.
+            </summary>
+            <value>A string that specifies the caption text.
+            The default value is an empty string ("").</value>
+            <remarks>The background color of the caption is dependent on the current theme of the user.
+            Use the <see cref="P:MobileTools.Controls.NotificationWithSoftKeys.Text"/> property to modify the text in the body of the message balloon.</remarks>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Critical">
+            <summary>
+            Gets or sets a value indicating whether the notification is of urgent importance.
+            </summary>
+            <value>true if the notification is critical; otherwise, false. The default is false.</value>
+            <remarks>Critical notifications have a red background caption color, or other color, depending on the current Pocket PC theme.</remarks>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Icon">
+            <summary>
+            Gets or sets the current native icon handle for the message balloon on the title bar.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.InitialDuration">
+            <summary>
+            Gets or sets the number of seconds the message balloon remains visible after initially shown.
+            </summary>
+            <remarks>The amount of time the balloon is visible, in seconds. The default is 10.</remarks>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Text">
+            <summary>
+            Gets or sets the text for the message balloon.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.TitleTime">
+            <summary>
+            Gets or sets a value indicating whether the current time is displayed with the notification title. 
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Spinners">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.NotificationWithSoftKeys.Visible">
+            <summary>
+            Gets or sets a value indicating whether the message balloon is visible.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.NotificationWithSoftKeys.BalloonChanged">
+            <summary>
+            Occurs when a message balloon is displayed or hidden.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.NotificationWithSoftKeys.ResponseSubmitted">
+            <summary>
+            Occurs when the user clicks a button or link in the message balloon.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.NotificationWithSoftKeys.SpinnerClick">
+            <summary>
+            Occurs when the user clicks a button or link in the message balloon.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.NotificationWithSoftKeys.LeftSoftKeyClick">
+            <summary>
+            Occurs when the user clicks the left soft key if it is of type SoftKeyType.StayOpen.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.NotificationWithSoftKeys.RightSoftKeyClick">
+            <summary>
+            Occurs when the user clicks the right soft key if it is of type SoftKeyType.StayOpen.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView.baseHeight">
+            <summary>
+            Altura da base.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView._images">
+            <summary>
+            Images da lista.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView.lastPage">
+            <summary>
+            Ultima página válida.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView.imagesControls">
+            <summary>
+            Vetor dos controles das imagens.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView.disposed">
+            <summary>
+            Identifica se o controle foi liberado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.ImageListView.images_ListChanged(System.Object,System.EventArgs)">
+            <summary>
+            Método acionado quando um a lista de imagens é alterada.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MobileTools.Controls.ImageListView.CreateGraphicObject(System.Drawing.Graphics)">
+            <summary>
+            Desenha o objeto
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.ImageListView.RenderImages">
+            <summary>
+            Desenha a imagem na tela
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.BorderColor">
+            <summary>
+            Cor da borda da lista.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.SelectedIndex">
+            <summary>
+            Índice da imagem  selecionada.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.TypeImage">
+            <summary>
+            Define o tipo da imagem a ser exibida
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.BorderWidth">
+            <summary>
+            Largura da borda da lista.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.Images">
+            <summary>
+            Imagens da lista.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.ImageListView.PerLine">
+            <summary>
+            Quantidade de imagens por linha da lista.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.ImageListView.ImageButton._source">
+            <summary>
+            Fonta da imagem usada no botão.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="M:MobileTools.PInvoke.SystemParametersInfo4Strings(System.UInt32,System.UInt32,System.Text.StringBuilder,System.UInt32)">
+            <summary>
+            to find whether you are running on a Smartphone or a Pocket PC
+            </summary>
+            <param name="uiAction"></param>
+            <param name="uiParam"></param>
+            <param name="pvParam"></param>
+            <param name="fWinIni"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.PInvoke.GetPlatformType">
+            <summary>
+            Get Platform Type: Pocket Pc or Windows CE
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.PlatformDetection">
+            <summary>
+            Platform Detections methods
+            </summary>
+        </member>
+        <member name="T:MobileTools.GPS.LocationChangedEventArgs">
+            <summary>
+            Event args used for LocationChanged events.
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.LocationChangedEventArgs.Position">
+            <summary>
+            Gets the new position when the GPS reports a new position.
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.Satellite.Id">
+            <summary>
+            Id of the satellite
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.Satellite.Elevation">
+            <summary>
+            Elevation of the satellite
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.Satellite.Azimuth">
+            <summary>
+            Azimuth of the satellite
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.Satellite.SignalStrength">
+            <summary>
+            SignalStrenth of the satellite
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.GpsPosition.GetSatellitesInSolution">
+            <summary>
+            Satellites used in the solution
+            </summary>
+            <returns>Array of Satellites</returns>
+        </member>
+        <member name="M:MobileTools.GPS.GpsPosition.GetSatellitesInView">
+            <summary>
+            Satellites in view
+            </summary>
+            <returns>Array of Satellites</returns>
+        </member>
+        <member name="M:MobileTools.GPS.GpsPosition.ParseDegreesMinutesSeconds(System.Double)">
+            <summary>
+            Parses out the degrees, minutes, seconds from the double format returned by
+            the NMEA GPS device
+            </summary>
+            <param name="val">degrees, minutes, seconds as a double</param>
+            <returns>DegreesMinutesSeconds structure</returns>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.Time">
+            <summary>
+            UTC according to GPS clock.
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.TimeValid">
+            <summary>
+            True if the Time property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatellitesInSolutionValid">
+            <summary>
+            True if the SatellitesInSolution property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatellitesInViewValid">
+            <summary>
+            True if the SatellitesInView property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatelliteCount">
+            <summary>
+            Number of satellites used in solution
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatelliteCountValid">
+            <summary>
+            True if the SatelliteCount property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatellitesInViewCount">
+            <summary>
+            Number of satellites in view.  
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SatellitesInViewCountValid">
+            <summary>
+            True if the SatellitesInViewCount property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.Speed">
+            <summary>
+            Speed in knots
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SpeedValid">
+            <summary>
+            True if the Speed property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.EllipsoidAltitude">
+            <summary>
+            Altitude with regards to ellipsoid, in meters
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.EllipsoidAltitudeValid">
+            <summary>
+            True if the EllipsoidAltitude property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SeaLevelAltitude">
+            <summary>
+            Altitute with regards to sea level, in meters
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.SeaLevelAltitudeValid">
+            <summary>
+            True if the SeaLevelAltitude property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.Latitude">
+            <summary>
+            Latitude in decimal degrees.  North is positive
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.LatitudeInDegreesMinutesSeconds">
+            <summary>
+            Latitude in degrees, minutes, seconds.  North is positive
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.LatitudeValid">
+            <summary>
+            True if the Latitude property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.Longitude">
+            <summary>
+            Longitude in decimal degrees.  East is positive
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.LongitudeInDegreesMinutesSeconds">
+            <summary>
+            Longitude in degrees, minutes, seconds.  East is positive
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.LongitudeValid">
+            <summary>
+            True if the Longitude property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.Heading">
+            <summary>
+            Degrees heading (course made good).  True North=0
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.HeadingValid">
+            <summary>
+            True if the Heading property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.PositionDilutionOfPrecision">
+            <summary>
+            Position Dilution Of Precision
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.PositionDilutionOfPrecisionValid">
+            <summary>
+            True if the PositionDilutionOfPrecision property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.HorizontalDilutionOfPrecision">
+            <summary>
+            Horizontal Dilution Of Precision
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.HorizontalDilutionOfPrecisionValid">
+            <summary>
+            True if the HorizontalDilutionOfPrecision property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.VerticalDilutionOfPrecision">
+            <summary>
+            Vertical Dilution Of Precision
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.GpsPosition.VerticalDilutionOfPrecisionValid">
+            <summary>
+            True if the VerticalDilutionOfPrecision property is valid, false if invalid
+            </summary>
+        </member>
+        <member name="T:MobileTools.Process">
+            <summary>
+            Summary description for Process.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.LabelAutoResize.changeDesign">
+            <summary>
+            Indica que houve alguma modificação no design do controle.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.LabelAutoResize.CreateMemoryBmp">
+            <summary>
+            Cria um instância de um bitmap me memória.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.LabelAutoResize.Draw">
+            <summary>
+            Desenha o controle.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.LabelAutoResize.GetSize(System.String,System.Drawing.Font,System.Int32)">
+            <summary>
+            Obtem a dimensão que o texto vai ocupar.
+            </summary>
+            <param name="text">Texto.</param>
+            <param name="font">Fonte do texto.</param>
+            <param name="width">Largura máxima.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Controls.LabelAutoResize.GetSize(System.String,System.Drawing.Font,System.Int32,System.String@)">
+            <summary>
+            Obtem a dimensão que o texto vai ocupar.
+            </summary>
+            <param name="text">Texto.</param>
+            <param name="font">Fonte do texto.</param>
+            <param name="width">Largura máxima.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.Controls.TextBoxEx">
+            <summary>
+            Author	:- Moditha Kumara
+            Date	:- 26/5/2004
+            Extended TextBox component which is capable of validating text in couple
+            of ways. This is a modified version of the original by Luis Alberto Ruiz Arauz
+            ValidText component (in codeproject.com). However it was in VB.NET. So I thought
+            of converting it to c#. Secondly, it had quite lengthy code which I thought
+            can be reduced. This is the end result. This address the masking issue
+            differently to Luis version. Couple of touches have been made here and there.
+            
+            Use this. edit it(if needed) and please tell me if you made any improvements
+            to my code. I will be adding more controls/improvements under CustomControls
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.TextBoxEx.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.TextBoxEx.TextPropertyChanged(System.String)">
+            <summary>
+            OnTextChanged event cannot be used here.
+            We call this method from the TEXT property, SET section
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.TextBoxEx.PerformMaskValidation(System.Windows.Forms.KeyPressEventArgs,System.Boolean)">
+            <summary>
+            Checks each character and adds it to TEXT property.
+            additionaly tells wether the current character is valid.
+            Can be used to check wether the passed character got added
+            </summary>
+            <param name="e">KeyPressEventArgs</param>
+            <returns>true- if the character is valid. else false.</returns>
+            
+        </member>
+        <member name="M:MobileTools.Controls.TextBoxEx.GetMaskPattern(System.String)">
+            <summary>
+            For future updates. To provide mask character escaping functionality.
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Controls.TextBoxEx.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:MobileTools.Controls.TextBoxEx.ValidationText" -->
+        <member name="P:MobileTools.Controls.TextBoxEx.IsRequired">
+            <summary>
+            Controls whether a value is needed for text property.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.ShowErrorIcon">
+            <summary>
+            Controls whether error icon should be shown.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.RegExPatternMode">
+            <summary>
+            Regular expression mode to use.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.ValidationMode">
+            <summary>
+            Specifies the type of validation to be used.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.ErrorMessage">
+            <summary>
+            Error message to show when validation fails.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.TextInputMode">
+            <summary>
+            Controls wherther text input mode is insert or overwrite.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.TextBoxEx.UseEnterAsTab">
+            <summary>
+            Controls whether the ENTER key acts as a TAB.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNOTIFICATIONDATA.csDuration">
+            <summary>
+            Duration to display the bubble (in seconds).
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNOTIFICATIONDATA.grfFlags">
+            <summary>
+            Flags that affect the behaviour of the Notification bubble
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNOTIFICATIONDATA.lParam">
+            <summary>
+            User defined parameter
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNP.INFORM">
+            <summary>
+            Bubble shown for duration, then goes away
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNP.ICONIC">
+            <summary>
+            No bubble, icon shown for duration then goes away
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.Structs.SHNF">
+            <summary>
+            Flags that affect the display behaviour of the Notification
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNF.STRAIGHTTOTRAY">
+            <summary>
+            For SHNP_INFORM priority and above, don't display the notification bubble when it's initially added;
+            the icon will display for the duration then it will go straight into the tray.
+            The user can view the icon / see the bubble by opening the tray.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNF.CRITICAL">
+            <summary>
+            Critical information - highlights the border and title of the bubble.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNF.FORCEMESSAGE">
+            <summary>
+            Force the message (bubble) to display even if settings says not to.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNF.DISPLAYON">
+            <summary>
+            Force the display to turn on for notification. Added for Windows Mobile 2003.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Controls.Structs.SHNF.SILENT">
+            <summary>
+            Force the notification to be silent and not vibrate, regardless of Settings. Added for Windows Mobile 2003.
+            </summary>
+        </member>
+        <member name="T:MobileTools.CheckList.EventOption">
+            <summary>
+            Delegate acionado quando um opção é selecionada.
+            </summary>
+            <param name="sender"></param>
+            <param name="item">Item selecionado.</param>
+        </member>
+        <member name="M:MobileTools.CheckList.MultipleOptions.BuildOptions">
+            <summary>
+            Constroi os controles.
+            </summary>
+        </member>
+        <member name="E:MobileTools.CheckList.MultipleOptions.ItemCheckStateChanged">
+            <summary>
+            Evento acionado quando o item é selecionado
+            </summary>
+        </member>
+        <member name="T:MobileTools.SystemTimeInfo">
+            <summary>
+            Gerencia o horário do sistema.
+            </summary>
+        </member>
+        <member name="M:MobileTools.SystemTimeInfo.UpdateSystemTime(System.DateTime)">
+            <summary>
+            Atualiza o horário do sistema.
+            </summary>
+            <param name="time">Nome horário.</param>
+        </member>
+        <member name="M:MobileTools.Net.Helper.CheckConnected(System.String)">
+            <summary>
+            Verifica se a conexão com o servidor pode ser estabelecida.
+            </summary>
+            <param name="targetAddress">Endereço do servidor.</param>
+            <returns>
+            <para>True: se o a conexão foi estabelecida.</para>
+            <para>False: se o a conexão não foi estabelecida.</para>
+            </returns>
+        </member>
+        <member name="M:MobileTools.CheckList.ChangeAnswerArgs.#ctor(MobileTools.CheckList.ItemQuestion,MobileTools.CheckList.ItemQuestion)">
+            <summary>
+            Construtor padrão.
+            </summary>
+            <param name="newAnswer"></param>
+            <param name="oldAnswer"></param>
+        </member>
+        <member name="P:MobileTools.CheckList.ChangeAnswerArgs.Cancel">
+            <summary>
+            Cancela a modificação.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.ChangeAnswerArgs.NewAnswer">
+            <summary>
+            Nova Resposta.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.ChangeAnswerArgs.OldAnswer">
+            <summary>
+            Resposta anterior.
+            </summary>
+        </member>
+        <member name="M:MobileTools.CheckList.ItemQuestion.#ctor(System.String,System.Object)">
+            <summary>
+            Construtor.
+            </summary>
+            <param name="value">Número do item.</param>
+            <param name="description">Descrição.</param>
+        </member>
+        <member name="M:MobileTools.CheckList.ItemQuestion.#ctor(System.String,System.Object,System.Int64)">
+            <summary>
+            Construtor.
+            </summary>
+            <param name="value">Número do item.</param>
+            <param name="description">Descrição.</param>
+            <param name="tag">Identificador livre</param>
+        </member>
+        <member name="P:MobileTools.CheckList.ItemQuestion.Value">
+            <summary>
+            Valor do item.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.ItemQuestion.Description">
+            <summary>
+            Descrição do item.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.ItemQuestion.Tag">
+            <summary>
+            Tag
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.SelectedValueEventArgs.Handled">
+            <summary>
+            Valor que indica que o evneto foi handled.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.RadioButtonGroup.OnSelectedValueChanged(MobileTools.Controls.SelectedValueEventArgs)">
+            <summary>
+            Método acionado quando o valor selecionado é alterado.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Controls.RadioButtonGroup.collection_ControlAdded(System.Windows.Forms.Control)">
+            <summary>
+            Método acionado quando um controle é adicionado no grupo.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MobileTools.Controls.RadioButtonGroup.RadioButtonGroup_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Método acionado quando algum RadioButton do grupo for selecionado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MobileTools.Controls.RadioButtonGroup.UpdateRadioButtons">
+            <summary>
+            Atualiza a seleção dos radios buttons contidos no grupo.
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.RadioButtonGroup.SelectedValueChanged">
+            <summary>
+            Evento acionado quando o valor selecionado é alterado.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Controls.RadioButtonGroup.SelectedValue">
+            <summary>
+            Representa o valor selecionado pelos radio buttons
+            </summary>
+        </member>
+        <member name="E:MobileTools.Controls.RadioButtonGroup.RadioButtonGroupControlCollection.ControlAdded">
+            <summary>
+            Evento acionado quando um controle é acionado na coleção.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Controls.NotificationMessageWindow">
+            <summary>
+            Handles messages received from the Notification system and throws events in the parent NotificationEngine object
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatterSource">
+            <summary>
+            Representa uma fonte de dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.source">
+            <summary>
+            Stream onde os dados serão salvos.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.localStream">
+            <summary>
+            Identifica se a stream foi criada na atual instância.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.coreSupports">
+            <summary>
+            Informações dos dados de suporte para trabalhar a os dados.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatterSource.memberAllowNullCount">
+            <summary>
+            Númer de membros da tipo que permite valores nulos.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.#ctor(System.IO.Stream,System.Type)">
+            <summary>
+            Instancia uma fonte que será salva na stream informada.
+            </summary>
+            <param name="stream">Stream onde os dados serão salvos.</param>
+            <param name="baseType">Tipo base trabalhado pela fonte.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Flush">
+            <summary>
+            Força o salvamento da informação na stream.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Add(System.Object)">
+            <summary>
+            Adiciona um item na fonte.
+            </summary>
+            <param name="item">Item contendo os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatterSource.Dispose">
+            <summary>
+            Libera a instancia.
+            </summary>
+        </member>
+        <member name="P:MobileTools.Serialize.BFormatterSource.Count">
+            <summary>
+            Quantidade de itens contidos na fonte.
+            </summary>
+        </member>
+        <member name="T:MobileTools.CheckList.SimpleQuestion">
+            <summary>
+            Representa a estrutura de uma questão simples.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.SimpleQuestion.Items">
+            <summary>
+            Lista dos itens da resposta simples.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.SimpleQuestion.BackColor">
+            <summary>
+            Cor de fundo da questão.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.SimpleQuestion.ForeColor">
+            <summary>
+            Cor do texto da questão.
+            </summary>
+        </member>
+        <member name="P:MobileTools.CheckList.SimpleQuestion.Font">
+            <summary>
+            Fonte dos itens da questão.
+            </summary>
+        </member>
+        <member name="M:MobileTools.ThreadSafe.FireEvent``1(System.Delegate,System.Object,``0)">
+            <summary>
+            Dispara um evento utilizando segurança de thread, se o método algo
+            oferecer suporte.
+            </summary>
+            <typeparam name="T">Tipo do argumento passado para o delegate.</typeparam>
+            <param name="deleg">Delegate aonde os métodos algo estão relacionados.</param>
+            <param name="arg">Argumento passado para o delegate.</param>
+        </member>
+        <member name="M:MobileTools.ThreadSafe.FireEvent(System.Delegate,System.Object[])">
+            <summary>
+            Dispara um evento utilizando segurança de thread, se o método algo
+            oferecer suporte.
+            </summary>
+            <typeparam name="T">Tipo do argumento passado para o delegate.</typeparam>
+            <param name="deleg">Delegate aonde os métodos algo estão relacionados.</param>
+            <param name="arg">Argumento passado para o delegate.</param>
+        </member>
+        <member name="M:MobileTools.ThreadSafe.FireEvent(MobileTools.ThreadSafeMethod)">
+            <summary>
+            Dispara um evento utilizando segurança de thread, se o método algo
+            oferecer suporte.
+            </summary>
+            <param name="deleg">Delegate aonde os métodos algo estão relacionados.</param>
+        </member>
+        <member name="T:MobileTools.Serialize.BNonSerializeAttribute">
+            <summary>
+            Atributo para identifica que aquele campo ou método não será serializado.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.SerializableMaxLenghtAttribute">
+            <summary>
+            Atribute que identifica o tamanho máximo em byte que o campo pode conter.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.SerializableMaxLenghtAttribute.#ctor(System.Int32)">
+            <summary>
+            Construtor padrão.
+            </summary>
+            <param name="maxLenght">Tamanho máximo para serializar.</param>
+        </member>
+        <member name="P:MobileTools.Serialize.SerializableMaxLenghtAttribute.MaxLenght">
+            <summary>
+            Gets a quantidade máxima de byte que o campo suporta.
+            </summary>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatter">
+            <summary>
+            Serializa e deserializa um objeto em um junto de dados binários.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.coreTypes">
+            <summary>
+            Tipos básico suportados para serialização
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.IsStruct(System.Type)">
+            <summary>
+            Verifica se o tipo informado é uma estrutura.
+            </summary>
+            <param name="type">Tipo.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.IsCoreType(System.Type)">
+            <summary>
+            Verifica se é um tipo básico aceitável para serialização.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Support(System.Type)">
+            <summary>
+            Verifica se o tipo é suportado pela serialização.
+            </summary>
+            <param name="type">Tipo a ser verificado.</param>
+            <returns>
+            <list type="bool">
+            <item>True: o tipo é suportado.</item>
+            <item>False: o tipo não é suportado.</item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.WriteData(System.IO.Stream,System.Object,System.Type,System.Int32)">
+            <summary>
+            Escreve o valor do objeto na stream.
+            </summary>
+            <param name="stream">Stream aonde serão salvos os dados do objeto.</param>
+            <param name="o">Objeto contendo os dados.</param>
+            <param name="type">Tipo do valor a ser serializado.</param>
+            <param name="maxLenght">Tamanho máximo a ser serializado.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.ReadData(System.IO.Stream,System.Type,System.Int32)">
+            <summary>
+            Lê os dados da stream e salva no objeto
+            </summary>
+            <param name="stream"></param>
+            <param name="type">Tipo de dado a ser lido.</param>
+            <return>Valor lido.</return>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Export(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Object)">
+            <summary>
+            Extrai os dados do objeto.
+            </summary>
+            <param name="streamOut">Stream onde será armazenado os dados extraídos.</param>
+            <param name="supports">Informações dos membros onde estão os dados.</param>
+            <param name="membersAllowNullCount">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="graph">Objeto de onde será estraído os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Import(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Object)">
+            <summary>
+            Importa os dados do objeto contidos na stream.
+            </summary>
+            <param name="streamIn">Stream onde estão os dados a serem importados.</param>
+            <param name="supports">Informações dos membros que mapeam os dados.</param>
+            <param name="memberAllowNullCount">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="graph">Objeto onde os dados importados serão salvos.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.LoadTypeInformation(System.Type,System.Int16@)">
+            <summary>
+            Carrega as informações sobre o tipo.
+            </summary>
+            <param name="type">Tipo a ser examinado.</param>
+            <param name="membersAllowNullCount">Númeor de membros que permite valores nulos.</param>
+            <returns>Informações de suporte.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.DeserializeBase(System.IO.Stream,System.Type,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Int32,System.Object)">
+            <summary>
+            Deserializa os dados.
+            </summary>
+            <param name="stream">Stream onde os dados estão armazenados.</param>
+            <param name="type">Tipo que será recuperado.</param>
+            <param name="supports">Membros mapeados.</param>
+            <param name="memberAllowNull">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="maxLenght">Tamanho máximo aceito.</param>
+            <param name="graph">Objeto onde a deserialização será salva.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.SerializeBase(System.IO.Stream,MobileTools.Serialize.BFormatter.InfoCoreSupport[],System.Int16,System.Int32,System.Object)">
+            <summary>
+            Serializa os dados.
+            </summary>
+            <param name="stream">Stream onde será salvo os dados.</param>
+            <param name="supports">Membros mapeados.</param>
+            <param name="membersAllowNull">Quantidade de membros que aceitam valores nulos.</param>
+            <param name="maxLenght">Tamanho máximo aceito.</param>
+            <param name="graph">Objeto que será serializado.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.ReadArrayLenght(System.IO.Stream,System.Int32)">
+            <summary>
+            Lê o tamanho do vetor serializado no stream.
+            </summary>
+            <param name="stream">Stream onde está armazenada os dados.</param>
+            <param name="maxLenght">Tamanho máximo do vetor.</param>
+            <returns>Tamanho do vetor salvo no arquivo.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Serialize(System.Object)">
+            <summary>
+            Serializa o objeto passado, e armazena os dados na stream.
+            </summary>
+            <param name="graph">Objeto a serializado.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MobileTools.Serialize.BFormatter.Serialize(System.IO.Stream,System.Object)" -->
+        <member name="M:MobileTools.Serialize.BFormatter.Deserialize(System.IO.Stream,System.Type)">
+            <summary>
+            Deseriliza os dados contidos na stream e retorna o objeto do tipo passado com os dados preenchidos.
+            </summary>
+            <param name="serializationStream">Stream onde estão os dados para serem deserializados.</param>
+            <param name="typeReturn">Tipo de retorno do elemento.</param>
+            <returns>Objeto com os dados dados preenchidos.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.Deserialize(System.Byte[],System.Type)">
+            <summary>
+            Deseriliza os dados contidos no buffer e retorna o objeto do tipo passado com os dados preenchidos.
+            </summary>
+            <param name="buffer">Buffer onde estão os dados para serem deserializados.</param>
+            <param name="typeReturn">Tipo de retorno do elemento.</param>
+            <returns>Objeto com os dados dados preenchidos.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.CopyInstance``1(``0)">
+            <summary>
+            Copia os dados de uma instância para a outra sem
+            nenhum vinculo de ponteiro.
+            </summary>
+            <typeparam name="T">Tipo que será usado para cópia.</typeparam>
+            <param name="source">Objeto contendo a fonte dos dados.</param>
+            <returns>Objeto para onde dados foram copiados.</returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.CopyInstance``1(``0,``0)">
+            <summary>
+            Copia os dados de uma instância para a outra sem
+            nenhum vinculo de ponteiro.
+            </summary>
+            <typeparam name="T">Tipo que será usado para cópia.</typeparam>
+            <param name="source">Objeto contendo a fonte dos dados.</param>
+            <param name="destination">Objeto para onde será copiado os dados.</param>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.BytesToDecimal(System.Byte[])">
+            <summary>
+            Converte um array de bytes para decimal.
+            </summary>
+            <param name="bytes">O array de bytes que será convertido.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.DecimalToBytes(System.Decimal)">
+            <summary>
+            Converte um decimal para um array de bytes.
+            </summary>
+            <param name="d">O decimal que será convertido.</param>
+            <returns></returns>
+        </member>
+        <member name="T:MobileTools.Serialize.BFormatter.InfoCoreSupport">
+            <summary>
+            Armazena as informações sobre os tipos suportados.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Construtor padrão
+            </summary>
+            <param name="coreTypeSupported">Identifica se é um tipo básico suportado.</param>
+            <param name="allowNullValue">Permite valores nulos.</param>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.coreTypeSupported">
+            <summary>
+            Identifica se o tipo do paramentro é suportado
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.allowNullValue">
+            <summary>
+            Identifica se o tipo do paramentro suporta valor nulos.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.fieldInfo">
+            <summary>
+            Informações sobre o campo.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.propertyInfo">
+            <summary>
+            Informações sobre a propriedade.
+            </summary>
+        </member>
+        <member name="F:MobileTools.Serialize.BFormatter.InfoCoreSupport.maxLenght">
+            <summary>
+            Tamanho máximo do membro.
+            </summary>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.GetValue(System.Object)">
+            <summary>
+            Recupera o valor do membro do objeto informado. 
+            </summary>
+            <param name="graph"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Serialize.BFormatter.InfoCoreSupport.GetMemberType">
+            <summary>
+            Recupera o tipo do membro.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.Led.SetLedStatus(System.Int32,MobileTools.Led.LedState)">
+            <summary>
+            Define o estado LED.
+            </summary>
+            <param name="led">Número do led.</param>
+            <param name="newState">Estado do led.</param>
+        </member>
+        <member name="P:MobileTools.Led.Count">
+            <summary>
+            Quantidades de Leds.
+            </summary>
+        </member>
+        <member name="T:MobileTools.GPS.DegreesMinutesSeconds">
+            <summary>
+            class that represents a gps coordinate in degrees, minutes, and seconds.  
+            </summary>
+        </member>
+        <member name="M:MobileTools.GPS.DegreesMinutesSeconds.#ctor(System.Double)">
+            <summary>
+            Constructs a new instance of DegreesMinutesSeconds converting 
+            from decimal degrees
+            </summary>
+            <param name="decimalDegrees">Initial value as decimal degrees</param>
+        </member>
+        <member name="M:MobileTools.GPS.DegreesMinutesSeconds.#ctor(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Constructs a new instance of DegreesMinutesSeconds
+            </summary>
+            <param name="degrees">Degrees unit of the coordinate</param>
+            <param name="minutes">Minutes unit of the coordinate</param>
+            <param name="seconds">Seconds unit of the coordinate</param>
+        </member>
+        <member name="M:MobileTools.GPS.DegreesMinutesSeconds.ToDecimalDegrees">
+            <summary>
+            Converts the decimal, minutes, seconds coordinate to 
+            decimal degrees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MobileTools.GPS.DegreesMinutesSeconds.ToString">
+            <summary>
+            Converts the instance to a string in format: D M' S"
+            </summary>
+            <returns>string representation of degrees, minutes, seconds</returns>
+        </member>
+        <member name="P:MobileTools.GPS.DegreesMinutesSeconds.Degrees">
+            <summary>
+            The degrees unit of the coordinate
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.DegreesMinutesSeconds.Minutes">
+            <summary>
+            The minutes unit of the coordinate
+            </summary>
+        </member>
+        <member name="P:MobileTools.GPS.DegreesMinutesSeconds.Seconds">
+            <summary>
+            The seconds unit of the coordinate
+            </summary>
+        </member>
+        <member name="M:MobileTools.Info.GetDeviceID">
+            <summary>
+            Retorna o identificador do dispositivo.
+            </summary>
+            <returns>O ID do dispositivo.</returns>
+        </member>
+    </members>
+</doc>
