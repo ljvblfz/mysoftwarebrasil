@@ -1,0 +1,17 @@
+1o. passo: Habilitando conexões remotas e locais
+
+   1. Clique em Iniciar -> Programas -> Microsoft SQL Server 2005 -> Configuration Tools e rodar o SQL Server Surface Area Configuration;
+   2. Clique na opção Surface Area Configuration for Services and Connections;
+   3. Expanda a opções do Database Engine e clique em Remote Connections, deixe selecionada a opção Using both TCP/IP and named pipes, e clique OK como mostra a figura 3;
+   4. Agora clique na opção Service (embaixo ao Database Engine) e clique em Stop e aguarde até habilitar o botão Start e clique sobre ele;
+   5. Clique agora para expandir as opções do SQL Server Browser, clique em Service e verifique se está configurado para iniciar automaticamente (Startup type: Automatic);
+   6. Pronto, primeiro parte resolvida. Habilitamos, nas configurações do SQL Server 2005, conexões remotas e locais utilizando TCP/IP e named pipes.
+
+2o. passo: Liberando o acesso no firewall do Windows 2003 Server
+
+   1. Clique em Iniciar -> Painel de Controle -> Windows Firewall;
+   2. Selecione a aba Exceptions;
+   3. Clique no botão Add Program e localize o SQL Server que deverá estar (dependendo da  intalação) em C:Program FilesMicrosoft SQL ServerMSSQL.1MSSQLBinnsqlservr.exe e clique em Open;
+   4. Adicione também o SQL Server Browser (C:Program FilesMicrosoft SQL Server90Sharedsqlbrowser.exe) e clique em Open também.
+
+Pronto, agora é possível acessar remotamente seu SQL Server através do Management Studio.
