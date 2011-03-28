@@ -84,6 +84,7 @@
     <Compile Include="Sincronizacao\InsertCarga.cs" />
     <Compile Include="Sincronizacao\Receber.cs">
     </Compile>
+    <Compile Include="Util\AtualizaVersao.cs" />
     <Compile Include="Util\Convert.cs" />
     <Compile Include="Util\ExtensionMethods.cs" />
     <Compile Include="Util\SqlCeCommandEx.cs" />
