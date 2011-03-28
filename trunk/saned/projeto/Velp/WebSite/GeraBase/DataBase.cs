@@ -699,6 +699,12 @@ namespace GeraBase
             }
         }
 
+
+        public List<UtilizacaoLigacaoONP> ListaUtilizacaoLigacao()
+        {
+            return UtilizacaoLigacaoFlow.ListaUtilizacaoLigacao();
+        }
+
         #endregion
 
 

@@ -160,6 +160,7 @@
     <Compile Include="DAL\VoltaRoteiroDAO.cs" />
     <Compile Include="GenericDAO.cs" />
     <Compile Include="Helper\ExtensionMetodos.cs" />
+    <Compile Include="InsertCarga.cs" />
     <Compile Include="Model\AgenteONP.cs" />
     <Compile Include="Model\AvisoDebito.cs" />
     <Compile Include="Model\CategoriaONP.cs" />

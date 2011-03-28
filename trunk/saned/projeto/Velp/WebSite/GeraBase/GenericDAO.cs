@@ -340,5 +340,187 @@ namespace GeraBase
             return retorno;
         }
 
+        /// <summary>
+        ///  Metodo que retorna os dados de fatura
+        /// </summary>
+        /// <param name="indice">int quantidade de registro em fatura</param>
+        /// <returns>FaturaONP[] array de dados de fatura</returns>
+        public FaturaONP[] SelectFatura(int indice)
+        {
+            // Instancia o objeto do banco de dados
+            SQLHelper connect = SQLHelper.Instance;
+
+            string referencia = GetMaiorReferencia();
+
+            FaturaONP[] arrayFatura = new FaturaONP[indice];
+
+            List<FaturaONP> list = new List<FaturaONP>();
+
+            try
+            {
+                // Adiciona o parametro Referencia
+                SqlCeParameter param = connect.cmd.CreateParameter();
+                param.ParameterName = "@Referencia";
+                param.Value = referencia;//Referencia;
+                connect.cmd.Parameters.Add(param);
+
+                //Monta comandText
+                connect.cmd.CommandText = "Select * from ONP_FATURA";
+
+                // Executa o comando
+                IDataReader dReader;
+                dReader = connect.cmd.ExecuteReader();
+
+                // converte os tipos e seta os valores
+                while (dReader.Read())
+                {
+
+                    FaturaONP Fatura = new FaturaONP();
+
+                    #region
+                    if (dReader["seq_fatura"] != DBNull.Value)
+                        Fatura.seq_fatura = double.Parse(dReader["seq_fatura"].ToString());
+                    else Fatura.seq_fatura = null;
+
+                    if (dReader["cod_referencia"] != DBNull.Value)
+                        Fatura.cod_referencia = dReader["cod_referencia"].ToString();
+                    else Fatura.cod_referencia = null;
+
+                    if (dReader["seq_roteiro"] != DBNull.Value)
+                        Fatura.seq_roteiro = double.Parse(dReader["seq_roteiro"].ToString());
+                    else Fatura.seq_roteiro = null;
+
+                    if (dReader["seq_matricula"] != DBNull.Value)
+                        Fatura.seq_matricula = int.Parse(dReader["seq_matricula"].ToString());
+                    else Fatura.seq_matricula = null;
+
+                    if (dReader["seq_tipo_entrega"] != DBNull.Value)
+                        Fatura.seq_tipo_entrega = double.Parse(dReader["seq_tipo_entrega"].ToString());
+                    else Fatura.seq_tipo_entrega = null;
+
+                    if (dReader["cod_hidrometro"] != DBNull.Value)
+                        Fatura.cod_hidrometro = dReader["cod_hidrometro"].ToString();
+                    else Fatura.cod_hidrometro = null;
+
+                    if (dReader["ind_fatura_emitida"] != DBNull.Value)
+                        Fatura.ind_fatura_emitida = dReader["ind_fatura_emitida"].ToString();
+                    else Fatura.ind_fatura_emitida = null;
+
+                    if (dReader["dat_vencimento"] != DBNull.Value)
+                        Fatura.dat_vencimento = DateTime.Parse(dReader["dat_vencimento"].ToString());
+                    else Fatura.dat_vencimento = null;
+
+                    if (dReader["val_arredonda_anterior"] != DBNull.Value)
+                        Fatura.val_arredonda_anterior = double.Parse(dReader["val_arredonda_anterior"].ToString());
+                    else Fatura.val_arredonda_anterior = null;
+
+                    if (dReader["val_arredonda_atual"] != DBNull.Value)
+                        Fatura.val_arredonda_atual = double.Parse(dReader["val_arredonda_atual"].ToString());
+                    else Fatura.val_arredonda_atual = null;
+
+                    if (dReader["dat_hora_emissao"] != DBNull.Value)
+                        Fatura.dat_hora_emissao = DateTime.Parse(dReader["dat_hora_emissao"].ToString());
+                    else Fatura.dat_hora_emissao = null;
+
+                    if (dReader["val_valor_faturado"] != DBNull.Value)
+                        Fatura.val_valor_faturado = double.Parse(dReader["val_valor_faturado"].ToString());
+                    else Fatura.val_valor_faturado = null;
+
+                    if (dReader["dat_leitura"] != DBNull.Value)
+                        Fatura.dat_leitura = DateTime.Parse(dReader["dat_leitura"].ToString());
+                    else Fatura.dat_leitura = null;
+
+                    if (dReader["dat_leitura_anterior"] != DBNull.Value)
+                        Fatura.dat_leitura_anterior = DateTime.Parse(dReader["dat_leitura_anterior"].ToString());
+                    else Fatura.dat_leitura_anterior = null;
+
+                    if (dReader["ind_entrega_especial"] != DBNull.Value)
+                        Fatura.ind_entrega_especial = dReader["ind_entrega_especial"].ToString();
+                    else Fatura.ind_entrega_especial = null;
+
+                    if (dReader["des_banco_debito"] != DBNull.Value)
+                        Fatura.des_banco_debito = dReader["des_banco_debito"].ToString();
+                    else Fatura.des_banco_debito = null;
+
+                    if (dReader["des_banco_agencia_debito"] != DBNull.Value)
+                        Fatura.des_banco_agencia_debito = dReader["des_banco_agencia_debito"].ToString();
+                    else Fatura.des_banco_agencia_debito = null;
+
+                    if (dReader["val_quantidade_pendente"] != DBNull.Value)
+                        Fatura.val_quantidade_pendente = double.Parse(dReader["val_quantidade_pendente"].ToString());
+                    else Fatura.val_quantidade_pendente = null;
+
+                    if (dReader["val_consumo_medio"] != DBNull.Value)
+                        Fatura.val_consumo_medio = double.Parse(dReader["val_consumo_medio"].ToString());
+                    else Fatura.val_consumo_medio = null;
+
+                    if (dReader["val_desconto"] != DBNull.Value)
+                        Fatura.val_desconto = double.Parse(dReader["val_desconto"].ToString());
+                    else Fatura.val_desconto = null;
+
+                    if (dReader["des_linha_digitavel"] != DBNull.Value)
+                        Fatura.des_linha_digitavel = dReader["des_linha_digitavel"].ToString();
+                    else Fatura.des_linha_digitavel = null;
+
+                    if (dReader["des_codigo_barras"] != DBNull.Value)
+                        Fatura.des_codigo_barras = dReader["des_codigo_barras"].ToString();
+                    else Fatura.des_codigo_barras = null;
+
+                    if (dReader["val_consumo_medido"] != DBNull.Value)
+                        Fatura.val_consumo_medido = double.Parse(dReader["val_consumo_medido"].ToString());
+                    else Fatura.val_consumo_medido = null;
+
+                    if (dReader["val_consumo_atribuido"] != DBNull.Value)
+                        Fatura.val_consumo_atribuido = double.Parse(dReader["val_consumo_atribuido"].ToString());
+                    else Fatura.val_consumo_atribuido = null;
+
+                    if (dReader["val_consumo_rateado"] != DBNull.Value)
+                        Fatura.val_consumo_rateado = double.Parse(dReader["val_consumo_rateado"].ToString());
+                    else Fatura.val_consumo_rateado = null;
+
+                    if (dReader["val_leitura_anterior"] != DBNull.Value)
+                        Fatura.val_leitura_anterior = double.Parse(dReader["val_leitura_anterior"].ToString());
+                    else Fatura.val_leitura_anterior = null;
+
+                    if (dReader["val_leitura_real"] != DBNull.Value)
+                        Fatura.val_leitura_real = double.Parse(dReader["val_leitura_real"].ToString());
+                    else Fatura.val_leitura_real = null;
+
+                    if (dReader["val_leitura_atribuida"] != DBNull.Value)
+                        Fatura.val_leitura_atribuida = double.Parse(dReader["val_leitura_atribuida"].ToString());
+                    else Fatura.val_leitura_atribuida = null;
+
+                    if (dReader["val_impressoes"] != DBNull.Value)
+                        Fatura.val_impressoes = double.Parse(dReader["val_impressoes"].ToString());
+
+                    if (dReader["dat_proxima_leitura"] != DBNull.Value)
+                        Fatura.dat_proxima_leitura = DateTime.Parse(dReader["dat_proxima_leitura"].ToString());
+                    else Fatura.dat_proxima_leitura = null;
+
+                    if (dReader["val_valor_credito"] != DBNull.Value)
+                        Fatura.val_valor_credito = double.Parse(dReader["val_valor_credito"].ToString());
+                    else Fatura.val_valor_credito = null;
+                    #endregion
+
+                    list.Add(Fatura);
+                }
+                dReader.Close();
+            }
+            catch (Exception erro)
+            {
+
+                throw new Exception(erro.Message);
+            }
+            finally
+            {
+
+            }
+
+            if (list.Count() > 0)
+                arrayFatura = list.ToArray();
+
+            return arrayFatura;
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlServerCe;
 using System.IO;
 using System.Data;
+using System.IO.Compression;
 
 namespace GeraBase
 {
@@ -48,6 +49,12 @@ namespace GeraBase
                 }
                 else
                 {
+                    // verifica se alterou o banco
+                    if (con.ConnectionString != Config.conectionString)
+                    {
+                        instancia.Conectar();
+                    }
+
                     // Limpa os parametros e comandos
                     instancia.cmd.Parameters.Clear();
                     instancia.cmd.CommandText = string.Empty;
@@ -128,6 +135,44 @@ namespace GeraBase
                 throw new IOException("Erro ao copiar arquivo de banco de dados movel não existe. ");
             }
         }
+
+
+        public string Compacta()
+        {
+            StreamReader arqTemp = default(StreamReader);
+            arqTemp = File.OpenText(GetConnection());
+
+            byte[] buffer = GetStreamAsByteArray(arqTemp.BaseStream);
+            MemoryStream ms = new MemoryStream();
+            using (GZipStream zip = new GZipStream(ms, CompressionMode.Compress, true))
+            {
+                zip.Write(buffer, 0, buffer.Length);
+            }
+
+            ms.Position = 0;
+            MemoryStream outStream = new MemoryStream();
+
+            byte[] compressed = new byte[ms.Length];
+            ms.Read(compressed, 0, compressed.Length);
+
+            byte[] gzBuffer = new byte[compressed.Length + 4];
+            System.Buffer.BlockCopy(compressed, 0, gzBuffer, 4, compressed.Length);
+            System.Buffer.BlockCopy(BitConverter.GetBytes(buffer.Length), 0, gzBuffer, 0, 4);
+            return Convert.ToBase64String(gzBuffer);
+        }
+
+        private byte[] GetStreamAsByteArray(System.IO.Stream stream)
+        {
+            int streamLength = Convert.ToInt32(stream.Length);
+            byte[] fileData = new byte[streamLength + 1];
+
+            // Read the file into a byte array
+            stream.Read(fileData, 0, streamLength);
+            stream.Close();
+
+            return fileData;
+        }
+
 
     }
 }
