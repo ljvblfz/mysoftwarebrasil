@@ -1,7 +1,0 @@
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\obj\Debug\ResolveAssemblyReference.cache
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\bin\Debug\Sinc_DATA.dll.config
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\bin\Debug\Sinc_DATA.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\bin\Debug\Sinc_DATA.pdb
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\bin\Debug\GDA.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\obj\Debug\Sinc_DATA.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\DataImport\obj\Debug\Sinc_DATA.pdb
