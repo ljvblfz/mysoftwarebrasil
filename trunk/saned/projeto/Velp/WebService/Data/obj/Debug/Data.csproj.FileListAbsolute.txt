@@ -1,7 +1,0 @@
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\bin\Debug\Data.dll.config
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\bin\Debug\Data.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\bin\Debug\Data.pdb
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\bin\Debug\GDA.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\obj\Debug\ResolveAssemblyReference.cache
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\obj\Debug\Data.dll
-D:\Velp\Sistemas\SANED\projeto\Velp\WebService\Data\obj\Debug\Data.pdb
