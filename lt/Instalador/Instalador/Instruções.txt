@@ -1,1 +1,0 @@
-﻿Atualizar os itens da pasta Resources pelos itens recentes e re-compilar o projeto.
