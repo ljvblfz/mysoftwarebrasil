@@ -1,9 +1,0 @@
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\SPCadMobileData.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\SPCadMobileData.pdb
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\CommonHelpMobile.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\GDA.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\System.Data.SqlServerCe.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\bin\Release\CommonHelpMobile.pdb
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\obj\Release\ResolveAssemblyReference.cache
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\obj\Release\SPCadMobileData.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadMobileData\obj\Release\SPCadMobileData.pdb
