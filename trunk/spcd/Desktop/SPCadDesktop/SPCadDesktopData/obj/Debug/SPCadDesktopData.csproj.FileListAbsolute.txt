@@ -1,8 +1,0 @@
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Debug\SPCadDesktopData.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Debug\SPCadDesktopData.pdb
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Debug\CommonHelpDesktop.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Debug\GDA.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\bin\Debug\CommonHelpDesktop.pdb
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Debug\ResolveAssemblyReference.cache
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Debug\SPCadDesktopData.dll
-D:\Velp\Sistemas\SPCad\Desenvolvimento\Desktop\SPCadDesktop\SPCadDesktopData\obj\Debug\SPCadDesktopData.pdb
