@@ -14,7 +14,8 @@ namespace Dum_Mobile
 
         public Dum()
         {
-            Configuration.conectionString = "Data Source = E:\\PROJETO\\C#\\Dum Mobile\\ConsoleApplication1\\OnPlace.sdf; Max Buffer Size=1024; Persist Security Info=False;";
+            //Configuration.conectionString = System.Configuration.ConfigurationManager.ConnectionStrings["dbPortal"];
+            Configuration.conectionString = "Data Source = E:\\PROJETO\\C#\\Dum Mobile\\TestProject1\\OnPlace.sdf; Max Buffer Size=1024; Persist Security Info=False;";
             //Configuration.conectionString = "Data Source = E:\\PROJETO\\C#\\Dum Mobile\\ConsoleApplication1\\OnPlace.sdf; Persist Security Info=False;";
             this.db = CeCommand.GetDbAdapter();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
-//using System.Data;
+using System.Data;
 using System.Data.SqlServerCe;
 using Dum_Mobile.Config;
 
@@ -23,14 +23,17 @@ namespace Dum_Mobile.Adapter
 
         public int Insert(Object model)
         {
-            int result = 0;
-            System.Data.DataTable table = new System.Data.DataTable();
-            DataSet genericDataSet = new DataSet();
-            System.Data.DataSet dataSet = genericDataSet.GetDataSet(model);
+            int result;
+            DataTable table = new DataTable();
+
             command.CommandText = String.Format("SELECT * FROM {0} where 1=0", model.GetType().Name);
-            adapter = new SqlCeDataAdapter(command.CommandText, command.Connection.ConnectionString);
+            adapter = new SqlCeDataAdapter(command);
             new SqlCeCommandBuilder(adapter);
+
             adapter.Fill(table);
+            table = new Data().GetDataTable(model, table);
+            result = adapter.Update(table);
+
             return result;
         }
     }

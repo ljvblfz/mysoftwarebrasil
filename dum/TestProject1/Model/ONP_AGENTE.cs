@@ -8,7 +8,7 @@ namespace ConsoleApplication1.Model
     public class ONP_AGENTE
     {
         public int cod_agente { get; set; }
-        public int nom_agente { get; set; }
-        public int des_senha { get; set; }
+        public string nom_agente { get; set; }
+        public string des_senha { get; set; }
     }
 }
