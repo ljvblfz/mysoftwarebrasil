@@ -8,3 +8,12 @@ E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\System.Data.SqlServerCe.dll
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\Dum Mobile.pdb
 E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.dll
 E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.pdb
+D:\Alexis\dum\TestProject1\bin\Debug\OnPlace.sdf
+D:\Alexis\dum\TestProject1\bin\Debug\TestProject1.dll.config
+D:\Alexis\dum\TestProject1\bin\Debug\TestProject1.dll
+D:\Alexis\dum\TestProject1\bin\Debug\TestProject1.pdb
+D:\Alexis\dum\TestProject1\bin\Debug\Dum Mobile.dll
+D:\Alexis\dum\TestProject1\bin\Debug\Dum Mobile.pdb
+D:\Alexis\dum\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\Alexis\dum\TestProject1\obj\Debug\TestProject1.dll
+D:\Alexis\dum\TestProject1\obj\Debug\TestProject1.pdb
