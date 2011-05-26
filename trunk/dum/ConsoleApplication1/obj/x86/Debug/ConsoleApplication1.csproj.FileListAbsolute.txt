@@ -1,0 +1,9 @@
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\Dum Mobile.dll
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\System.Data.SqlServerCe.dll
+E:\PROJETO\C#\Dum Mobile\ConsoleApplication1\bin\Debug\Dum Mobile.pdb

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="30bf3aca-6aee-44e8-bcf7-48547bedf57b" name="alexis@ZEUS 2011-05-13 00:31:39" runUser="zeus\alexis" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="df49efb3-0615-4490-90fb-061a07514b08">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="alexis_ZEUS 2011-05-13 00_31_39">
+      <DeploymentItem filename="E:\PROJETO\C#\Test_Mobile\dll\System.Data.SqlServerCe.dll" />
+      <DeploymentItem filename="E:\PROJETO\C#\Dum Mobile\Dum Mobile\bin\Debug\Dum Mobile.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-13T00:31:39.9908549-03:00" queuing="2011-05-13T00:31:43.0840318-03:00" start="2011-05-13T00:31:43.5300573-03:00" finish="2011-05-13T00:31:50.2934442-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ZEUS" outcome="Error" timestamp="2011-05-13T00:31:50.2824435-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="e:\projeto\c#\dum mobile\testproject1\bin\debug\testproject1.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Execution id="0ae7f123-97cb-49b2-ae72-b098d0bf7736" />
+      <TestMethod codeBase="E:/PROJETO/C#/Dum Mobile/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="0ae7f123-97cb-49b2-ae72-b098d0bf7736" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0ae7f123-97cb-49b2-ae72-b098d0bf7736" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="ZEUS" duration="00:00:06.3423628" startTime="2011-05-13T00:31:43.9510814-03:00" endTime="2011-05-13T00:31:50.2934442-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ae7f123-97cb-49b2-ae72-b098d0bf7736">
+    </UnitTestResult>
+  </Results>
+</TestRun>
