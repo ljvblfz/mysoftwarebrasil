@@ -18,7 +18,6 @@ namespace Dum_Mobile
         {
             //Configuration.conectionString = System.Configuration.ConfigurationManager.ConnectionStrings["dbPortal"];
             Configuration.conectionString = "Data Source = E:\\PROJETO\\C#\\Dum Mobile\\TestProject1\\OnPlace.sdf; Max Buffer Size=1024; Persist Security Info=False;";
-            //Configuration.conectionString = "Data Source = E:\\PROJETO\\C#\\Dum Mobile\\ConsoleApplication1\\OnPlace.sdf; Persist Security Info=False;";
             this.db = CeCommand.GetDbAdapter();
         }
 
@@ -27,18 +26,21 @@ namespace Dum_Mobile
             return this.db.Insert(model);
         }
 
-        public Dum Where(string column, object value)
-        {
-            SqlCeParameter param = new SqlCeParameter();
-            param.ParameterName = "@" + column;
-            param.Value = value;
-            this.db.command.Parameters = new SqlCeParameterCollection { param };
-            return this;
-        }
-
         public int Update(Object model)
         {
-            return 0;
+            return this.db.Update(model);
+        }
+
+        public int Delete(Object model)
+        {
+            return this.db.Delete(model);
+        }
+
+        public static Primary GetAttribute(Type t)
+        {
+            //Get instance of the attribute.  
+            Primary primary = (Primary)Attribute.GetCustomAttribute(t, typeof(Primary));
+            return primary;     
         }
     }
 }

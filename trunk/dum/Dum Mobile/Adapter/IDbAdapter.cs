@@ -8,7 +8,12 @@ namespace Dum_Mobile.Adapter
         SqlCeDataAdapter adapter { get; set; }
         SqlCeCommand command { get; set; }
         SqlCeConnection connetion { get; set; }
-        int Insert(Object model);
         SqlCeParameterCollection paraman { get; set; }
+        
+        int Insert(Object model);
+        
+        int Update(object model);
+
+        int Delete(object model);
     }
 }

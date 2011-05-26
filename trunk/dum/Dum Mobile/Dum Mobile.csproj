@@ -50,6 +50,7 @@
     <Compile Include="Command\ICeCommand.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="Dum.cs" />
+    <Compile Include="Primary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Updater.cs" />
   </ItemGroup>

@@ -20,7 +20,17 @@ namespace TestProject1
             onp_agente.cod_agente = 1001;
             onp_agente.nom_agente = "teste";
             onp_agente.des_senha = "sdsdsds";
+
+            Primary p = GetAttribute(typeof(ONP_AGENTE));
+
             dum.Insert(onp_agente);
+        }
+
+        public static Primary GetAttribute(Type t)
+        {
+            //Get instance of the attribute.  
+            Primary primary = (Primary)Attribute.GetCustomAttribute(t, typeof(Primary));
+            return primary;
         }
     }
 }

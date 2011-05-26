@@ -36,5 +36,27 @@ namespace Dum_Mobile.Adapter
 
             return result;
         }
+
+
+        public int Update(Object model)
+        {
+            int result;
+            DataTable table = new DataTable();
+
+            command.CommandText = String.Format("SELECT * FROM {0} where 1=0", model.GetType().Name);
+            adapter = new SqlCeDataAdapter(command);
+            new SqlCeCommandBuilder(adapter);
+
+            adapter.Fill(table);
+            table = new Data().GetDataTable(model, table);
+            result = adapter.Update(table);
+
+            return result;
+        }
+
+        public int Delete(Object model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
