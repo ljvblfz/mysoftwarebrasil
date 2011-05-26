@@ -5,12 +5,14 @@ using System.Text;
 using Dum_Mobile.Adapter;
 using Dum_Mobile.Command;
 using Dum_Mobile.Config;
+using System.Data.SqlServerCe;
 
 namespace Dum_Mobile
 {
     public class Dum
     {
         private IDbAdapter db { get; set; }
+        private string query { get; set; }
 
         public Dum()
         {
@@ -20,9 +22,23 @@ namespace Dum_Mobile
             this.db = CeCommand.GetDbAdapter();
         }
 
-        public int Insert(Object query)
+        public int Insert(Object model)
         {
-            return this.db.Insert(query);
+            return this.db.Insert(model);
+        }
+
+        public Dum Where(string column, object value)
+        {
+            SqlCeParameter param = new SqlCeParameter();
+            param.ParameterName = "@" + column;
+            param.Value = value;
+            this.db.command.Parameters = new SqlCeParameterCollection { param };
+            return this;
+        }
+
+        public int Update(Object model)
+        {
+            return 0;
         }
     }
 }
