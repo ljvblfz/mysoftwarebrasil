@@ -1,10 +1,10 @@
+E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\OnPlace.sdf
+E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\TestProject1.dll.config
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\TestProject1.dll
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\TestProject1.pdb
-E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\ResolveAssemblyReference.cache
-E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.dll
-E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.pdb
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\Dum Mobile.dll
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\System.Data.SqlServerCe.dll
 E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\Dum Mobile.pdb
-E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\OnPlace.sdf
-E:\PROJETO\C#\Dum Mobile\TestProject1\bin\Debug\TestProject1.dll.config
+E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.dll
+E:\PROJETO\C#\Dum Mobile\TestProject1\obj\Debug\TestProject1.pdb

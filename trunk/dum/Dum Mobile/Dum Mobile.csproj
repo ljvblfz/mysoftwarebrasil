@@ -39,12 +39,11 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapter\DataSet.cs" />
+    <Compile Include="Adapter\Data.cs" />
     <Compile Include="Adapter\DbAdapter.cs" />
     <Compile Include="Adapter\IDbAdapter.cs" />
     <Compile Include="Command\CeCommand.cs" />

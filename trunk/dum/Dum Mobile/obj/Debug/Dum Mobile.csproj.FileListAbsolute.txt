@@ -1,6 +1,6 @@
 E:\PROJETO\C#\Dum Mobile\Dum Mobile\obj\Debug\ResolveAssemblyReference.cache
 E:\PROJETO\C#\Dum Mobile\Dum Mobile\bin\Debug\Dum Mobile.dll
 E:\PROJETO\C#\Dum Mobile\Dum Mobile\bin\Debug\Dum Mobile.pdb
+E:\PROJETO\C#\Dum Mobile\Dum Mobile\bin\Debug\System.Data.SqlServerCe.dll
 E:\PROJETO\C#\Dum Mobile\Dum Mobile\obj\Debug\Dum Mobile.dll
 E:\PROJETO\C#\Dum Mobile\Dum Mobile\obj\Debug\Dum Mobile.pdb
-E:\PROJETO\C#\Dum Mobile\Dum Mobile\bin\Debug\System.Data.SqlServerCe.dll
