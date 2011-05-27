@@ -20,7 +20,7 @@ namespace TestProject1
             onp_agente.cod_agente = 1001;
             onp_agente.nom_agente = "teste";
             onp_agente.des_senha = "sdsdsds";
-            dum.Insert(onp_agente);
+            dum.Update(onp_agente);
         }
     }
 }

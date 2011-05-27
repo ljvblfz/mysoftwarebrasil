@@ -16,9 +16,10 @@ namespace Dum_Mobile.Adapter
             System.Data.DataRow row = table.NewRow();
             foreach (PropertyInfo item in prop)
             {
-                object[] atrubutes = item.GetCustomAttributes(true);
                 row[item.Name] = item.GetValue(model, null);
-                table.PrimaryKey = new System.Data.DataColumn[] { table.Columns[item.Name] };
+                object[] atrubutes = item.GetCustomAttributes(true);
+                if (atrubutes.Length > 0)
+                    table.PrimaryKey = new System.Data.DataColumn[] { table.Columns[item.Name] };
             }
 
             table.Rows.Add(row);
@@ -26,11 +27,11 @@ namespace Dum_Mobile.Adapter
             return table;
         }
 
-        public static Primary GetAttribute(Type t)
-        {
-            //Get instance of the attribute.  
-            Primary primary = (Primary)Attribute.GetCustomAttribute(t, typeof(Primary));
-            return primary;
-        }
+        //public static Primary GetAttribute(Type t)
+        //{
+        //    //Get instance of the attribute.  
+        //    Primary primary = (Primary)Attribute.GetCustomAttribute(t, typeof(Primary));
+        //    return primary;
+        //}
     }
 }
