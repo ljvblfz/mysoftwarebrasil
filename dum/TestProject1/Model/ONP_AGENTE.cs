@@ -6,7 +6,6 @@ using Dum_Mobile;
 
 namespace ConsoleApplication1.Model
 {
-    
     public class ONP_AGENTE
     {
         [Primary("cod_agente")]
