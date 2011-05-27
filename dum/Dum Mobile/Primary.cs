@@ -7,7 +7,7 @@ namespace Dum_Mobile
 {
 
     [AttributeUsage(AttributeTargets.All)]
-    public class Primary : Attribute
+    public sealed class Primary : Attribute
     {
         private string primary;
 
