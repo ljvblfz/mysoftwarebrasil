@@ -1,3 +1,44 @@
+    
+-- =============================================
+-- Author:		<Alexis Moura>
+-- Create date: <30/12/2010>
+-- Description:	<Paginação> 
+-- =============================================
+
+	declare @page int
+    declare @pageIni int
+    declare @pageFim int
+    declare @maxPage int
+    set @maxPage = 10
+    set @page = 1
+    set @pageIni = (@page*@maxPage)-@maxPage+1
+    set @pageFim = @page*@maxPage
+
+    SELECT * FROM (
+		SELECT 
+			M.MessageID
+			,M.Subject
+			,M.Body
+			,M.IsAlert
+			,M.IsReminder
+			,M.IsDraft
+			,M.SearchArgs
+			,M.Attach
+			,M.MessageParentID
+			,M.MessageFolderID
+			,M.SentOn
+			,M.CreatedBy
+			,M.CreatedOn
+			, ROW_NUMBER() OVER (ORDER BY M.MessageID) as row     
+		FROM [Message] M
+		JOIN UserMessage UM ON UM.MessageID = M.MessageID
+		JOIN [User] U ON U.UserID = UM.SentTo 
+		WHERE
+			U.UserID = 1
+	) a 
+	WHERE row > @pageIni and row <= @pageFim
+	ORDER BY row,a.MessageID
+
 -- =============================================
 -- Author:		<Alexis Moura>
 -- Create date: <30/12/2010>
