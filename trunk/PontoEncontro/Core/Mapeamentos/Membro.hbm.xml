@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Membro, Core" table="[MEMBRO]" lazy="false">
+
+		<id name="Membroid" column= "[MEMBROID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<many-to-one name="Pessoaid" column= "[PESSOAID]" class="Core.Pessoa, Core" not-null="true"/>
+		<property name="Membronickname" column= "[MEMBRONICKNAME]" type="String" length="255" not-null="true"/>
+		<property name="Membroultimologin" column= "[MEMBROULTIMOLOGIN]" type="DateTime" not-null="true"/>
+		<property name="Membrosenha" column= "[MEMBROSENHA]" type="String" length="50" not-null="true"/>
+
+		<bag name="EncontromembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Encontromembro"/>
+		</bag>
+		<bag name="FotoList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Foto"/>
+		</bag>
+		<bag name="MembrofavoritoList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Membrofavorito"/>
+		</bag>
+		<bag name="MembroamigoList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Membroamigo"/>
+		</bag>
+		<bag name="AnuncioList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Anuncio"/>
+		</bag>
+		<bag name="ComunidademembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[COMUNIDADEID]"/>
+			<one-to-many class="Core.Comunidademembro"/>
+		</bag>
+</class>
+</hibernate-mapping>

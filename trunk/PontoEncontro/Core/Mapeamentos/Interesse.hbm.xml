@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Interesse, Core" table="[INTERESSES]" lazy="false">
+
+		<id name="Interresseid" column= "[INTERRESSEID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Interressename" column= "[INTERRESSENAME]" type="String" length="255" not-null="true"/>
+
+		<bag name="InretessepessoaList" inverse="true" lazy="false" cascade="all">
+			<key column="[PESSOAID]"/>
+			<one-to-many class="Core.Inretessepessoa"/>
+		</bag>
+		<bag name="PessoaidList" inverse="true" lazy="false" cascade="all">
+			<key column="[PESSOAID]"/>
+			<one-to-many class="Core.Inretessepessoa"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

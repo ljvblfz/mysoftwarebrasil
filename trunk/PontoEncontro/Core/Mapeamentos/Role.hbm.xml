@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Role, Core" table="[ROLE]" lazy="false">
+
+		<id name="Roleid" column= "[ROLEID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Rolename" column= "[ROLENAME]" type="String" length="255" not-null="true"/>
+
+		<bag name="RolemembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[ROLEID]"/>
+			<one-to-many class="Core.Rolemembro"/>
+		</bag>
+		<bag name="MenuroleList" inverse="true" lazy="false" cascade="all">
+			<key column="[ROLEID]"/>
+			<one-to-many class="Core.Menurole"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Estadocivil, Core" table="[ESTADOCIVIL]" lazy="false">
+
+		<id name="Estadocivilid" column= "[ESTADOCIVILID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Estadocivilname" column= "[ESTADOCIVILNAME]" type="String" length="255" not-null="true"/>
+
+		<bag name="PessoaList" inverse="true" lazy="false" cascade="all">
+			<key column="[SEXOID]"/>
+			<one-to-many class="Core.Pessoa"/>
+		</bag>
+		<bag name="SexoidList" inverse="true" lazy="false" cascade="all">
+			<key column="[SEXOID]"/>
+			<one-to-many class="Core.Pessoa"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Comunidade, Core" table="[COMUNIDADE]" lazy="false">
+
+		<id name="Comunidadeid" column= "[COMUNIDADEID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Comunidadename" column= "[COMUNIDADENAME]" type="String" length="255" not-null="true"/>
+		<property name="Comunidadedatacreate" column= "[COMUNIDADEDATACREATE]" type="DateTime" not-null="true"/>
+		<property name="Comunidadedescricao" column= "[COMUNIDADEDESCRICAO]" type="" not-null="true"/>
+
+		<bag name="ComunidademembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[COMUNIDADEID]"/>
+			<one-to-many class="Core.Comunidademembro"/>
+		</bag>
+		<bag name="ComunidadeidList" inverse="true" lazy="false" cascade="all">
+			<key column="[COMUNIDADEID]"/>
+			<one-to-many class="Core.Comunidademembro"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

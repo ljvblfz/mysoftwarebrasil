@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Estado, Core" table="[ESTADO]" lazy="false">
+
+		<id name="Estadoid" column= "[ESTADOID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Estadoname" column= "[ESTADONAME]" type="String" length="255" not-null="true"/>
+		<property name="Estadosigla" column= "[ESTADOSIGLA]" type="String" length="2" not-null="true"/>
+		<many-to-one name="Paisid" column= "[PAISID]" class="Core.Pai, Core" not-null="true"/>
+
+		<bag name="CidadeList" inverse="true" lazy="false" cascade="all">
+			<key column="[ESTADOID]"/>
+			<one-to-many class="Core.Cidade"/>
+		</bag>
+		<bag name="EstadoidList" inverse="true" lazy="false" cascade="all">
+			<key column="[ESTADOID]"/>
+			<one-to-many class="Core.Cidade"/>
+		</bag>
+
+</class>
+</hibernate-mapping>
