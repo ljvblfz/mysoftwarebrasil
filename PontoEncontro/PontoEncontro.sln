@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro", "PontoEncontro\PontoEncontro.csproj", "{27BC84B0-A2BC-4832-9E91-5ABAC4838A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro.Tests", "PontoEncontro.Tests\PontoEncontro.Tests.csproj", "{D7C29984-15D8-424C-8EAF-DD1F0A2EABD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{5655A2A5-B4E5-4126-B980-1D6FD6EE2861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27BC84B0-A2BC-4832-9E91-5ABAC4838A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BC84B0-A2BC-4832-9E91-5ABAC4838A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BC84B0-A2BC-4832-9E91-5ABAC4838A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BC84B0-A2BC-4832-9E91-5ABAC4838A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C29984-15D8-424C-8EAF-DD1F0A2EABD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C29984-15D8-424C-8EAF-DD1F0A2EABD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C29984-15D8-424C-8EAF-DD1F0A2EABD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C29984-15D8-424C-8EAF-DD1F0A2EABD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5655A2A5-B4E5-4126-B980-1D6FD6EE2861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5655A2A5-B4E5-4126-B980-1D6FD6EE2861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5655A2A5-B4E5-4126-B980-1D6FD6EE2861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5655A2A5-B4E5-4126-B980-1D6FD6EE2861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Post, Core" table="[POST]" lazy="false">
+
+		<id name="Postid" column= "[POSTID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<many-to-one name="Membroid" column= "[MEMBROID]" class="Core.Foto, Core" not-null="true"/>
+		<many-to-one name="Fotoid" column= "[FOTOID]" class="Core.Foto, Core" not-null="true"/>
+		<property name="Posttext" column= "[POSTTEXT]" type="String" not-null="true"/>
+
+
+</class>
+</hibernate-mapping>

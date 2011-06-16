@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Pai, Core" table="[PAIS]" lazy="false">
+
+		<id name="Paisid" column= "[PAISID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Paisname" column= "[PAISNAME]" type="String" length="255" not-null="true"/>
+
+		<bag name="EstadoList" inverse="true" lazy="false" cascade="all">
+			<key column="[PAISID]"/>
+			<one-to-many class="Core.Estado"/>
+		</bag>
+		<bag name="PaisidList" inverse="true" lazy="false" cascade="all">
+			<key column="[PAISID]"/>
+			<one-to-many class="Core.Estado"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

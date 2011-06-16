@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Encontro, Core" table="[ENCONTRO]" lazy="false">
+
+		<id name="Encontroid" column= "[ENCONTROID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<many-to-one name="Enderecoid" column= "[ENDERECOID]" class="Core.Endereco, Core" not-null="true"/>
+		<property name="Encontrotitulo" column= "[ENCONTROTITULO]" type="String" length="50" not-null="true"/>
+		<property name="Encontrodescricao" column= "[ENCONTRODESCRICAO]" type="String" not-null="true"/>
+		<property name="Encontroquantpessoa" column= "[ENCONTROQUANTPESSOAS]" type="int" not-null="false"/>
+		<property name="Encontrodata" column= "[ENCONTRODATA]" type="DateTime" not-null="true"/>
+		<property name="Encontrovalor" column= "[ENCONTROVALOR]" type="double" not-null="false"/>
+
+		<bag name="EncontromembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Encontromembro"/>
+		</bag>
+		<bag name="MembroidList" inverse="true" lazy="false" cascade="all">
+			<key column="[MEMBROID]"/>
+			<one-to-many class="Core.Encontromembro"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

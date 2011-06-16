@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Comunidademembro, Core" table="[COMUNIDADEMEMBRO]" lazy="false">
+
+		<composite-id name="Pk" class="Core.Comunidademembro+PK, Core">
+			<key-many-to-one name="Comunidadeid" column= "[COMUNIDADEID]" class="Core.Comunidade, Core"/>
+			<key-many-to-one name="Membroid" column= "[MEMBROID]" class="Core.Membro, Core"/>
+		</composite-id>
+
+		<property name="Comunidademembromediador" column= "[COMUNIDADEMEMBROMEDIADOR]" type="String" length="1" not-null="true"/>
+
+
+</class>
+</hibernate-mapping>

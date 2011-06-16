@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="Core.Anuncio, Core" table="[ANUNCIO]" lazy="false">
+
+		<id name="Anuncioid" column= "[ANUNCIOID]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Anunciovalorhora" column= "[ANUNCIOVALORHORA]" type="double" not-null="true"/>
+		<property name="Anucioproficional" column= "[ANUCIOPROFICIONAL]" type="String" length="1" not-null="true"/>
+		<property name="Anunciotitulo" column= "[ANUNCIOTITULO]" type="String" length="255" not-null="true"/>
+		<property name="Anunciotexto" column= "[ANUNCIOTEXTO]" type="String" not-null="true"/>
+		<many-to-one name="Membroid" column= "[MEMBROID]" class="Core.Membro, Core" not-null="true"/>
+
+
+</class>
+</hibernate-mapping>
