@@ -1,17 +1,8 @@
 <?xml version="1.0"?>
-<activerecord isWeb="true">
-  <config>
-    <add key="hibernate.connection.driver_class" value="NHibernate.Driver.SqlClientDriver"/>
-    <add key="hibernate.dialect" value="NHibernate.Dialect.MsSql2005Dialect"/>
-    <add key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
-    <add key="hibernate.connection.connection_string" value="Data Source=ZEUS;Initial Catalog=pontoencontro;Integrated Security=True;User ID=sa;pwd=dolar$"/>
-    <add key="hibernate.show_sql" value="true"/>
-  </config>
-</activerecord>
-<!--<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
-	<session-factory>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory>
 
-	--><!-- configurations --><!--
+    <!--configurations--> 
 		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
@@ -19,7 +10,7 @@
 		<property name="proxyfactory.factory_class">NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu</property>
 		<property name="show_sql">true</property>
 
-	--><!-- mapping files --><!--
+	 <!--mapping files--> 
 		<mapping resource="Core.Mapeamentos.Amigo.hbm.xml" assembly="Core"/>
 		<mapping resource="Core.Mapeamentos.Anuncio.hbm.xml" assembly="Core"/>
 		<mapping resource="Core.Mapeamentos.Cabelo.hbm.xml" assembly="Core"/>
@@ -51,4 +42,4 @@
 		<mapping resource="Core.Mapeamentos.Sexo.hbm.xml" assembly="Core"/>
 
 </session-factory>
-</hibernate-configuration>-->
+</hibernate-configuration>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Core;
+using CorePontoEncontro;
 
 namespace PontoEncontro
 {
@@ -33,8 +33,7 @@ namespace PontoEncontro
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            System.IO.Stream stream = new System.IO.StreamReader("E:/PROJETO/C#/PontoEncontro/Core/hibernate.cfg.xml").BaseStream;
-            Initialize.Ini(stream);
+            CorePontoEncontro.Inicialize.Ini();
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }

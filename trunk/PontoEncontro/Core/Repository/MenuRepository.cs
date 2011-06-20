@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Castle.ActiveRecord;
+using System.Collections;
+using NHibernate;
 
 namespace Core.Repository
 {
@@ -10,7 +11,10 @@ namespace Core.Repository
     {
         public static Object[] ListAll()
         {
-            return Core.Model.Menu.FindAll();
+            IList<Menu> listMenu = new Core.MenuRepositorios().GetMenu();
+            
+            return listMenu.ToArray();
+
         }
     }
 }

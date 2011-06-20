@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Models;
+using Infrastructure.Models;
 
 namespace PontoEncontro.Controllers
 {
@@ -14,8 +14,7 @@ namespace PontoEncontro.Controllers
 
         public ActionResult Index()
         {
-            var result = Core.Repository.MenuRepository.ListAll();
-            //List<Menu> result = (List<Menu>)new Core.MenuRepositorios().GetMenu();
+            IList<Menu> result = CorePontoEncontro.Repository.MenuRepository.ListAll();
 
             return View(result);
         }
@@ -40,13 +39,13 @@ namespace PontoEncontro.Controllers
         // POST: /Menu/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Infrastructure.Models.Menu collection)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                CorePontoEncontro.Repository.MenuRepository.Insert(collection);
+                return View(collection);
             }
             catch
             {

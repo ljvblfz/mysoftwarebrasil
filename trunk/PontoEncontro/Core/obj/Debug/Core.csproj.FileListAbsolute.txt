@@ -8,7 +8,6 @@ E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\NHibernate.dll
 E:\PROJETO\C#\PontoEncontro\Core\obj\Debug\Core.dll
 E:\PROJETO\C#\PontoEncontro\Core\obj\Debug\Core.pdb
 E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\NHibernate.ByteCode.Castle.dll
-E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\hibernate.cfg.xml
 E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\Antlr3.Runtime.dll
 E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\Castle.DynamicProxy2.dll
 E:\PROJETO\C#\PontoEncontro\Core\bin\Debug\LinFu.DynamicProxy.dll
