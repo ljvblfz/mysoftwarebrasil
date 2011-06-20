@@ -41,16 +41,8 @@ namespace PontoEncontro.Controllers
         [HttpPost]
         public ActionResult Create(Infrastructure.Models.Menu collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                CorePontoEncontro.Repository.MenuRepository.Insert(collection);
-                return View(collection);
-            }
-            catch
-            {
-                return View();
-            }
+            CorePontoEncontro.Repository.MenuRepository.Insert(collection);
+            return View(collection);
         }
         
         //
