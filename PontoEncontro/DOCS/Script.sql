@@ -1,242 +1,425 @@
 /*
 Created		24/05/2011
-Modified		09/06/2011
+Modified		19/06/2011
 Project		
-Model		
+Model			
 Company		
 Author		
 Version		
-Database		mySQL 5 
+Database		MS SQL 2005 
 */
 
 
-drop table IF EXISTS ComunidadeMembro;
-drop table IF EXISTS Comunidade;
-drop table IF EXISTS Anuncio;
-drop table IF EXISTS MembroAmigo;
-drop table IF EXISTS MembroFavorito;
-drop table IF EXISTS Favoritos;
-drop table IF EXISTS inretessePessoa;
-drop table IF EXISTS Interesses;
-drop table IF EXISTS EstadoCivil;
-drop table IF EXISTS Olhos;
-drop table IF EXISTS Cabelos;
-drop table IF EXISTS Etinia;
-drop table IF EXISTS Sexo;
-drop table IF EXISTS Post;
-drop table IF EXISTS Perfil;
-drop table IF EXISTS Fotos;
-drop table IF EXISTS EncontroMembro;
-drop table IF EXISTS Encontro;
-drop table IF EXISTS Amigos;
-drop table IF EXISTS Membro;
-drop table IF EXISTS Cidade;
-drop table IF EXISTS Estado;
-drop table IF EXISTS Pais;
-drop table IF EXISTS Endereco;
-drop table IF EXISTS Pessoa;
+Drop table [MenuRole] 
+go
+Drop table [Menu] 
+go
+Drop table [RoleMembro] 
+go
+Drop table [Role] 
+go
+Drop table [ComunidadeMembro] 
+go
+Drop table [Comunidade] 
+go
+Drop table [Anuncio] 
+go
+Drop table [MembroAmigo] 
+go
+Drop table [MembroFavorito] 
+go
+Drop table [Favoritos] 
+go
+Drop table [inretessePessoa] 
+go
+Drop table [Interesses] 
+go
+Drop table [EstadoCivil] 
+go
+Drop table [Olhos] 
+go
+Drop table [Cabelos] 
+go
+Drop table [Etinia] 
+go
+Drop table [Sexo] 
+go
+Drop table [Post] 
+go
+Drop table [Perfil] 
+go
+Drop table [Fotos] 
+go
+Drop table [EncontroMembro] 
+go
+Drop table [Encontro] 
+go
+Drop table [Amigos] 
+go
+Drop table [Membro] 
+go
+Drop table [Cidade] 
+go
+Drop table [Estado] 
+go
+Drop table [Pais] 
+go
+Drop table [Endereco] 
+go
+Drop table [Pessoa] 
+go
 
 
-Create table Pessoa (
-	sexoId Int NOT NULL,
-	olhosId Int NOT NULL,
-	cabelosId Int NOT NULL,
-	etiniaId Int NOT NULL,
-	perfilId Int NOT NULL,
-	estadoCivilId Int NOT NULL,
-	enderecoId Int NOT NULL,
-	pessoaId Int NOT NULL,
-	pessoaName Varchar(255) NOT NULL,
-	pessoaNascimento Date NOT NULL,
-	pessoaProfissao Varchar(255) NOT NULL,
-	pessoaEmail Varchar(255) NOT NULL,
-	pessoaMSN Varchar(255),
-	UNIQUE (pessoaEmail),
-	UNIQUE (pessoaMSN),
- Primary Key (pessoaId)) ENGINE = InnoDB;
+Create table [Pessoa]
+(
+	[sexoId] Integer NOT NULL,
+	[olhosId] Integer NOT NULL,
+	[cabelosId] Integer NOT NULL,
+	[etiniaId] Integer NOT NULL,
+	[perfilId] Integer NOT NULL,
+	[estadoCivilId] Integer NOT NULL,
+	[enderecoId] Integer NOT NULL,
+	[pessoaId] Integer NOT NULL,
+	[pessoaName] Varchar(255) NOT NULL,
+	[pessoaNascimento] Datetime NOT NULL,
+	[pessoaProfissao] Varchar(255) NOT NULL,
+	[pessoaEmail] Varchar(255) NOT NULL, UNIQUE ([pessoaEmail]),
+	[pessoaMSN] Varchar(255) NULL, UNIQUE ([pessoaMSN]),
+Primary Key ([pessoaId])
+) 
+go
 
-Create table Endereco (
-	enderecoId Int NOT NULL,
-	CEP Varchar(20),
-	cidadeId Int NOT NULL,
- Primary Key (enderecoId)) ENGINE = InnoDB;
+Create table [Endereco]
+(
+	[enderecoId] Integer NOT NULL,
+	[CEP] Varchar(20) NULL,
+	[cidadeId] Integer NOT NULL,
+Primary Key ([enderecoId])
+) 
+go
 
-Create table Pais (
-	paisId Int NOT NULL,
-	paisName Varchar(255) NOT NULL,
-	UNIQUE (paisName),
- Primary Key (paisId)) ENGINE = InnoDB;
+Create table [Pais]
+(
+	[paisId] Integer NOT NULL,
+	[paisName] Varchar(255) NOT NULL, UNIQUE ([paisName]),
+Primary Key ([paisId])
+) 
+go
 
-Create table Estado (
-	estadoId Int NOT NULL,
-	estadoName Varchar(255) NOT NULL,
-	estadoSigla Varchar(2) NOT NULL,
-	paisId Int NOT NULL,
-	UNIQUE (estadoName),
-	UNIQUE (estadoSigla),
- Primary Key (estadoId)) ENGINE = InnoDB;
+Create table [Estado]
+(
+	[estadoId] Integer NOT NULL,
+	[estadoName] Varchar(255) NOT NULL, UNIQUE ([estadoName]),
+	[estadoSigla] Varchar(2) NOT NULL, UNIQUE ([estadoSigla]),
+	[paisId] Integer NOT NULL,
+Primary Key ([estadoId])
+) 
+go
 
-Create table Cidade (
-	cidadeId Int NOT NULL,
-	cidadeName Varchar(255) NOT NULL,
-	estadoId Int NOT NULL,
-	UNIQUE (cidadeName),
- Primary Key (cidadeId)) ENGINE = InnoDB;
+Create table [Cidade]
+(
+	[cidadeId] Integer NOT NULL,
+	[cidadeName] Varchar(255) NOT NULL, UNIQUE ([cidadeName]),
+	[estadoId] Integer NOT NULL,
+Primary Key ([cidadeId])
+) 
+go
 
-Create table Membro (
-	pessoaId Int NOT NULL,
-	membroId Int NOT NULL,
-	membroNickName Varchar(255) NOT NULL,
-	membroUltimoLogin Date NOT NULL,
-	membroSenha Varchar(50) NOT NULL,
- Primary Key (membroId)) ENGINE = InnoDB;
+Create table [Membro]
+(
+	[pessoaId] Integer NOT NULL,
+	[membroId] Integer NOT NULL,
+	[membroNickName] Varchar(255) NOT NULL,
+	[membroUltimoLogin] Datetime NOT NULL,
+	[membroSenha] Varchar(50) NOT NULL,
+Primary Key ([membroId])
+) 
+go
 
-Create table Amigos (
-	amigoId Int NOT NULL AUTO_INCREMENT,
- Primary Key (amigoId)) ENGINE = InnoDB;
+Create table [Amigos]
+(
+	[amigoId] Integer NOT NULL,
+Primary Key ([amigoId])
+) 
+go
 
-Create table Encontro (
-	encontroId Int NOT NULL,
-	enderecoId Int NOT NULL,
-	encontroTitulo Varchar(50) NOT NULL,
-	encontroDescricao Text NOT NULL,
-	encontroQuantPessoas Int,
-	encontroData Date NOT NULL,
-	encontroValor Float,
- Primary Key (encontroId)) ENGINE = InnoDB;
+Create table [Encontro]
+(
+	[encontroId] Integer NOT NULL,
+	[enderecoId] Integer NOT NULL,
+	[encontroTitulo] Varchar(50) NOT NULL,
+	[encontroDescricao] Text NOT NULL,
+	[encontroQuantPessoas] Integer NULL,
+	[encontroData] Datetime NOT NULL,
+	[encontroValor] Float NULL,
+Primary Key ([encontroId])
+) 
+go
 
-Create table EncontroMembro (
-	membroId Int NOT NULL,
-	encontroId Int NOT NULL,
-	encontroMembroCriador Bit(1) NOT NULL,
- Primary Key (membroId,encontroId)) ENGINE = InnoDB;
+Create table [EncontroMembro]
+(
+	[membroId] Integer NOT NULL,
+	[encontroId] Integer NOT NULL,
+	[encontroMembroId] Integer Identity NOT NULL,
+Primary Key ([membroId],[encontroId],[encontroMembroId])
+) 
+go
 
-Create table Fotos (
-	membroId Int NOT NULL,
-	fotoId Int NOT NULL,
-	fotoPath Varchar(255) NOT NULL,
- Primary Key (membroId,fotoId)) ENGINE = InnoDB;
+Create table [Fotos]
+(
+	[membroId] Integer NOT NULL,
+	[fotoId] Integer NOT NULL,
+	[fotoPath] Varchar(255) NOT NULL,
+Primary Key ([membroId],[fotoId])
+) 
+go
 
-Create table Perfil (
-	perfilId Int NOT NULL AUTO_INCREMENT,
-	perfilAltura Int NOT NULL,
-	perfilPeso Int NOT NULL,
-	perfilFumante Bit(1) NOT NULL,
-	perfilBebe Bit(1) NOT NULL,
-	pessoaInteresseConhecer Text,
-	pessoaFantasiasSexuais Text,
-	pessoaOutrosInteresses Text,
- Primary Key (perfilId)) ENGINE = InnoDB;
+Create table [Perfil]
+(
+	[perfilId] Integer NOT NULL,
+	[perfilAltura] Integer NOT NULL,
+	[perfilPeso] Integer NOT NULL,
+	[perfilFumante] Bit NOT NULL,
+	[perfilBebe] Bit NOT NULL,
+	[pessoaInteresseConhecer] Text NULL,
+	[pessoaFantasiasSexuais] Text NULL,
+	[pessoaOutrosInteresses] Text NULL,
+Primary Key ([perfilId])
+) 
+go
 
-Create table Post (
-	membroId Int NOT NULL,
-	fotoId Int NOT NULL,
-	postId Int NOT NULL AUTO_INCREMENT,
-	postText Text NOT NULL,
- Primary Key (postId)) ENGINE = InnoDB;
+Create table [Post]
+(
+	[membroId] Integer NOT NULL,
+	[fotoId] Integer NOT NULL,
+	[postId] Integer NOT NULL,
+	[postText] Text NOT NULL,
+Primary Key ([postId])
+) 
+go
 
-Create table Sexo (
-	sexoId Int NOT NULL,
-	sexoName Varchar(255) NOT NULL,
-	UNIQUE (sexoName),
- Primary Key (sexoId)) ENGINE = InnoDB;
+Create table [Sexo]
+(
+	[sexoId] Integer NOT NULL,
+	[sexoName] Varchar(255) NOT NULL, UNIQUE ([sexoName]),
+Primary Key ([sexoId])
+) 
+go
 
-Create table Etinia (
-	etiniaId Int NOT NULL AUTO_INCREMENT,
-	etiniaName Varchar(255) NOT NULL,
-	UNIQUE (etiniaName),
- Primary Key (etiniaId)) ENGINE = InnoDB;
+Create table [Etinia]
+(
+	[etiniaId] Integer NOT NULL,
+	[etiniaName] Varchar(255) NOT NULL, UNIQUE ([etiniaName]),
+Primary Key ([etiniaId])
+) 
+go
 
-Create table Cabelos (
-	cabelosId Int NOT NULL AUTO_INCREMENT,
-	cabelosName Varchar(255),
- Primary Key (cabelosId)) ENGINE = InnoDB;
+Create table [Cabelos]
+(
+	[cabelosId] Integer NOT NULL,
+	[cabelosName] Varchar(255) NULL,
+Primary Key ([cabelosId])
+) 
+go
 
-Create table Olhos (
-	olhosId Int NOT NULL AUTO_INCREMENT,
-	olhosName Varchar(255) NOT NULL,
-	UNIQUE (olhosName),
- Primary Key (olhosId)) ENGINE = InnoDB;
+Create table [Olhos]
+(
+	[olhosId] Integer NOT NULL,
+	[olhosName] Varchar(255) NOT NULL, UNIQUE ([olhosName]),
+Primary Key ([olhosId])
+) 
+go
 
-Create table EstadoCivil (
-	estadoCivilId Int NOT NULL AUTO_INCREMENT,
-	estadoCivilName Varchar(255) NOT NULL,
-	UNIQUE (estadoCivilName),
- Primary Key (estadoCivilId)) ENGINE = InnoDB;
+Create table [EstadoCivil]
+(
+	[estadoCivilId] Integer NOT NULL,
+	[estadoCivilName] Varchar(255) NOT NULL, UNIQUE ([estadoCivilName]),
+Primary Key ([estadoCivilId])
+) 
+go
 
-Create table Interesses (
-	interresseId Int NOT NULL AUTO_INCREMENT,
-	interresseName Varchar(255) NOT NULL,
-	UNIQUE (interresseName),
- Primary Key (interresseId)) ENGINE = InnoDB;
+Create table [Interesses]
+(
+	[interresseId] Integer NOT NULL,
+	[interresseName] Varchar(255) NOT NULL, UNIQUE ([interresseName]),
+Primary Key ([interresseId])
+) 
+go
 
-Create table inretessePessoa (
-	pessoaId Int NOT NULL,
-	interresseId Int NOT NULL,
- Primary Key (pessoaId,interresseId)) ENGINE = InnoDB;
+Create table [inretessePessoa]
+(
+	[pessoaId] Integer NOT NULL,
+	[interresseId] Integer NOT NULL,
+	[inretessePessoaId] Integer Identity NOT NULL,
+Primary Key ([pessoaId],[interresseId],[inretessePessoaId])
+) 
+go
 
-Create table Favoritos (
-	favoritosId Int NOT NULL AUTO_INCREMENT,
- Primary Key (favoritosId)) ENGINE = InnoDB;
+Create table [Favoritos]
+(
+	[favoritosId] Integer NOT NULL,
+Primary Key ([favoritosId])
+) 
+go
 
-Create table MembroFavorito (
-	membroId Int NOT NULL,
-	favoritosId Int NOT NULL,
- Primary Key (membroId,favoritosId)) ENGINE = InnoDB;
+Create table [MembroFavorito]
+(
+	[membroId] Integer NOT NULL,
+	[favoritosId] Integer NOT NULL,
+	[membroFavoritoId] Integer Identity NOT NULL,
+Primary Key ([membroId],[favoritosId],[membroFavoritoId])
+) 
+go
 
-Create table MembroAmigo (
-	membroId Int NOT NULL,
-	amigoId Int NOT NULL,
- Primary Key (membroId,amigoId)) ENGINE = InnoDB;
+Create table [MembroAmigo]
+(
+	[membroId] Integer NOT NULL,
+	[amigoId] Integer NOT NULL,
+	[membroAmigoId] Integer Identity NOT NULL,
+Primary Key ([membroId],[amigoId],[membroAmigoId])
+) 
+go
 
-Create table Anuncio (
-	anuncioId Int NOT NULL,
-	anuncioValorHora Float NOT NULL,
-	anucioProficional Bit(1) NOT NULL,
-	anuncioTitulo Varchar(255) NOT NULL,
-	anuncioTexto Text NOT NULL,
-	membroId Int NOT NULL,
- Primary Key (anuncioId)) ENGINE = InnoDB;
+Create table [Anuncio]
+(
+	[anuncioId] Integer NOT NULL,
+	[anuncioValorHora] Float NOT NULL,
+	[anucioProficional] Bit NOT NULL,
+	[anuncioTitulo] Varchar(255) NOT NULL,
+	[anuncioTexto] Text NOT NULL,
+	[membroId] Integer NOT NULL,
+Primary Key ([anuncioId])
+) 
+go
 
-Create table Comunidade (
-	comunidadeId Int NOT NULL AUTO_INCREMENT,
-	comunidadeName Varchar(255) NOT NULL,
-	comunidadeDataCreate Date NOT NULL,
-	comunidadeDescricao Text NOT NULL,
- Primary Key (comunidadeId)) ENGINE = InnoDB;
+Create table [Comunidade]
+(
+	[comunidadeId] Integer NOT NULL,
+	[comunidadeName] Varchar(255) NOT NULL,
+	[comunidadeDataCreate] Datetime NOT NULL,
+	[comunidadeDescricao] Text NOT NULL,
+Primary Key ([comunidadeId])
+) 
+go
 
-Create table ComunidadeMembro (
-	comunidadeId Int NOT NULL,
-	membroId Int NOT NULL,
-	comunidadeMembromediador Bit(1) NOT NULL,
- Primary Key (comunidadeId,membroId)) ENGINE = InnoDB;
+Create table [ComunidadeMembro]
+(
+	[comunidadeId] Integer NOT NULL,
+	[membroId] Integer NOT NULL,
+	[comunidadeMembroId] Integer NOT NULL,
+Primary Key ([comunidadeId],[membroId],[comunidadeMembroId])
+) 
+go
+
+Create table [Role]
+(
+	[RoleId] Integer NOT NULL,
+	[RoleName] Varchar(255) NOT NULL, UNIQUE ([RoleName]),
+Primary Key ([RoleId])
+) 
+go
+
+Create table [RoleMembro]
+(
+	[RoleId] Integer NOT NULL,
+	[membroId] Integer NOT NULL,
+	[roleMembroId] Integer Identity NOT NULL,
+Primary Key ([RoleId],[membroId],[roleMembroId])
+) 
+go
+
+Create table [Menu]
+(
+	[MenuId] Integer NOT NULL,
+	[MenuIdPai] Integer NOT NULL,
+	[MenuName] Varchar(255) NOT NULL, UNIQUE ([MenuName]),
+	[MenuOrdem] Integer NOT NULL,
+	[MenuPath] Varchar(255) NOT NULL,
+Primary Key ([MenuId])
+) 
+go
+
+Create table [MenuRole]
+(
+	[RoleId] Integer NOT NULL,
+	[MenuId] Integer NOT NULL,
+	[menuRoleId] Char(1) Identity NOT NULL,
+Primary Key ([RoleId],[MenuId],[menuRoleId])
+) 
+go
 
 
-Alter table inretessePessoa add Foreign Key (pessoaId) references Pessoa (pessoaId) on delete  restrict on update  restrict;
-Alter table Membro add Foreign Key (pessoaId) references Pessoa (pessoaId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (enderecoId) references Endereco (enderecoId) on delete  restrict on update  restrict;
-Alter table Encontro add Foreign Key (enderecoId) references Endereco (enderecoId) on delete  restrict on update  restrict;
-Alter table Estado add Foreign Key (paisId) references Pais (paisId) on delete  restrict on update  restrict;
-Alter table Cidade add Foreign Key (estadoId) references Estado (estadoId) on delete  restrict on update  restrict;
-Alter table Endereco add Foreign Key (cidadeId) references Cidade (cidadeId) on delete  restrict on update  restrict;
-Alter table EncontroMembro add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table Fotos add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table MembroFavorito add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table MembroAmigo add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table Anuncio add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table ComunidadeMembro add Foreign Key (membroId) references Membro (membroId) on delete  restrict on update  restrict;
-Alter table MembroAmigo add Foreign Key (amigoId) references Amigos (amigoId) on delete  restrict on update  restrict;
-Alter table EncontroMembro add Foreign Key (encontroId) references Encontro (encontroId) on delete  restrict on update  restrict;
-Alter table Post add Foreign Key (membroId,fotoId) references Fotos (membroId,fotoId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (perfilId) references Perfil (perfilId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (sexoId) references Sexo (sexoId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (etiniaId) references Etinia (etiniaId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (cabelosId) references Cabelos (cabelosId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (olhosId) references Olhos (olhosId) on delete  restrict on update  restrict;
-Alter table Pessoa add Foreign Key (estadoCivilId) references EstadoCivil (estadoCivilId) on delete  restrict on update  restrict;
-Alter table inretessePessoa add Foreign Key (interresseId) references Interesses (interresseId) on delete  restrict on update  restrict;
-Alter table MembroFavorito add Foreign Key (favoritosId) references Favoritos (favoritosId) on delete  restrict on update  restrict;
-Alter table ComunidadeMembro add Foreign Key (comunidadeId) references Comunidade (comunidadeId) on delete  restrict on update  restrict;
+Alter table [inretessePessoa] add  foreign key([pessoaId]) references [Pessoa] ([pessoaId])  on update no action on delete no action 
+go
+Alter table [Membro] add  foreign key([pessoaId]) references [Pessoa] ([pessoaId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([enderecoId]) references [Endereco] ([enderecoId])  on update no action on delete no action 
+go
+Alter table [Encontro] add  foreign key([enderecoId]) references [Endereco] ([enderecoId])  on update no action on delete no action 
+go
+Alter table [Estado] add  foreign key([paisId]) references [Pais] ([paisId])  on update no action on delete no action 
+go
+Alter table [Cidade] add  foreign key([estadoId]) references [Estado] ([estadoId])  on update no action on delete no action 
+go
+Alter table [Endereco] add  foreign key([cidadeId]) references [Cidade] ([cidadeId])  on update no action on delete no action 
+go
+Alter table [EncontroMembro] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [Fotos] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [MembroFavorito] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [MembroAmigo] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [Anuncio] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [ComunidadeMembro] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [RoleMembro] add  foreign key([membroId]) references [Membro] ([membroId])  on update no action on delete no action 
+go
+Alter table [MembroAmigo] add  foreign key([amigoId]) references [Amigos] ([amigoId])  on update no action on delete no action 
+go
+Alter table [EncontroMembro] add  foreign key([encontroId]) references [Encontro] ([encontroId])  on update no action on delete no action 
+go
+Alter table [Post] add  foreign key([membroId],[fotoId]) references [Fotos] ([membroId],[fotoId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([perfilId]) references [Perfil] ([perfilId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([sexoId]) references [Sexo] ([sexoId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([etiniaId]) references [Etinia] ([etiniaId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([cabelosId]) references [Cabelos] ([cabelosId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([olhosId]) references [Olhos] ([olhosId])  on update no action on delete no action 
+go
+Alter table [Pessoa] add  foreign key([estadoCivilId]) references [EstadoCivil] ([estadoCivilId])  on update no action on delete no action 
+go
+Alter table [inretessePessoa] add  foreign key([interresseId]) references [Interesses] ([interresseId])  on update no action on delete no action 
+go
+Alter table [MembroFavorito] add  foreign key([favoritosId]) references [Favoritos] ([favoritosId])  on update no action on delete no action 
+go
+Alter table [ComunidadeMembro] add  foreign key([comunidadeId]) references [Comunidade] ([comunidadeId])  on update no action on delete no action 
+go
+Alter table [RoleMembro] add  foreign key([RoleId]) references [Role] ([RoleId])  on update no action on delete no action 
+go
+Alter table [MenuRole] add  foreign key([RoleId]) references [Role] ([RoleId])  on update no action on delete no action 
+go
+Alter table [MenuRole] add  foreign key([MenuId]) references [Menu] ([MenuId])  on update no action on delete no action 
+go
+Alter table [Menu] add  foreign key([MenuIdPai]) references [Menu] ([MenuId])  on update no action on delete no action 
+go
+
+
+Set quoted_identifier on
+go
+
+
+Set quoted_identifier off
+go
+
+
+/* Roles permissions */
 
 
 /* Users permissions */

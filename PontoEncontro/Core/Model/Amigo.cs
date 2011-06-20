@@ -15,31 +15,11 @@ namespace Core.Model
         : ActiveRecordValidationBase<Amigo>
     {
 
-        #region Property_Names
-
-        public static string Prop_amigoId = "amigoId";
-
-        #endregion
-
         #region Private_Variables
 
         private int _amigoid;
 
         private IList _MembroAmigo = new List<MembroAmigo>();
-
-        #endregion
-
-        #region Constructors
-
-        public Amigo()
-        {
-        }
-
-        public Amigo(
-            int p_amigoid)
-        {
-            _amigoid = p_amigoid;
-        }
 
         #endregion
 
@@ -49,6 +29,7 @@ namespace Core.Model
         public int amigoId
         {
             get { return _amigoid; }
+            set { _amigoid = value; }
         }
 
         [HasMany(typeof(MembroAmigo), Table = "MembroAmigo", ColumnKey = "amigoId")]
