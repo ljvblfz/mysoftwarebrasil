@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Infrastructure.Models;
+using System.Web.Security;
 
 namespace PontoEncontro.Controllers
 {
@@ -17,6 +18,22 @@ namespace PontoEncontro.Controllers
             IList<Menu> result = CorePontoEncontro.Repository.MenuRepository.ListAll();
 
             return View(result);
+        }
+
+
+        public ActionResult Generation()
+        {
+            IList<Menu> result = CorePontoEncontro.Repository.MenuRepository.ListAll();
+            if (Request.IsAuthenticated)
+            {
+                return View(result);
+            }
+            else
+            {
+                return View(result.Where(i => i.MenuId == 4 || i.MenuId == 5 || i.MenuId == 6));
+            }
+
+            return View();
         }
 
         //
