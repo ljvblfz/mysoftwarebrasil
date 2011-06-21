@@ -19,5 +19,29 @@ namespace PontoEncontro.Controllers
         {
             return View();
         }
+
+        public ActionResult Themes()
+        {
+            HttpCookie themeCookie = Request.Cookies["Theme"];
+
+            string theme = themeCookie != null ? themeCookie.Value : "Default";
+
+            ViewBag.Themes = new SelectList(
+                new[] { "Default", "1Column", "2Column", "3Column" }, theme);
+
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult Themes(string theme)
+        {
+            HttpCookie themeCookie = new HttpCookie("Theme", theme);
+            HttpContext.Response.Cookies.Add(themeCookie);
+
+            ViewBag.Themes = new SelectList(
+                new[] { "Default", "1Column", "2Column", "3Column" }, theme);
+
+            return PartialView();
+        }
     }
 }

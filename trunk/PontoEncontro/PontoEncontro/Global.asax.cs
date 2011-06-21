@@ -37,5 +37,34 @@ namespace PontoEncontro
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            RazorViewEngine engine = (RazorViewEngine)System.Web.Mvc.ViewEngines.Engines[1];
+
+            HttpCookie themeCookie = Request.Cookies["Theme"];
+
+            string themeName = "Default";
+
+            if (themeCookie != null)
+                themeName = themeCookie.Value;
+
+            engine.MasterLocationFormats = new string[] {
+                    "~/Themes/" + themeName + "/Views/{1}/{0}.cshtml",
+                    "~/Themes/" + themeName + "/Views/Shared/{0}.cshtml",
+                };
+
+            engine.ViewLocationFormats = new string[] {
+                    "~/Themes/" + themeName + "/Views/{1}/{0}.cshtml",
+                    "~/Themes/" + themeName + "/Views/Shared/{0}.cshtml",
+                };
+
+            engine.PartialViewLocationFormats = new string[] {
+                    "~/Themes/" + themeName + "/Views/{1}/{0}.cshtml",
+                    "~/Themes/" + themeName + "/Views/Shared/{0}.cshtml",
+                };
+
+            string extensionsPath = Server.MapPath(string.Format("~/Themes/{0}/Extensions/", themeName));
+        }
     }
 }
