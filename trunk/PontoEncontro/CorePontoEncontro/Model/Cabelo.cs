@@ -53,6 +53,7 @@ namespace CorePontoEncontro.Model
         public int cabelosId
         {
             get { return _cabelosid; }
+            set { _cabelosid = value; }
         }
 
         [Property("cabelosName", Access = PropertyAccess.NosetterCamelcaseUnderscore, Length = 255), ValidateLength(1, 255)]
