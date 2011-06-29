@@ -53,6 +53,7 @@ namespace CorePontoEncontro.Model
         public int etiniaId
         {
             get { return _etiniaid; }
+            set { _etiniaid = value; }
         }
 
         [Property("etiniaName", Access = PropertyAccess.NosetterCamelcaseUnderscore, NotNull = true, Length = 255), ValidateLength(1, 255)]
