@@ -65,9 +65,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\SexoHelper.cs" />
+    <Compile Include="Models\PontoEncontroContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Themes\Default\Views\Menu\Index.cshtml" />
@@ -186,6 +188,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Themes\Default\Views\Account\DadosEndereco.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoa\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoa\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoa\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoa\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\MenuDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\SexoDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\EtiniaDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\CabelosDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\OlhosDropDown.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
