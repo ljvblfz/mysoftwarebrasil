@@ -12,14 +12,12 @@ namespace PontoEncontro.Controllers
     {
         //
         // GET: /Menu/
-
         public ActionResult Index()
         {
             IList<Menu> result = CorePontoEncontro.Repository.MenuRepository.ListAll();
 
             return View(result);
         }
-
 
         public ActionResult Generation()
         {
@@ -38,7 +36,6 @@ namespace PontoEncontro.Controllers
 
         //
         // GET: /Menu/Details/5
-
         public ActionResult Details(int id)
         {
             return View();
@@ -46,15 +43,17 @@ namespace PontoEncontro.Controllers
 
         //
         // GET: /Menu/Create
-
         public ActionResult Create()
         {
+            var list = from d in CorePontoEncontro.Repository.MenuRepository.ListAll()
+                                      orderby d.MenuIdPai descending
+                                      select d;
+            ViewData["Ratings"] = list.ToArray();
             return View();
         } 
 
         //
         // POST: /Menu/Create
-
         [HttpPost]
         public ActionResult Create(Infrastructure.Models.Menu collection)
         {
@@ -64,7 +63,6 @@ namespace PontoEncontro.Controllers
         
         //
         // GET: /Menu/Edit/5
- 
         public ActionResult Edit(int id)
         {
             return View();
@@ -72,7 +70,6 @@ namespace PontoEncontro.Controllers
 
         //
         // POST: /Menu/Edit/5
-
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -90,7 +87,6 @@ namespace PontoEncontro.Controllers
 
         //
         // GET: /Menu/Delete/5
- 
         public ActionResult Delete(int id)
         {
             return View();
@@ -98,7 +94,6 @@ namespace PontoEncontro.Controllers
 
         //
         // POST: /Menu/Delete/5
-
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -66,6 +66,18 @@ namespace PontoEncontro.Controllers
 
         public ActionResult Register()
         {
+            IList<Sexo> listSexo = CorePontoEncontro.Repository.SexoRepository.ListAll();
+            ViewData["listSexo"] = listSexo.ToArray();
+
+            IList<Olho> listOlhos = CorePontoEncontro.Repository.OlhosRepository.ListAll();
+            ViewData["listOlhos"] = listOlhos.ToArray();
+
+            IList<Cabelo> listCabelo = CorePontoEncontro.Repository.CabeloRepository.ListAll();
+            ViewData["listCabelo"] = listCabelo.ToArray();
+
+            IList<Etinia> listEtinia = CorePontoEncontro.Repository.EtiniaRepository.ListAll();
+            ViewData["listEtinia"] = listEtinia.ToArray();
+
             return View();
         }
 
