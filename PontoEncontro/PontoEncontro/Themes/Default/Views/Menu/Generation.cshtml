@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Infrastructure.Models.Menu>
+@{Layout=null;}
+<ul>
+    @foreach (var item in Model)
+    {
+        <li><a href="@item.MenuPath">@item.MenuName</a> </li>
+    }
+</ul>

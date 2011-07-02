@@ -1,0 +1,5 @@
+﻿@using (Html.BeginForm())
+{
+    @Html.DropDownList("Theme", (SelectList)ViewBag.Themes)
+    <input type="submit" value="Alterar" />
+}
