@@ -10,13 +10,9 @@ namespace CorePontoEncontro.Repository
     {
         public static IList<T> ListAll()
         {
-            IList<T> list = new List<T>();
             T[] collection = ActiveRecordBase<T>.FindAll();
-            foreach (var item in collection)
-            {
-                //list.Add(Convert(item, 0));
-            }
-            return list;
+            IList<T> list = new List<T>(collection);
+             return list;
         }
     }
 }
