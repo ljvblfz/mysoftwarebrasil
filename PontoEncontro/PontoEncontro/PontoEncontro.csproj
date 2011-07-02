@@ -190,21 +190,6 @@
     <Content Include="Themes\Default\Views\Account\DadosEndereco.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pessoa\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pessoa\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pessoa\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pessoa\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Pessoa\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Themes\Default\Views\Shared\EditorTemplates\MenuDropDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +203,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Themes\Default\Views\Shared\EditorTemplates\OlhosDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\EstadoCivilDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\EstadoDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Account\DadosCidade.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Account\DadosEstado.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\EditorTemplates\CidadeDropDown.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

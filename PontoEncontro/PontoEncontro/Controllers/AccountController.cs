@@ -78,6 +78,15 @@ namespace PontoEncontro.Controllers
             IList<Etinia> listEtinia = CorePontoEncontro.Repository.EtiniaRepository.ListAll();
             ViewData["listEtinia"] = listEtinia.ToArray();
 
+            IList<EstadoCivil> listEstadoCivil = CorePontoEncontro.Repository.EstadoCivilRepository.ListAll();
+            ViewData["listEstadoCivil"] = listEstadoCivil.ToArray();
+
+            IList<Estado> listEstado = CorePontoEncontro.Repository.EstadoRepository.ListAll();
+            ViewData["listEstado"] = listEstado.ToArray();
+
+            //IList<Cidade> listCidade = CorePontoEncontro.Repository.CidadeRepository.ListAll();
+            //ViewData["listCidade"] = listCidade.ToArray();
+
             return View();
         }
 
