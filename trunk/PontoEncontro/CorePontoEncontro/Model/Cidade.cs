@@ -57,6 +57,7 @@ namespace CorePontoEncontro.Model
         public int cidadeId
         {
             get { return _cidadeid; }
+            set { _cidadeid = value; }
         }
 
         [Property("cidadeName", Access = PropertyAccess.NosetterCamelcaseUnderscore, NotNull = true, Length = 255), ValidateLength(1, 255)]

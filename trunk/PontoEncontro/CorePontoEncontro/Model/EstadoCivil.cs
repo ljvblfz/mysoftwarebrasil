@@ -53,6 +53,7 @@ namespace CorePontoEncontro.Model
         public int estadoCivilId
         {
             get { return _estadocivilid; }
+            set { _estadocivilid = value; }
         }
 
         [Property("estadoCivilName", Access = PropertyAccess.NosetterCamelcaseUnderscore, NotNull = true, Length = 255), ValidateLength(1, 255)]

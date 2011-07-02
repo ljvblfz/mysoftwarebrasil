@@ -61,6 +61,7 @@ namespace CorePontoEncontro.Model
         public int estadoId
         {
             get { return _estadoid; }
+            set { _estadoid = value; }
         }
 
         [Property("estadoName", Access = PropertyAccess.NosetterCamelcaseUnderscore, NotNull = true, Length = 255), ValidateLength(1, 255)]
