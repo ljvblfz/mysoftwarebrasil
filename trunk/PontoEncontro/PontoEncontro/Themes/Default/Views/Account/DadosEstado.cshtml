@@ -1,9 +1,14 @@
 ﻿@model Infrastructure.Models.Estado
+<script type="text/javascript" language="javascript">
 
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Estado</legend>
-
-        @Html.EditorForModel()
-
-    </fieldset>
+    $(document).ready(function () {
+        $('#estadoId').change(function () {
+            ListCity($('#estadoId').val());
+        });
+    });
+</script>
+@Html.ValidationSummary(true)
+<fieldset>
+    <legend>Estado</legend>
+    @Html.EditorForModel()
+</fieldset>

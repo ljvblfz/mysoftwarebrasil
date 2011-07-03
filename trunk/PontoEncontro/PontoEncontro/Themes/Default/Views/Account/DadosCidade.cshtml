@@ -1,9 +1,22 @@
 ﻿@model Infrastructure.Models.Cidade
+<script type="text/jscript" language="javascript">
 
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Cidade</legend>
+    function ListCity(estadoId) {
+            $.ajax({
+                type: "POST",
+                data: { estadoId: estadoId },
+                url: '../Cidade/List',
+                success: function (data) {
+                    //$('cidadeId').html(data);
+                    alert('Load was performed.');
+                }
+            });
+        }
+</script>
+@Html.ValidationSummary(true)
+<fieldset>
+    <legend>Cidade</legend>
 
-        @Html.EditorForModel()
+    @Html.EditorForModel()
 
-    </fieldset>
+</fieldset>
