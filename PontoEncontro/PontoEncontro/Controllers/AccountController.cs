@@ -81,11 +81,15 @@ namespace PontoEncontro.Controllers
             IList<EstadoCivil> listEstadoCivil = CorePontoEncontro.Repository.EstadoCivilRepository.ListAll();
             ViewData["listEstadoCivil"] = listEstadoCivil.ToArray();
 
-            IList<Estado> listEstado = CorePontoEncontro.Repository.EstadoRepository.ListAll();
+            IList<Estado> listEstado = new List<Estado>();
+            listEstado.Add(new Estado());
+            listEstado = CorePontoEncontro.Repository.EstadoRepository.ListAll();
             ViewData["listEstado"] = listEstado.ToArray();
 
-            //IList<Cidade> listCidade = CorePontoEncontro.Repository.CidadeRepository.ListAll();
-            //ViewData["listCidade"] = listCidade.ToArray();
+            IList<Cidade> listCidade = new List<Cidade>();
+            listCidade.Add(new Cidade());
+            //listCidade = CorePontoEncontro.Repository.CidadeRepository.ListAll();
+            ViewData["listCidade"] = listCidade.ToArray();
 
             return View();
         }
