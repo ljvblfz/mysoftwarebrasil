@@ -85,13 +85,6 @@ namespace CorePontoEncontro.Model
             set { _paisId = value; }
         }
 
-        [HasMany(typeof(Cidade), Table = "Cidade", ColumnKey = "estadoId")]
-        public IList Cidade
-        {
-            get { return _Cidade; }
-            set { _Cidade = value; }
-        }
-
         #endregion
 
     } // Estado
