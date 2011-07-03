@@ -1,0 +1,15 @@
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\CorePontoEncontro.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\CorePontoEncontro.pdb
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Castle.ActiveRecord.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Castle.Components.Validator.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Castle.Core.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Castle.DynamicProxy.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Core.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Iesi.Collections.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\log4net.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\NHibernate.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\bin\Release\Infrastructure.pdb
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\obj\Release\ResolveAssemblyReference.cache
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\obj\Release\CorePontoEncontro.dll
+E:\PROJETO\C#\PontoEncontro\CorePontoEncontro\obj\Release\CorePontoEncontro.pdb
