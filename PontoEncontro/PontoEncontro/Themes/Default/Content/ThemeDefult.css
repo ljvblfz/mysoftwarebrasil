@@ -255,3 +255,28 @@ border:0;
 padding:2px;
 text-align:right;
 }
+
+	.fieldLinha {
+		margin:7px 0;
+		text-align:left;
+		width: 100%;
+		clear:both;
+	}
+
+	.fieldLinha2{
+		margin:7px 0;
+		width: 50%;
+		float: left;
+	}
+
+
+	.fieldLinha3{
+		margin:7px 0;
+		width: 33%;
+		float:left;
+	}
+
+	.fieldLinhaVazia {
+		margin:10px 0;
+        height:32px;
+	}
