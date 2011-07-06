@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Infrastructure.Models;
 using System.Web.Security;
+using CorePontoEncontro.Repository;
 
 namespace PontoEncontro.Controllers
 {
@@ -21,7 +22,7 @@ namespace PontoEncontro.Controllers
 
         public ActionResult Generation()
         {
-            IList<Menu> result = CorePontoEncontro.Repository.MenuRepository.ListAll();
+            IList<Menu> result =  MenuRepository.ListAll();
             if (Request.IsAuthenticated)
             {
                 return View(result);

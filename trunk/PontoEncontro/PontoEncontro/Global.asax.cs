@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CorePontoEncontro;
+//using CorePontoEncontro;
 
 namespace PontoEncontro
 {
@@ -62,6 +62,7 @@ namespace PontoEncontro
             engine.PartialViewLocationFormats = new string[] {
                     "~/Themes/" + themeName + "/Views/{1}/{0}.cshtml",
                     "~/Themes/" + themeName + "/Views/Shared/{0}.cshtml",
+                    "~/Themes/" + themeName + "/Views/Shared/EditorTemplates/{0}.cshtml",
                 };
 
             string extensionsPath = Server.MapPath(string.Format("~/Themes/{0}/Extensions/", themeName));

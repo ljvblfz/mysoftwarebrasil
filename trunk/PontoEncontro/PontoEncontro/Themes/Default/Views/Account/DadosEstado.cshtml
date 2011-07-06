@@ -1,14 +1,25 @@
 ﻿@model Infrastructure.Models.Estado
-<script type="text/javascript" language="javascript">
 
-    $(document).ready(function () {
-        $('#estadoId').change(function () {
-            ListCity($('#estadoId').val());
-        });
-    });
-</script>
 @Html.ValidationSummary(true)
 <fieldset>
     <legend>Estado</legend>
     @Html.EditorForModel()
 </fieldset>
+<script type="text/javascript" language="javascript">
+
+    $(document).ready(function () {
+        $('#estadoId').change(function () {
+            document.getElementById('selectCidades').style.display = "none";
+            $.ajax({
+                type: "POST",
+                data: { estadoId: $('#estadoId').val() },
+                url: '../Cidade/List',
+                success: function (data) {
+                    document.getElementById('selectCidades').innerHTML = data;
+                    document.getElementById('selectCidades').style.display = "block";
+                }
+            });
+            
+        });
+    });
+</script>
