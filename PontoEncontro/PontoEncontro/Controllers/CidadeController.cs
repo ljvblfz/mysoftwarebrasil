@@ -20,10 +20,9 @@ namespace PontoEncontro.Controllers
         [HttpPost]
         public ActionResult List(int estadoId)
         {
-            IList<Cidade> listCidade = new List<Cidade>();
-            listCidade.Add(new Cidade());
-            //listCidade = CorePontoEncontro.Repository.CidadeRepository.ListAll();
-            return PartialView(listCidade);
+            IEnumerable<Cidade> listCidade = CorePontoEncontro.Repository.CidadeRepository.ListByEstados(estadoId);
+            ViewData["listCidade"] = listCidade;
+            return PartialView("CidadeDropDown");
         }
 
         [HttpPost]
