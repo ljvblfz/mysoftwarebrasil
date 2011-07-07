@@ -7,22 +7,6 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Interess</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.interresseId)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.interresseId)
-            @Html.ValidationMessageFor(model => model.interresseId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.interresseName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.interresseName)
-            @Html.ValidationMessageFor(model => model.interresseName)
-        </div>
-
+        @Html.EditorForModel()
     </fieldset>
 
