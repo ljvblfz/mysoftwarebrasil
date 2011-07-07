@@ -53,6 +53,7 @@ namespace CorePontoEncontro.Model
         public int interresseId
         {
             get { return _interresseid; }
+            set { _interresseid = value; }
         }
 
         [Property("interresseName", Access = PropertyAccess.NosetterCamelcaseUnderscore, NotNull = true, Length = 255), ValidateLength(1, 255)]

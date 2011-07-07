@@ -91,6 +91,11 @@ namespace PontoEncontro.Controllers
             //listCidade = CorePontoEncontro.Repository.CidadeRepository.ListAll();
             ViewData["listCidade"] = listCidade.ToArray();
 
+            IList<Interess> listInteress = new List<Interess>();
+            listInteress.Add(new Interess());
+            listInteress = CorePontoEncontro.Repository.InteresseRepository.ListAll();
+            ViewData["listInteress"] = listInteress.ToArray();
+
             return View();
         }
 
@@ -98,17 +103,18 @@ namespace PontoEncontro.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(FormCollection form)
         {
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                //Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
 
-                if (createStatus == MembershipCreateStatus.Success)
+                //if (createStatus == MembershipCreateStatus.Success)
+                if(true)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                    //FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -118,7 +124,7 @@ namespace PontoEncontro.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View("LogOn");
         }
 
         //

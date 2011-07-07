@@ -7,29 +7,5 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Membro</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.membroNickName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.membroNickName)
-            @Html.ValidationMessageFor(model => model.membroNickName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.membroUltimoLogin)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.membroUltimoLogin)
-            @Html.ValidationMessageFor(model => model.membroUltimoLogin)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.membroSenha)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.membroSenha)
-            @Html.ValidationMessageFor(model => model.membroSenha)
-        </div>
-
+        @Html.EditorForModel()
     </fieldset>
