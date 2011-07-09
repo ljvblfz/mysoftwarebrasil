@@ -1,0 +1,8 @@
+﻿@model Infrastructure.Models.Interess
+@{foreach (Infrastructure.Models.Interess item in (System.Collections.IEnumerable)ViewData["listInteress"])
+	{
+      @Html.CheckBox(item.interresseId.ToString())
+      @Html.Label(item.interresseName)
+      <br />
+    }
+}
