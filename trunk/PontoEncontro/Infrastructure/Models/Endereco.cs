@@ -12,17 +12,32 @@ namespace Infrastructure.Models
 	public partial class Endereco 
 	{
 
-		#region Properties
+        #region properties
+ 
+		[ScaffoldColumn(false)]
+		public int enderecoId { get; set; }
+ 
+		public string CEP { get; set; }
+ 
+		public int cidadeId { get; set; }
+ 
+        #endregion
+ 
+        #region constructors
+ 
+		public Endereco()
+		{
+		}
 
-        [ScaffoldColumn(false)]
-        public int enderecoId { get; set; }
+        public Endereco(dynamic entity)
+		{
+		    this.enderecoId = entity.enderecoId;
+		    this.CEP = entity.CEP;
+		    this.cidadeId = entity.cidadeId;
+        }
 
-        public string CEP { get; set; }
+        #endregion
 
-        public Cidade cidadeId { get; set; }
-
-		#endregion
-
-	} // Endereco
+    } // Endereco
 }
 

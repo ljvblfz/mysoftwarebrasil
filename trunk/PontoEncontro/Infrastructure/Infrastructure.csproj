@@ -46,9 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Globalizator.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Amigos.cs" />
+    <Compile Include="Models\Anuncio.cs" />
     <Compile Include="Models\Cabelo.cs" />
     <Compile Include="Models\Cidade.cs" />
+    <Compile Include="Models\Comunidade.cs" />
+    <Compile Include="Models\ComunidadeMembro.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\EstadoCivil.cs" />
@@ -59,6 +64,7 @@
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Olho.cs" />
     <Compile Include="Models\Pai.cs" />
+    <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Sexo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

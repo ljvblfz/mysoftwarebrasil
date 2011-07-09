@@ -105,6 +105,67 @@ namespace PontoEncontro.Controllers
         [HttpPost]
         public ActionResult Register(FormCollection form)
         {
+            int cabelosId;
+            int.TryParse(form["cabelosId"], out cabelosId);
+
+            int sexoId;
+            int.TryParse(form["sexoId"], out sexoId);
+
+            int estadoCivilId;
+            int.TryParse(form["estadoCivilId"], out estadoCivilId);
+
+            int etiniaId;
+            int.TryParse(form["etiniaId"], out etiniaId);
+
+            DateTime pessoaNascimento;
+            DateTime.TryParse(form["pessoaNascimento"], out pessoaNascimento);
+
+            Pessoa pessoa = new Pessoa();
+            pessoa.pessoaName = form["pessoaName"];
+            pessoa.pessoaEmail = form["pessoaEmail"];
+            pessoa.pessoaMSN = form["pessoaEmail"];
+            pessoa.pessoaNascimento = pessoaNascimento;
+            pessoa.pessoaProfissao = form["pessoaProfissao"];
+            pessoa.sexoId = sexoId;
+            pessoa.cabelosId = cabelosId;
+            pessoa.estadoCivilId = estadoCivilId;
+            pessoa.etiniaId = etiniaId;
+            
+
+            int cidadeId;
+            int.TryParse(form["cidadeId"], out cidadeId);
+
+            Endereco endereco = new Endereco();
+            endereco.cidadeId = cidadeId;
+
+
+            int perfilId;
+            int.TryParse(form["perfilId"], out perfilId);
+
+            int perfilAltura;
+            int.TryParse(form["sexoId"], out perfilAltura);
+
+            int perfilPeso;
+            int.TryParse(form["perfilPeso"], out perfilPeso);
+
+            bool perfilFumante;
+            bool.TryParse(form["perfilFumante"], out perfilFumante);
+
+            bool perfilBebe;
+            bool.TryParse(form["perfilBebe"], out perfilBebe);
+
+            Perfil perfil = new Perfil();
+
+            perfil.perfilId = perfilId;
+            perfil.perfilAltura = perfilAltura;
+            perfil.perfilPeso = perfilPeso;
+            perfil.perfilFumante = perfilFumante;
+            perfil.perfilBebe = perfilBebe;
+            perfil.pessoaInteresseConhecer = form["pessoaInteresseConhecer"];
+            perfil.pessoaFantasiasSexuais = form["pessoaFantasiasSexuais"];
+            perfil.pessoaOutrosInteresses = form["pessoaOutrosInteresses"];
+
+
             if (ModelState.IsValid)
             {
                 // Attempt to register the user

@@ -1,21 +1,43 @@
+//
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
+using Infrastructure;
+using System;
+using System.ComponentModel;
+
 namespace Infrastructure.Models
 {
-	// data object class Sexo generated from Sexo
-	// alexis [2011-06-13] Created
+    public class Sexo
+    {
+        #region properties
 
-	using System;
-
-	public partial class Sexo 
-	{
-
-		#region Properties
-
+        [ScaffoldColumn(false)]
         public int sexoId { get; set; }
 
+        [DisplayName("Sexo")]
+        [UIHint("SexoDropDown")]
+        [StringLength(255, ErrorMessageResourceType = typeof(Globalizator), ErrorMessageResourceName = "SexosexoNameStringLength")]
+        [Required(ErrorMessageResourceType = typeof(Globalizator), ErrorMessageResourceName = "SexosexoNameRequired")]
         public string sexoName { get; set; }
 
-		#endregion
+        #endregion
 
-	} // Sexo
+        #region constructors
+
+        public Sexo()
+        {
+        }
+
+        public Sexo(dynamic entity)
+        {
+            this.sexoId = entity.sexoId;
+            this.sexoName = entity.sexoName;
+        }
+
+        #endregion
+    }
 }
-
