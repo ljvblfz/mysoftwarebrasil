@@ -1,29 +1,44 @@
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
+using Infrastructure;
+using System;
+using System.ComponentModel;
+ 
 namespace Infrastructure.Models
 {
-	// data object class Olho generated from Olhos
-	// alexis [2011-06-13] Created
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Globalization;
-    using System.Web.Mvc;
-    using System.Web.Security;
-    using System.ComponentModel;
-
-	public class Olho 
-	{
-
-		#region Properties
-
-        [ScaffoldColumn(false)]
-        public int olhosId { get; set; }
-
+    public class Olho                                                                                               
+    {
+        #region properties
+ 
+		[ScaffoldColumn(false)]
+		public int olhosId { get; set; }
+ 
         [DisplayName("Olhos")]
         [UIHint("OlhosDropDown")]
-        public string olhosName { get; set; }
+		[StringLength(255, ErrorMessageResourceType = typeof(Globalizator), ErrorMessageResourceName = "OlhosolhosNameStringLength")]
+		[Required(ErrorMessageResourceType = typeof(Globalizator), ErrorMessageResourceName = "OlhosolhosNameRequired")]
+		public string olhosName { get; set; }
+ 
+        #endregion
+ 
+        #region constructors
+ 
+		public Olho()
+		{
+		}
 
+        public Olho(dynamic entity)
+		{
+		this.olhosId = entity.olhosId;
+		this.olhosName = entity.olhosName;
+		}
+	
 		#endregion
-
-	} // Olho
+	}
 }
+
 

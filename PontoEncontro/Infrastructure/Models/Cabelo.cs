@@ -1,28 +1,41 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
+using Infrastructure;
+using System;
+using System.ComponentModel;
+ 
 namespace Infrastructure.Models
 {
-	// data object class Cabelo generated from Cabelos
-	// alexis [2011-06-13] Created
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Globalization;
-    using System.Web.Mvc;
-    using System.Web.Security;
-    using System.ComponentModel;
-
-	public partial class Cabelo 
-	{
-		#region Properties
-
-        [ScaffoldColumn(false)]
-        public int cabelosId { get; set; }
-
+    public class Cabelo                                                                                             
+    {
+        #region properties
+ 
+		[ScaffoldColumn(false)]
+		public int cabelosId { get; set; }
+ 
         [DisplayName("Cabelos")]
         [UIHint("CabelosDropDown")]
-        public string cabelosName { get; set; }
+		[StringLength(255, ErrorMessageResourceType = typeof(Globalizator), ErrorMessageResourceName = "CabeloscabelosNameStringLength")]
+		public string cabelosName { get; set; }
+ 
+        #endregion
+ 
+        #region constructors
+ 
+		public Cabelo()
+		{
+		}
 
+        public Cabelo(dynamic entity)
+		{
+		this.cabelosId = entity.cabelosId;
+		this.cabelosName = entity.cabelosName;
+		}
+	
 		#endregion
-
-	} // Cabelo
+	}
 }
 
