@@ -1,5 +1,0 @@
-E:\PROJETO\C#\PontoEncontro\Infrastructure\bin\Release\Infrastructure.dll
-E:\PROJETO\C#\PontoEncontro\Infrastructure\bin\Release\Infrastructure.pdb
-E:\PROJETO\C#\PontoEncontro\Infrastructure\obj\Release\ResolveAssemblyReference.cache
-E:\PROJETO\C#\PontoEncontro\Infrastructure\obj\Release\Infrastructure.dll
-E:\PROJETO\C#\PontoEncontro\Infrastructure\obj\Release\Infrastructure.pdb
