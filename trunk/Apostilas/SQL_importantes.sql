@@ -155,16 +155,6 @@ END+'(dReader["'+COLUMN_NAME+'"].ToString());'+CHAR(13)
 -- =============================================
 -- Author:		<Alexis Moura>
 -- Create date: <06/08/2010>
--- Description:	<Insert um novo cadastrador no CADEP> 
--- =============================================
-
-	INSERT INTO usuario (cod_usu,nom_usu,cod_regiao)values(47,"Marcos",null)
-	COMMIT;
-
-
--- =============================================
--- Author:		<Alexis Moura>
--- Create date: <06/08/2010>
 -- Description:	<Script que gera uma inportação de dados> 
 -- =============================================
 
