@@ -1,0 +1,7 @@
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\bin\Exemple_Login.dll
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\bin\Exemple_Login.pdb
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\bin\EntityFramework.dll
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\bin\EntityFramework.xml
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\obj\Debug\ResolveAssemblyReference.cache
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\obj\Debug\Exemple_Login.dll
+D:\Code\VisualStudio\Exemple_Login\Exemple_Login\obj\Debug\Exemple_Login.pdb
