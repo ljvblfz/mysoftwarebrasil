@@ -1,0 +1,132 @@
+table {
+	border:1px solid;
+	font-size:11px;
+	margin:2px 10px;
+	padding:3px;
+}
+
+    table th, table td {
+        padding:4px 6px;
+    }
+
+	table th {
+		text-align:center;
+	}
+
+		table th img {
+			cursor:pointer;
+			margin-bottom:2px;
+		}
+
+		  .imgTb {
+		      margin-bottom:-4px;
+		      _margin-bottom:-3px;
+		  }
+
+	table td {
+		padding:4px;
+		*padding-right:10px;
+	}
+
+	table a:link, table a:hover, table a:active, table a:visited, table a:link.inputImg, table a:hover.inputImg, table a:active.inputImg, table a:visited .inputImg {
+		background-image:none;
+		border:none;
+		cursor:pointer;
+		font-weight:normal;
+		text-decoration:none;
+		padding:0;
+	}
+
+	table.item {
+	   margin:2px 0;
+	}
+
+	.tblPesquisa tr {
+		cursor:pointer;
+	}
+
+	.tblPesquisa a:hover {
+		text-decoration:underline;
+	}
+
+
+/*IMGS*/
+.imgInput{
+   margin-left: 5px;
+}
+
+
+table.item td .imgInput {
+    margin:0 13px -4px -13px;
+    _margin-bottom:-3px;
+}
+
+        table.item td .imgInput {
+            margin-left:3px;
+        }
+
+.logo a {
+	background-color:transparent !important;
+	border-bottom:none !important;
+}
+
+/*PAGINACAO E NUMERO DE REGISTROS*/
+.pagination {
+	border:none;
+	text-align:right;
+}
+
+	.pagination a:link, .pagination a:active, .pagination a:visited, .pagination a:hover {
+		border:none;
+	}
+
+		.pagination .pagLink, .pagActive  {
+			background-color:#F4F4F4;
+			border:1px solid #CCC;
+			padding:3px;
+		}
+
+		.pagination a:hover .pagLink {
+			background-color:#43757E;
+			border-color:#333;
+		}
+
+		.pagActive {
+			background-color:#3B5998;
+			border-color:#F4F4F4;
+			color:#FFF;
+		}
+
+		.pagImg a:hover, .pagImg a:active {
+			background-color:#FFF;
+		}
+		
+.listNavegacao li{
+	list-style: none;
+	line-height: 20px;
+	text-align: left;
+	padding-bottom: 5px;
+	border-bottom:1px solid #C8C8C8;
+	cursor:pointer;
+	height:20px;
+	width:80%;
+	list-style-image: url(../images/seta-right.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+
+	margin:auto;
+}
+
+.listNavegacao li a{
+	border:none !important;
+	cursor:pointer;
+	font-weight:normal;
+	text-decoration:none;
+	color: #084E5A;
+}
+
+.listNavegacao li a:hover{
+	background:none;
+	color:#084E5A !important;
+	cursor:pointer;
+}

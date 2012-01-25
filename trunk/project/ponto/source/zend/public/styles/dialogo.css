@@ -1,0 +1,92 @@
+@charset "utf-8";
+/**
+ * Sabv - Rios Projetos e Sistemas
+ * v1 
+ * por: Cleuza Eleuterio - cleowd@gmail.com
+ * NOTA: o uso desta folha de estilo esta unica e exclusivamente
+ * autorizado para Sabv - Rios Projetos e Sistemas
+*/
+
+/* CSS Document */
+
+html { 
+	overflow:hidden !important;  
+}
+
+div.sombra {
+    background:transparent url(../images/bg_login_ie.gif) left top repeat;
+    height:100%;
+    left:0;
+    position:fixed;
+    _position:absolute;
+    top:0;
+    width:100%;    
+    _width:105%;
+    z-index:900000;
+}
+
+    #bgAlpha {
+        left: 20px; 
+        top: 50%; 
+        visibility: visible; 
+        width:100%;
+        z-index:900001;
+    }
+
+        #msgTr {
+        	border:1px solid #CCC;
+        	height:200px;
+        	left:50%;
+        	margin:-100px -200px;
+        	position:absolute;
+        	text-align:left;
+        	top:50%;
+        	width:400px;
+        	z-index:900001;
+        }
+		
+		.alerta {
+        	background:#FFF url(../images/modal_alerta.jpg) 6px 35px no-repeat; /*imagem da caixa de mensagem*/
+		}
+
+		.erro {
+        	background:#FFF url(../images/modal_erro.jpg) 6px 35px no-repeat; /*imagem da caixa de mensagem*/
+		}
+		
+		.confirma {
+        	background:#FFF url(../images/modal_confirmacao.jpg) 6px 35px no-repeat; /*imagem da caixa de mensagem*/
+		}
+		
+		.info {
+        	background:#FFF url(../images/modal_informacao.jpg) 6px 35px no-repeat; /*imagem da caixa de mensagem*/
+		}
+		
+			#msgTr form {
+				background:transparent url(../images/bgFrmBox.jpg) bottom left repeat-x;
+				border:1px solid #000;
+				height:198px;
+			}
+		
+			#msgTr h3 {
+				background:#000 url(../images/bgDgr.jpg) left top repeat-x;
+				color:#FFF;
+				line-height:28px;
+				margin-bottom:9px;
+				padding-left:10px;
+			}
+			
+			#msgTr .btnLine {
+				text-align:right;
+				padding-right: 10px;
+			}
+			
+			#msgTr .boxTxt {
+				margin:0 13px 0 93px;
+				height:expression( this.scrollHeight < 128 ? "127px" : "auto" ); 
+				min-height:127px;
+				text-align:left;
+			}
+        
+select {
+	display:none;
+}

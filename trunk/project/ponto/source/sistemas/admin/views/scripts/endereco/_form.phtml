@@ -1,0 +1,28 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmendereco" id="frmendereco" action="<?= $this->baseUrl."/".$this->modulo ?>/endereco/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idEndereco',$this->descricaoCampos['idEndereco']);?><br />					                    
+					<?=$this->formText('idEndereco', $this->idEndereco, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('CEP',$this->descricaoCampos['CEP']);?><br />					                    
+					<?=$this->formText('CEP', $this->CEP, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idCidade',$this->descricaoCampos['idCidade']);?><br />					                    
+					<?=$this->formText('idCidade', $this->idCidade, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idBairro',$this->descricaoCampos['idBairro']);?><br />					                    
+					<?=$this->formText('idBairro', $this->idBairro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

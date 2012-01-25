@@ -1,0 +1,29 @@
+<div id="container">
+    <h2><?php echo  $this->escape($this->title); ?></h2>
+    <div id="mid">
+        <table width="97%"  border="0" cellpadding="0" cellspacing="0">
+            <tr>
+               <th width="20">
+                    <span id="botao-abrir-pesquisa" style="display:<?php echo $this->mostraFiltro=='none'?'block':'none'?>">
+                         <img src="<?php echo $this->baseUrl?>/zend/public/images/setaDown.gif" class='inputImg' title='Abrir pesquisa' alt='abrirrPesquisa' onClick="document.getElementById('criterio-pesquisa').style.display = 'block';document.getElementById('botao-fechar-pesquisa').style.display = 'block';document.getElementById('botao-abrir-pesquisa').style.display = 'none';">
+                    </span>
+                    <span id="botao-fechar-pesquisa" style="display:<?php echo $this->mostraFiltro?>" >
+                        <img src="<?php echo $this->baseUrl?>/zend/public/images/setaUp.gif" 'class'='inputImg' 'title'='Fechar pesquisa' 'alt'='fecharPesquisa' onClick="document.getElementById('criterio-pesquisa').style.display = 'none';document.getElementById('botao-fechar-pesquisa').style.display = 'none';document.getElementById('botao-abrir-pesquisa').style.display = 'block';">
+                    </span>
+                </th>
+                <th>
+                    Pesquisa Avançada
+                </th>
+            </tr>
+        </table>
+        <span id="criterio-pesquisa" style="display:<?php echo $this->mostraFiltro?>">
+            <!--Tabela de filtros para pesquisa -->
+            <?php echo $this->getHelper('Pesquisa')->filtro;?>
+        </span>
+        <!--Tabela de resultados da pesquisa -->
+        <?php  echo $this->getHelper('Pesquisa')->tabela;?>
+        <div class="fieldBtn">
+            <?php echo  $this->acao($this->botao_submit); ?>
+        </div><!--/fieldBtn -->
+    </div><!--/mid -->
+</div><!--/container -->

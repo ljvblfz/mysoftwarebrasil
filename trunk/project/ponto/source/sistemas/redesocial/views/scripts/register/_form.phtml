@@ -1,0 +1,118 @@
+<script language="JavaScript">
+	
+	/**
+	 * Carrega os termos de uso
+	 * @access public
+	 * @return void
+	 **/
+	function changeUseTerms() {
+	
+			// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+			$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+			$( "#dialog-confirm" ).dialog({
+				resizable: false,
+				height:540,
+				width:540,
+				modal: true,
+				buttons: {
+					"Aceito": function() {
+						$( "#userTerms" ).attr("checked", true);
+						$( this ).dialog( "close" );
+					},
+					Cancel: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			});
+		}
+
+</script>
+<form name="frmregister" id="frmregister" action="<?= $this->baseUrl."/".$this->modulo?>/register/<?=$this->action;?>" method="post">
+	<div class="fieldLinha2">
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('loginMembro',$this->descricaoCampos['loginMembro']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formText('loginMembro', $this->loginMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('senhaMembro',$this->descricaoCampos['senhaMembro']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formPassword('senhaMembro', $this->senhaMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('nomePessoa',$this->descricaoCampos['nomePessoa']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formText('nomePessoa', $this->nomePessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('idSexo',$this->descricaoCampos['idSexo']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formSelect('idSexo', $this->idSexo, array('class'=>'medTxtArea'),$this->sexoArray);?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('nascimentoPessoa',$this->descricaoCampos['nascimentoPessoa']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->data('nascimentoPessoa',$this->DataFormat($this->nascimentoPessoa));?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('emailPessoa',$this->descricaoCampos['emailPessoa']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formText('emailPessoa', $this->emailPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('idEstado',$this->descricaoCampos['idEstado']);?>
+			</div>
+			<div class="fieldLinha2">
+				<?=$this->formSelect('idEstado', $this->idEstado, array('class'=>'medTxtArea','onchange'=>'carregaCidade(this.value);'),$this->estadoArray);?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<div class="fieldLinha2">
+				<?=$this->label('idCidade',$this->descricaoCampos['idCidade']);?>
+    		</div>
+			<div class="fieldLinha2">
+				<?=$this->formSelect('idCidade', $this->idCidade, array('class'=>'medTxtArea'),$this->cidadeArray);?>
+			</div>
+		</div>
+		<div class="fieldLinha">
+			<?=$this->formCheckbox('userTerms', $this->userTerms, array());?>
+			Estou de acordo com os
+			<a onclick="javascript:changeUseTerms();">
+				termos de usos.
+			</a>
+		</div>
+		<div class="fieldBtn">
+			<?=$this->acao($this->botao_submit); ?>
+		</div>
+	</div>
+	<div class="fieldLinha2">
+		
+	</div>
+</form>
+<div id="dialog-confirm" title="Termos de Uso" style="visibility: hidden;">
+	<p>
+		<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		These items will be permanently deleted and cannot be recovered. Are you sure?
+	</p>
+</div>
+

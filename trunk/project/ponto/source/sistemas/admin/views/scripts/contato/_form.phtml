@@ -1,0 +1,28 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmcontato" id="frmcontato" action="<?= $this->baseUrl."/".$this->modulo ?>/contato/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idContato',$this->descricaoCampos['idContato']);?><br />					                    
+					<?=$this->formText('idContato', $this->idContato, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('valorContato',$this->descricaoCampos['valorContato']);?><br />					                    
+					<?=$this->formText('valorContato', $this->valorContato, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPerfil',$this->descricaoCampos['idPerfil']);?><br />					                    
+					<?=$this->formText('idPerfil', $this->idPerfil, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idTipoContato',$this->descricaoCampos['idTipoContato']);?><br />					                    
+					<?=$this->formText('idTipoContato', $this->idTipoContato, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>
