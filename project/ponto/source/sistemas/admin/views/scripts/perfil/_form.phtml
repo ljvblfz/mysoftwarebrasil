@@ -1,0 +1,40 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmperfil" id="frmperfil" action="<?= $this->baseUrl."/".$this->modulo ?>/perfil/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idSexo',$this->descricaoCampos['idSexo']);?><br />					                    
+					<?=$this->formText('idSexo', $this->idSexo, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idOlho',$this->descricaoCampos['idOlho']);?><br />					                    
+					<?=$this->formText('idOlho', $this->idOlho, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idCabelo',$this->descricaoCampos['idCabelo']);?><br />					                    
+					<?=$this->formText('idCabelo', $this->idCabelo, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idEtinia',$this->descricaoCampos['idEtinia']);?><br />					                    
+					<?=$this->formText('idEtinia', $this->idEtinia, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idEstadoCivil',$this->descricaoCampos['idEstadoCivil']);?><br />					                    
+					<?=$this->formText('idEstadoCivil', $this->idEstadoCivil, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idEndereco',$this->descricaoCampos['idEndereco']);?><br />					                    
+					<?=$this->formText('idEndereco', $this->idEndereco, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPerfil',$this->descricaoCampos['idPerfil']);?><br />					                    
+					<?=$this->formText('idPerfil', $this->idPerfil, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

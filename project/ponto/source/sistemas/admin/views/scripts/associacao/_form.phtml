@@ -1,0 +1,28 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmassociacao" id="frmassociacao" action="<?= $this->baseUrl."/".$this->modulo ?>/associacao/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idAssociacao',$this->descricaoCampos['idAssociacao']);?><br />					                    
+					<?=$this->formText('idAssociacao', $this->idAssociacao, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idTipoAssociacao',$this->descricaoCampos['idTipoAssociacao']);?><br />					                    
+					<?=$this->formText('idTipoAssociacao', $this->idTipoAssociacao, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idMembro',$this->descricaoCampos['idMembro']);?><br />					                    
+					<?=$this->formText('idMembro', $this->idMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPessoa',$this->descricaoCampos['idPessoa']);?><br />					                    
+					<?=$this->formText('idPessoa', $this->idPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

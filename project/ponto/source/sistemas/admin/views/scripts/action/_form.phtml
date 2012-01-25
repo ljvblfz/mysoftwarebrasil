@@ -1,0 +1,20 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmaction" id="frmaction" action="<?= $this->baseUrl."/".$this->modulo ?>/action/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idAction',$this->descricaoCampos['idAction']);?><br />					                    
+					<?=$this->formText('idAction', $this->idAction, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('nameAction',$this->descricaoCampos['nameAction']);?><br />					                    
+					<?=$this->formText('nameAction', $this->nameAction, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

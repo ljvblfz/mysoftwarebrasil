@@ -1,0 +1,28 @@
+<?php echo $this->render('header.phtml'); ?>
+		<div class="signin-box">
+			<h2>Login <strong></strong></h2>
+			<form id="form<?php echo $this->action;?>" action="<?php echo  $this->baseUrl."/".$this->modulo."/".$this->controller."/".$this->action;?>" method="post">
+				<label>
+					<?php echo $this->label('loginMembro',$this->descricaoCampos['loginMembro']);?>
+					<?php echo $this->formText('loginMembro', $this->loginMembro, array());?>
+				</label>
+				<label>
+					<?php echo $this->label('senhaMembro',$this->descricaoCampos['senhaMembro']);?>
+					<?php echo $this->formPassword('senhaMembro', $this->senhaMembro, array());?>
+				</label>
+				<?php echo $this->acao($this->botao_submit); ?>
+				<label class="remember">
+					<?php echo $this->label('persistentCookie',$this->descricaoCampos['persistentCookie']);?>
+					<?php echo $this->formCheckbox('persistentCookie', $this->persistentCookie, array());?>
+				</label>
+			</form>
+			<ul>
+				<li>
+					<a target="_top" href="#" id="link-forgot-passwd">
+						Não consegue acessar sua conta?
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+<?php echo $this->render('footer.phtml'); ?>

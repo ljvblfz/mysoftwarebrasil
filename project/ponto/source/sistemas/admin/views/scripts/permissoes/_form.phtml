@@ -1,0 +1,32 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmpermissoes" id="frmpermissoes" action="<?= $this->baseUrl."/".$this->modulo ?>/permissoes/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPermissao',$this->descricaoCampos['idPermissao']);?><br />					                    
+					<?=$this->formText('idPermissao', $this->idPermissao, array('class'=>'medTxtAreaRO', 'readonly'=>'readonly'));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('namePermissao',$this->descricaoCampos['namePermissao']);?><br />					                    
+					<?=$this->formText('namePermissao', $this->namePermissao, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idAction',$this->descricaoCampos['idAction']);?><br />					                    
+					<?=$this->formSelect('idAction', $this->idAction, array('class'=>'medTxtArea', 'maxlength'=>''),$this->actionArray);?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idController',$this->descricaoCampos['idController']);?><br />					                    
+					<?=$this->formSelect('idController', $this->idController, array('class'=>'medTxtArea', 'maxlength'=>''),$this->controllerArray);?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idRole',$this->descricaoCampos['idRole']);?><br />					                    
+					<?=$this->formMultiCheckbox('idRole', $this->idRole, array('class'=>'miniTxtArea'),$this->roleArray);?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

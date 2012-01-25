@@ -1,0 +1,32 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmpessoa" id="frmpessoa" action="<?= $this->baseUrl."/".$this->modulo ?>/pessoa/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPessoa',$this->descricaoCampos['idPessoa']);?><br />					                    
+					<?=$this->formText('idPessoa', $this->idPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPerfil',$this->descricaoCampos['idPerfil']);?><br />					                    
+					<?=$this->formText('idPerfil', $this->idPerfil, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('nomePessoa',$this->descricaoCampos['nomePessoa']);?><br />					                    
+					<?=$this->formText('nomePessoa', $this->nomePessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('e_MailPessoa',$this->descricaoCampos['e_MailPessoa']);?><br />					                    
+					<?=$this->formText('e_MailPessoa', $this->e_MailPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('nascimentoPessoa',$this->descricaoCampos['nascimentoPessoa']);?><br />					                    
+					<?=$this->formText('nascimentoPessoa', $this->nascimentoPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

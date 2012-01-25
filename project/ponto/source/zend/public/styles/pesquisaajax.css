@@ -1,0 +1,43 @@
+@charset "utf-8";
+/**
+ * Sabv - Rios Projetos e Sistemas
+ * v1 
+ * por: Cleuza Eleuterio - cleowd@gmail.com
+ * NOTA: o uso desta folha de estilo esta unica e exclusivamente
+ * autorizado para Sabv - Rios Projetos e Sistemas
+*/
+
+/* CSS Document */
+
+
+/*div#pesquisaAjax {
+    background:transparent url(../images/bg_login_ie.gif) left top repeat;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;    
+    _width:105%;
+    z-index:900000;
+}*/
+
+    .pesquisaAjax {
+        border:1px solid #000;
+        padding:7px;
+        position:relative;
+        visibility:visible; 
+        width:95%;
+    }
+    
+        .pesquisaAjax #container {
+            width:100% !important;
+        }
+        
+        .pesquisaAjax .fechar {
+            margin:0;
+        }
+    
+    .fieldBtn {
+        height:auto;
+    }
+    

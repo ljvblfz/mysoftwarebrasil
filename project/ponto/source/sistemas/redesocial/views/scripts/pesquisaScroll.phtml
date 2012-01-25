@@ -1,0 +1,26 @@
+<div id="container">
+	<h2><?php echo  $this->escape($this->title); ?></h2>
+    <span id="msg">
+        <?php echo $this->mensagem($this->mensagens);?>
+    </span>
+    <span id="msgErro">
+        <?php echo $this->erro($this->errors,$this->descricaoCampos);?>
+    </span>
+    <div id="mid">
+
+        <!--Tabela de resultados da pesquisa -->
+        <div id="pesquisa"></div>
+		<div id="Console"></div>
+		<div class="fieldLinha">
+			<br>
+			<a id="buttonMaisResult"
+				class="button ui-state-default ui-corner-all"
+				onmouseout="buttonOut(this);"
+				onmouseover="buttonHover(this);"
+				onclick="pesquisaScroll();">
+				<span class="iconButton ui-icon ui-icon-pencil" ></span>
+				Mais Resulados
+			</a>
+		</div>
+    </div><!--/mid -->
+</div><!--/container -->

@@ -1,0 +1,20 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmrole" id="frmrole" action="<?= $this->baseUrl."/".$this->modulo ?>/role/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idRole',$this->descricaoCampos['idRole']);?><br />					                    
+					<?=$this->formText('idRole', $this->idRole, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('nameRole',$this->descricaoCampos['nameRole']);?><br />					                    
+					<?=$this->formText('nameRole', $this->nameRole, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>

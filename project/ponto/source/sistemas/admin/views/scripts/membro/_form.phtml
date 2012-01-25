@@ -1,0 +1,32 @@
+<div id="container">
+    <h2><?=$this->escape($this->title);?></h2>
+    <div id="mid">
+        <form name="frmmembro" id="frmmembro" action="<?= $this->baseUrl."/".$this->modulo ?>/membro/<?= $this->action;?>" method="post">
+            <fieldset>
+                <div class="fieldLinha2">
+                    <?=$this->label('idMembro',$this->descricaoCampos['idMembro']);?><br />					                    
+					<?=$this->formText('idMembro', $this->idMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('loginMembro',$this->descricaoCampos['loginMembro']);?><br />					                    
+					<?=$this->formText('loginMembro', $this->loginMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('senhaMembro',$this->descricaoCampos['senhaMembro']);?><br />					                    
+					<?=$this->formText('senhaMembro', $this->senhaMembro, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idPessoa',$this->descricaoCampos['idPessoa']);?><br />					                    
+					<?=$this->formText('idPessoa', $this->idPessoa, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+                <div class="fieldLinha2">
+                    <?=$this->label('idRole',$this->descricaoCampos['idRole']);?><br />					                    
+					<?=$this->formText('idRole', $this->idRole, array('class'=>'medTxtArea', 'maxlength'=>''));?>
+                </div>
+            </fieldset>
+            <div class="fieldBtn">
+                <?= $this->acao($this->botao_submit); ?>
+            </div>
+        </form>
+    </div>
+</div>
