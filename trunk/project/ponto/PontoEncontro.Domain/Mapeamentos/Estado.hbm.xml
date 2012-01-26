@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Estado, PontoEncontro.Domain" table="[ESTADO]" lazy="false">
+
+		<id name="Idestado" column= "[IDESTADO]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Nameestado" column= "[NAMEESTADO]" type="String" length="255" not-null="true"/>
+		<property name="Siglaestado" column= "[SIGLAESTADO]" type="String" length="2" not-null="true"/>
+
+		<bag name="CidadeList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDESTADO]"/>
+			<one-to-many class="PontoEncontro.Domain.Cidade"/>
+		</bag>
+		<bag name="IdestadoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDESTADO]"/>
+			<one-to-many class="PontoEncontro.Domain.Cidade"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

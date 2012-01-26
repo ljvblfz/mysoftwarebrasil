@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Permissoe, PontoEncontro.Domain" table="[PERMISSOES]" lazy="false">
+
+		<id name="Idpermissao" column= "[IDPERMISSAO]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Namepermissao" column= "[NAMEPERMISSAO]" type="String" length="255" not-null="false"/>
+		<many-to-one name="Idaction" column= "[IDACTION]" class="PontoEncontro.Domain.Action, PontoEncontro.Domain" not-null="true"/>
+		<many-to-one name="Idcontroller" column= "[IDCONTROLLER]" class="PontoEncontro.Domain.Controller, PontoEncontro.Domain" not-null="true"/>
+
+		<bag name="PermissaoroleList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDROLE]"/>
+			<one-to-many class="PontoEncontro.Domain.Permissaorole"/>
+		</bag>
+		<bag name="IdroleList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDROLE]"/>
+			<one-to-many class="PontoEncontro.Domain.Permissaorole"/>
+		</bag>
+
+</class>
+</hibernate-mapping>
