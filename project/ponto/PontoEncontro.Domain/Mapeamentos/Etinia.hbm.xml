@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Etinia, PontoEncontro.Domain" table="[ETINIA]" lazy="false">
+
+		<id name="Idetinia" column= "[IDETINIA]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Nameetinia" column= "[NAMEETINIA]" type="String" length="255" not-null="true"/>
+
+		<bag name="PerfilList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDSEXO]"/>
+			<one-to-many class="PontoEncontro.Domain.Perfil"/>
+		</bag>
+		<bag name="IdsexoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDSEXO]"/>
+			<one-to-many class="PontoEncontro.Domain.Perfil"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

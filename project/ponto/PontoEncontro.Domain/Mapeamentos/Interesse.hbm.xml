@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Interesse, PontoEncontro.Domain" table="[INTERESSE]" lazy="false">
+
+		<id name="Idinteresse" column= "[IDINTERESSE]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Descricao" column= "[DESCRICAO]" type="String" length="255" not-null="true"/>
+		<many-to-one name="Idtipointeresse" column= "[IDTIPOINTERESSE]" class="PontoEncontro.Domain.Tipointeresse, PontoEncontro.Domain" not-null="true"/>
+		<many-to-one name="Idperfil" column= "[IDPERFIL]" class="PontoEncontro.Domain.Perfil, PontoEncontro.Domain" not-null="true"/>
+
+
+</class>
+</hibernate-mapping>

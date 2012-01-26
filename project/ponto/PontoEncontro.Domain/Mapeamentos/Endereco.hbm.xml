@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Endereco, PontoEncontro.Domain" table="[ENDERECO]" lazy="false">
+
+		<id name="Idendereco" column= "[IDENDERECO]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Cep" column= "[CEP]" type="String" length="20" not-null="false"/>
+		<many-to-one name="Idcidade" column= "[IDCIDADE]" class="PontoEncontro.Domain.Cidade, PontoEncontro.Domain" not-null="true"/>
+		<many-to-one name="Idbairro" column= "[IDBAIRRO]" class="PontoEncontro.Domain.Bairro, PontoEncontro.Domain" not-null="false"/>
+
+		<bag name="PerfilList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDSEXO]"/>
+			<one-to-many class="PontoEncontro.Domain.Perfil"/>
+		</bag>
+		<bag name="IdsexoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDSEXO]"/>
+			<one-to-many class="PontoEncontro.Domain.Perfil"/>
+		</bag>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Membro, PontoEncontro.Domain" table="[MEMBRO]" lazy="false">
+
+		<id name="Idmembro" column= "[IDMEMBRO]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Loginmembro" column= "[LOGINMEMBRO]" type="String" length="255" not-null="true"/>
+		<property name="Senhamembro" column= "[SENHAMEMBRO]" type="String" length="50" not-null="true"/>
+		<many-to-one name="Idpessoa" column= "[IDPESSOA]" class="PontoEncontro.Domain.Pessoa, PontoEncontro.Domain" not-null="true"/>
+		<many-to-one name="Idrole" column= "[IDROLE]" class="PontoEncontro.Domain.Role, PontoEncontro.Domain" not-null="true"/>
+
+		<bag name="AssociadoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDMEMBRO]"/>
+			<one-to-many class="PontoEncontro.Domain.Associado"/>
+		</bag>
+		<bag name="IdmembroList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDMEMBRO]"/>
+			<one-to-many class="PontoEncontro.Domain.Associado"/>
+		</bag>
+		<bag name="AssociacaoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDTIPOASSOCIACAO]"/>
+			<one-to-many class="PontoEncontro.Domain.Associacao"/>
+		</bag>
+		<bag name="IdtipoassociacaoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDTIPOASSOCIACAO]"/>
+			<one-to-many class="PontoEncontro.Domain.Associacao"/>
+		</bag>
+
+</class>
+</hibernate-mapping>
