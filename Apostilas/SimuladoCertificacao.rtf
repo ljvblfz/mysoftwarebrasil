@@ -1,0 +1,499 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang22\f0\fs22 PERGUNTA 1\par
+\pard\sa200\sl276\slmult1\qj Voc\'ea est\'e1 implementando uma aplica\'e7\'e3o ASP.NET que usa controles ligados a dados GridView em multiplepages. Voc\'ea adiciona o c\'f3digo JavaScript para atualizar periodicamente tipos espec\'edficos de itens de dados em controles theseGridView. Voc\'ea precisa se certificar que o c\'f3digo JavaScript pode localizar o HTML elementscreated para cada linha nesses controles GridView, sem a necessidade de ser alterada se os controles de um pa aremoved para outro. O que voc\'ea deve fazer? \par
+\pard\sa200\sl276\slmult1 A. Substituir o controle GridView com um control.\par
+B. ListView. Defina o atributo ClientIDMode para Predictable no file.\par
+C. web.config Defina o atributo ClientIDRowSuffix de cada controle GridView a uma \'fanica value.\par
+D diferentes. Defina o atributo da diretiva @ OutputCache VaryByControl para o ID do controle GridView.\par
+PERGUNTA 2\par
+\pard\sa200\sl276\slmult1\qj Voc\'ea est\'e1 implementando uma aplica\'e7\'e3o ASP.NET que inclui uma p\'e1gina chamada TestPage.aspx usa uma p\'e1gina mestra chamada TestMaster.master. Voc\'ea adicione o seguinte c\'f3digo no arquivo code-behind theTestPage.aspx para ler uma propriedade p\'fablica denominada TestMaster.master CityName.\par
+protected void Page_Load(object sender, EventArgs e)\{ \par
+string s = Master.CityName;\par
+\} Voc\'ea precisa se certificar de que TestPage.aspx pode acessar a propriedade cityname. O que voc\'ea deve fazer?\par
+\pard\sa200\sl276\slmult1\b A. Adicione a seguinte diretiva para TestPage.aspx.<%@ MasterType VirtualPath="~/TestMaster.master" %>\b0\par
+B. Adicione a seguinte diretiva para TestPage.aspx.<%@ PreviousPageType VirtualPath="~/TestMaster.master" %>\par
+C. Defina o atributo Strict no @Master directiva do TestMaster.master p\'e1gina para true.\par
+D. Set the Explicit attribute in the @ Master directive of the TestMaster.master page to true.\par
+PERGUNTA 3\par
+Voc\'ea est\'e1 implementando uma p\'e1gina ASP.NET. Adicionar asp: Button controles para Ajuda e no detalhe. Voc\'ea adicionar um arquivo de capa ASP.NET chamado default.skin a um \b Tema. \b0 Voc\'ea precisa criar e usar um style separado para o bot\'e3o de Ajuda, e voc\'ea deve usar o estilo padr\'e3o para o bot\'e3o Detalhes. O que voc\'ea deve fazer?\par
+\pard\sl240\slmult1\b A. Adicione a seguinte marca\'e7\'e3o para o arquivo default.skin.\par
+\pard\li720\sl240\slmult1 <asp:Button ID="Help"></asp:Button>\par
+<asp:Button ID="Default"></asp:Button>\par
+\par
+Use a seguinte marca\'e7\'e3o para os bot\'f5es na p\'e1gina ASP.NET.\par
+<asp:Button SkinID="Help">Help</asp:Button>\par
+<asp:Button SkinID="Default">Detail</asp:Button>\b0\par
+\pard\sl240\slmult1\par
+B. Adicione a seguinte marca\'e7\'e3o para o arquivo default.skin.\par
+\pard\li720\sl240\slmult1 <asp:Button SkinID="Help"></asp:Button>\par
+<asp:Button ID="Default"></asp:Button>\par
+\par
+Use a seguinte marca\'e7\'e3o para os bot\'f5es na p\'e1gina ASP.NET.\par
+<asp:Button SkinID="Help">Help</asp:Button>\par
+<asp:Button SkinID="Default">Detail</asp:Button>\par
+\pard\sl240\slmult1\par
+C. Adicione a seguinte marca\'e7\'e3o para o arquivo default.skin.\par
+\pard\li720\sl240\slmult1 <asp:Button SkinID="Help"></asp:Button>\par
+<asp:Button></asp:Button>\par
+\par
+Use a seguinte marca\'e7\'e3o para os bot\'f5es na p\'e1gina ASP.NET.\par
+<asp:Button SkinID="Help"></asp:Button>\par
+<asp:Button SkinID="Default">Detail</asp:Button>\par
+\pard\sl240\slmult1\par
+D. Adicione a seguinte marca\'e7\'e3o para o arquivo default.skin.\par
+\tab <asp:Button SkinID="Help"></asp:Button>\par
+\pard\sa200\sl276\slmult1\par
+PERGUNTA 4\par
+\pard\sl240\slmult1 Voc\'ea est\'e1 criando um site ASP.NET. O site tem uma p\'e1gina mestra chamada custom.master. Thecode-behind file para custom.master cont\'e9m o seguinte segmento de c\'f3digo. public partial classCustomMaster:\par
+\par
+MasterPage\par
+ \{\par
+\tab public string Region\{get; set;\}\par
+\tab protected void Page_Load(object sender, EventArgs e)\{\}\par
+\}\par
+\par
+Voc\'ea cria uma nova p\'e1gina ASP.NET e especificar custom.master como seu mestre page. Voc\'ea adicionar um controle Label chamado lblRegion ao page.You nova necessidade de exibir o valor de propriedade da p\'e1gina mestra na Regi\'e3o lblRegion.What voc\'ea deve fazer?\par
+\par
+A. Adicione o seguinte segmento de c\'f3digo ao m\'e9todo Page_Load do arquivo Custom.Master.cs code-behind.\par
+\tab CustomMaster custom = this.Parent as CustomMaster;\par
+\tab lblRegion.Text = custom.Region;\par
+\par
+\b B. Adicione o seguinte segmento de c\'f3digo ao m\'e9todo Page_Load do arquivo Custom.Master.cs code-behind.\par
+\tab CustomMaster custom = this.Master as CustomMaster;\par
+\tab lblRegion.Text = custom.Region;\b0\par
+\par
+C. Adicione o seguinte segmento de c\'f3digo ao m\'e9todo Page_Load do arquivo Custom.Master.cs code-behind.\par
+\tab Label lblRegion = Page.FindControl("lblRegion") as Label; \par
+\tab lblRegion.Text = this.Region;\par
+\par
+D. Adicione o seguinte segmento de c\'f3digo ao m\'e9todo Page_Load do arquivo Custom.Master.cs code-behind.\par
+\tab Label lblRegion = Master.FindControl("lblRegion") as Label;\par
+\tab  lblRegion.Text = this.Region;\par
+\par
+\pard\sa200\sl276\slmult1 PERGUNTA 5\par
+\pard\sl240\slmult1 Voc\'ea est\'e1 implementando um site ASP.NET. O site permite aos usu\'e1rios escolher explicitamente o displaylanguage para p\'e1ginas da Web do site. Voc\'ea cria uma p\'e1gina Web que cont\'e9m um namedddlLanguage DropDownList, como mostrado no seguinte segmento de c\'f3digo.\par
+\par
+<asp:DropDownList ID="ddlLanguage" runat="server"AutoPostBack="True" ClientIDMode="Static"OnSelectedIndexChanged="SelectedLanguageChanged">\par
+\tab <asp:ListItem Value="en">English</asp:ListItem>\par
+\tab <asp:ListItem Value="es">Spanish</asp:ListItem>\par
+\tab <asp:ListItem Value="fr">French</asp:ListItem>\par
+\tab <asp:ListItem Value="de">German</asp:ListItem>\par
+</asp:DropDownList>\par
+\par
+\pard\sa200\sl276\slmult1 O site cont\'e9m recursos localizados para todos o conte\'fado da p\'e1gina que devem ser traduzidos para o idioma que est\'e1 selecionado pelo usu\'e1rio. Voc\'ea precisa adicionar c\'f3digo para garantir que a p\'e1gina exibe o conte\'fado no idioma selecionado se o usu\'e1rio seleciona um idioma na lista drop-down. Segmento de c\'f3digo que voc\'ea deve usar?\par
+\pard\sl240\slmult1 A. \par
+protected void SelectedLanguageChanged(object sender, EventArgs e) \par
+\{\par
+\tab Page.UICulture = ddlLanguage.SelectedValue;\par
+\}\par
+\par
+B. \par
+protected override void InitializeCulture()\par
+\{\par
+\tab Page.UICulture = Request.Form["ddlLanguage"];\par
+\}\par
+\par
+C. \par
+protected void Page_Load(object sender, EventArgs e)\par
+\{\par
+\tab Page.Culture = Request.Form["ddlLanguage"];\par
+\}\par
+\par
+\b D. \par
+protected override void InitializeCulture()\par
+\{\par
+\tab Page.Culture = ddlLanguage.SelectedValue;\par
+\}\b0\par
+\par
+\pard\sa200\sl276\slmult1 PERGUNTA 6\par
+\pard\sl240\slmult1\qj Voc\'ea est\'e1 implementando uma aplica\'e7\'e3o ASP.NET que inclui os seguintes requisitos. recuperar o n\'famero de erros ativos a partir do cache, se o n\'famero est\'e1 presente. Se o n\'famero n\'e3o \'e9 encontrado na cache, chamar um m\'e9todo chamado GetActiveBugs, e salvar o resultado sob a chave de cache ActiveBugs. Garantir que os dados em cache expira ap\'f3s 30 segundos. Voc\'ea precisa adicionar um c\'f3digo para preencher os requisitos.\par
+Segmento de c\'f3digo que voc\'ea deve acrescentar?\par
+\pard\sl240\slmult1\par
+A. int numOfActiveBugs = (int)Cache["ActiveBugs"];\par
+if (!numOfActiveBugs.HasValue)\par
+\{\par
+    int result = GetActiveBugs();\par
+    Cache.Insert("ActiveBugs", result, null,DateTime.Now.AddSeconds(30),             \tab   \tab Cache.NoSlidingExpiration);\par
+    numOfActiveBugs = result;\par
+\}\par
+ActiveBugs = numOfActiveBugs.Value;\par
+\par
+B. int numOfActiveBugs = (int) Cache.Get("ActiveBugs");\par
+if (numOfActiveBugs != 0)\par
+\{\par
+   int result = GetActiveBugs();\par
+   Cache.Insert("ActiveBugs", result, null,DateTime.Now.AddSeconds(30), \tab Cache.NoSlidingExpiration);\par
+numOfActiveBugs = result;\par
+\}\par
+ActiveBugs = numOfActiveBugs;\par
+\par
+\b C. int numOfActiveBugs = 0;\par
+if (Cache["ActiveBugs"] == null)\par
+\{\par
+   int result = GetActiveBugs();\par
+   Cache.Add("ActiveBugs", result, null, DateTime.Now.AddSeconds(30),     \tab Cache.NoSlidingExpiration,CacheItemPriority.Normal, null); \par
+   numOfActiveBugs = result;\par
+\}\par
+ActiveBugs = numOfActiveBugs;\b0\par
+\par
+D. int numOfActiveBugs = (int?)Cache["ActiveBugs"];\par
+if (!numOfActiveBugs.HasValue)\par
+\{\par
+   int result = GetActiveBugs();\par
+   Cache.Insert("ActiveBugs", result, null\par
+\tab Cache.NoAbsoluteExpiration, TimeSpan.FromSeconds(30));\par
+   numOfActiveBugs = result;\par
+\}\par
+ActiveBugs = numOfActiveBugs.Value;\par
+\par
+\par
+PERGUNTA 7 \par
+ \par
+Voc\'ea est\'e1 implementando uma aplica\'e7\'e3o ASP.NET que ir\'e1 usar session state em out-of-proc mode. voc\'ea adicione o seguinte c\'f3digo.\par
+\par
+public class Person \par
+\{ \par
+\tab public string FirstName \{ get; set;\} \par
+\tab public string LastName \{ get; set;\} \par
+\} \par
+\par
+Voc\'ea precisa adicionar um atributo para a classe Pessoa para garantir que voc\'ea pode salvar uma inst\'e2ncia para o session state . Qual atributo voc\'ea deve usar?\par
+ \par
+A.  Bindable \par
+B.  DataObject \par
+\b C.  Serializable \b0\par
+D.  DataContract \par
+ \par
+PERGUNTA 8\par
+\par
+\pard\sl240\slmult1\qj Voc\'ea cria uma p\'e1gina Web chamada TestPage.aspx e um control de usu\'e1rio chamado contained em um arquivo chamado TestUserControl.ascx. Voc\'ea precisa adicionar dinamicamente TestUserControl.ascx para TestPage.aspx. Segmento de c\'f3digo que voc\'ea deve usar?\par
+\pard\sl240\slmult1  \par
+\b A. \par
+ protected void Page_Load(object sender, EventArgs e) \par
+\{ \par
+\tab Control userControl = Page.LoadControl("TestUserControl.ascx"); \tab Page.Form.Controls.Add(userControl); \par
+\} \b0\par
+\par
+B. \par
+ protected void Page_Load(object sender, EventArgs e) \par
+\{ \par
+\tab Control userControl = Page.FindControl("TestUserControl.ascx"); \tab Page.Form.Controls.Load(userControl); \par
+\} \par
+\par
+C.  \par
+protected void Page_PreInit(object sender, EventArgs e) \par
+\{ \par
+\tab Control userControl = Page.LoadControl("TestUserControl.ascx"); \tab Page.Form.Controls.Add(userControl); \par
+\} \par
+\par
+D.  \par
+protected void Page_PreInit(object sender, EventArgs e) \par
+\{ \par
+\tab Control userControl = Page.FindControl("TestUserControl.ascx"); \tab Page.Form.Controls.Load(userControl); \par
+\} \par
+\par
+PERGUNTA 9\par
+\par
+Voc\'ea cria uma p\'e1gina Web chamada TestPage.aspx e um controle de usu\'e1rio chamado TestUserControl.ascx. TestPage.aspx usa TestUserControl.ascx como mostrado na seguinte linha de c\'f3digo.\par
+\par
+\tab <uc:TestUserControl ID="testControl" runat="server"/> \par
+\par
+Em TestUserControl.ascx, voc\'ea precisa adicionar um membro cityname somente leitura chamado para retornar o valor "New York". Voc\'ea tamb\'e9m deve adicionar c\'f3digo para TestPage.aspx a ler este valor. Que duas a\'e7\'f5es que voc\'ea deve executar? (Cada resposta correta representa parte da solu\'e7\'e3o. Escolha dois.)\par
+ \par
+\b A. Adicione a seguinte linha de c\'f3digo para o TestUserControl.ascx.cs arquivo code-behind.\par
+public string CityName \par
+\{ \par
+\tab get \{ return "New York"; \} \par
+\} \b0\par
+\par
+B. Adicione a seguinte linha de c\'f3digo para o TestUserControl.ascx.cs arquivo code-behind.\par
+protected readonly string CityName = "New York"; \par
+\par
+\b C. Adicione o seguinte segmento de c\'f3digo para o TestPage.aspx.cs arquivo code-behind.\par
+protected void Page_Load(object sender, EventArgs e) \par
+\{ \par
+\tab string s = testControl.CityName; \par
+\} \b0\par
+\par
+D.  Adicione o seguinte segmento de c\'f3digo para o TestPage.aspx.cs arquivo code-behind.\par
+protected void Page_Load(object sender, EventArgs e) \par
+\{ \par
+\tab string s = testControl.Attributes["CityName"]; \par
+\}\par
+\par
+\par
+PERGUNTA 10\par
+\par
+Voc\'ea usa a declara\'e7\'e3o a seguir para adicionar um controle de usu\'e1rio da Web denominado TestUserControl.ascx para uma p\'e1gina ASP.NET chamada TestPage.aspx.\par
+\par
+<uc:TestUserControl ID="testControl" runat="server"/> \par
+Voc\'ea adiciona o c\'f3digo a seguir para o arquivo code-behind de TestPage.aspx.\par
+\par
+private void TestMethod() \par
+\{ \par
+... \par
+\} \par
+\par
+Voc\'ea define o seguinte delegate. \par
+public delegate void MyEventHandler(); \par
+\par
+Voc\'ea precisa adicionar um evento de MyEventHandler tipo chamado MyEvent para TestUserControl.ascx e anexar m\'e9todo TestMethod da p\'e1gina do evento. Que duas a\'e7\'f5es que voc\'ea deve executar? (Cada resposta correta representa parte da solu\'e7\'e3o. Escolha dois.)\par
+ \par
+A.  Adicione a seguinte linha de c\'f3digo para TestUserControl.ascx.cs.\par
+public event MyEventHandler MyEvent; \par
+\par
+\b B.  Adicione a seguinte linha de c\'f3digo para TestUserControl.ascx.cs.\par
+public MyEventHandler MyEvent; \b0\par
+\par
+\b C.  Substituir a refer\'eancia TestUserControl.ascx em TestPage.aspx com a seguinte declara\'e7\'e3o.\par
+<uc:TestUserControl ID="testControl" runat="server" OnMyEvent="TestMethod"/> \b0\par
+\par
+D.  Substituir a refer\'eancia TestUserControl.ascx em TestPage.aspx com a seguinte declara\'e7\'e3o.\par
+<uc:TestUserControl ID="testControl" runat="server" MyEvent="TestMethod"/> \par
+\par
+\par
+PERGUNTA 11\par
+\par
+Voc\'ea cria um controle de servidor personalizado chamado Task que cont\'e9m o seguinte segmento de c\'f3digo. (Os n\'fameros de linha s\'e3o inclu\'eddos apenas para refer\'eancia.)\par
+\par
+01 namespace DevControls \par
+02\{ \par
+03public class Task : WebControl \par
+04\{ \par
+05 [DefaultValue("")] \par
+06public string Title \{ ... \} \par
+08protected override void RenderContents( \par
+HtmlTextWriter output) \par
+09\{ \par
+10output.Write(Title); \par
+11\} \par
+12 \} \par
+13\} \par
+\par
+Voc\'ea precisa se certificar que a adi\'e7\'e3o de um controle de tarefas da caixa de ferramentas cria marca\'e7\'e3o no seguinte formato.\par
+<Dev:Task ID="Task1" runat="server" Title="New Task" /> \par
+Que duas a\'e7\'f5es que voc\'ea deve executar? (Cada resposta correta representa parte da solu\'e7\'e3o. Escolha dois.)\par
+ \par
+A.  Adicione o seguinte segmento de c\'f3digo para o arquivo do projeto AssemblyInfo.cs.\par
+[assembly: TagPrefix("DevControls", "Dev")] \par
+\par
+\b B.  Substitua a linha 05 com o seguinte segmento de c\'f3digo.\par
+[DefaultValue("New Task")] \b0\par
+\par
+\b C.  Insert the following code segment immediately before line 03. \par
+[ToolboxData("<\{0\}:Task runat=\\"server\\" Title=\\"New Task\\" />")] \b0\par
+\par
+D.  Replace line 10 with the following code segment. output.Write("<Dev:Task runat=\\"server\\" Title=\\"New Task\\" />"); \par
+ \par
+\par
+PERGUNTA 12\par
+\par
+Voc\'ea est\'e1 implementando uma p\'e1gina ASP.NET que inclui o seguinte down list.\par
+\par
+<asp:PlaceHolder ID="dynamicControls" runat="server"> \par
+\pard\li720\sl240\slmult1 <asp:DropDownList ID="MyDropDown" runat="server"> \par
+\pard\li1440\sl240\slmult1 <asp:ListItem Text="abc" value="abc" /> \par
+<asp:ListItem Text="def" value="def" /> \par
+\pard\li720\sl240\slmult1 </asp:DropDownList> \par
+\pard\sl240\slmult1 </asp:PlaceHolder> \par
+\par
+Voc\'ea precisa adicionar dinamicamente valores para o final da lista drop-down.\par
+O que voc\'ea deve fazer?\par
+ \par
+A.  Adicione o seguinte manipulador de eventos OnPreRender ao asp: DropDownList\par
+\par
+protected void MyDropDown_PreRender(object sender, EventArgs e)\par
+ \{ \par
+\pard\li720\sl240\slmult1 DropDownList ddl = sender as DropDownList; \par
+Label lbl = new Label(); \par
+lbl.Text = "Option"; \par
+lbl.ID = "Option"; \par
+ddl.Controls.Add(lbl); \par
+\pard\sl240\slmult1\} \par
+\par
+\b B. Adicione o seguinte manipulador de eventos OnPreRender ao asp: DropDownList\par
+\par
+protected void MyDropDown_PreRender(object sender, EventArgs e) \par
+\{ \par
+\pard\li720\sl240\slmult1 DropDownList ddl = sender as DropDownList; \par
+ddl.Items.Add("Option"); \par
+\pard\sl240\slmult1\}\b0\par
+\par
+C.  Adicione o seguinte manipulador de eventos para a p\'e1gina code-behind.\par
+\par
+protected void Page_LoadComplete(object sender, EventArgs e)\par
+\{ \par
+\pard\li720\sl240\slmult1 DropDownList ddl = Page.FindControl("MyDropDown") as DropDownList; Label lbl = new Label(); \par
+lbl.Text = "Option"; \par
+lbl.ID = "Option"; \par
+ddl.Controls.Add(lbl); \par
+\pard\sl240\slmult1\} \par
+\par
+D.  Adicione o seguinte manipulador de eventos para a p\'e1gina code-behind.\par
+\par
+protected void Page_LoadComplete(object sender, EventArgs e) \par
+\{ \par
+\pard\li720\sl240\slmult1 DropDownList ddl = Page.FindControl("MyDropDown") as DropDownList; ddl.Items.Add("Option"); \par
+\pard\sl240\slmult1\} \par
+\par
+\par
+PERGUNTA 13\par
+\par
+Voc\'ea criar uma p\'e1gina ASP.NET que cont\'e9m a seguinte tag.\par
+\par
+<h1 id="hdr1" runat="server">Page Name</h1> \par
+\par
+Voc\'ea precisa escrever um c\'f3digo que vai mudar o conte\'fado da tag dinamicamente quando a p\'e1gina \'e9 carregada. Quais s\'e3o as duas maneiras poss\'edveis para atingir esse objetivo? (Cada resposta correta apresenta uma\par
+solu\'e7\'e3o completa. Escolha dois.)\par
+ \par
+\b A.  this.hdr1.InnerHtml = "Text"; \b0\par
+\par
+B.  (hdr1.Parent as HtmlGenericControl).InnerText = "Text"; \par
+\par
+\b C.  HtmlGenericControl h1 = this.FindControl("hdr1") as HtmlGenericControl; \par
+      h1.InnerText = "Text"; \b0\par
+\par
+D.  HtmlGenericControl h1 = Parent.FindControl("hdr1") as HtmlGenericControl;\par
+       h1.InnerText = "Text"; \par
+\par
+\par
+PERGUNTA 14\par
+\par
+\pard\sl240\slmult1\qj Voc\'ea est\'e1 implementando controles personalizados de servidor ASP.NET. Voc\'ea tem uma classe base chamada RotaryGaugeControl e duas subclasses chamado CompassGaugeControl e SpeedGaugeControl. Cada controle requer seu pr\'f3prio cliente de c\'f3digo JavaScript para funcionar corretamente. O JavaScript inclui fun\'e7\'f5es que s\'e3o usadas para criar os elementos HTML adequados para o controle. Voc\'ea precisa se certificar que o JavaScript para cada um desses controles que \'e9 usado em uma p\'e1gina ASP.NET \'e9 inclu\'eddo na p\'e1gina HTML gerado apenas uma vez, mesmo que a p\'e1gina ASP.NET usa v\'e1rias inst\'e2ncias do controle dadas. O que voc\'ea deve fazer?\par
+\pard\sl240\slmult1  \par
+A.  Coloque o JavaScript em um arquivo chamado controls.js e adicione a seguinte linha de c\'f3digo ao m\'e9todo Page_Load de cada controle.\par
+Page.ClientScript.RegisterClientScriptInclude( this.GetType(), "script", "controls.js"); \par
+\par
+B. Adicionar a seguinte linha de c\'f3digo ao m\'e9todo Page_Load de cada controle, onde strJavascript cont\'e9m o\par
+JavaScript code for the control. \par
+Page.ClientScript.RegisterClientScriptBlock( this.GetType(), "script", strJavascript); \par
+\par
+C.  Adicionar a seguinte linha de c\'f3digo ao m\'e9todo Page_Load de cada controle, onde className \'e9 o nome da classe de controle e strJavascript cont\'e9m o c\'f3digo JavaScript para o controle.\par
+Page.ClientScript.RegisterStartupScript( typeof(CLASSNAME), "script", strJavascript); \par
+\par
+D.  Adicionar a seguinte linha de c\'f3digo ao m\'e9todo Page_Load de cada controle, onde className \'e9 o nome da classe de controle e strJavascript cont\'e9m o c\'f3digo JavaScript para o controle.\par
+Page.ClientScript.RegisterClientScriptBlock( typeof(CLASSNAME), "script", strJavascript); \par
+ \par
+\par
+PERGUNTA 15\par
+\par
+Voc\'ea est\'e1 criando um site ASP.NET. O site est\'e1 configurado para usar Membership e Role\par
+provedores de gerenciamento. Voc\'ea precisa verificar se o conectado no momento usu\'e1rio \'e9 um membro de uma fun\'e7\'e3o chamada Administradores. Segmento de c\'f3digo que voc\'ea deve usar?\par
+ \par
+A.  bool isMember = Roles.GetUsersInRole("Administrators").Any(); \par
+B.  bool isMember = Membership.ValidateUser(User.Identity.Name, "Administrators"); \par
+C.  bool isMember = Roles.GetRolesForUser("Administrators").Any(); \par
+D.  bool isMember = User.IsInRole("Administrators"); \par
+\par
+\par
+PERGUNTA 16\par
+\par
+Voc\'ea est\'e1 criando um site ASP.NET. Voc\'ea criar um m\'f3dulo HTTP chamado CustomModule, e voc\'ea registrar o m\'f3dulo no arquivo web.config. A classe CustomModule cont\'e9m o seguinte c\'f3digo.\par
+\par
+public class CustomModule : IHttpModule \par
+\{ \par
+\tab string footerContent = "<div>Footer Content</div>"; \par
+\tab public void Dispose() \{\} \par
+\} \par
+\par
+Voc\'ea precisa adicionar c\'f3digo para CustomModule para anexar o conte\'fado do rodap\'e9 de cada p\'e1gina ASP.NET processada. Segmento de c\'f3digo que voc\'ea deve usar?\par
+ \par
+A.  \par
+public CustomModule(HttpApplication app) \par
+\{ \par
+\tab app.EndRequest += new EventHandler(app_EndRequest); \par
+\tab void app_EndRequest(object sender, EventArgs e) \par
+\tab HttpApplication app = sender as HttpApplication; \par
+\tab app.Response.Write(footerContent); \par
+\} \par
+\par
+B.  \par
+public void Init(HttpApplication app) \par
+\{ \par
+app.EndRequest += new EventHandler(app_EndRequest); \par
+void app_EndRequest(object sender, EventArgs e) \par
+\{ \par
+\tab HttpApplication app = new HttpApplication(); \par
+\tab app.Response.Write(footerContent); \par
+\} \par
+\par
+C.  \par
+Public customModule(); \par
+\{ \par
+\tab HttpApplication app = new HttpApplication(); \par
+\tab app.EndRequest += new EventHandler(app_EndRequest); \par
+\} \par
+void app_EndRequest(object sender, EventArgs e) \par
+\{ \par
+\tab HttpApplication app = sender as HttpApplication; \par
+\tab app.Response.Write(footerContent); \par
+\} \par
+\par
+D.  \par
+public void Init(HttpApplication app) \par
+\{ \par
+\tab app.EndRequest += new EventHandler(app_EndRequest); \par
+\} \par
+void app_EndRequest(object sender, EventArgs e) \par
+\{ \par
+\tab HttpApplication app = sender as HttpApplication; \par
+\tab app.Response.Write(footerContent); \par
+\} \par
+\par
+PERGUNTA 17\par
+\par
+\par
+Voc\'ea est\'e1 implementando um site ASP.NET. O diret\'f3rio raiz do site cont\'e9m uma p\'e1gina chamada Error.aspx. Voc\'ea precisa exibir a p\'e1gina Error.aspx se um erro n\'e3o tratado ocorre em qualquer p\'e1gina dentro do site. Voc\'ea tamb\'e9m deve assegurar que o URL original no navegador n\'e3o \'e9 alterado.\par
+O que voc\'ea deve fazer?\par
+ \par
+A.  Adicionar a seguinte configura\'e7\'e3o para o arquivo web.config.\par
+<system.web> \par
+\pard\li720\sl240\slmult1 <customErrors mode="On"> \par
+\tab <error statusCode="500" redirect="~/Error.aspx" /> \par
+</customErrors> \par
+\pard\sl240\slmult1 </system.web> \par
+\par
+B.  Adicionar a seguinte configura\'e7\'e3o para o arquivo web.config.\par
+<system.web> \par
+\pard\li720\sl240\slmult1 <customErrors redirectMode="ResponseRewrite" \par
+mode="On" defaultRedirect="~/Error.aspx" /> \par
+\pard\sl240\slmult1 </system.web> \par
+\par
+C.  Adicione o seguinte segmento de c\'f3digo para o arquivo Global.asax.\par
+void Application_Error(object sender, EventArgs e) \par
+\{ \par
+\tab Response.Redirect("~/Error.aspx"); \par
+\} \par
+\par
+\b D.  Adicione o seguinte segmento de c\'f3digo para o arquivo Global.asax.\par
+void Page_Error(object sender, EventArgs e) \par
+\{\par
+\tab Server.Transfer("~/Error.aspx"); \par
+\} \b0\par
+\par
+\par
+PERGUNTA 18\par
+\par
+Voc\'ea est\'e1 implementando um site ASP.NET. O site usa um componente que deve ser dinamicamente configurado antes que ele possa ser usado dentro de p\'e1ginas do site. Voc\'ea cria um m\'e9todo est\'e1tico chamado SiteHelper.Configure que configura o componente. Voc\'ea precisa adicionar um segmento de c\'f3digo para o arquivo Global.asax que invoca o m\'e9todo SiteHelper.Configure o primeiro tempo, e apenas na primeira vez, que qualquer p\'e1gina do site \'e9 solicitada. Segmento de c\'f3digo que voc\'ea deve usar?\par
+ \par
+A.  void Application_Start(object sender, EventArgs e) \par
+\{ \par
+\tab SiteHelper.Configure(); \par
+\} \par
+\par
+B.  void Application_Init(object sender, EventArgs e) \par
+\{ \par
+\tab SiteHelper.Configure(); \par
+\}\par
+\par
+\b C.  void Application_BeginRequest(object sender, EventArgs e) \{ \par
+\tab SiteHelper.Configure(); \par
+\} \b0\par
+\par
+D.  Object lockObject = new Object(); \par
+void Application_BeginRequest(object sender, EventArgs e) \{ \par
+\tab SiteHelper.Configure(); \par
+\} \par
+ \par
+}
+ 
