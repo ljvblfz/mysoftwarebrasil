@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D31325D7-87DB-42CF-B0B2-CA7503554B20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PontoEncontro.Domain</RootNamespace>
+    <AssemblyName>PontoEncontro.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Repositorios\ActionRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\AssociacaoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\AssociadoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\BairroRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\CabeloRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\CidadeRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\ContatoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\ControllerRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\EnderecoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\EstadocivilRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\EstadoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\EtiniaRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\InteresseRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\MembroRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\MenuRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\OlhoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\PerfilRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\PermissaoroleRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\PermissoeRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\PessoaRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\RoleRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\SexoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\TipoassociacaoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\TipocontatoRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repositorios\TipointeresseRepositorios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>DLL NHibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>DLL NHibernate\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL NHibernate\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="NHibernateHelper\SessionFactoryHelper.cs" />
+    <Compile Include="Entidades\Action.cs" />
+    <EmbeddedResource Include="Mapeamentos\Action.hbm.xml" />
+    <Compile Include="Entidades\Associacao.cs" />
+    <EmbeddedResource Include="Mapeamentos\Associacao.hbm.xml" />
+    <Compile Include="Entidades\Associado.cs" />
+    <EmbeddedResource Include="Mapeamentos\Associado.hbm.xml" />
+    <Compile Include="Entidades\Bairro.cs" />
+    <EmbeddedResource Include="Mapeamentos\Bairro.hbm.xml" />
+    <Compile Include="Entidades\Cabelo.cs" />
+    <EmbeddedResource Include="Mapeamentos\Cabelo.hbm.xml" />
+    <Compile Include="Entidades\Cidade.cs" />
+    <EmbeddedResource Include="Mapeamentos\Cidade.hbm.xml" />
+    <Compile Include="Entidades\Contato.cs" />
+    <EmbeddedResource Include="Mapeamentos\Contato.hbm.xml" />
+    <Compile Include="Entidades\Controller.cs" />
+    <EmbeddedResource Include="Mapeamentos\Controller.hbm.xml" />
+    <Compile Include="Entidades\Endereco.cs" />
+    <EmbeddedResource Include="Mapeamentos\Endereco.hbm.xml" />
+    <Compile Include="Entidades\Estado.cs" />
+    <EmbeddedResource Include="Mapeamentos\Estado.hbm.xml" />
+    <Compile Include="Entidades\Estadocivil.cs" />
+    <EmbeddedResource Include="Mapeamentos\Estadocivil.hbm.xml" />
+    <Compile Include="Entidades\Etinia.cs" />
+    <EmbeddedResource Include="Mapeamentos\Etinia.hbm.xml" />
+    <Compile Include="Entidades\Interesse.cs" />
+    <EmbeddedResource Include="Mapeamentos\Interesse.hbm.xml" />
+    <Compile Include="Entidades\Membro.cs" />
+    <EmbeddedResource Include="Mapeamentos\Membro.hbm.xml" />
+    <Compile Include="Entidades\Menu.cs" />
+    <EmbeddedResource Include="Mapeamentos\Menu.hbm.xml" />
+    <Compile Include="Entidades\Olho.cs" />
+    <EmbeddedResource Include="Mapeamentos\Olho.hbm.xml" />
+    <Compile Include="Entidades\Perfil.cs" />
+    <EmbeddedResource Include="Mapeamentos\Perfil.hbm.xml" />
+    <Compile Include="Entidades\Permissaorole.cs" />
+    <EmbeddedResource Include="Mapeamentos\Permissaorole.hbm.xml" />
+    <Compile Include="Entidades\Permissoe.cs" />
+    <EmbeddedResource Include="Mapeamentos\Permissoe.hbm.xml" />
+    <Compile Include="Entidades\Pessoa.cs" />
+    <EmbeddedResource Include="Mapeamentos\Pessoa.hbm.xml" />
+    <Compile Include="Entidades\Role.cs" />
+    <EmbeddedResource Include="Mapeamentos\Role.hbm.xml" />
+    <Compile Include="Entidades\Sexo.cs" />
+    <EmbeddedResource Include="Mapeamentos\Sexo.hbm.xml" />
+    <Compile Include="Entidades\Tipoassociacao.cs" />
+    <EmbeddedResource Include="Mapeamentos\Tipoassociacao.hbm.xml" />
+    <Compile Include="Entidades\Tipocontato.cs" />
+    <EmbeddedResource Include="Mapeamentos\Tipocontato.hbm.xml" />
+    <Compile Include="Entidades\Tipointeresse.cs" />
+    <EmbeddedResource Include="Mapeamentos\Tipointeresse.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PontoEncontro.Infrastructure\PontoEncontro.Infrastructure.csproj">
+      <Project>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</Project>
+      <Name>PontoEncontro.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

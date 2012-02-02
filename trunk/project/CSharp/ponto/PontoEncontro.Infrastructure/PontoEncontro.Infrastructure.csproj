@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lms.API.Infrastructure</RootNamespace>
+    <AssemblyName>Lms.API.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.2.0.0\lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SharedBinaries\FluentNHibernate-NH3.1-1.2\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SharedBinaries\FluentNHibernate-NH3.1-1.2\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SharedBinaries\FluentNHibernate-NH3.1-1.2\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Passport">
+      <HintPath>..\..\..\SharedBinaries\WebAula\Passport.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.Mvc, Version=2011.2.712.235, Culture=neutral, PublicKeyToken=29ac1a93ec063d92, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lms\Themes\Algar\Extensions\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Webaula.Cache">
+      <HintPath>..\..\..\SharedBinaries\WebAula\Webaula.Cache.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aplication.cs" />
+    <Compile Include="Compression\StringCompressor.cs" />
+    <Compile Include="Compression\TicketCompressor.cs" />
+    <Compile Include="Data\IFactoryDatabase.cs" />
+    <Compile Include="Data\NHb\FactoryDatabaseNHb.cs" />
+    <Compile Include="Enum\DatabaseType.cs" />
+    <Compile Include="Enum\EducationStatus.cs" />
+    <Compile Include="Enum\IncomeStatus.cs" />
+    <Compile Include="Enum\MaritalStatus.cs" />
+    <Compile Include="Filter\FilterBy.cs" />
+    <Compile Include="Globalizator.cs" />
+    <Compile Include="Filter\FilterTelerik.cs" />
+    <Compile Include="Mef\CatalogBuilder.cs" />
+    <Compile Include="Mef\Contracts\Constants.cs" />
+    <Compile Include="Mef\Contracts\IControllerMetadata.cs" />
+    <Compile Include="Mef\MefControllerFactory.cs" />
+    <Compile Include="Mef\MvcCatalog.cs" />
+    <Compile Include="MVC\AutoMappedViewResult.cs" />
+    <Compile Include="MVC\BaseController.cs" />
+    <Compile Include="MVC\DataAnnotations\Store.cs" />
+    <Compile Include="MVC\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="MVC\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="MVC\Extensions\HtmlHelpersExtensions.cs" />
+    <Compile Include="MVC\Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="MVC\Extensions\LabelExtensions.cs" />
+    <Compile Include="MVC\Extensions\StringExtensions.cs" />
+    <Compile Include="MVC\DataAnnotations\Search.cs" />
+    <Compile Include="MVC\Helper\Grid\GridTelerik.cs" />
+    <Compile Include="MVC\Security\Anonymous.cs" />
+    <Compile Include="MVC\Security\AuthorizeUser.cs" />
+    <Compile Include="MVC\Security\Authenticated.cs" />
+    <Compile Include="Order\OrderTelerik.cs" />
+    <Compile Include="Enum\LogicalOperator.cs" />
+    <Compile Include="Order\OrderBy.cs" />
+    <Compile Include="MVC\DataAnnotations\DropDown.cs" />
+    <Compile Include="MVC\Helper\DropDown\DropDownTelerik.cs" />
+    <Compile Include="MVC\CustomMetadataProvider.cs" />
+    <Compile Include="MVC\ExtendModelMetadata.cs" />
+    <Compile Include="MVC\ExtendModelMetadataProvider.cs" />
+    <Compile Include="Linq\LambdaExpressionBase.cs" />
+    <Compile Include="Log\LogExceptionFilterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Management.Globalization\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\Management.Globalization\Service.wsdl" />
+    <None Include="Service References\Management.Globalization\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Management.Globalization\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Management.Globalization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Management.Globalization\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Management.Globalization\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Management.Globalization\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Management.Globalization\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
