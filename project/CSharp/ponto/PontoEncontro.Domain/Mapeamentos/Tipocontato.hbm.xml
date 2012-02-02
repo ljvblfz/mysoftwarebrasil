@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="PontoEncontro.Domain.Tipocontato, PontoEncontro.Domain" table="[TIPOCONTATO]" lazy="false">
+
+		<id name="Idtipocontato" column= "[IDTIPOCONTATO]" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="Nametipocontato" column= "[NAMETIPOCONTATO]" type="String" length="255" not-null="true"/>
+
+		<bag name="ContatoList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDPERFIL]"/>
+			<one-to-many class="PontoEncontro.Domain.Contato"/>
+		</bag>
+		<bag name="IdperfilList" inverse="true" lazy="false" cascade="all">
+			<key column="[IDPERFIL]"/>
+			<one-to-many class="PontoEncontro.Domain.Contato"/>
+		</bag>
+
+</class>
+</hibernate-mapping>
