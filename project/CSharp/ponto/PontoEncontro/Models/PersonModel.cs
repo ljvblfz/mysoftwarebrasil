@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using PontoEncontro.Domain;
+using PontoEncontro.Infrastructure.MVC.DataAnnotations;
 
 namespace PontoEncontro.Models
 {
@@ -24,5 +26,15 @@ namespace PontoEncontro.Models
         [DataType(DataType.Date)]
         [Display(Name = "Nascimento")]
         public virtual DateTime Nascimentopessoa { get; set; }
+
+        [Required]
+        [DropDown]
+        [Display(Name = "Estado")]
+        public virtual IList<Estado> Idestado { get; set; }
+
+        [Required]
+        [DropDown]
+        [Display(Name = "Cidade")]
+        public virtual IList<Cidade> Idcidade { get; set; }
     }
 }

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PontoEncontro.Models;
+using PontoEncontro.Domain;
+using PontoEncontro.Infrastructure.MVC;
 
 namespace PontoEncontro.Controllers
 {
-    public class RegisterController : Controller
+    public class RegisterController : BaseController
     {
         //
         // GET: /Register/
@@ -36,9 +39,13 @@ namespace PontoEncontro.Controllers
         // POST: /Register/Create
 
         [HttpPost]
-        public ActionResult Member(FormCollection collection)
+        public ActionResult Member(RegisterModel modelView, Membro model)
         {
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Person");
+            }
+            return View(modelView);
         }
 
         public ActionResult Person()

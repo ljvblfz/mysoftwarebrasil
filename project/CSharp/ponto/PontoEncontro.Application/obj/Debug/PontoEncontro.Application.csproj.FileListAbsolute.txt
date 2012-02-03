@@ -3,3 +3,8 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Ap
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\ResolveAssemblyReference.cache
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.pdb
+E:\PROJETO\C#\ponto\PontoEncontro.Application\bin\Debug\PontoEncontro.Application.dll
+E:\PROJETO\C#\ponto\PontoEncontro.Application\bin\Debug\PontoEncontro.Application.pdb
+E:\PROJETO\C#\ponto\PontoEncontro.Application\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJETO\C#\ponto\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.dll
+E:\PROJETO\C#\ponto\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.pdb

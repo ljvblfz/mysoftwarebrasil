@@ -15,11 +15,6 @@ namespace PontoEncontro.Models
         public string Loginmembro { get; set; }
 
         [Required]
-        [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
-        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
@@ -27,7 +22,7 @@ namespace PontoEncontro.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Senhamembro", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }
