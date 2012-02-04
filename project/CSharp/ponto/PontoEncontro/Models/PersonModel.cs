@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Security;
 using PontoEncontro.Domain;
 using PontoEncontro.Infrastructure.MVC.DataAnnotations;
+using Lms.API.Infrastructure.MVC.Extensions;
+using System.Linq.Expressions;
 
 namespace PontoEncontro.Models
 {
@@ -28,13 +30,23 @@ namespace PontoEncontro.Models
         public virtual DateTime Nascimentopessoa { get; set; }
 
         [Required]
-        [DropDown]
+        [UIHint("DropDown")]
         [Display(Name = "Estado")]
-        public virtual IList<Estado> Idestado { get; set; }
+        public virtual IEnumerable<SelectListItem> Idestado { get; set; }
 
         [Required]
-        [DropDown]
+        [UIHint("DropDown")]
         [Display(Name = "Cidade")]
-        public virtual IList<Cidade> Idcidade { get; set; }
+        public virtual IEnumerable<SelectListItem> Idcidade { get; set; }
+
+        public PersonModel()
+        {
+        }
+
+        public PersonModel(IList<Estado> listState)
+        {
+            this.Idestado = EnumerableExtensions.CreateSelectListItem(listState, t => t.Nameestado, y => y.Idestado);
+            Idcidade = new List<SelectListItem>() { new SelectListItem(){Text="Selecione um estado",Value="",Selected=true}};
+        }
     }
 }

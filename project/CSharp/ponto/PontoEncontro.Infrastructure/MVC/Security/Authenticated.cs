@@ -25,7 +25,6 @@ namespace PontoEncontro.Infrastructure.MVC.Security
             {
                 base.OnAuthorization(filterContext);
             }
-
         }
     }
 }
