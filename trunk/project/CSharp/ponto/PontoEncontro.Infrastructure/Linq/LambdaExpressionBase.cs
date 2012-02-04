@@ -13,9 +13,12 @@ namespace PontoEncontro.Infrastructure.Linq
     public class LambdaExpressionBase
     {
         /// <summary>
-        /// Nome da propriedade
+        ///  Delegate de expressão recursiva (tipo delegate genérico)
+        ///  detalhes: 
         /// </summary>
-        public string Name { get; set; }
+        /// <typeparam name="T">tipo da expressão</typeparam>
+        /// <param name="self">valor da expressão</param>
+        delegate T SelfApplicable<T>(SelfApplicable<T> self);
 
         /// <summary>
         ///  Construtor
@@ -30,21 +33,10 @@ namespace PontoEncontro.Infrastructure.Linq
         /// <returns>nome da propriedade</returns>
         public static string GetName<TSouce>(Expression<Func<TSouce, object>> expression)
         {
-            var lambda = new LambdaExpressionBase();
-            lambda.SetPropety(expression.Body);
-            return lambda.Name;
-        }
-
-        /// <summary>
-        ///  Seta o objeto apartir da expressao
-        /// </summary>
-        /// <param name="member">corpo da expressão</param>
-        public void SetPropety(Expression member)
-        {
             MemberInfo info = null;
 
             // Retorna o operador da expressão
-            var nextOperand = member;
+            var nextOperand = expression.Body;
 
             // Verifica os tipos da árvore de expressão.
             // ExpressionType.Convert : Uma operação de conversão ou de conversão, como (SampleType)obj 
@@ -64,7 +56,41 @@ namespace PontoEncontro.Infrastructure.Linq
                 throw new ArgumentException("Not a member access", "expression");
             }
 
-            this.Name = info.Name;
+            return info.Name;
+        }
+
+        /// <summary>
+        ///  Retorna o valor do objeto
+        /// </summary>
+        /// <typeparam name="T">type do objeto</typeparam>
+        /// <param name="model">objeto</param>
+        /// <param name="expression">expression lambda</param>
+        /// <returns>object</returns>
+        public static object GetValue<T>(T model, Func<T, object> function)
+        {
+            SelfApplicable<Func<T, object>> myDelegate = x => function;
+            Func<T, object> Fix = myDelegate(myDelegate);
+            var result = Fix(model);
+            return ( result != null ? result : new object());
+        }
+
+        public static object GetValue<T>(T model, Expression<Func<T, object>> expression)
+        {
+            return GetValue(model, expression.Compile());
+        }
+
+        /// <summary>
+        ///  Seta o valor no objeto
+        /// </summary>
+        /// <typeparam name="T">type do objeto</typeparam>
+        /// <param name="model">objeto</param>
+        /// <param name="expression">expression lambda</param>
+        /// <returns>objeto</returns>
+        public static object SetValue<T>(T model, Func<T, object> expression)
+        {
+            SelfApplicable<Func<T, object>> myDelegate = x => expression;
+            Func<T, object> Fix = myDelegate(myDelegate);
+            return Fix(model);
         }
     }
 }

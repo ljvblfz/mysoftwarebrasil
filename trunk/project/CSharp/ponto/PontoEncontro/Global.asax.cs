@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using PontoEncontro.Infrastructure.MVC.Security;
+using PontoEncontro.Infrastructure.Log;
+using PontoEncontro.Infrastructure.MVC;
 
 namespace PontoEncontro
 {
@@ -15,11 +18,13 @@ namespace PontoEncontro
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new Authenticated());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
             routes.MapRoute(
                 "Default", // Route name
@@ -27,6 +32,10 @@ namespace PontoEncontro
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute("LogOn",
+                "LogOn",
+                new { controller = "Account", action = "LogOn", id = UrlParameter.Optional }
+            );
         }
 
         protected void Application_Start()
@@ -36,6 +45,12 @@ namespace PontoEncontro
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
             AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
+        }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            // Adciona Atributos customizados ao MetaData
+            ModelMetadataProviders.Current = new ExtendModelMetadataProvider(new CustomMetadataProvider());
         }
     }
 }

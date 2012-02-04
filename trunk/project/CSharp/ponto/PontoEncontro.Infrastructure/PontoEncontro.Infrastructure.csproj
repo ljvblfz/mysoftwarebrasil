@@ -126,13 +126,8 @@
     <Compile Include="MVC\AutoMappedViewResult.cs" />
     <Compile Include="MVC\BaseController.cs" />
     <Compile Include="MVC\DataAnnotations\Store.cs" />
-    <Compile Include="MVC\Extensions\DateTimeExtensions.cs" />
-    <Compile Include="MVC\Extensions\DictionaryExtensions.cs" />
-    <Compile Include="MVC\Extensions\HtmlHelpersExtensions.cs" />
-    <Compile Include="MVC\Extensions\IEnumerableExtensions.cs" />
-    <Compile Include="MVC\Extensions\LabelExtensions.cs" />
-    <Compile Include="MVC\Extensions\StringExtensions.cs" />
     <Compile Include="MVC\DataAnnotations\Search.cs" />
+    <Compile Include="MVC\Extensions\EnumerableExtensions.cs" />
     <Compile Include="MVC\Helper\Grid\GridTelerik.cs" />
     <Compile Include="MVC\Security\Anonymous.cs" />
     <Compile Include="MVC\Security\AuthorizeUser.cs" />
