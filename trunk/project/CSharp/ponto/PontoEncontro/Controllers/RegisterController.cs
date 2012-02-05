@@ -101,24 +101,21 @@ namespace PontoEncontro.Controllers
                 var member = Aplication.GetCookie(typeof(Membro), "Member") as Membro;
                 var person = Aplication.GetCookie(typeof(Pessoa), "Person") as Pessoa;
 
-                var perfil = new Perfil()
+                var profile = new Perfil()
                 {
-                    idCabelo = int.Parse(form["Idcabelo"]),
+                    idCabelo = int.Parse(form["idCabelo"]),
                     idEndereco = address.idEndereco,
-                    idEstadoCivil = int.Parse(form["Idestadocivil"]),
-                    idEtinia = int.Parse(form["Idetinia"]),
-                    idOlho = int.Parse(form["Idolho"]),
-                    idSexo = int.Parse(form["Idsexo"]),
+                    idEstadoCivil = int.Parse(form["idEstadoCivil"]),
+                    idEtinia = int.Parse(form["idEtinia"]),
+                    idOlho = int.Parse(form["idOlho"]),
+                    idSexo = int.Parse(form["idSexo"]),
                 };
-                new EnderecoRepository().Save(address);
-                new PerfilRepository().Save(perfil);
-                person.idPerfil = perfil.idPerfil;
-                new PessoaRepository().Save(person);
-                member.idPessoa = person.idPessoa;
-                new MembroRepository().Save(member);
-                return RedirectToAction("Index");
+
+                new MembroRepository().Register(member, profile, address, person);
+                ModelState.AddModelError("", "Conta criada com sucesso.");
+                return RedirectToAction("LogOn", "Account");
             }
-            return View(form);
+            return View();
         }
 
         //
