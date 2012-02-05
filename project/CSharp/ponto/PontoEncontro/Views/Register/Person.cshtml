@@ -11,9 +11,9 @@
                 success: function (myOptions) {
                     var dados = myOptions;
                     var options = $('#Idcidade').prop('options');
-                    options[0] = new Option('Selecione', '0', true, true);
+                    options[options.length] = new Option('Selecione', '0', true, true);
                     $.each(dados, function (val, text) {
-                        options[options.length] = new Option(text.Text, val.Value, false, false);
+                        options[options.length] = new Option(text.Text, text.Value, false, false);
                     });
                 },
                 erro: function (msg) {
