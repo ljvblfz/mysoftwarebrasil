@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Entity\EstadoCivil.cs" />
     <Compile Include="Entity\Permissoes.cs" />
     <Compile Include="Mapping\ActionMap.cs" />
     <Compile Include="Mapping\AssociacaoMap.cs" />
@@ -54,7 +55,6 @@
     <Compile Include="Mapping\PessoaMap.cs" />
     <Compile Include="Mapping\RoleMap.cs" />
     <Compile Include="Mapping\SexoMap.cs" />
-    <Compile Include="Mapping\sysdiagramsMap.cs" />
     <Compile Include="Mapping\TipoAssociacaoMap.cs" />
     <Compile Include="Mapping\TipoContatoMap.cs" />
     <Compile Include="Mapping\TipoInteresseMap.cs" />

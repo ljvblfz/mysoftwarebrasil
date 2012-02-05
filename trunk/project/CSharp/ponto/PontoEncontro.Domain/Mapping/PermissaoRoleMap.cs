@@ -23,10 +23,8 @@ namespace PontoEncontro.Domain.Mapping
 		public PermissaoRoleMap()
         {
 		    Table("PermissaoRole");
-                        Id(x => x.idRole,"idRole").GeneratedBy.Native("PermissaoRoleSeq");
-            HasMany(x => x.idRole);
-            Id(x => x.idPermissao,"idPermissao").GeneratedBy.Native("PermissaoRoleSeq");
-            HasMany(x => x.idPermissao);
+            Id(x => x.idRole,"idRole").GeneratedBy.Native("PermissaoRoleSeq");
+            Map(x => x.idPermissao,"idPermissao");
         }
     }
 }

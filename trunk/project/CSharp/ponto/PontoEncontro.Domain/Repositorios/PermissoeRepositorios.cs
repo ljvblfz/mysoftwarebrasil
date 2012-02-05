@@ -9,7 +9,7 @@ using NHibernate.Linq;
 
 namespace PontoEncontro.Domain
 {
-    public class PermissoeRepository : GenericRepository<Permissoe>
+    public class PermissoeRepository : GenericRepository<Permissoes>
     {
 
     }

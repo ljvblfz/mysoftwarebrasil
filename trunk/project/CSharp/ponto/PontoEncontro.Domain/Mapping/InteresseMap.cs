@@ -20,15 +20,13 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class InteresseMap : ClassMap<Interesse>
     {
-		public InteresseMap()
+        public InteresseMap()
         {
-		    Table("Interesse");
-                        Id(x => x.idInteresse,"idInteresse").GeneratedBy.Native("InteresseSeq");
+            Table("Interesse");
+            Id(x => x.idInteresse, "idInteresse").GeneratedBy.Native("InteresseSeq");
             Map(x => x.Descricao);
             Map(x => x.idTipoInteresse);
-            HasMany(x => x.idTipoInteresse);
             Map(x => x.idPerfil);
-            HasMany(x => x.idPerfil);
         }
     }
 }

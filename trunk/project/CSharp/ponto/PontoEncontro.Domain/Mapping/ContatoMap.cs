@@ -20,15 +20,13 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class ContatoMap : ClassMap<Contato>
     {
-		public ContatoMap()
+        public ContatoMap()
         {
-		    Table("Contato");
-                        Id(x => x.idContato,"idContato").GeneratedBy.Native("ContatoSeq");
+            Table("Contato");
+            Id(x => x.idContato, "idContato").GeneratedBy.Native("ContatoSeq");
             Map(x => x.valorContato);
             Map(x => x.idPerfil);
-            HasMany(x => x.idPerfil);
             Map(x => x.idTipoContato);
-            HasMany(x => x.idTipoContato);
         }
     }
 }

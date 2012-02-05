@@ -9,7 +9,7 @@ using NHibernate.Linq;
 
 namespace PontoEncontro.Domain
 {
-    public class TipocontatoRepository : GenericRepository<Tipocontato>
+    public class TipocontatoRepository : GenericRepository<TipoContato>
     {
 
     }
