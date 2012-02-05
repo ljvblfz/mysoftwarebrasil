@@ -12,17 +12,17 @@ namespace PontoEncontro.Models
     {
         [Required]
         [Display(Name = "Usuario")]
-        public string Loginmembro { get; set; }
+        public string loginMembro { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
-        public string Senhamembro { get; set; }
+        public string senhaMembro { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Senhamembro", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("senhaMembro", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }

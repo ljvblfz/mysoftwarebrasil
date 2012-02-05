@@ -17,7 +17,7 @@ namespace PontoEncontro.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         [Display(Name = "Seu nome")]
-        public string Nomepessoa { get; set; }
+        public string nomePessoa { get; set; }
 
         //[StringLength(8, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 8)]
         //[Display(Name = "CEP")]
@@ -26,12 +26,12 @@ namespace PontoEncontro.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public string EMailpessoa { get; set; }
+        public string e_MailPessoa { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Nascimento")]
-        public DateTime Nascimentopessoa { get; set; }
+        public DateTime nascimentoPessoa { get; set; }
 
         [UIHint("DropDown")]
         [Display(Name = "Estado")]
