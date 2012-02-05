@@ -15,29 +15,27 @@ namespace PontoEncontro.Models
     public class PersonModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         [Display(Name = "Seu nome")]
-        public virtual string Nomepessoa { get; set; }
+        public string Nomepessoa { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public virtual string EMailpessoa { get; set; }
+        public string EMailpessoa { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Nascimento")]
-        public virtual DateTime Nascimentopessoa { get; set; }
+        public DateTime Nascimentopessoa { get; set; }
 
-        [Required]
         [UIHint("DropDown")]
         [Display(Name = "Estado")]
-        public virtual IEnumerable<SelectListItem> Idestado { get; set; }
+        public IEnumerable<SelectListItem> Idestado { get; set; }
 
-        [Required]
         [UIHint("DropDown")]
         [Display(Name = "Cidade")]
-        public virtual IEnumerable<SelectListItem> Idcidade { get; set; }
+        public IEnumerable<SelectListItem> Idcidade { get; set; }
 
         public PersonModel()
         {
@@ -46,7 +44,7 @@ namespace PontoEncontro.Models
         public PersonModel(IList<Estado> listState)
         {
             this.Idestado = EnumerableExtensions.CreateSelectListItem(listState, t => t.Nameestado, y => y.Idestado);
-            Idcidade = new List<SelectListItem>() { new SelectListItem(){Text="Selecione um estado",Value="",Selected=true}};
+            //Idcidade = new List<SelectListItem>() { new SelectListItem(){Text="Selecione um estado",Value="",Selected=true}};
         }
     }
 }

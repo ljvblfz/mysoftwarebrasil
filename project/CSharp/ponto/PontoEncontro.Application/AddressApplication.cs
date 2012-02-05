@@ -11,14 +11,23 @@ namespace PontoEncontro.Application
     /// </summary>
     public class AddressApplication
     {
+        /// <summary>
+        ///  Lista todos os estados
+        /// </summary>
+        /// <returns></returns>
         public static IList<Estado> GetListState()
         {
-            return new PontoEncontro.Domain.EstadoRepository().ListAll();
+            return new EstadoRepository().ListAll();
         }
 
-        public static IList<Cidade> GetListCity()
+        /// <summary>
+        ///  Lista todas as cidades do estaodo
+        /// </summary>
+        /// <param name="idState"></param>
+        /// <returns></returns>
+        public static IList<Cidade> GetListCity(int idState)
         {
-            return new PontoEncontro.Domain.CidadeRepository().ListAll();
+            return new CidadeRepository().GetListCity(idState);
         }
     }
 }

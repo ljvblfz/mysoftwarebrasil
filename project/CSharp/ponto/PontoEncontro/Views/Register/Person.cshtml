@@ -1,39 +1,32 @@
 ﻿@model PontoEncontro.Models.PersonModel
-@{
-    ViewBag.Title = "Pessoa";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
 <script type="text/javascript">
     $(function () {
         $("#Idestado")
         .bind("change", function () {
-		    $.ajax({
-		        type: "POST",
-		        url: "/Register/GetCity",
-		        data: "name=" + $(this).val(),
-		        success: function (myOptions) {
-		            var dados = myOptions;
-		            options[0] = new Option('Selecione', '0', true, true);
-		            $.each(dados, function (val, text) {
-		                options[options.length] = new Option(text.Text, val.Value, false, false);
-		            });
-		        },
-		        erro: function (msg) { 
-		            $('.right').html(msg);
-		        }
-		    });
-		});
+            $.ajax({
+                type: "POST",
+                url: "/Register/GetCity",
+                data: "idEstado=" + $(this).val(),
+                success: function (myOptions) {
+                    var dados = myOptions;
+                    var options = $('#Idcidade').prop('options');
+                    options[0] = new Option('Selecione', '0', true, true);
+                    $.each(dados, function (val, text) {
+                        options[options.length] = new Option(text.Text, val.Value, false, false);
+                    });
+                },
+                erro: function (msg) {
+                    $('.right').html(msg);
+                }
+            });
+        });
     });
 </script>
-<h2>
-    Adicionar dados pessoais</h2>
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
-    <div>
-        <fieldset>
-            <legend>Account Information</legend>
-            @Html.EditorForModel()
-        </fieldset>
-    </div>
-}
+<h2>Adicionar dados pessoais</h2>
+<div>
+    <fieldset>
+        <legend id="pass1"></legend>
+        @Html.EditorForModel()
+    </fieldset>
+</div>

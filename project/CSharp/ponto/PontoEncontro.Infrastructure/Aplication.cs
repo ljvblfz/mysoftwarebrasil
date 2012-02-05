@@ -10,6 +10,7 @@ using System.Threading;
 using PontoEncontro.Infrastructure.Compression;
 using PontoEncontro.Infrastructure.MVC.DataAnnotations;
 using System.Reflection;
+using System.Web.Script.Serialization;
 
 namespace PontoEncontro.Infrastructure
 {
@@ -25,6 +26,33 @@ namespace PontoEncontro.Infrastructure
         public static bool IsAuthenticated()
         {
             return GetTicket() is FormsAuthenticationTicket ? true : false;
+        }
+
+        /// <summary>
+        ///  Cria um cookie
+        /// </summary>
+        /// <returns>void</returns>
+        public static void AddCookie<TSourse>(TSourse objects,string key)
+        {
+            var serializer = new JavaScriptSerializer().Serialize(objects);
+
+            // Cria o cookie
+            var cookie = new HttpCookie(key,serializer);
+            cookie.Expires = DateTime.Now.AddDays(3);
+            HttpContext.Current.Response.Cookies.Add(cookie);
+        }
+
+        /// <summary>
+        ///  Recupera o objeto no cookie
+        /// </summary>
+        /// <returns>objeto tipado</returns>
+        public static object GetCookie(Type type, string key)
+        {
+            var cookie = System.Web.HttpContext.Current.Request.Cookies[key];
+            if (cookie is HttpCookie)
+             return new JavaScriptSerializer().Deserialize(cookie.Value, type);
+
+            return new object();
         }
 
         /// <summary>
@@ -104,7 +132,7 @@ namespace PontoEncontro.Infrastructure
         /// <summary>
         ///  Retorna o host do servidor
         /// </summary>
-        /// <returns>host do servidor (identifica o cliente atraves o passaport)</returns>
+        /// <returns>host do servidor</returns>
         public static string GetHost()
         {
             return HttpContext.Current.Request.Url.Host;

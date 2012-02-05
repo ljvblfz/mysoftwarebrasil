@@ -84,6 +84,7 @@
     <Reference Include="System.Web">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq">
       <Private>True</Private>
@@ -116,8 +117,8 @@
     <Compile Include="Enum\IncomeStatus.cs" />
     <Compile Include="Enum\MaritalStatus.cs" />
     <Compile Include="Filter\FilterBy.cs" />
-    <Compile Include="Globalizator.cs" />
     <Compile Include="Filter\FilterTelerik.cs" />
+    <Compile Include="JavaScriptSerializer.cs" />
     <Compile Include="Mef\CatalogBuilder.cs" />
     <Compile Include="Mef\Contracts\Constants.cs" />
     <Compile Include="Mef\Contracts\IControllerMetadata.cs" />
