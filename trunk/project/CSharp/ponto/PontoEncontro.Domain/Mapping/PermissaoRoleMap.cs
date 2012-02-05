@@ -1,0 +1,32 @@
+//
+//  Copyright (c) 2012, AXS 
+//  All rights reserved.
+//
+//  Authors: 
+//          
+//           * Alexis Moura
+//           Generation
+//           Messenger:
+//
+using System.Collections.Generic;
+using System.Text;
+using System;
+using FluentNHibernate.Mapping;
+
+namespace PontoEncontro.Domain.Mapping
+{
+    /// <summary>
+    /// Classe de mapeamento de PermissaoRole
+    /// </summary>
+    public class PermissaoRoleMap : ClassMap<PermissaoRole>
+    {
+		public PermissaoRoleMap()
+        {
+		    Table("PermissaoRole");
+                        Id(x => x.idRole,"idRole").GeneratedBy.Native("PermissaoRoleSeq");
+            HasMany(x => x.idRole);
+            Id(x => x.idPermissao,"idPermissao").GeneratedBy.Native("PermissaoRoleSeq");
+            HasMany(x => x.idPermissao);
+        }
+    }
+}
