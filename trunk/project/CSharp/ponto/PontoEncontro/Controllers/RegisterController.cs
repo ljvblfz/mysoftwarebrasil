@@ -9,6 +9,8 @@ using PontoEncontro.Infrastructure.MVC;
 using PontoEncontro.Infrastructure.MVC.Security;
 using PontoEncontro.Application;
 using Lms.API.Infrastructure.MVC.Extensions;
+using System.Web.Script.Serialization;
+using PontoEncontro.Infrastructure;
 
 namespace PontoEncontro.Controllers
 {
@@ -23,15 +25,7 @@ namespace PontoEncontro.Controllers
         }
 
         //
-        // GET: /Register/Details/5
-        [Anonymous]
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Register/Create
+        // GET: /Register/Member
         [Anonymous]
         public ActionResult Member()
         {
@@ -39,7 +33,7 @@ namespace PontoEncontro.Controllers
         } 
 
         //
-        // POST: /Register/Create
+        // POST: /Register/Member
 
         [HttpPost]
         [Anonymous]
@@ -47,11 +41,15 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.Idrole = new Role() { Idrole = 2};
+                Aplication.AddCookie(model, "Member");
                 return RedirectToAction("Person");
             }
             return View(modelView);
         }
 
+        //
+        // GET: /Register/Person
         [Anonymous]
         public ActionResult Person()
         {
@@ -60,22 +58,68 @@ namespace PontoEncontro.Controllers
         }
 
         //
-        // POST: /Register/Create
+        // POST: /Register/Person
         [HttpPost]
         [Anonymous]
-        public ActionResult Person(FormCollection collection)
+        public ActionResult Person(PersonModel modelView, Pessoa model, FormCollection form)
         {
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var idCidade = 1;
+                var idestado = 1;
+                int.TryParse(form["Idcidade"],out idCidade);
+                int.TryParse(form["Idestado"], out idestado);
+
+                var address = new Endereco()
+                {
+                    Idcidade = new Cidade() 
+                    {
+                        Idcidade = idCidade,
+                        Idestado = new Estado()
+                        {
+                            Idestado = idestado
+                        }
+                    }
+                };
+                Aplication.AddCookie(address, "Address");
+                Aplication.AddCookie(model, "Person");
+                return RedirectToAction("Profile");
+            }
+            return View(modelView);
+        }
+
+        //
+        // GET: /Register/Profile
+        [Anonymous]
+        public ActionResult Profile()
+        {
+            return View(new ProfileModel());
+        }
+
+        //
+        // POST: /Register/Profile
+        [HttpPost]
+        [Anonymous]
+        public ActionResult Profile(FormCollection form)
+        {
+            if (ModelState.IsValid)
+            {
+                var address = Aplication.GetCookie(typeof(Endereco), "Address");
+                var member = Aplication.GetCookie(typeof(Membro), "Member");
+                var person = Aplication.GetCookie(typeof(Pessoa), "Person");
+                return RedirectToAction("Index");
+            }
+            return View(form);
         }
 
         //
         // POST: /Register/GetCity
         [HttpPost]
         [Anonymous]
-        public JsonResult GetCity(int? idEstado)
+        public JsonResult GetCity(int idEstado)
         {
             var result = EnumerableExtensions.CreateSelectListItem<Cidade>(
-                    AddressApplication.GetListCity(),
+                    AddressApplication.GetListCity(idEstado),
                     t => t.Namecidade,
                     v => v.Idcidade);
             return Json(result);
