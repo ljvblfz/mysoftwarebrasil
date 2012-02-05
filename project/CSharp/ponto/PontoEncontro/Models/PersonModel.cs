@@ -47,7 +47,7 @@ namespace PontoEncontro.Models
 
         public PersonModel(IList<Estado> listState)
         {
-            this.Idestado = EnumerableExtensions.CreateSelectListItem(listState, t => t.Nameestado, y => y.Idestado);
+            this.Idestado = EnumerableExtensions.CreateSelectListItem(listState, t => t.nameEstado, y => y.idEstado);
             //Idcidade = new List<SelectListItem>() { new SelectListItem(){Text="Selecione um estado",Value="",Selected=true}};
         }
     }

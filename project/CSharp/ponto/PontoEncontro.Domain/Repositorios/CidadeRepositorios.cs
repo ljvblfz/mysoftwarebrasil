@@ -36,7 +36,7 @@ namespace PontoEncontro.Domain
                     try
                     {
                         var result = (from c in session.Query<Cidade>()
-                                                where c.Idestado.Idestado == idState
+                                                where c.idEstado == idState
                                                 select c
                                         ).ToList();
                         session.Flush();

@@ -20,13 +20,12 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class CidadeMap : ClassMap<Cidade>
     {
-		public CidadeMap()
+        public CidadeMap()
         {
-		    Table("Cidade");
-                        Id(x => x.idCidade,"idCidade").GeneratedBy.Native("CidadeSeq");
+            Table("Cidade");
+            Id(x => x.idCidade, "idCidade").GeneratedBy.Native("CidadeSeq");
             Map(x => x.nameCidade);
             Map(x => x.idEstado);
-            HasMany(x => x.idEstado);
         }
     }
 }

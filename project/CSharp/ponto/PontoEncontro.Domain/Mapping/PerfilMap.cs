@@ -20,22 +20,17 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class PerfilMap : ClassMap<Perfil>
     {
-		public PerfilMap()
+        public PerfilMap()
         {
-		    Table("Perfil");
-                        Map(x => x.idSexo);
-            HasMany(x => x.idSexo);
+            Table("Perfil");
+            Id(x => x.idPerfil, "idPerfil").GeneratedBy.Native("PerfilSeq");
+            Map(x => x.idSexo);
             Map(x => x.idOlho);
-            HasMany(x => x.idOlho);
             Map(x => x.idCabelo);
-            HasMany(x => x.idCabelo);
             Map(x => x.idEtinia);
-            HasMany(x => x.idEtinia);
             Map(x => x.idEstadoCivil);
-            HasMany(x => x.idEstadoCivil);
             Map(x => x.idEndereco);
-            HasMany(x => x.idEndereco);
-            Id(x => x.idPerfil,"idPerfil").GeneratedBy.Native("PerfilSeq");
+
         }
     }
 }

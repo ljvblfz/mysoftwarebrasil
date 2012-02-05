@@ -20,15 +20,13 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class PermissoesMap : ClassMap<Permissoes>
     {
-		public PermissoesMap()
+        public PermissoesMap()
         {
-		    Table("Permissoes");
-                        Id(x => x.idPermissao,"idPermissao").GeneratedBy.Native("PermissoesSeq");
+            Table("Permissoes");
+            Id(x => x.idPermissao, "idPermissao").GeneratedBy.Native("PermissoesSeq");
             Map(x => x.namePermissao);
             Map(x => x.idAction);
-            HasMany(x => x.idAction);
             Map(x => x.idController);
-            HasMany(x => x.idController);
         }
     }
 }

@@ -20,12 +20,11 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class PessoaMap : ClassMap<Pessoa>
     {
-		public PessoaMap()
+        public PessoaMap()
         {
-		    Table("Pessoa");
-                        Id(x => x.idPessoa,"idPessoa").GeneratedBy.Native("PessoaSeq");
+            Table("Pessoa");
+            Id(x => x.idPessoa, "idPessoa").GeneratedBy.Native("PessoaSeq");
             Map(x => x.idPerfil);
-            HasMany(x => x.idPerfil);
             Map(x => x.nomePessoa);
             Map(x => x.e_MailPessoa);
             Map(x => x.nascimentoPessoa);

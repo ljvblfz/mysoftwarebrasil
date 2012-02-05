@@ -20,16 +20,14 @@ namespace PontoEncontro.Domain.Mapping
     /// </summary>
     public class MembroMap : ClassMap<Membro>
     {
-		public MembroMap()
+        public MembroMap()
         {
-		    Table("Membro");
-                        Id(x => x.idMembro,"idMembro").GeneratedBy.Native("MembroSeq");
+            Table("Membro");
+            Id(x => x.idMembro, "idMembro").GeneratedBy.Native("MembroSeq");
             Map(x => x.loginMembro);
             Map(x => x.senhaMembro);
             Map(x => x.idPessoa);
-            HasMany(x => x.idPessoa);
             Map(x => x.idRole);
-            HasMany(x => x.idRole);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.Idrole = new Role() { Idrole = 2 };
+                model.idRole = 2;
                 Aplication.AddCookie(model, "Member");
                 return RedirectToAction("Person");
             }
@@ -72,14 +72,7 @@ namespace PontoEncontro.Controllers
 
                 var address = new Endereco()
                 {
-                    Idcidade = new Cidade()
-                    {
-                        Idcidade = idCidade,
-                        Idestado = new Estado()
-                        {
-                            Idestado = idestado
-                        }
-                    }
+                    idCidade = idCidade
                 };
                 Aplication.AddCookie(address, "Address");
                 Aplication.AddCookie(model, "Person");
@@ -110,18 +103,18 @@ namespace PontoEncontro.Controllers
 
                 var perfil = new Perfil()
                 {
-                    Idcabelo = new Cabelo() { Idcabelo = int.Parse(form["Idcabelo"]) },
-                    Idendereco = address,
-                    Idestadocivil = new Estadocivil() { Idestadocivil = int.Parse(form["Idestadocivil"]) },
-                    Idetinia = new Etinia() { Idetinia = int.Parse(form["Idetinia"]) },
-                    Idolho = new Olho() { Idolho = int.Parse(form["Idolho"]) },
-                    Idsexo = new Sexo() { Idsexo = int.Parse(form["Idsexo"]) },
+                    idCabelo = int.Parse(form["Idcabelo"]),
+                    idEndereco = address.idEndereco,
+                    idEstadoCivil = int.Parse(form["Idestadocivil"]),
+                    idEtinia = int.Parse(form["Idetinia"]),
+                    idOlho = int.Parse(form["Idolho"]),
+                    idSexo = int.Parse(form["Idsexo"]),
                 };
                 new EnderecoRepository().Save(address);
                 new PerfilRepository().Save(perfil);
-                person.Idperfil = perfil;
+                person.idPerfil = perfil.idPerfil;
                 new PessoaRepository().Save(person);
-                member.Idpessoa = person;
+                member.idPessoa = person.idPessoa;
                 new MembroRepository().Save(member);
                 return RedirectToAction("Index");
             }
@@ -136,8 +129,8 @@ namespace PontoEncontro.Controllers
         {
             var result = EnumerableExtensions.CreateSelectListItem<Cidade>(
                     AddressApplication.GetListCity(idEstado),
-                    t => t.Namecidade,
-                    v => v.Idcidade);
+                    t => t.nameCidade,
+                    v => v.idCidade);
             return Json(result);
         }
 
