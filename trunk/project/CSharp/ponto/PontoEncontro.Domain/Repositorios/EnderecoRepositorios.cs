@@ -11,6 +11,9 @@ namespace PontoEncontro.Domain
 {
     public class EnderecoRepository : GenericRepository<Endereco>
     {
-
+        public EnderecoRepository()
+            :base()
+        {
+        }
     }
 }

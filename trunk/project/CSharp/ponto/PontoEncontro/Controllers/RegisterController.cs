@@ -30,7 +30,7 @@ namespace PontoEncontro.Controllers
         public ActionResult Member()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Register/Member
@@ -41,7 +41,7 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.Idrole = new Role() { Idrole = 2};
+                model.Idrole = new Role() { Idrole = 2 };
                 Aplication.AddCookie(model, "Member");
                 return RedirectToAction("Person");
             }
@@ -63,16 +63,16 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult Person(PersonModel modelView, Pessoa model, FormCollection form)
         {
-            if (ModelState.IsValid)
+            if (true)
             {
                 var idCidade = 1;
                 var idestado = 1;
-                int.TryParse(form["Idcidade"],out idCidade);
+                int.TryParse(form["Idcidade"], out idCidade);
                 int.TryParse(form["Idestado"], out idestado);
 
                 var address = new Endereco()
                 {
-                    Idcidade = new Cidade() 
+                    Idcidade = new Cidade()
                     {
                         Idcidade = idCidade,
                         Idestado = new Estado()
@@ -104,9 +104,25 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
-                var address = Aplication.GetCookie(typeof(Endereco), "Address");
-                var member = Aplication.GetCookie(typeof(Membro), "Member");
-                var person = Aplication.GetCookie(typeof(Pessoa), "Person");
+                var address = Aplication.GetCookie(typeof(Endereco), "Address") as Endereco;
+                var member = Aplication.GetCookie(typeof(Membro), "Member") as Membro;
+                var person = Aplication.GetCookie(typeof(Pessoa), "Person") as Pessoa;
+
+                var perfil = new Perfil()
+                {
+                    Idcabelo = new Cabelo() { Idcabelo = int.Parse(form["Idcabelo"]) },
+                    Idendereco = address,
+                    Idestadocivil = new Estadocivil() { Idestadocivil = int.Parse(form["Idestadocivil"]) },
+                    Idetinia = new Etinia() { Idetinia = int.Parse(form["Idetinia"]) },
+                    Idolho = new Olho() { Idolho = int.Parse(form["Idolho"]) },
+                    Idsexo = new Sexo() { Idsexo = int.Parse(form["Idsexo"]) },
+                };
+                new EnderecoRepository().Save(address);
+                new PerfilRepository().Save(perfil);
+                person.Idperfil = perfil;
+                new PessoaRepository().Save(person);
+                member.Idpessoa = person;
+                new MembroRepository().Save(member);
                 return RedirectToAction("Index");
             }
             return View(form);
