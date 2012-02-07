@@ -78,6 +78,7 @@ namespace PontoEncontro.Infrastructure
             {
                 ticket.Expires = DateTime.Now.AddDays(-1);
                 HttpContext.Current.Response.AppendCookie(ticket);
+                FormsAuthentication.SignOut();
             }
         }
 
@@ -93,7 +94,7 @@ namespace PontoEncontro.Infrastructure
         /// <param name="roles">Os dados específicos do usuário para ser armazenado com o cookie.(roles)</param>
         /// <param name="expiration">A data local e hora em que o cookie expira.</param>
         /// <returns>cookie criptografado</returns>
-        public static string CreateTicket(string username, bool isPersistent, string roles, DateTime expiration)
+        public static string CreateTicket(string username, bool isPersistent, object user, DateTime expiration)
         {
             FormsAuthentication.Initialize();
 
@@ -104,7 +105,7 @@ namespace PontoEncontro.Infrastructure
                                                         DateTime.Now,
                                                         expiration,
                                                         isPersistent,
-                                                        roles,
+                                                        new JavaScriptSerializer().Serialize(user),
                                                         FormsAuthentication.FormsCookiePath
                                                        );
 
@@ -123,10 +124,21 @@ namespace PontoEncontro.Infrastructure
         ///  Retorna o usuario corrente
         /// </summary>
         /// <returns></returns>
-        public static int GetUserId()
+        public static object GetUser()
         {
-            //TODO: Ainda não implementado
-            return 1;
+            var ticket = GetTicket();
+            return new JavaScriptSerializer()
+                .DeserializeObject(ticket.UserData);
+        }
+
+        /// <summary>
+        ///  Retorna o user name
+        /// </summary>
+        /// <returns>user name</returns>
+        public static string GetUserName()
+        {
+            var ticket = GetTicket();
+            return ticket.Name;
         }
 
         /// <summary>

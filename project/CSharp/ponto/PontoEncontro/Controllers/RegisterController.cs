@@ -11,6 +11,7 @@ using PontoEncontro.Application;
 using Lms.API.Infrastructure.MVC.Extensions;
 using System.Web.Script.Serialization;
 using PontoEncontro.Infrastructure;
+using PontoEncontro.Adapter;
 
 namespace PontoEncontro.Controllers
 {
@@ -41,8 +42,8 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.idRole = 2;
-                Aplication.AddCookie(model, "Member");
+                SecurityAdapter.RegisterMember(model);
+                ViewBag.Message = new List<string>() { "Prossiga com o registro"};
                 return RedirectToAction("Person");
             }
             return View(modelView);
@@ -53,7 +54,8 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult Person()
         {
-            var personModel = new PersonModel(AddressApplication.GetListState());
+            var personModel = new PersonModel();
+            personModel.Idestado = AddressAdapter.GetListState();
             return View(personModel);
         }
 
@@ -63,19 +65,9 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult Person(PersonModel modelView, Pessoa model, FormCollection form)
         {
-            if (true)
+            if (ModelState.IsValidField("nomePessoa"))
             {
-                var idCidade = 1;
-                var idestado = 1;
-                int.TryParse(form["Idcidade"], out idCidade);
-                int.TryParse(form["Idestado"], out idestado);
-
-                var address = new Endereco()
-                {
-                    idCidade = idCidade
-                };
-                Aplication.AddCookie(address, "Address");
-                Aplication.AddCookie(model, "Person");
+                SecurityAdapter.RegisterPerson(model, form);
                 return RedirectToAction("Profile");
             }
             return View(modelView);
@@ -97,21 +89,8 @@ namespace PontoEncontro.Controllers
         {
             if (ModelState.IsValid)
             {
-                var address = Aplication.GetCookie(typeof(Endereco), "Address") as Endereco;
-                var member = Aplication.GetCookie(typeof(Membro), "Member") as Membro;
-                var person = Aplication.GetCookie(typeof(Pessoa), "Person") as Pessoa;
-
-                var profile = new Perfil()
-                {
-                    idCabelo = int.Parse(form["idCabelo"]),
-                    idEndereco = address.idEndereco,
-                    idEstadoCivil = int.Parse(form["idEstadoCivil"]),
-                    idEtinia = int.Parse(form["idEtinia"]),
-                    idOlho = int.Parse(form["idOlho"]),
-                    idSexo = int.Parse(form["idSexo"]),
-                };
-
-                new MembroRepository().Register(member, profile, address, person);
+                SecurityAdapter.RegisterProfile(form);
+                SecurityAdapter.CompleteRecordUser();
                 ModelState.AddModelError("", "Conta criada com sucesso.");
                 return RedirectToAction("LogOn", "Account");
             }
@@ -124,10 +103,7 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public JsonResult GetCity(int idEstado)
         {
-            var result = EnumerableExtensions.CreateSelectListItem<Cidade>(
-                    AddressApplication.GetListCity(idEstado),
-                    t => t.nameCidade,
-                    v => v.idCidade);
+            var result = AddressAdapter.GetListCity(idEstado);
             return Json(result);
         }
 
