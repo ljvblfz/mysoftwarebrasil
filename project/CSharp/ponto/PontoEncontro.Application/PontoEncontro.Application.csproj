@@ -40,15 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressApplication.cs" />
+    <Compile Include="Service\AddressApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\CheckIntegrit.cs" />
+    <Compile Include="Validation\IValidate.cs" />
+    <Compile Include="Validation\NotEmpty.cs" />
+    <Compile Include="Validation\Validate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PontoEncontro.Domain\PontoEncontro.Domain.csproj">
       <Project>{D31325D7-87DB-42CF-B0B2-CA7503554B20}</Project>
       <Name>PontoEncontro.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PontoEncontro.Infrastructure\PontoEncontro.Infrastructure.csproj">
+      <Project>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</Project>
+      <Name>PontoEncontro.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
