@@ -1,0 +1,9 @@
+﻿@if (ViewBag.Message is IList<string> && ViewBag.Message.Count > 0)
+{
+    foreach (var item in ViewBag.Message as IList<string>)
+    {
+       <text>
+        <strong>@item</strong>
+       </text>       
+    }
+}
