@@ -25,18 +25,19 @@ namespace PontoEncontro.Infrastructure.MVC
         public static Func<object, Type, Type, object> Map = (source, sourceType, destinationType) =>
         {
             // Se os tipos são identicos ou e um GridModel(Telerik)
-            if (sourceType == destinationType || source.GetType().GetInterfaces().Contains(typeof(IGridModel)))
+            if (
+                    source == null 
+                    || sourceType == null 
+                    || sourceType == destinationType 
+                    || source.GetType().GetInterfaces().Contains(typeof(IGridModel))
+               )
                 return source;
 
             // Se o tipo e uma Colletion utiliza o mapeamento automatico
-            else if (source.GetType().GetInterfaces().Contains(typeof(IList))
-                                                || source.GetType().GetInterfaces().Contains(typeof(IEnumerable)))
-            {
+            else {
                 Mapper.CreateMap(sourceType, destinationType);
                 return Mapper.Map(source, sourceType, destinationType);
             }
-            else
-                return Activator.CreateInstance(destinationType, source);
         };
 
         /// <summary>
@@ -45,7 +46,11 @@ namespace PontoEncontro.Infrastructure.MVC
         /// <param name="context">O contexto que o resultado é executado dentro</param>
         public override void ExecuteResult(ControllerContext context)
         {
-            base.ViewData.Model = Map(ViewData.Model, ViewData.Model.GetType(), _viewModelType);
+            base.ViewData.Model = Map(
+                                        ViewData.Model,
+                                        ViewData.Model != null ? ViewData.Model.GetType() : null, 
+                                        _viewModelType
+                                      );
             base.ExecuteResult(context);
         }
 

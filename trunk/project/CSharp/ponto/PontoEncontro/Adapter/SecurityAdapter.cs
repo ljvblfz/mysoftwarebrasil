@@ -72,5 +72,14 @@ namespace PontoEncontro.Adapter
             var profile = Aplication.GetCookie(typeof(Pessoa), "Profile") as Perfil;
             return new MembroRepository().Register(member, profile, address, person);
         }
+
+        /// <summary>
+        ///  Atualiza os dados de mebro
+        /// </summary>
+        /// <param name="model">modelo</param>
+        public static void UpdateMember(Membro model)
+        {
+            new MembroRepository().Update(model);
+        }
     }
 }

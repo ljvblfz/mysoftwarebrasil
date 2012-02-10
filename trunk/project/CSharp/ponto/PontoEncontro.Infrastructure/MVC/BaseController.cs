@@ -15,6 +15,23 @@ namespace PontoEncontro.Infrastructure.MVC
     [HandleError]
     public abstract class BaseController : Controller
     {
+        public void AddMessage(string message)
+        {
+            IList<string> listaMessage = null;
+
+            if(TempData["mensage"] != null)
+                listaMessage = (List<string>)TempData["mensage"];
+            else
+                listaMessage =  new List<string>();
+
+            listaMessage.Add(message);
+            TempData["mensage"] = listaMessage;
+        }
+
+        private void RenderMessenger()
+        {
+            ViewBag.Message = TempData["mensage"];
+        }
 
         #region Metodos privados
 
@@ -51,7 +68,31 @@ namespace PontoEncontro.Infrastructure.MVC
         /// <returns>Objeto de visão</returns>
         public ViewResult View(object model, Type typeDestination)
         {
+            this.RenderMessenger();
             return AutoMappedView(model, typeDestination);
+        }
+
+        /// <summary>
+        /// Cria um objeto que torna System.Web.Mvc.ViewResult em vista a resposta.
+        /// executa a conversão do objeto para o modelView
+        /// </summary>
+        /// <param name="model">objeto model do dominio</param>
+        /// <returns>Objeto de visão</returns>
+        public ViewResult View(object model)
+        {
+            this.RenderMessenger();
+            return base.View(model);
+        }
+
+        /// <summary>
+        /// Cria um objeto que torna System.Web.Mvc.ViewResult em vista a resposta.
+        /// executa a conversão do objeto para o modelView
+        /// </summary>
+        /// <returns>Objeto de visão</returns>
+        public ViewResult View()
+        {
+            this.RenderMessenger();
+            return base.View();
         }
 
         #endregion

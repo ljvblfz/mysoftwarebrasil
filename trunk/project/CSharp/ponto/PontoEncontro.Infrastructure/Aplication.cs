@@ -124,11 +124,11 @@ namespace PontoEncontro.Infrastructure
         ///  Retorna o usuario corrente
         /// </summary>
         /// <returns></returns>
-        public static object GetUser()
+        public static object GetUser<T>(Type type)
         {
             var ticket = GetTicket();
             return new JavaScriptSerializer()
-                .DeserializeObject(ticket.UserData);
+                .Deserialize(ticket.UserData, type);
         }
 
         /// <summary>
