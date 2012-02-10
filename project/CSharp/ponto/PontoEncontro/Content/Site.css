@@ -82,6 +82,7 @@ page width. Or, you can specify an exact pixel width. */
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    padding:30px;
 }
 
 header, #header {
@@ -323,4 +324,103 @@ div#title {
 
 .tri-state {
     width: 6em;
+}
+
+#content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: right;
+    margin: 0;
+    padding: 10px;
+    width: 76%;
+}
+
+#sidebar {
+    background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    width: 15%;
+    padding: 30px 30px 15px;
+}
+
+#sidebar ul {
+	list-style:none;
+	line-height:normal;
+	margin:0;
+	padding:0;
+}
+#sidebar li {
+	margin-bottom:0;
+
+}
+#sidebar li ul {
+	margin:0;
+}
+#sidebar li li {
+	background:url(images/bullet.jpg) no-repeat left 13px;
+	border-bottom:1px solid #E0E0E0;
+	margin:10px;
+	padding:10px 0;
+}
+#sidebar li li a {
+	font-weight:400;
+	padding:0 0 0 20px;
+}
+#sidebar li li a:hover {
+	font-weight:420;
+	color:#666;
+}
+#sidebar p {
+	line-height:10%;
+	margin:0;
+	padding:0 14px;
+}
+#sidebar h2 {
+	height:30px;
+	font-size:18px;
+	font-weight:400;
+	color:#000000;
+	margin:0 0 10px;
+	padding:6px 0 2px;
+}
+#sidebar a {
+	text-align:left;
+	text-decoration:none;
+	color:#666;
+}
+
+#ul {
+	list-style:none;
+	line-height:normal;
+	margin:0;
+	padding:0;
+}
+#li {
+	margin-bottom:0;
+	padding:0 0 10px;
+}
+#li ul {
+	margin:0;
+}
+#li {
+	background:url(images/bullet.jpg) no-repeat left 13px;
+	border-bottom:1px solid #E0E0E0;
+	margin:10px;
+	padding:10px 0;
+}
+#li a {
+	font-weight:400;
+	padding:0 0 0 20px;
+	text-decoration:none;
+}
+#li a:hover {
+	font-weight:420;
+	color:#666;
+	text-decoration:none;
+}
+
+p, ul, ol {
+	margin-top:0;
+	line-height:140%;
+	text-align: inherit;
 }

@@ -29,10 +29,18 @@
                 </ul>
             </nav>
         </header>
-        <section id="main">
-            @Html.Partial("_Message")
-            @RenderBody()
-        </section>
+        <div id="sidebar">
+            <ul id="">
+                @*@Html.Action("MessageBox", "Account", new { Area = "Security" })*@
+                <li><a href="/member/edit">Dados de membro</a></li><br />
+                <li><a href="#">Arcade</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <section id="main">
+                @RenderBody()
+            </section>
+        </div>
         <footer>
         </footer>
     </div>

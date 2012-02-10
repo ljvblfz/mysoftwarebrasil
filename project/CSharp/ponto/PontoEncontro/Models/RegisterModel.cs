@@ -24,5 +24,9 @@ namespace PontoEncontro.Models
         [Display(Name = "Confirmar senha")]
         [Compare("senhaMembro", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public RegisterModel()
+        {
+        }
     }
 }

@@ -9,6 +9,7 @@
 {
     <div class="left grid_12 alpha">
         @Html.ValidationSummary(false)
+        @Html.Partial("_Message")
     </div>
     <div class="left">
         @if (ViewData.TemplateInfo.TemplateDepth > 1)
