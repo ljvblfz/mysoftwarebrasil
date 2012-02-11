@@ -11,6 +11,7 @@ using PontoEncontro.Infrastructure.Compression;
 using PontoEncontro.Infrastructure.MVC.DataAnnotations;
 using System.Reflection;
 using System.Web.Script.Serialization;
+using PontoEncontro.Infrastructure.Linq;
 
 namespace PontoEncontro.Infrastructure
 {

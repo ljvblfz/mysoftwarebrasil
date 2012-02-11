@@ -8,8 +8,8 @@
     <ProjectGuid>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lms.API.Infrastructure</RootNamespace>
-    <AssemblyName>Lms.API.Infrastructure</AssemblyName>
+    <RootNamespace>PontoEncontro.Infrastructure</RootNamespace>
+    <AssemblyName>PontoEncontro.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -118,6 +118,7 @@
     <Compile Include="Enum\MaritalStatus.cs" />
     <Compile Include="Filter\FilterBy.cs" />
     <Compile Include="Filter\FilterTelerik.cs" />
+    <Compile Include="IO\Upload.cs" />
     <Compile Include="JavaScriptSerializer.cs" />
     <Compile Include="Mef\CatalogBuilder.cs" />
     <Compile Include="Mef\Contracts\Constants.cs" />

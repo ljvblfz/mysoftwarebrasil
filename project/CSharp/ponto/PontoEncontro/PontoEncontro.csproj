@@ -110,8 +110,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter\AddressAdapter.cs.cs" />
+    <Compile Include="Adapter\PhotoAdapter.cs" />
     <Compile Include="Adapter\SecurityAdapter.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -119,6 +121,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\PhotoModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
@@ -242,6 +245,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Member\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Member\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\File.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Photo\Create.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

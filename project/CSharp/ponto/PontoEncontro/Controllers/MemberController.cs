@@ -8,6 +8,7 @@ using PontoEncontro.Domain;
 using PontoEncontro.Adapter;
 using PontoEncontro.Infrastructure.MVC;
 using PontoEncontro.Infrastructure;
+using PontoEncontro.Infrastructure.MVC.Security;
 
 namespace PontoEncontro.Controllers
 {
@@ -23,7 +24,7 @@ namespace PontoEncontro.Controllers
 
         //
         // GET: /Member/Create
-
+        [Anonymous]
         public ActionResult Create()
         {
             return View();
@@ -33,12 +34,13 @@ namespace PontoEncontro.Controllers
         // POST: /Member/Create
 
         [HttpPost]
+        [Anonymous]
         public ActionResult Create(RegisterModel modelView, Membro model)
         {
             if (ModelState.IsValid)
             {
                 SecurityAdapter.RegisterMember(model);
-                return RedirectToAction("Person");
+                return RedirectToAction("Person", "Register");
             }
             return View(modelView);
         }

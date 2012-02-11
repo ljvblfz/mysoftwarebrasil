@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entity\EstadoCivil.cs" />
+    <Compile Include="Entity\Foto.cs" />
     <Compile Include="Entity\Permissoes.cs" />
     <Compile Include="Mapping\ActionMap.cs" />
     <Compile Include="Mapping\AssociacaoMap.cs" />
@@ -45,6 +46,7 @@
     <Compile Include="Mapping\EstadoCivilMap.cs" />
     <Compile Include="Mapping\EstadoMap.cs" />
     <Compile Include="Mapping\EtiniaMap.cs" />
+    <Compile Include="Mapping\FotoMap.cs" />
     <Compile Include="Mapping\InteresseMap.cs" />
     <Compile Include="Mapping\MembroMap.cs" />
     <Compile Include="Mapping\MenuMap.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Repositorios\ControllerRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Repositorios\FotoRepositorios.cs" />
     <Compile Include="Repositorios\EnderecoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
