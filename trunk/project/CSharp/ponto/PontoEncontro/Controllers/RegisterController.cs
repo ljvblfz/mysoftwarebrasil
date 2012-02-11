@@ -22,32 +22,31 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult Index()
         {
-            return RedirectToAction("Member");
+            return RedirectToAction("Create","Member");
         }
 
-        //
-        // GET: /Register/Member
-        [Anonymous]
-        public ActionResult Member()
-        {
-            return View();
-        }
+        ////
+        //// GET: /Register/Member
+        //[Anonymous]
+        //public ActionResult Member()
+        //{
+        //    return View();
+        //}
 
-        //
-        // POST: /Register/Member
+        ////
+        //// POST: /Register/Member
 
-        [HttpPost]
-        [Anonymous]
-        public ActionResult Member(RegisterModel modelView, Membro model)
-        {
-            if (ModelState.IsValid)
-            {
-                SecurityAdapter.RegisterMember(model);
-                ViewBag.Message = new List<string>() { "Prossiga com o registro"};
-                return RedirectToAction("Person");
-            }
-            return View(modelView);
-        }
+        //[HttpPost]
+        //[Anonymous]
+        //public ActionResult Member(RegisterModel modelView, Membro model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        SecurityAdapter.RegisterMember(model);
+        //        return RedirectToAction("Person");
+        //    }
+        //    return View(modelView);
+        //}
 
         //
         // GET: /Register/Person
