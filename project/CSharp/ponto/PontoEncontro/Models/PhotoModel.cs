@@ -17,7 +17,7 @@ namespace PontoEncontro.Models
     {
         [UIHint("File")]
         [Display(Name = "Foto")]
-        public HttpPostedFile nameFoto { get; set; }
+        public HttpPostedFileBase nameFoto { get; set; }
 
         [Display(Name = "Legenda")]
         public string legendaFoto { get; set; }

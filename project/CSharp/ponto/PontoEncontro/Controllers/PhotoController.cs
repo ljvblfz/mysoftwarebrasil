@@ -20,11 +20,20 @@ namespace PontoEncontro.Controllers
         }
 
         //
-        // GET: /Foto/Details/5
+        // GET: /Foto/Details
 
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            return View();
+            return View(PhotoAdapter.List());
+        }
+
+        //
+        // POST: /Foto/Details
+
+        [HttpPost]
+        public JsonResult Details(FormCollection collection)
+        {
+            return Json(PhotoAdapter.List());
         }
 
         //
@@ -41,11 +50,12 @@ namespace PontoEncontro.Controllers
         [HttpPost]
         public ActionResult Create(PhotoModel modelView)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    PhotoAdapter.CreateFoto(modelView, file);
-            //    return RedirectToAction("Person");
-            //}
+            if (ModelState.IsValid)
+            {
+                if (PhotoAdapter.CreateFoto(modelView))
+                    AddMessage("Foto adicionada");
+                return View();    
+            }
             return View(modelView);
         }
         

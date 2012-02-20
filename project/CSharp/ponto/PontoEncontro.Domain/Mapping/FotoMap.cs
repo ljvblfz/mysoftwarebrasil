@@ -13,7 +13,7 @@ using System.Text;
 using System;
 using FluentNHibernate.Mapping;
 
-namespace PontoEncontro.Domain.Mappings
+namespace PontoEncontro.Domain.Mapping
 {
     /// <summary>
     /// Classe de mapeamento de Foto

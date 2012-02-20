@@ -27,33 +27,6 @@ namespace PontoEncontro.Domain
             var config = Fluently.Configure(cfg);
             sessionFactory = config
                             .Mappings(MappingsAssembly)
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
-                            //.Mappings(x => x.FluentMappings.Add<ActionMap>())
                             .BuildSessionFactory();
 
 			return sessionFactory;

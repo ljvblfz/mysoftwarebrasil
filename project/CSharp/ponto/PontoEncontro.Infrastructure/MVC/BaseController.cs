@@ -95,6 +95,21 @@ namespace PontoEncontro.Infrastructure.MVC
             return base.View();
         }
 
+        /// <summary>
+        /// Creates a System.Web.Mvc.JsonResult object that serializes the specified
+        ///  object to JavaScript Object Notation (JSON).
+        /// </summary>
+        /// <param name="data">The JavaScript object graph to serialize.</param>
+        /// <returns>
+        /// The JSON result object that serializes the specified object to JSON format.
+        /// The result object that is prepared by this method is written to the response
+        /// by the ASP.NET MVC framework when the object is executed.
+        /// </returns>
+        public JsonResult Json(object data)
+        {
+            return base.Json(data);
+        }
+
         #endregion
     }
 }
