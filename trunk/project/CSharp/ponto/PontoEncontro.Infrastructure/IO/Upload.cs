@@ -69,7 +69,11 @@ namespace PontoEncontro.Infrastructure.IO
         /// <returns>nome do arquivo gravado</returns>
         private string Save(HttpPostedFileBase postedFile, string destiny)
         {
-            var fileName = Guid.NewGuid().ToString() + "." + Path.GetExtension(postedFile.FileName);
+            var directory = new DirectoryInfo(destiny);
+            if (!directory.Exists)
+                directory.Create();
+
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(postedFile.FileName);
             postedFile.SaveAs(Path.Combine(destiny, fileName));
             return fileName;
         }
