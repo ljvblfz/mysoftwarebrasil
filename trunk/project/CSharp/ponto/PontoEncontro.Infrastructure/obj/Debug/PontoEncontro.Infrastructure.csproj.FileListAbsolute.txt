@@ -1,6 +1,3 @@
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.dll.config
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.dll
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.pdb
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\Microsoft.CSharp.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.ComponentModel.DataAnnotations.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Data.DataSetExtensions.dll
@@ -12,8 +9,6 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Web.dl
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Xml.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Xml.Linq.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\Lms.API.Infrastructure.dll
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\Lms.API.Infrastructure.pdb
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.dll.config
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.dll
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\bin\Debug\Lms.API.Infrastructure.pdb
@@ -30,3 +25,8 @@ E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\bin\Debug\System.Xml.Linq.dll
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\obj\Debug\Lms.API.Infrastructure.dll
 E:\PROJETO\C#\ponto\PontoEncontro.Infrastructure\obj\Debug\Lms.API.Infrastructure.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.dll.config
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\PontoEncontro.Infrastructure.pdb
