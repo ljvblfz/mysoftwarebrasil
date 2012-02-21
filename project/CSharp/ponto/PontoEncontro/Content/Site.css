@@ -4,6 +4,7 @@ to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
 @import "themes/base/jquery.ui.all.css";
+@import "themes/base/jquery.lightbox-0.5.css";
 
 body {
     background-color: #5c87b2;
