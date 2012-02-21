@@ -1,0 +1,14 @@
+﻿@model IList<PontoEncontro.Domain.Foto>
+@foreach (var item in Model)
+{
+    var img = PontoEncontro.Infrastructure.IO.Image.GetBase64Image(item.pathFoto + "\\" + item.nameFoto);
+    <div class="image">
+        <a href="details/@item.nameFoto">
+            <img src="data:image/gif;base64,@img" height="100" width="100" alt="@item.legendaFoto" />
+        </a>
+        <h5 class="description">@item.legendaFoto</h5>
+        <a href="delete/@item.nameFoto">
+            <span class="ui-icon ui-icon-trash"></span>
+        </a>
+    </div>
+}
