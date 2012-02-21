@@ -1,0 +1,50 @@
+﻿@model IList<PontoEncontro.Domain.Foto>
+           
+<!-- Ativando o jQuery lightBox plugin -->
+<script type="text/javascript">
+    $(function () {
+        $('#gallery a').lightBox({
+
+            fixedNavigation:true,
+            imageBlank: '../../Content/themes/base/images/lightbox-blank.gif',
+            imageBtnClose: '../../Content/themes/base/images/lightbox-btn-close.gif',
+            imageLoading: '../../Content/themes/base/images/lightbox-ico-loading.gif',
+            imageBtnPrev: '../../Content/themes/base/images/lightbox-btn-prev.gif',
+            imageBtnNext: '../../Content/themes/base/images/lightbox-btn-next.gif'
+	        });
+	    
+});
+		
+</script>
+<style type="text/css">
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+		background-color: #444;
+		padding: 10px;
+		width: 520px;
+	}
+	#gallery ul { list-style: none; }
+	#gallery ul li { display: inline; }
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { color: #fff; }
+</style>
+<div id="gallery">
+    <ul>
+        @foreach (var item in Model)
+        {
+            var dir = PontoEncontro.Infrastructure.IO.Image.GetVirtualPath(item.pathFoto + "\\" + item.nameFoto);
+            var img = PontoEncontro.Infrastructure.IO.Image.GetBase64Image(item.pathFoto + "\\" + item.nameFoto);
+            <li><a href="@dir" title="">
+                <img src="data:image/gif;base64,@img" width="72" height="72" alt="" />
+            </a></li>
+        }
+    </ul>
+</div>
