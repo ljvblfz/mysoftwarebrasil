@@ -407,7 +407,7 @@ namespace PontoEncontro.Domain
         /// </summary>
         /// <param name="entity">Entidade a ser deletada.</param>
         /// <returns>Retorna true se a entidade for excluido. Caso contrário retorna false.</returns>
-        public virtual void Delete(TSource entity)
+        public virtual bool Delete(TSource entity)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
@@ -419,6 +419,7 @@ namespace PontoEncontro.Domain
                         transaction.Commit();
                         session.Flush();
                         session.Close();
+                        return true;
                     }
                     catch (NHibernate.HibernateException ex)
                     {
