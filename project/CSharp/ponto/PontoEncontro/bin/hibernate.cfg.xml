@@ -3,46 +3,18 @@
 	<session-factory>
 
 	<!-- configurations -->
-		<!--<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+		<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
 		<property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
 		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
 		<property name="connection.connection_string">Data Source=ZEUS;Initial Catalog=PontoEncontro;Integrated Security=True</property>
 		<property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
-		<property name="show_sql">true</property>-->
+		<property name="show_sql">true</property>
 
-    <property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+    <!--<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
     <property name="dialect">NHibernate.Dialect.MsSqlCeDialect</property>
     <property name="connection.driver_class">NHibernate.Driver.SqlServerCeDriver</property>
     <property name="connection.connection_string">Data Source=E:\PROJETO\C#\PontoEncontro\PontoEncontro\App_Data\DataBasePonto.sdf;Password=dolar$</property>
     <property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
-    <property name="show_sql">true</property>
-    
-	<!-- mapping files -->
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Action.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Associacao.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Associado.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Bairro.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Cabelo.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Cidade.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Contato.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Controller.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Endereco.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Estado.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Estadocivil.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Etinia.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Interesse.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Membro.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Menu.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Olho.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Perfil.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Permissaorole.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Permissoe.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Pessoa.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Role.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Sexo.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Tipoassociacao.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Tipocontato.hbm.xml" assembly="PontoEncontro.Domain"/>
-		<mapping resource="PontoEncontro.Domain.Mapeamentos.Tipointeresse.hbm.xml" assembly="PontoEncontro.Domain"/>
-
+    <property name="show_sql">true</property>-->
 </session-factory>
 </hibernate-configuration>

@@ -30,10 +30,8 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\System.Web.Helpers.xml
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\ResolveAssemblyReference.cache
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\PontoEncontro.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\PontoEncontro.pdb
-E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\hibernate.cfg.xml
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Domain.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\NHibernate.dll
-E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\Lms.API.Infrastructure.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\Iesi.Collections.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\log4net.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\Telerik.Web.Mvc.dll
@@ -41,7 +39,6 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\FluentNHibernate.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\AutoMapper.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\Webaula.Cache.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Domain.pdb
-E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\Lms.API.Infrastructure.pdb
 E:\PROJETO\C#\ponto\PontoEncontro\bin\hibernate.cfg.xml
 E:\PROJETO\C#\ponto\PontoEncontro\bin\PontoEncontro.dll
 E:\PROJETO\C#\ponto\PontoEncontro\bin\PontoEncontro.pdb
@@ -88,3 +85,6 @@ E:\PROJETO\C#\ponto\PontoEncontro\obj\Debug\PontoEncontro.dll
 E:\PROJETO\C#\ponto\PontoEncontro\obj\Debug\PontoEncontro.pdb
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Application.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Application.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\hibernate.cfg.xml
+E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PontoEncontro.Infrastructure.pdb
