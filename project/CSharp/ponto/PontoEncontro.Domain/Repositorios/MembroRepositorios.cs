@@ -126,5 +126,47 @@ namespace PontoEncontro.Domain
                 }
             }
         }
+
+        /// <summary>
+        ///  Lista membros
+        /// </summary>
+        /// <param name="idEstado"></param>
+        /// <param name="idCidade"></param>
+        /// <returns></returns>
+        public IList ListMember(int idEstado, int idCidade)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    try
+                    {
+                        var result = (
+                                        from m in session.Query<Membro>()
+                                        join p in session.Query<Pessoa>() on m.idPessoa equals p.idPessoa
+                                        join pe in session.Query<Perfil>() on p.idPerfil equals pe.idPerfil
+                                        join e in session.Query<Endereco>() on pe.idEndereco equals e.idEndereco
+                                        join c in session.Query<Cidade>() on e.idCidade equals c.idCidade
+                                        where
+                                            c.idEstado == idEstado
+                                            ||
+                                            c.idCidade == idCidade
+                                        select new { membro = m, pessoa = p, perfil = pe }
+                                     ).ToList();
+                        session.Flush();
+                        session.Close();
+                        return result;
+                    }
+                    catch (NHibernate.HibernateException ex)
+                    {
+                        transaction.Rollback();
+                        if (ex.InnerException != null)
+                            throw new Exception(ex.InnerException.Message, ex);
+                        throw new Exception(ex.Message, ex);
+                    }
+                }
+            }
+        }
+
     }
 }

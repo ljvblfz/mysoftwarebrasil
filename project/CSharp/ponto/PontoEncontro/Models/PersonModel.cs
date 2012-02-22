@@ -19,10 +19,6 @@ namespace PontoEncontro.Models
         [Display(Name = "Seu nome")]
         public string nomePessoa { get; set; }
 
-        //[StringLength(8, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 8)]
-        //[Display(Name = "CEP")]
-        //public string Cep { get; set; }
-
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]

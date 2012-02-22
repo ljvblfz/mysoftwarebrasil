@@ -68,5 +68,21 @@ namespace PontoEncontro.Controllers
             }
             return View(modelView);
         }
+
+        public ActionResult Search()
+        {
+            var memberModel = new MemberModel();
+            memberModel.Idestado = AddressAdapter.GetListState();
+            return View(memberModel);
+        }
+
+        [HttpPost]
+        public ActionResult Search(MemberModel model, FormCollection form)
+        {
+            var memberModel = new MemberModel();
+            memberModel.Idestado = AddressAdapter.GetListState();
+            memberModel.membros = MemberAdapter.ListMember(form);
+            return View(memberModel);
+        }
     }
 }
