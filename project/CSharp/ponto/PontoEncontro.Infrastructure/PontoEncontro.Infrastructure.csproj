@@ -121,6 +121,7 @@
     <Compile Include="IO\Image.cs" />
     <Compile Include="IO\Upload.cs" />
     <Compile Include="JavaScriptSerializer.cs" />
+    <Compile Include="Linq\Dynamic.cs" />
     <Compile Include="Mef\CatalogBuilder.cs" />
     <Compile Include="Mef\Contracts\Constants.cs" />
     <Compile Include="Mef\Contracts\IControllerMetadata.cs" />

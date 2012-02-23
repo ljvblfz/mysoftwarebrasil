@@ -1,8 +1,8 @@
-﻿@model System.Collections.IList
+﻿@model PontoEncontro.Infrastructure.Linq.Dynamic
 @{
-    if(Model != null && Model.Count > 0)
+    if(Model != null && Model.ListObjects.Count > 0)
     {
-        foreach (var item in Model)
+        foreach (var item in Model.ListObjects)
         {
             var membro = item;
         }

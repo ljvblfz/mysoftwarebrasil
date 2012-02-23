@@ -5,6 +5,7 @@ using System.Collections;
 using NHibernate;
 using System.Linq;
 using NHibernate.Linq;
+using PontoEncontro.Infrastructure.Linq;
 
 
 namespace PontoEncontro.Domain
@@ -133,7 +134,7 @@ namespace PontoEncontro.Domain
         /// <param name="idEstado"></param>
         /// <param name="idCidade"></param>
         /// <returns></returns>
-        public IList ListMember(int idEstado, int idCidade)
+        public Dynamic ListMember(int idEstado, int idCidade)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
@@ -155,7 +156,7 @@ namespace PontoEncontro.Domain
                                      ).ToList();
                         session.Flush();
                         session.Close();
-                        return result;
+                        return new Dynamic(result); ;
                     }
                     catch (NHibernate.HibernateException ex)
                     {
