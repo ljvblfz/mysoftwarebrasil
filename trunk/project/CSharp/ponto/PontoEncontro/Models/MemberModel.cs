@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Collections;
+using PontoEncontro.Infrastructure.Linq;
 
 namespace PontoEncontro.Models
 {
@@ -19,7 +20,7 @@ namespace PontoEncontro.Models
         public IEnumerable<SelectListItem> Idcidade { get; set; }
 
         [UIHint("ListMembros")]
-        public IList membros { get; set; }
+        public Dynamic membros { get; set; }
 
         public MemberModel()
         {
