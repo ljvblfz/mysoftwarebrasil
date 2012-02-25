@@ -45,6 +45,11 @@ namespace PontoEncontro.Domain
             ///  idRole 
             /// </summary>
             public virtual int idRole { get; set; }
+
+            /// <summary>
+            ///  Pessoa
+            /// </summary>
+            public virtual Pessoa pessoa { get; set; }
                        
 
         #endregion
