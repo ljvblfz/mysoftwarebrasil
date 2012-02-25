@@ -45,6 +45,11 @@ namespace PontoEncontro.Domain
             ///  nascimentoPessoa 
             /// </summary>
             public virtual DateTime nascimentoPessoa { get; set; }
+
+            /// <summary>
+            ///  Perfil
+            /// </summary>
+            public virtual Perfil perfil { get; set; }
                        
 
         #endregion

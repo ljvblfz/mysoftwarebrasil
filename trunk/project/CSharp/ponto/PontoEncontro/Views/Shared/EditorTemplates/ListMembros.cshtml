@@ -2,9 +2,24 @@
 @{
     if(Model != null && Model.ListObjects.Count > 0)
     {
-        foreach (var item in Model.ListObjects)
+        foreach (Dictionary<Type,object> item in Model.ListObjects)
         {
-            var membro = item;
+            var membro = item[typeof(PontoEncontro.Domain.Membro)] as PontoEncontro.Domain.Membro;
+            var pessoa = item[typeof(PontoEncontro.Domain.Pessoa)] as PontoEncontro.Domain.Pessoa;
+            var perfil = item[typeof(PontoEncontro.Domain.Perfil)] as PontoEncontro.Domain.Perfil;
+            
+            <text>
+             <div>
+                <fieldset>
+                    <div>
+                        <strong>@membro.loginMembro</strong>
+                        <strong>@PontoEncontro.Infrastructure.Date.GetAge(pessoa.nascimentoPessoa)</strong>
+                    </div>
+                    <div>
+                    </div>
+                </fieldset>
+             </div>
+            </text>
         }
     }
 }

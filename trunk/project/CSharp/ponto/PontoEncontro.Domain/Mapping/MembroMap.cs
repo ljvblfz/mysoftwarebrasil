@@ -28,6 +28,11 @@ namespace PontoEncontro.Domain.Mapping
             Map(x => x.senhaMembro);
             Map(x => x.idPessoa);
             Map(x => x.idRole);
+            References(x => x.pessoa)
+                .Column("idPessoa")
+                .Not.Insert()
+                .Not.Update()
+                .Cascade.All();
         }
     }
 }
