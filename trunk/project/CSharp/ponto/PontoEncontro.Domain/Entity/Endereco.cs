@@ -40,6 +40,16 @@ namespace PontoEncontro.Domain
             ///  idBairro 
             /// </summary>
             public virtual int idBairro { get; set; }
+
+            /// <summary>
+            ///  Cidade
+            /// </summary>
+            public virtual Cidade cidade { get; set; }
+            
+            /// <summary>
+            ///  Bairro
+            /// </summary>
+            public virtual Bairro bairro { get; set; }
                        
 
         #endregion

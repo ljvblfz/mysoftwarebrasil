@@ -23,6 +23,7 @@ namespace PontoEncontro.Domain.Mapping
         public PessoaMap()
         {
             Table("Pessoa");
+            LazyLoad();
             Id(x => x.idPessoa, "idPessoa").GeneratedBy.Native("PessoaSeq");
             Map(x => x.idPerfil);
             Map(x => x.nomePessoa);
@@ -31,6 +32,7 @@ namespace PontoEncontro.Domain.Mapping
 
             References(x => x.perfil)
                 .Column("idPerfil")
+                .Not.LazyLoad()
                 .Not.Insert()
                 .Not.Update()
                 .Cascade.All();

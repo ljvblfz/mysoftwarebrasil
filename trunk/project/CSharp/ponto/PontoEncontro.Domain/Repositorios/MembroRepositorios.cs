@@ -148,11 +148,12 @@ namespace PontoEncontro.Domain
                                         join pe in session.Query<Perfil>() on p.idPerfil equals pe.idPerfil
                                         join e in session.Query<Endereco>() on pe.idEndereco equals e.idEndereco
                                         join c in session.Query<Cidade>() on e.idCidade equals c.idCidade
+                                        join f in session.Query<Foto>() on m.idMembro equals f.idMembro
                                         where
                                             c.idEstado == idEstado
                                             ||
                                             c.idCidade == idCidade
-                                        select new { membro = m, pessoa = p, perfil = pe }
+                                        select new { membro = m, foto = f }
                                      ).ToList();
                         session.Flush();
                         session.Close();

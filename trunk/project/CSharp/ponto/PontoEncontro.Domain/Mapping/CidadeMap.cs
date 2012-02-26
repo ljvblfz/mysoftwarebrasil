@@ -26,6 +26,12 @@ namespace PontoEncontro.Domain.Mapping
             Id(x => x.idCidade, "idCidade").GeneratedBy.Native("CidadeSeq");
             Map(x => x.nameCidade);
             Map(x => x.idEstado);
+
+            References(x => x.estado)
+                .Column("idEstado")
+                .Not.LazyLoad()
+                .Not.Insert()
+                .Not.Update();
         }
     }
 }
