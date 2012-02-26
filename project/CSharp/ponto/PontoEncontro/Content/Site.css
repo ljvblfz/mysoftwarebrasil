@@ -425,3 +425,23 @@ p, ul, ol {
 	line-height:140%;
 	text-align: inherit;
 }
+
+.fieldLinha {
+	margin:7px 0;
+	text-align:left;
+	width: 100%;
+	clear:both;
+}
+
+.fieldLinha2{
+	margin:7px 0;
+	width: 50%;
+	float: left;
+}
+
+
+.fieldLinha3{
+	margin:7px 0;
+	width: 30%;
+	float:left;
+}

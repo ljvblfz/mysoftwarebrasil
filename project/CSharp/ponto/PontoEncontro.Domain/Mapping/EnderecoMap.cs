@@ -23,10 +23,23 @@ namespace PontoEncontro.Domain.Mapping
         public EnderecoMap()
         {
             Table("Endereco");
+            LazyLoad();
             Id(x => x.idEndereco, "idEndereco").GeneratedBy.Native("EnderecoSeq");
             Map(x => x.CEP);
             Map(x => x.idCidade);
             Map(x => x.idBairro);
+
+            References(x => x.bairro)
+                .Column("idBairro")
+                .Not.LazyLoad()
+                .Not.Insert()
+                .Not.Update();
+
+            References(x => x.cidade)
+                .Column("idCidade")
+                .Not.LazyLoad()
+                .Not.Insert()
+                .Not.Update();
         }
     }
 }

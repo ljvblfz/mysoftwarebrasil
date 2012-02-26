@@ -55,6 +55,36 @@ namespace PontoEncontro.Domain
             ///  idPerfil 
             /// </summary>
             public virtual int idPerfil { get; set; }
+
+            /// <summary>
+            ///  Sexo
+            /// </summary>
+            public virtual Sexo sexo { get; set; }
+
+            /// <summary>
+            ///  Olho
+            /// </summary>
+            public virtual Olho olho { get; set; }
+
+            /// <summary>
+            ///  Cabelo
+            /// </summary>
+            public virtual Cabelo cabelo { get; set; }
+
+            /// <summary>
+            ///  Etinia
+            /// </summary>
+            public virtual Etinia etinia { get; set; }
+            
+            /// <summary>
+            ///  Estado civil
+            /// </summary>
+            public virtual EstadoCivil estadoCivil { get; set; }
+
+            /// <summary>
+            ///  Endereço
+            /// </summary>
+            public virtual Endereco endereco { get; set; }
                        
 
         #endregion

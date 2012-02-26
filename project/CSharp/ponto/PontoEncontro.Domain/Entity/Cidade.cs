@@ -19,7 +19,6 @@ namespace PontoEncontro.Domain
     public class Cidade 
     {  
         #region properties
-    
         
             /// <summary>
             ///  idCidade 
@@ -35,7 +34,11 @@ namespace PontoEncontro.Domain
             ///  idEstado 
             /// </summary>
             public virtual int idEstado { get; set; }
-                       
+            
+            /// <summary>
+            ///  Estado
+            /// </summary>
+            public virtual Estado estado { get; set; }
 
         #endregion
         
