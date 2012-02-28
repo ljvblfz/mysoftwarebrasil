@@ -22,7 +22,7 @@ namespace PontoEncontro.Infrastructure
             (DateTime.Now.Month == birth.Month &&
             DateTime.Now.Day < birth.Day))
                 age--;
-            return age;
+            return age == null ? 0 : age;
         }
     }
 }
