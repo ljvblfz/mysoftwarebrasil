@@ -6,6 +6,7 @@ using NHibernate;
 using System.Linq;
 using NHibernate.Linq;
 using PontoEncontro.Infrastructure.Linq;
+using PontoEncontro.Infrastructure;
 
 
 namespace PontoEncontro.Domain
@@ -134,7 +135,7 @@ namespace PontoEncontro.Domain
         /// <param name="idEstado"></param>
         /// <param name="idCidade"></param>
         /// <returns></returns>
-        public Dynamic ListMember(int idEstado, int idCidade)
+        public Dynamic ListMember(int idEstado, int idCidade, string loginMembro, int[] age, bool lastUpdate, bool lastAccessed, int page = 0)
         {
             using (ISession session = SessionFactory.OpenSession())
             {
@@ -150,11 +151,19 @@ namespace PontoEncontro.Domain
                                         join c in session.Query<Cidade>() on e.idCidade equals c.idCidade
                                         join f in session.Query<Foto>() on m.idMembro equals f.idMembro
                                         where
-                                            c.idEstado == idEstado
-                                            ||
-                                            c.idCidade == idCidade
+                                            c.idEstado == (idEstado == 0 ? c.idEstado : idEstado)
+                                            &&
+                                            c.idCidade == (idCidade == 0 ? c.idCidade : idCidade)
+                                            &&
+                                            m.loginMembro.Contains(
+                                                (String.IsNullOrEmpty(loginMembro) ? m.loginMembro : loginMembro)
+                                            )
+                                            &&
+                                            p.nascimentoPessoa.Year > (age.Count() > 1 ? age[1] :  p.nascimentoPessoa.Year + 1)
+                                            &&
+                                            p.nascimentoPessoa.Year < (age.Count() > 1 ? age[0] : p.nascimentoPessoa.Year + 1)
                                         select new { membro = m, foto = f }
-                                     ).ToList();
+                                     ).Take(10).Skip(page).ToList();
                         session.Flush();
                         session.Close();
                         return new Dynamic(result); ;
@@ -169,6 +178,5 @@ namespace PontoEncontro.Domain
                 }
             }
         }
-
     }
 }
