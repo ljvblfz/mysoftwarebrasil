@@ -1,0 +1,8 @@
+﻿@if (PontoEncontro.Infrastructure.Aplication.IsAuthenticated())
+{
+    <text>Welcome <strong>@PontoEncontro.Infrastructure.Aplication.GetUserName()</strong>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}

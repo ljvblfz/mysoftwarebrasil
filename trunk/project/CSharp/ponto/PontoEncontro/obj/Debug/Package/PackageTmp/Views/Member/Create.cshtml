@@ -1,0 +1,16 @@
+﻿@model PontoEncontro.Models.RegisterModel
+
+<h2>Criar conta</h2>
+<p>
+    Utilize o formulário abaixo para criar uma nova conta.
+</p>
+<p>
+    A senha é obrigatorio ter um mínimo de @Membership.MinRequiredPasswordLength
+    caracteres de comprimento.
+</p>
+<div>
+    <fieldset>
+        <legend id="pass1"></legend>
+        @Html.EditorForModel()
+    </fieldset>
+</div>

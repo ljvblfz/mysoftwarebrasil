@@ -10,15 +10,13 @@ namespace PontoEncontro.Controllers
 {
     public class HomeController : Controller
     {
-        //[Anonymous]
-        public ActionResult Index()
+        [Anonymous]
+        public ActionResult Index(string id)
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-            //var user = new PontoEncontro.Domain.ActionRepository().ListAll();
             return View();
         }
 
-        //[Anonymous]
+        [Anonymous]
         public ActionResult About()
         {
             return View();

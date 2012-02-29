@@ -25,29 +25,6 @@ namespace PontoEncontro.Controllers
             return RedirectToAction("Create","Member");
         }
 
-        ////
-        //// GET: /Register/Member
-        //[Anonymous]
-        //public ActionResult Member()
-        //{
-        //    return View();
-        //}
-
-        ////
-        //// POST: /Register/Member
-
-        //[HttpPost]
-        //[Anonymous]
-        //public ActionResult Member(RegisterModel modelView, Membro model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        SecurityAdapter.RegisterMember(model);
-        //        return RedirectToAction("Person");
-        //    }
-        //    return View(modelView);
-        //}
-
         //
         // GET: /Register/Person
         [Anonymous]

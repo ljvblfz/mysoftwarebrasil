@@ -1,0 +1,8 @@
+﻿@*@model IEnumerable<SelectListItem>*@
+@{
+    if (Model is IEnumerable<SelectListItem>){
+        @Html.DropDownList("", Model as IEnumerable<SelectListItem>, "Selecione")
+    }else{
+        @Html.DropDownList("", new List<SelectListItem>(), "Selecione")
+    }
+}

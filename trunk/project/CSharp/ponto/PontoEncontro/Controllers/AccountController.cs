@@ -35,6 +35,7 @@ namespace PontoEncontro.Controllers
                 if (new MembroRepository().Login(model.UserName,model.Password))
                 {
                     var user = new MembroRepository().GetMemberLogin(model.UserName);
+                    user.pessoa = null;
                     Aplication.CreateTicket(
                                             model.UserName, 
                                             model.RememberMe, 
@@ -56,7 +57,7 @@ namespace PontoEncontro.Controllers
 
         //
         // GET: /Account/LogOff
-        
+        [Anonymous]
         public ActionResult LogOff()
         {
             Aplication.DestroyTicket();
