@@ -82,8 +82,15 @@ namespace PontoEncontro.Controllers
         {
             var memberModel = new MemberModel();
             memberModel.Idestado = AddressAdapter.GetListState();
+            memberModel.Age = MemberAdapter.GetAge();
             memberModel.Membros = MemberAdapter.ListMember(form);
             return View(memberModel);
+        }
+
+        [Anonymous]
+        public ActionResult Get(string id)
+        {
+            return View();
         }
     }
 }

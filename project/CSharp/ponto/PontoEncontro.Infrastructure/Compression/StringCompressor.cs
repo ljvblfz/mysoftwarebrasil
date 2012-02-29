@@ -39,7 +39,7 @@ namespace PontoEncontro.Infrastructure.Compression
         /// <returns></returns>
         public virtual string Decompress(string compressedText)
         {
-            byte[] gZipBuffer = Convert.FromBase64String(compressedText);
+            byte[] gZipBuffer = Convert.FromBase64String(compressedText??"");
             using (var memoryStream = new MemoryStream())
             {
                 int dataLength = BitConverter.ToInt32(gZipBuffer, 0);

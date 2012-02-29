@@ -159,11 +159,48 @@ namespace PontoEncontro.Domain
                                                 (String.IsNullOrEmpty(loginMembro) ? m.loginMembro : loginMembro)
                                             )
                                             &&
-                                            p.nascimentoPessoa.Year > (age.Count() > 1 ? age[1] :  p.nascimentoPessoa.Year + 1)
+                                            p.nascimentoPessoa.Year > (age.Count() > 1 ? age[1] :  0)
                                             &&
-                                            p.nascimentoPessoa.Year < (age.Count() > 1 ? age[0] : p.nascimentoPessoa.Year + 1)
+                                            p.nascimentoPessoa.Year < (age.Count() > 1 ? age[0] : 10000)
                                         select new { membro = m, foto = f }
                                      ).Take(10).Skip(page).ToList();
+                        session.Flush();
+                        session.Close();
+                        return new Dynamic(result); ;
+                    }
+                    catch (NHibernate.HibernateException ex)
+                    {
+                        transaction.Rollback();
+                        if (ex.InnerException != null)
+                            throw new Exception(ex.InnerException.Message, ex);
+                        throw new Exception(ex.Message, ex);
+                    }
+                }
+            }
+        }
+
+        public Dynamic GetMember(string loginMembro)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    try
+                    {
+                        var result = (
+                                        from m in session.Query<Membro>()
+                                        join p in session.Query<Pessoa>() on m.idPessoa equals p.idPessoa
+                                        join pe in session.Query<Perfil>() on p.idPerfil equals pe.idPerfil
+                                        join e in session.Query<Endereco>() on pe.idEndereco equals e.idEndereco
+                                        join c in session.Query<Cidade>() on e.idCidade equals c.idCidade
+                                        join f in session.Query<Foto>() on m.idMembro equals f.idMembro
+                                        where
+                                            m.loginMembro.Contains(
+                                                (String.IsNullOrEmpty(loginMembro) ? m.loginMembro : loginMembro)
+                                            )
+
+                                        select new { membro = m, foto = f }
+                                     ).ToList();
                         session.Flush();
                         session.Close();
                         return new Dynamic(result); ;

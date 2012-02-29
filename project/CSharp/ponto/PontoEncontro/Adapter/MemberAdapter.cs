@@ -27,6 +27,20 @@ namespace PontoEncontro.Adapter
             return new MembroRepository().ListMember(idEstado, idCidade, loginMembro, age, lastUpdate, lastAccessed);
         }
 
+        /// <summary>
+        ///  Recupera os dados o usuario
+        /// </summary>
+        /// <param name="loginMembro">nome do membro</param>
+        /// <returns></returns>
+        public static Dynamic Get(string loginMembro)
+        {
+            return new MembroRepository().GetMember(loginMembro);
+        }
+
+        /// <summary>
+        ///  Retorna um select de idade
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<SelectListItem> GetAge()
         {
             return new List<SelectListItem>()
