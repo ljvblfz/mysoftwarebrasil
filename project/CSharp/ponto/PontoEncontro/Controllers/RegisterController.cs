@@ -22,7 +22,7 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult Index()
         {
-            return RedirectToAction("Create","Member");
+            return RedirectToAction("Create", "Member");
         }
 
         //

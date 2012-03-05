@@ -1,8 +1,8 @@
 ﻿@if (PontoEncontro.Infrastructure.Aplication.IsAuthenticated())
 {
-    <text>Welcome <strong>@PontoEncontro.Infrastructure.Aplication.GetUserName()</strong>!
-    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+   @Html.Partial("Menu")
 }
-else {
-    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+else if (ViewContext.RouteData.Values["controller"].ToString() == "Home")
+{
+    @Html.Action("LogOn", "Account")
 }

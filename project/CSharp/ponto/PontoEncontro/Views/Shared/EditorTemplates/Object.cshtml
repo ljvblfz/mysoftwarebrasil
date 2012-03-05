@@ -7,11 +7,11 @@
                           )
 )
 {
-    <div class="left grid_12 alpha">
+    <div class="fieldLinha">
         @Html.ValidationSummary(false)
         @Html.Partial("_Message")
     </div>
-    <div class="left">
+    <div class="fieldLinha">
         @if (ViewData.TemplateInfo.TemplateDepth > 1)
         {
             @ViewData.ModelMetadata.SimpleDisplayText
@@ -28,7 +28,7 @@
                 { 
             <div>
                 <div>
-                    @Html.Label(prop.PropertyName)
+                    <strong>@Html.Label(prop.PropertyName)</strong>
                     @if (prop.IsRequired)
                     {
                         <span class="required-field" title="">*</span>
@@ -43,9 +43,9 @@
             }
         }
     </div>
-    <div class="confirm-register left width marginTop20">
-        <p>
-            <input type="submit" value="Save" />
-        </p>
+    <div class="fieldLinha">
+        <a href="#" onclick="$('#form_@(ViewContext.RouteData.Values["controller"].ToString())').submit();" >
+            <span class="button">Entrar</span>
+        </a>
     </div>
 }
