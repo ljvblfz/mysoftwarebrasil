@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro", "PontoEncontro\PontoEncontro.csproj", "{6B098510-E214-4957-8D81-CBB4AF6F1106}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axis", "PontoEncontro\Axis.csproj", "{6B098510-E214-4957-8D81-CBB4AF6F1106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro.Domain", "PontoEncontro.Domain\PontoEncontro.Domain.csproj", "{D31325D7-87DB-42CF-B0B2-CA7503554B20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axis.Domain", "PontoEncontro.Domain\Axis.Domain.csproj", "{D31325D7-87DB-42CF-B0B2-CA7503554B20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5D4365F4-4E2F-4588-8F59-978E459974B7}"
 EndProject
@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{A7EF0CFF-9560-4D23-BC77-9EC310824290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro.Infrastructure", "PontoEncontro.Infrastructure\PontoEncontro.Infrastructure.csproj", "{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axis.Infrastructure", "PontoEncontro.Infrastructure\Axis.Infrastructure.csproj", "{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoEncontro.Application", "PontoEncontro.Application\PontoEncontro.Application.csproj", "{5A2E67D9-B90B-4C86-8F37-A00CEF03E0E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axis.Application", "PontoEncontro.Application\Axis.Application.csproj", "{5A2E67D9-B90B-4C86-8F37-A00CEF03E0E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
