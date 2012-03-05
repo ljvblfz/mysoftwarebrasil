@@ -19,7 +19,7 @@ namespace PontoEncontro.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction("Create");
+            return View();
         }
 
         //
@@ -88,7 +88,7 @@ namespace PontoEncontro.Controllers
         }
 
         [Anonymous]
-        public ActionResult Get(string id)
+        public ActionResult Details(string id)
         {
             return View();
         }

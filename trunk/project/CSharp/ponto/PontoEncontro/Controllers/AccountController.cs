@@ -21,7 +21,7 @@ namespace PontoEncontro.Controllers
         [Anonymous]
         public ActionResult LogOn()
         {
-            return View();
+            return PartialView();
         }
 
         //

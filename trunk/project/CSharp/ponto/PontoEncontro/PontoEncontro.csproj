@@ -49,7 +49,9 @@
     <Reference Include="System.Data.SQLite">
       <HintPath>..\PontoEncontro.Domain\DLL NHibernate\System.Data.SQLite.DLL</HintPath>
     </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -137,11 +139,99 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DataBasePonto.sdf" />
+    <Content Include="Content\themes\base\images\banner1.png" />
+    <Content Include="Content\themes\base\images\bg.png" />
+    <Content Include="Content\themes\base\images\contact-us.png" />
+    <Content Include="Content\themes\base\images\footer.png" />
+    <Content Include="Content\themes\base\images\icon1.png" />
+    <Content Include="Content\themes\base\images\icon2.png" />
+    <Content Include="Content\themes\base\images\icon3.png" />
+    <Content Include="Content\themes\base\images\icon4.png" />
+    <Content Include="Content\themes\base\images\icon\Address-book.png" />
+    <Content Include="Content\themes\base\images\icon\Arrow-back-red.png" />
+    <Content Include="Content\themes\base\images\icon\Arrow-back.png" />
+    <Content Include="Content\themes\base\images\icon\Arrow-red.png" />
+    <Content Include="Content\themes\base\images\icon\Arrow.png" />
+    <Content Include="Content\themes\base\images\icon\Bookmark.png" />
+    <Content Include="Content\themes\base\images\icon\Briefcase.png" />
+    <Content Include="Content\themes\base\images\icon\Chat.png" />
+    <Content Include="Content\themes\base\images\icon\Checkmark.png" />
+    <Content Include="Content\themes\base\images\icon\Clock.png" />
+    <Content Include="Content\themes\base\images\icon\Config.png" />
+    <Content Include="Content\themes\base\images\icon\Database-add.png" />
+    <Content Include="Content\themes\base\images\icon\Database-warning.png" />
+    <Content Include="Content\themes\base\images\icon\Database-x.png" />
+    <Content Include="Content\themes\base\images\icon\Database.png" />
+    <Content Include="Content\themes\base\images\icon\Exclamation.png" />
+    <Content Include="Content\themes\base\images\icon\Folder-add.png" />
+    <Content Include="Content\themes\base\images\icon\Folder-remove.png" />
+    <Content Include="Content\themes\base\images\icon\Folder.png" />
+    <Content Include="Content\themes\base\images\icon\Graph.png" />
+    <Content Include="Content\themes\base\images\icon\Heart-add.png" />
+    <Content Include="Content\themes\base\images\icon\Heart-x.png" />
+    <Content Include="Content\themes\base\images\icon\Heart.png" />
+    <Content Include="Content\themes\base\images\icon\Home.png" />
+    <Content Include="Content\themes\base\images\icon\Info.png" />
+    <Content Include="Content\themes\base\images\icon\Lifesaver.png" />
+    <Content Include="Content\themes\base\images\icon\List.png" />
+    <Content Include="Content\themes\base\images\icon\Mail-add.png" />
+    <Content Include="Content\themes\base\images\icon\Mail-spam.png" />
+    <Content Include="Content\themes\base\images\icon\Mail-x.png" />
+    <Content Include="Content\themes\base\images\icon\Mail.png" />
+    <Content Include="Content\themes\base\images\icon\Mail_forward.png" />
+    <Content Include="Content\themes\base\images\icon\Mail_reply.png" />
+    <Content Include="Content\themes\base\images\icon\Music.png" />
+    <Content Include="Content\themes\base\images\icon\No.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-add.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-arrow-back.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-arrow.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-pencil.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-warning.png" />
+    <Content Include="Content\themes\base\images\icon\Paper-x.png" />
+    <Content Include="Content\themes\base\images\icon\Paper.png" />
+    <Content Include="Content\themes\base\images\icon\Pencil.png" />
+    <Content Include="Content\themes\base\images\icon\Person-add-black.png" />
+    <Content Include="Content\themes\base\images\icon\Person-add.png" />
+    <Content Include="Content\themes\base\images\icon\Person-black.png" />
+    <Content Include="Content\themes\base\images\icon\Person-group-add.png" />
+    <Content Include="Content\themes\base\images\icon\Person-group-warning.png" />
+    <Content Include="Content\themes\base\images\icon\Person-group-x.png" />
+    <Content Include="Content\themes\base\images\icon\Person-group.png" />
+    <Content Include="Content\themes\base\images\icon\Person-warning-black.png" />
+    <Content Include="Content\themes\base\images\icon\Person-warning.png" />
+    <Content Include="Content\themes\base\images\icon\Person-white-add.png" />
+    <Content Include="Content\themes\base\images\icon\Person-white-warning.png" />
+    <Content Include="Content\themes\base\images\icon\Person-white-x.png" />
+    <Content Include="Content\themes\base\images\icon\Person-white.png" />
+    <Content Include="Content\themes\base\images\icon\Person-x-black.png" />
+    <Content Include="Content\themes\base\images\icon\Person-x-white.png" />
+    <Content Include="Content\themes\base\images\icon\Person-x.png" />
+    <Content Include="Content\themes\base\images\icon\Person.png" />
+    <Content Include="Content\themes\base\images\icon\Photo.png" />
+    <Content Include="Content\themes\base\images\icon\Piechart.png" />
+    <Content Include="Content\themes\base\images\icon\Plus.png" />
+    <Content Include="Content\themes\base\images\icon\Questions.png" />
+    <Content Include="Content\themes\base\images\icon\Refresh.png" />
+    <Content Include="Content\themes\base\images\icon\Rss.png" />
+    <Content Include="Content\themes\base\images\icon\Screen.png" />
+    <Content Include="Content\themes\base\images\icon\Search.png" />
+    <Content Include="Content\themes\base\images\icon\Speech-Bubble-add.png" />
+    <Content Include="Content\themes\base\images\icon\Speech-Bubble-x.png" />
+    <Content Include="Content\themes\base\images\icon\Speech-Bubble.png" />
+    <Content Include="Content\themes\base\images\icon\Warning.png" />
+    <Content Include="Content\themes\base\images\icon\World-download.png" />
+    <Content Include="Content\themes\base\images\icon\World-search.png" />
+    <Content Include="Content\themes\base\images\icon\World.png" />
+    <Content Include="Content\themes\base\images\icon\X.png" />
     <Content Include="Content\themes\base\images\lightbox-blank.gif" />
     <Content Include="Content\themes\base\images\lightbox-btn-close.gif" />
     <Content Include="Content\themes\base\images\lightbox-btn-next.gif" />
     <Content Include="Content\themes\base\images\lightbox-btn-prev.gif" />
     <Content Include="Content\themes\base\images\lightbox-ico-loading.gif" />
+    <Content Include="Content\themes\base\images\loading.gif" />
+    <Content Include="Content\themes\base\images\logo.png" />
+    <Content Include="Content\themes\base\images\mac.png" />
+    <Content Include="Content\themes\base\images\pagination.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -186,6 +276,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\slides.min.jquery.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -281,6 +372,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\ListMembros.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SlidePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Member\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
