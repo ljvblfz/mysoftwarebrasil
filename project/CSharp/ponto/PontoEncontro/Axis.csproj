@@ -307,17 +307,17 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PontoEncontro.Application\PontoEncontro.Application.csproj">
+    <ProjectReference Include="..\PontoEncontro.Application\Axis.Application.csproj">
       <Project>{5A2E67D9-B90B-4C86-8F37-A00CEF03E0E0}</Project>
-      <Name>PontoEncontro.Application</Name>
+      <Name>Axis.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PontoEncontro.Domain\PontoEncontro.Domain.csproj">
+    <ProjectReference Include="..\PontoEncontro.Domain\Axis.Domain.csproj">
       <Project>{D31325D7-87DB-42CF-B0B2-CA7503554B20}</Project>
-      <Name>PontoEncontro.Domain</Name>
+      <Name>Axis.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PontoEncontro.Infrastructure\PontoEncontro.Infrastructure.csproj">
+    <ProjectReference Include="..\PontoEncontro.Infrastructure\Axis.Infrastructure.csproj">
       <Project>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</Project>
-      <Name>PontoEncontro.Infrastructure</Name>
+      <Name>Axis.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
