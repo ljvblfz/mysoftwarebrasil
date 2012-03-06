@@ -138,7 +138,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DataBasePonto.sdf" />
+    <Content Include="App_Data\DataBasePonto.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\themes\base\images\banner1.png" />
     <Content Include="Content\themes\base\images\bg.png" />
     <Content Include="Content\themes\base\images\contact-us.png" />

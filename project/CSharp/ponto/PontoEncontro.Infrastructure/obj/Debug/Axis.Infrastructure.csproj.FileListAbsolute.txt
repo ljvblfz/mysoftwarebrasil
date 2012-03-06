@@ -1,0 +1,16 @@
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.dll.config
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\PontoEncontro.Infrastructure.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\Microsoft.CSharp.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.ComponentModel.DataAnnotations.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Data.DataSetExtensions.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Data.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Runtime.Serialization.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.ServiceModel.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Web.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Xml.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\bin\Debug\System.Xml.Linq.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Infrastructure\obj\Debug\PontoEncontro.Infrastructure.pdb

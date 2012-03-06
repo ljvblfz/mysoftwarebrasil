@@ -1,0 +1,16 @@
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Application.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Application.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Domain.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Infrastructure.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\FluentNHibernate.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\NHibernate.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\log4net.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\Telerik.Web.Mvc.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\AutoMapper.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\Webaula.Cache.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\Iesi.Collections.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Domain.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\bin\Debug\PontoEncontro.Infrastructure.pdb
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\ResolveAssemblyReference.cache
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.dll
+E:\PROJETO\C#\PontoEncontro\PontoEncontro.Application\obj\Debug\PontoEncontro.Application.pdb

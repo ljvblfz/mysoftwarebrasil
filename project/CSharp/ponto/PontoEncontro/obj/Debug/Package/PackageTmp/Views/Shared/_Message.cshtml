@@ -1,9 +1,0 @@
-﻿@if (ViewBag.Message is IList<string> && ViewBag.Message.Count > 0)
-{
-    <div class="validation-summary-errors">
-        @foreach (var item in ViewBag.Message as IList<string>)
-        {
-            <strong>@item</strong>      
-        }
-    </div>
-}
