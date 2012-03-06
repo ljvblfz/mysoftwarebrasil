@@ -203,7 +203,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PontoEncontro.Infrastructure\PontoEncontro.Infrastructure.csproj">
+    <ProjectReference Include="..\PontoEncontro.Infrastructure\Axis.Infrastructure.csproj">
       <Project>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</Project>
       <Name>PontoEncontro.Infrastructure</Name>
     </ProjectReference>

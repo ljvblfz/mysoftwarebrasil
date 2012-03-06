@@ -1,8 +1,0 @@
-﻿<script type="text/javascript">
-    $(function() {
-	    $.datepicker.regional["pt-BR"];
-	    $( "#@(ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(""))" ).datepicker();
-    });
-</script>
-@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, new { placeholder = ViewData.ModelMetadata.Watermark })
-
