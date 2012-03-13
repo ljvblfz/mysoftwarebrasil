@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 using PontoEncontro.Domain;
+using AutoMapper;
 
 namespace PontoEncontro.Models
 {
@@ -67,6 +68,12 @@ namespace PontoEncontro.Models
                 new SelectListItem() { Text = "Solteiro", Value = "1", Selected = false },
                 new SelectListItem() { Text = "Casado", Value = "2", Selected = false }
             };
+        }
+
+        public ProfileModel(Perfil perfil)
+        {
+            Mapper.CreateMap<Perfil, ProfileModel>();
+            Mapper.Map(perfil, this, typeof(Perfil), typeof(ProfileModel));
         }
     }
 }

@@ -60,80 +60,80 @@
     <Compile Include="Mapping\TipoAssociacaoMap.cs" />
     <Compile Include="Mapping\TipoContatoMap.cs" />
     <Compile Include="Mapping\TipoInteresseMap.cs" />
-    <Compile Include="Repositorios\ActionRepositorios.cs">
+    <Compile Include="Repository\ActionRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\AssociacaoRepositorios.cs">
+    <Compile Include="Repository\AssociacaoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\AssociadoRepositorios.cs">
+    <Compile Include="Repository\AssociadoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\BairroRepositorios.cs">
+    <Compile Include="Repository\BairroRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\CabeloRepositorios.cs">
+    <Compile Include="Repository\CabeloRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\CidadeRepositorios.cs">
+    <Compile Include="Repository\CidadeRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\ContatoRepositorios.cs">
+    <Compile Include="Repository\ContatoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\ControllerRepositorios.cs">
+    <Compile Include="Repository\ControllerRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\FotoRepositorios.cs" />
-    <Compile Include="Repositorios\EnderecoRepositorios.cs">
+    <Compile Include="Repository\FotoRepositorios.cs" />
+    <Compile Include="Repository\EnderecoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\EstadocivilRepositorios.cs">
+    <Compile Include="Repository\EstadocivilRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\EstadoRepositorios.cs">
+    <Compile Include="Repository\EstadoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\EtiniaRepositorios.cs">
+    <Compile Include="Repository\EtiniaRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\InteresseRepositorios.cs">
+    <Compile Include="Repository\InteresseRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\MembroRepositorios.cs">
+    <Compile Include="Repository\MembroRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\MenuRepositorios.cs">
+    <Compile Include="Repository\MenuRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\OlhoRepositorios.cs">
+    <Compile Include="Repository\OlhoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\PerfilRepositorios.cs">
+    <Compile Include="Repository\PerfilRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\PermissaoroleRepositorios.cs">
+    <Compile Include="Repository\PermissaoroleRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\PermissoeRepositorios.cs">
+    <Compile Include="Repository\PermissoeRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\PessoaRepositorios.cs">
+    <Compile Include="Repository\PessoaRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\RoleRepositorios.cs">
+    <Compile Include="Repository\RoleRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\SexoRepositorios.cs">
+    <Compile Include="Repository\SexoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\TipoassociacaoRepositorios.cs">
+    <Compile Include="Repository\TipoassociacaoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\TipocontatoRepositorios.cs">
+    <Compile Include="Repository\TipocontatoRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Repositorios\TipointeresseRepositorios.cs">
+    <Compile Include="Repository\TipointeresseRepositorios.cs">
       <SubType>Code</SubType>
     </Compile>
     <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">

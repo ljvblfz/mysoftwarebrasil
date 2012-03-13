@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Collections;
 using PontoEncontro.Infrastructure.Linq;
+using PontoEncontro.Domain;
+using AutoMapper;
 
 namespace PontoEncontro.Models
 {
@@ -37,6 +39,12 @@ namespace PontoEncontro.Models
 
         public MemberModel()
         {
+        }
+
+        public MemberModel(Membro membro)
+        {
+            Mapper.CreateMap<Membro, MemberModel>();
+            Mapper.Map(membro, this, typeof(Membro), typeof(MemberModel));
         }
     }
 }

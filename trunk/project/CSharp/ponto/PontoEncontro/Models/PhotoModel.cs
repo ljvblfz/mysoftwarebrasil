@@ -9,6 +9,7 @@ using PontoEncontro.Infrastructure.MVC.DataAnnotations;
 using Lms.API.Infrastructure.MVC.Extensions;
 using System.Linq.Expressions;
 using System.Web;
+using AutoMapper;
 
 namespace PontoEncontro.Models
 {
@@ -24,6 +25,12 @@ namespace PontoEncontro.Models
 
         public PhotoModel()
         {
+        }
+
+        public PhotoModel(Foto foto)
+        {
+            Mapper.CreateMap<Foto, PhotoModel>();
+            Mapper.Map(foto, this, typeof(Foto), typeof(PhotoModel));
         }
     }
 }

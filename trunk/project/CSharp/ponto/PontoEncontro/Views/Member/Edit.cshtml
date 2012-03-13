@@ -1,9 +1,38 @@
-﻿@model PontoEncontro.Models.RegisterModel
+﻿@model PontoEncontro.Models.PanelControlModel
 
 <h2>Editar os dados de membro</h2>
-<div>
-    <fieldset>
-        <legend id="pass1"></legend>
-        @Html.EditorForModel()
-    </fieldset>
-</div>
+@using (Html.BeginForm(
+                            ViewContext.RouteData.Values["action"].ToString(),
+                            ViewContext.RouteData.Values["controller"].ToString(),
+                            FormMethod.Post,
+                            new { enctype = "multipart/form-data", id = "form_" + ViewContext.RouteData.Values["controller"].ToString() }
+                          ))
+{
+    <div class="fieldLinha">
+        <div class="editor-label">
+           <strong>@Html.LabelFor(m => m.loginMembro)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.loginMembro) 
+            @Html.ValidationMessageFor(m => m.loginMembro)
+        </div>
+        <div class="editor-label">
+           <strong>@Html.LabelFor(m => m.nomePessoa)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.nomePessoa) 
+            @Html.ValidationMessageFor(m => m.nomePessoa)
+        </div>
+        <div class="editor-label">
+           <strong>@Html.LabelFor(m => m.nascimentoPessoa)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.nascimentoPessoa) 
+            @Html.ValidationMessageFor(m => m.nascimentoPessoa)
+        </div>
+
+        <a href="#" onclick="$('#form_@(ViewContext.RouteData.Values["controller"].ToString())').submit();" >
+            <span class="button">Salvar</span>
+        </a>
+    </div>
+}

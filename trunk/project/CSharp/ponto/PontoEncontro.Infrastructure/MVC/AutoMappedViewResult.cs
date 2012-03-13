@@ -35,8 +35,7 @@ namespace PontoEncontro.Infrastructure.MVC
 
             // Se o tipo e uma Colletion utiliza o mapeamento automatico
             else {
-                Mapper.CreateMap(sourceType, destinationType);
-                return Mapper.Map(source, sourceType, destinationType);
+                return Activator.CreateInstance(destinationType, source);
             }
         };
 

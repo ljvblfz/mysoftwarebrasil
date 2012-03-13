@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using PontoEncontro.Domain;
+using AutoMapper;
 
 namespace PontoEncontro.Models
 {
@@ -27,6 +29,12 @@ namespace PontoEncontro.Models
 
         public RegisterModel()
         {
+        }
+
+        public RegisterModel(Membro membro)
+        {
+            Mapper.CreateMap<Membro, RegisterModel>();
+            Mapper.Map(membro, this, typeof(Membro), typeof(RegisterModel));
         }
     }
 }

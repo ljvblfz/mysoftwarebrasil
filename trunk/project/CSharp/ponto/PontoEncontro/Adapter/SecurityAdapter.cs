@@ -79,7 +79,20 @@ namespace PontoEncontro.Adapter
         /// <param name="model">modelo</param>
         public static void UpdateMember(Membro model)
         {
-            new MembroRepository().Update(model);
+            var member = Aplication.GetUser<Membro>(typeof(Membro)) as Membro;
+            member.loginMembro = model.loginMembro;
+            new MembroRepository().Update(member);
+            Aplication.UpdaterUser(member);
+        }
+        
+        /// <summary>
+        ///  Retorna todos os dados do membro logado
+        /// </summary>
+        /// <returns></returns>
+        public static Membro GetMember()
+        {
+            var membroCookie = Aplication.GetUser<Membro>(typeof(Membro)) as Membro;
+            return new MembroRepository().GetMemberLogin(membroCookie.loginMembro);
         }
     }
 }
