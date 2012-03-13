@@ -8,6 +8,7 @@ using PontoEncontro.Domain;
 using PontoEncontro.Infrastructure.MVC.DataAnnotations;
 using Lms.API.Infrastructure.MVC.Extensions;
 using System.Linq.Expressions;
+using AutoMapper;
 
 namespace PontoEncontro.Models
 {
@@ -39,6 +40,12 @@ namespace PontoEncontro.Models
 
         public PersonModel()
         {
+        }
+
+        public PersonModel(Pessoa pessoa)
+        {
+            Mapper.CreateMap<Pessoa, PersonModel>();
+            Mapper.Map(pessoa, this, typeof(Pessoa), typeof(PersonModel));
         }
     }
 }

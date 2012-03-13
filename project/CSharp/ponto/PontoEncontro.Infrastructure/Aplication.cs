@@ -133,6 +133,20 @@ namespace PontoEncontro.Infrastructure
         }
 
         /// <summary>
+        /// Atualiza o coockie do usuario
+        /// </summary>
+        /// <param name="userData"></param>
+        public static void UpdaterUser(object userData)
+        {
+            var ticket = GetTicket();
+            DestroyTicket();
+            CreateTicket(ticket.Name,
+                            ticket.IsPersistent,
+                            userData,
+                            ticket.Expiration);
+        }
+
+        /// <summary>
         ///  Retorna o user name
         /// </summary>
         /// <returns>user name</returns>

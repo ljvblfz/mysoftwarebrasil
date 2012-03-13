@@ -50,8 +50,8 @@ namespace PontoEncontro.Controllers
  
         public ActionResult Edit()
         {
-            var membro = Aplication.GetUser<Membro>(typeof(Membro));
-            return View(membro, typeof(RegisterModel));
+            var membro = SecurityAdapter.GetMember();
+            return View(membro, typeof(PanelControlModel));
         }
 
         //
@@ -60,11 +60,11 @@ namespace PontoEncontro.Controllers
         [HttpPost]
         public ActionResult Edit(RegisterModel modelView, Membro model)
         {
-            if (ModelState.IsValid)
+            if (!String.IsNullOrEmpty(model.loginMembro))
             {
                 SecurityAdapter.UpdateMember(model);
                 AddMessage("Membro atualizado com sucesso.");
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index","Member");
             }
             return View(modelView);
         }

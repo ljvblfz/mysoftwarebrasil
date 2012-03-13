@@ -11,7 +11,6 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\Remotion.Data.Linq.dl
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\System.Data.SqlServerCe.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\log4net.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\Telerik.Web.Mvc.dll
-E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\AutoMapper.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\Webaula.Cache.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\bin\Debug\PontoEncontro.Infrastructure.pdb
 E:\PROJETO\C#\PontoEncontro\PontoEncontro.Domain\obj\Debug\ResolveAssemblyReference.cache

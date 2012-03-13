@@ -48,4 +48,4 @@ E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\PT\System.Data.SqlServerCe.resourc
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\ResolveAssemblyReference.cache
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\PontoEncontro.dll
 E:\PROJETO\C#\PontoEncontro\PontoEncontro\obj\Debug\PontoEncontro.pdb
-E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\App_Data\DataBasePonto.sdf
+E:\PROJETO\C#\PontoEncontro\PontoEncontro\bin\AutoMapper.xml
