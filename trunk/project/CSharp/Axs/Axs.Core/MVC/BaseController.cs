@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using log4net;
 using System.Reflection;
 
-namespace PontoEncontro.Infrastructure.MVC
+namespace Axis.Infrastructure.MVC
 {
     /// <summary>
     /// Fornece métodos que respondam às solicitações HTTP que são feitas para uma página ASP.NET MVC

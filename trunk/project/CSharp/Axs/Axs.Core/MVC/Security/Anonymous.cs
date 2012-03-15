@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PontoEncontro.Infrastructure.MVC.Security
+namespace Axis.Infrastructure.MVC.Security
 {
     /// <summary>
     ///  Objeto de permissão a usuarios anomimos

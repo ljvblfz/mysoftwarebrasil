@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PontoEncontro.Application.Validate
+namespace Axis.Application.Validate
 {
     /// <summary>
     /// Provides the means to check if the validity of the current state of an <see langword="object"/>.

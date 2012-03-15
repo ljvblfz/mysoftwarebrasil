@@ -13,7 +13,7 @@ using System.Text;
 using System;
 using FluentNHibernate.Mapping;
 
-namespace PontoEncontro.Domain.Mapping
+namespace Axis.Domain.Mapping
 {
     /// <summary>
     /// Classe de mapeamento de EstadoCivil

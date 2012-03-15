@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Models;
-using PontoEncontro.Domain;
-using PontoEncontro.Adapter;
-using PontoEncontro.Infrastructure.MVC;
-using PontoEncontro.Infrastructure;
-using PontoEncontro.Infrastructure.MVC.Security;
+using Axis.Models;
+using Axis.Domain;
+using Axis.Adapter;
+using Axis.Infrastructure.MVC;
+using Axis.Infrastructure;
+using Axis.Infrastructure.MVC.Security;
 
-namespace PontoEncontro.Controllers
+namespace Axis.Controllers
 {
     public class MemberController : BaseController
     {

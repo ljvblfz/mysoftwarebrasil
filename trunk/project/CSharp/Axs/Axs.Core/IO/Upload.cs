@@ -5,9 +5,9 @@ using System.Text;
 using System.Web;
 using System.IO;
 using System.Web.Hosting;
-using PontoEncontro.Infrastructure;
+using Axis.Infrastructure;
 
-namespace PontoEncontro.Infrastructure.IO
+namespace Axis.Infrastructure.IO
 {
     /// <summary>
     ///  Classe de upload de arquivos

@@ -1,8 +1,8 @@
 ﻿using System;
 using FluentNHibernate.Cfg.Db;
-using PontoEncontro.Infrastructure.Enum;
+using Axis.Infrastructure.Enum;
 
-namespace PontoEncontro.Infrastructure.ModelView.Data
+namespace Axis.Infrastructure.ModelView.Data
 {
     /// <summary>
     ///  Inteface de fabrica de base de dados a ser utilizado pela persistencia

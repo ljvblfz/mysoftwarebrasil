@@ -14,9 +14,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Telerik.Web.Mvc;
-using PontoEncontro.Infrastructure.Enum;
+using Axis.Infrastructure.Enum;
 
-namespace PontoEncontro.Infrastructure.Filter
+namespace Axis.Infrastructure.Filter
 {
     /// <summary>
     ///  Classe responsavel por trabalhar com os filtros da API Telerik

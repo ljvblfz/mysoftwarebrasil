@@ -7,13 +7,13 @@ using System.Security;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Threading;
-using PontoEncontro.Infrastructure.Compression;
-using PontoEncontro.Infrastructure.MVC.DataAnnotations;
+using Axis.Infrastructure.Compression;
+using Axis.Infrastructure.MVC.DataAnnotations;
 using System.Reflection;
 using System.Web.Script.Serialization;
-using PontoEncontro.Infrastructure.Linq;
+using Axis.Infrastructure.Linq;
 
-namespace PontoEncontro.Infrastructure
+namespace Axis.Infrastructure
 {
     /// <summary>
     ///  Classe que possui metodos que envolve a aplicação globalmente 

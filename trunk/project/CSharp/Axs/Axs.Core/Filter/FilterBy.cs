@@ -9,9 +9,9 @@
 //           Messenger: ivanpaulovich@hotmail.com 
 //
 
-using PontoEncontro.Infrastructure.Enum;
+using Axis.Infrastructure.Enum;
 
-namespace PontoEncontro.Infrastructure.Filter
+namespace Axis.Infrastructure.Filter
 {
     /// <summary>
     ///  Classe responsavel por amarzenar os filtros de pesquisa

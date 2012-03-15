@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace PontoEncontro.Infrastructure.MVC.DataAnnotations
+namespace Axis.Infrastructure.MVC.DataAnnotations
 {
     /// <summary>
     ///  Classe de Atributo personalizado do ModcelView do DropDown

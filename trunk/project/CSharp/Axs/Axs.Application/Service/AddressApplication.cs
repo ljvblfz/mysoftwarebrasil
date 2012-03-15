@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using PontoEncontro.Domain;
+using Axis.Domain;
 
-namespace PontoEncontro.Application
+namespace Axis.Application
 {
     /// <summary>
     ///  Serviço de endereço

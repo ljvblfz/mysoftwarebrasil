@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace PontoEncontro.Models
+namespace Axis.Models
 {
 
     public class ChangePasswordModel

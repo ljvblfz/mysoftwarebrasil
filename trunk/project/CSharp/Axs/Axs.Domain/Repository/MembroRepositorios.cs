@@ -5,11 +5,11 @@ using System.Collections;
 using NHibernate;
 using System.Linq;
 using NHibernate.Linq;
-using PontoEncontro.Infrastructure.Linq;
-using PontoEncontro.Infrastructure;
+using Axis.Infrastructure.Linq;
+using Axis.Infrastructure;
 
 
-namespace PontoEncontro.Domain
+namespace Axis.Domain
 {
     /// <summary>
     ///  Class de membro

@@ -12,7 +12,7 @@
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.Mef.Contracts
+namespace Axis.Infrastructure.Mef.Contracts
 {
     /// <summary>
     /// Constantes para metadados

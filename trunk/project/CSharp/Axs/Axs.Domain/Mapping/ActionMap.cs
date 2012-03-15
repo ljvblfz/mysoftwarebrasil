@@ -13,12 +13,12 @@ using System.Text;
 using System;
 using FluentNHibernate.Mapping;
 
-namespace PontoEncontro.Domain.Mapping
+namespace Axis.Domain.Mapping
 {
     /// <summary>
     /// Classe de mapeamento de Action
     /// </summary>
-    public class ActionMap : ClassMap<PontoEncontro.Domain.Action>
+    public class ActionMap : ClassMap<Axis.Domain.Action>
     {
 		public ActionMap()
         {

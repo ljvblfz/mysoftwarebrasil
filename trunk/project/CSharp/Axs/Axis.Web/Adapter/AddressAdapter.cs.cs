@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Lms.API.Infrastructure.MVC.Extensions;
-using PontoEncontro.Domain;
-using PontoEncontro.Application;
+using Axis.Domain;
+using Axis.Application;
 
-namespace PontoEncontro.Adapter
+namespace Axis.Adapter
 {
     /// <summary>
     ///  Classe adaptadora de endereço

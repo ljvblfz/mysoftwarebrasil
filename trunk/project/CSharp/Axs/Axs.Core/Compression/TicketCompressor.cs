@@ -3,7 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-namespace PontoEncontro.Infrastructure.Compression
+namespace Axis.Infrastructure.Compression
 {
     public class TicketCompressor : StringCompressor
 	{

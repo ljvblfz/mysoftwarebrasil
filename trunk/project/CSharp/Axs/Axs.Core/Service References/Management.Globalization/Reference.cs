@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PontoEncontro.Infrastructure.Management.Globalization {
+namespace Axis.Infrastructure.Management.Globalization {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17,7 +17,7 @@ namespace PontoEncontro.Infrastructure.Management.Globalization {
         
         // CODEGEN: Generating message contract since the wrapper name (GetStringRequest) of message GetStringRequest does not match the default value (GetString)
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetString", ReplyAction="http://tempuri.org/IService/GetStringResponse")]
-        PontoEncontro.Infrastructure.Management.Globalization.GetStringResponse GetString(PontoEncontro.Infrastructure.Management.Globalization.GetStringRequest request);
+        Axis.Infrastructure.Management.Globalization.GetStringResponse GetString(Axis.Infrastructure.Management.Globalization.GetStringRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -63,12 +63,12 @@ namespace PontoEncontro.Infrastructure.Management.Globalization {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : PontoEncontro.Infrastructure.Management.Globalization.IService, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : Axis.Infrastructure.Management.Globalization.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<PontoEncontro.Infrastructure.Management.Globalization.IService>, PontoEncontro.Infrastructure.Management.Globalization.IService {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<Axis.Infrastructure.Management.Globalization.IService>, Axis.Infrastructure.Management.Globalization.IService {
         
         public ServiceClient() {
         }
@@ -90,15 +90,15 @@ namespace PontoEncontro.Infrastructure.Management.Globalization {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        PontoEncontro.Infrastructure.Management.Globalization.GetStringResponse PontoEncontro.Infrastructure.Management.Globalization.IService.GetString(PontoEncontro.Infrastructure.Management.Globalization.GetStringRequest request) {
+        Axis.Infrastructure.Management.Globalization.GetStringResponse Axis.Infrastructure.Management.Globalization.IService.GetString(Axis.Infrastructure.Management.Globalization.GetStringRequest request) {
             return base.Channel.GetString(request);
         }
         
         public bool GetString(string Ticket, string ExpressionName, out string Expression) {
-            PontoEncontro.Infrastructure.Management.Globalization.GetStringRequest inValue = new PontoEncontro.Infrastructure.Management.Globalization.GetStringRequest();
+            Axis.Infrastructure.Management.Globalization.GetStringRequest inValue = new Axis.Infrastructure.Management.Globalization.GetStringRequest();
             inValue.Ticket = Ticket;
             inValue.ExpressionName = ExpressionName;
-            PontoEncontro.Infrastructure.Management.Globalization.GetStringResponse retVal = ((PontoEncontro.Infrastructure.Management.Globalization.IService)(this)).GetString(inValue);
+            Axis.Infrastructure.Management.Globalization.GetStringResponse retVal = ((Axis.Infrastructure.Management.Globalization.IService)(this)).GetString(inValue);
             Expression = retVal.Expression;
             return retVal.Exists;
         }

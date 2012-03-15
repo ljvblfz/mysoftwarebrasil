@@ -11,7 +11,7 @@
 using System;  
 using System.Collections.Generic;
  
-namespace PontoEncontro.Domain 
+namespace Axis.Domain 
 {
     /// <summary>
     /// Classe Modelo de Estado

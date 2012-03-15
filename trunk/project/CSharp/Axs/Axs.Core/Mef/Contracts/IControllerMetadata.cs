@@ -9,7 +9,7 @@
 //           Messenger: ivanpaulovich@hotmail.com 
 //
 
-namespace PontoEncontro.Infrastructure.Mef.Contracts
+namespace Axis.Infrastructure.Mef.Contracts
 {
     /// <summary>
     /// Metadados de um controlador

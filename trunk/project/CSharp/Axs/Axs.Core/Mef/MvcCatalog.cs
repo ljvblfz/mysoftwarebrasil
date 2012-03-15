@@ -21,7 +21,7 @@ using System.Reflection;
 using System.Threading;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.Mef
+namespace Axis.Infrastructure.Mef
 {
     /// <summary>
     /// Catálogos de Mvc

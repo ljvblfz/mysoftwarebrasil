@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Models;
-using PontoEncontro.Domain;
-using PontoEncontro.Infrastructure.MVC;
-using PontoEncontro.Infrastructure.MVC.Security;
-using PontoEncontro.Application;
+using Axis.Models;
+using Axis.Domain;
+using Axis.Infrastructure.MVC;
+using Axis.Infrastructure.MVC.Security;
+using Axis.Application;
 using Lms.API.Infrastructure.MVC.Extensions;
 using System.Web.Script.Serialization;
-using PontoEncontro.Infrastructure;
-using PontoEncontro.Adapter;
+using Axis.Infrastructure;
+using Axis.Adapter;
 
-namespace PontoEncontro.Controllers
+namespace Axis.Controllers
 {
     public class RegisterController : BaseController
     {

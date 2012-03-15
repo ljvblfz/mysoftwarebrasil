@@ -8,8 +8,8 @@
     <ProjectGuid>{D31325D7-87DB-42CF-B0B2-CA7503554B20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PontoEncontro.Domain</RootNamespace>
-    <AssemblyName>PontoEncontro.Domain</AssemblyName>
+    <RootNamespace>Axis.Domain</RootNamespace>
+    <AssemblyName>Axis.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -203,7 +203,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PontoEncontro.Infrastructure\Axis.Infrastructure.csproj">
+    <ProjectReference Include="..\Axs.Core\Axis.Infrastructure.csproj">
       <Project>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</Project>
       <Name>PontoEncontro.Infrastructure</Name>
     </ProjectReference>

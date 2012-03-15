@@ -7,7 +7,7 @@ using log4net.Config;
 using log4net;
 using System.Reflection;
 
-namespace PontoEncontro.Infrastructure.Log
+namespace Axis.Infrastructure.Log
 {
     /// <summary>
     ///  Classe que imoplementa os logs de erro

@@ -5,7 +5,7 @@ using System.Text;
 using Telerik.Web.Mvc;
 using System.Collections;
 
-namespace PontoEncontro.Infrastructure.MVC.Helper.Grid
+namespace Axis.Infrastructure.MVC.Helper.Grid
 {
     /// <summary>
     ///  Classe responsavel pelo grid do telerik

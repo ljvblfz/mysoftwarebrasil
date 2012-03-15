@@ -14,7 +14,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Reflection;
 
-namespace PontoEncontro.Infrastructure.Mef
+namespace Axis.Infrastructure.Mef
 {
     /// <summary>
     /// Construtor de catálogos

@@ -7,7 +7,7 @@ using System.Linq;
 using NHibernate.Linq;
 
 
-namespace PontoEncontro.Domain
+namespace Axis.Domain
 {
     public class MenuRepository : GenericRepository<Menu>
     {

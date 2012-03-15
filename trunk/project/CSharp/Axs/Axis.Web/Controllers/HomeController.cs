@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure.MVC.Security;
-//using PontoEncontro.Domain;
+using Axis.Infrastructure.MVC.Security;
+//using Axis.Domain;
 
-namespace PontoEncontro.Controllers
+namespace Axis.Controllers
 {
     public class HomeController : Controller
     {

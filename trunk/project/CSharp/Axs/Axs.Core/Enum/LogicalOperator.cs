@@ -8,7 +8,7 @@
 //           Blog: http://www.100loop.com/          
 //           Messenger: ivanpaulovich@hotmail.com 
 //
-namespace PontoEncontro.Infrastructure.Enum
+namespace Axis.Infrastructure.Enum
 {
     /// <summary>
     ///  Enumerador de operadores logicos

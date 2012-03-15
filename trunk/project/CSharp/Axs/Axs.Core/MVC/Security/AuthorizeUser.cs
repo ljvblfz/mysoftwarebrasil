@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure;
+using Axis.Infrastructure;
 using System.Web;
 using System.Web.Security;
 using System.Threading;
 using System.Security.Principal;
 using System.Collections.Generic;
 
-namespace PontoEncontro.Infrastructure.MVC.Security
+namespace Axis.Infrastructure.MVC.Security
 {
     /// <summary>
     ///  Objeto de permissão a usuarios autenticados no sistema

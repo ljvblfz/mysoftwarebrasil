@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PontoEncontro.Infrastructure.Enum
+namespace Axis.Infrastructure.Enum
 {
     /// <summary>
     /// Faixa de renda mensal
