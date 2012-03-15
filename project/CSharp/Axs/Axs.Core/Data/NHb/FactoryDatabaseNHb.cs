@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentNHibernate.Cfg.Db;
-using PontoEncontro.Infrastructure.ModelView.Data;
-using PontoEncontro.Infrastructure.Enum;
+using Axis.Infrastructure.ModelView.Data;
+using Axis.Infrastructure.Enum;
 
-namespace PontoEncontro.Infrastructure.ModelView.Data.NHb
+namespace Axis.Infrastructure.ModelView.Data.NHb
 {
     /// <summary>
     ///  Classe fabrica para conecção com varios banco para NHibernate 

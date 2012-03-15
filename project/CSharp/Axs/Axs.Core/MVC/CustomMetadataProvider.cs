@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure.MVC.DataAnnotations;
-using PontoEncontro.Infrastructure.MVC.Helper.Grid;
-using PontoEncontro.Infrastructure.MVC.DataAnnotations;
+using Axis.Infrastructure.MVC.DataAnnotations;
+using Axis.Infrastructure.MVC.Helper.Grid;
+using Axis.Infrastructure.MVC.DataAnnotations;
 
-namespace PontoEncontro.Infrastructure.MVC
+namespace Axis.Infrastructure.MVC
 {
     /// <summary>
     ///  Classe que implementa o provedor padrão de metadados modelo para ASP.NET MVC.

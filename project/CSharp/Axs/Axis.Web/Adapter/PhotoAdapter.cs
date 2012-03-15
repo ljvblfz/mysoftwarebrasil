@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure.IO;
-using PontoEncontro.Models;
-using PontoEncontro.Domain;
-using PontoEncontro.Infrastructure;
+using Axis.Infrastructure.IO;
+using Axis.Models;
+using Axis.Domain;
+using Axis.Infrastructure;
 using System.IO;
 
-namespace PontoEncontro.Adapter
+namespace Axis.Adapter
 {
     /// <summary>
     ///  Adaptador de Foto

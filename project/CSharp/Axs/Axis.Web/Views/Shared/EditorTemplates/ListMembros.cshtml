@@ -1,13 +1,13 @@
-﻿@model PontoEncontro.Infrastructure.Linq.Dynamic
-@using PontoEncontro.Infrastructure
-@using PontoEncontro.Infrastructure.IO
+﻿@model Axis.Infrastructure.Linq.Dynamic
+@using Axis.Infrastructure
+@using Axis.Infrastructure.IO
 @{
     if (Model != null && Model.ListObjects.Count > 0)
     {
         foreach (Dictionary<Type, object> item in Model.ListObjects)
         {
-            var membro = item[typeof(PontoEncontro.Domain.Membro)] as PontoEncontro.Domain.Membro;
-            var photo = item[typeof(PontoEncontro.Domain.Foto)] as PontoEncontro.Domain.Foto;
+            var membro = item[typeof(Axis.Domain.Membro)] as Axis.Domain.Membro;
+            var photo = item[typeof(Axis.Domain.Foto)] as Axis.Domain.Foto;
             var img = Image.GetBase64Image(photo.pathFoto + "\\" + photo.nameFoto);
             <text>
              <div>

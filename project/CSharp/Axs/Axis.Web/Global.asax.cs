@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using PontoEncontro.Infrastructure.MVC.Security;
-using PontoEncontro.Infrastructure.Log;
-using PontoEncontro.Infrastructure.MVC;
+using Axis.Infrastructure.MVC.Security;
+using Axis.Infrastructure.Log;
+using Axis.Infrastructure.MVC;
 
-namespace PontoEncontro
+namespace Axis
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801

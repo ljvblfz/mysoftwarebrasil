@@ -5,7 +5,7 @@ using System.Text;
 using AutoMapper;
 using System.Collections;
 
-namespace PontoEncontro.Infrastructure.Linq
+namespace Axis.Infrastructure.Linq
 {
     /// <summary>
     ///  Classe responsavel por armazenar anomimamente 

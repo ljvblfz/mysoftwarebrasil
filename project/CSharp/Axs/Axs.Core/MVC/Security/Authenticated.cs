@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.MVC.Security
+namespace Axis.Infrastructure.MVC.Security
 {
     /// <summary>
     ///  Filter de Autorização de rotias

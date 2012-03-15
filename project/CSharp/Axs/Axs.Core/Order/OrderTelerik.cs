@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Telerik.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.Order
+namespace Axis.Infrastructure.Order
 {
     /// <summary>
     ///  Classe responsavel por manipular os objetos order do telerik

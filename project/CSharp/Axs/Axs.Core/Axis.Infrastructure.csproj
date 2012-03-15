@@ -8,8 +8,8 @@
     <ProjectGuid>{4322F9D9-7DE5-49AD-A6B1-463CD163DA71}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PontoEncontro.Infrastructure</RootNamespace>
-    <AssemblyName>PontoEncontro.Infrastructure</AssemblyName>
+    <RootNamespace>Axis.Infrastructure</RootNamespace>
+    <AssemblyName>Axis.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>

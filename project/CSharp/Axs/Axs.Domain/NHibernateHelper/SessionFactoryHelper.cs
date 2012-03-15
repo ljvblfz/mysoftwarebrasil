@@ -1,14 +1,14 @@
 using NHibernate.Cfg;
 using NHibernate;
 using FluentNHibernate.Cfg;
-using PontoEncontro.Domain.Mapping;
+using Axis.Domain.Mapping;
 using System.Reflection;
 using System;
 using System.Linq;
 using System.IO;
 using NHibernate.Tool.hbm2ddl;
 
-namespace PontoEncontro.Domain
+namespace Axis.Domain
 {
 	public class SessionFactoryHelper
 	{
@@ -70,7 +70,7 @@ namespace PontoEncontro.Domain
         /// <param name="config"></param>
         public static void MappingsAssembly(MappingConfiguration config)
         {
-            string topNamespace = "PontoEncontro.Domain";
+            string topNamespace = "Axis.Domain";
             Assembly assemblyNamespace = Assembly.Load(topNamespace);
 
             Type[] mappingList = Assembly.GetExecutingAssembly()
@@ -91,7 +91,7 @@ namespace PontoEncontro.Domain
         private static void CreateSqlCeDatabaseFile(Configuration cfg)
         {
             var connectionString = cfg.Properties["connection.connection_string"];
-            var _dataFolder = "E:/PROJETO/C#/PontoEncontro/PontoEncontro/App_Data";
+            var _dataFolder = "E:/PROJETO/C#/Axis/Axis/App_Data";
             if (!string.IsNullOrEmpty(_dataFolder))
                 Directory.CreateDirectory(_dataFolder);
 

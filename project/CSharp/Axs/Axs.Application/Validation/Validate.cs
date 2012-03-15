@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 using System.Reflection;
-using PontoEncontro.Infrastructure.Linq;
+using Axis.Infrastructure.Linq;
 
-namespace PontoEncontro.Application.Validate
+namespace Axis.Application.Validate
 {
     /// <summary>
     ///  Classe que implemta metodos essenciais a validações

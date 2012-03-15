@@ -7,7 +7,7 @@ using System.Collections;
 using Telerik.Web.Mvc;
 using AutoMapper;
 
-namespace PontoEncontro.Infrastructure.MVC
+namespace Axis.Infrastructure.MVC
 {
     /// <summary>
     ///  Classe que implementa a conversão inplicita dos modelos

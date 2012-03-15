@@ -1,7 +1,6 @@
-﻿@model PontoEncontro.Models.LogOnModel
+﻿@model Axis.Models.LogOnModel
 
 <h1>Acesse a Sua Conta</h1>
-<img src="../../Content/themes/base/images/icon2.png" width="51" height="52" alt="icons" class="icons"/>
 <span>Digite seu Emal e senha.</span><br />
 @using (Html.BeginForm(
                             ViewContext.RouteData.Values["action"].ToString(),
@@ -42,5 +41,5 @@
                 @Html.ActionLink("Criar conta", "Index", "Register") 
             </span>
         </h2>
-    </div>
+    </div><br />
 }

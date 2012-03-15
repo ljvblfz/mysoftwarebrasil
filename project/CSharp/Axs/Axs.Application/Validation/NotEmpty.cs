@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PontoEncontro.Application.Validate
+namespace Axis.Application.Validate
 {
     /// <summary>
     ///  Classe de validação de vaor vazio

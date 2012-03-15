@@ -5,12 +5,12 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Collections;
-using PontoEncontro.Infrastructure.Linq;
-using PontoEncontro.Domain;
+using Axis.Infrastructure.Linq;
+using Axis.Domain;
 using AutoMapper;
-using PontoEncontro.Adapter;
+using Axis.Adapter;
 
-namespace PontoEncontro.Models
+namespace Axis.Models
 {
     public class PanelControlModel
     {

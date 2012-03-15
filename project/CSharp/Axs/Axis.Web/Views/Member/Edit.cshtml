@@ -1,6 +1,29 @@
-﻿@model PontoEncontro.Models.PanelControlModel
-
-<h2>Editar os dados de membro</h2>
+﻿@model Axis.Models.PanelControlModel
+<script type="text/javascript">
+    $(function () {
+        $("#Idestado")
+        .bind("change", function () {
+            $.ajax({
+                type: "POST",
+                url: "/Register/GetCity",
+                data: "idEstado=" + $(this).val(),
+                success: function (myOptions) {
+                    var dados = myOptions;
+                    var options = $('#Idcidade').prop('options');
+                    options[options.length] = new Option('Selecione', '0', true, true);
+                    $.each(dados, function (val, text) {
+                        options[options.length] = new Option(text.Text, text.Value, false, false);
+                    });
+                },
+                erro: function (msg) {
+                    $('.right').html(msg);
+                }
+            });
+        });
+    });
+</script>
+<h2>
+    Editar os dados de membro</h2>
 @using (Html.BeginForm(
                             ViewContext.RouteData.Values["action"].ToString(),
                             ViewContext.RouteData.Values["controller"].ToString(),
@@ -10,29 +33,76 @@
 {
     <div class="fieldLinha">
         <div class="editor-label">
-           <strong>@Html.LabelFor(m => m.loginMembro)</strong>
+            <strong>@Html.LabelFor(m => m.loginMembro)</strong>
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(m => m.loginMembro) 
+            @Html.TextBoxFor(m => m.loginMembro)
             @Html.ValidationMessageFor(m => m.loginMembro)
         </div>
         <div class="editor-label">
-           <strong>@Html.LabelFor(m => m.nomePessoa)</strong>
+            <strong>@Html.LabelFor(m => m.nomePessoa)</strong>
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(m => m.nomePessoa) 
+            @Html.TextBoxFor(m => m.nomePessoa)
             @Html.ValidationMessageFor(m => m.nomePessoa)
         </div>
         <div class="editor-label">
-           <strong>@Html.LabelFor(m => m.nascimentoPessoa)</strong>
+            <strong>@Html.LabelFor(m => m.nascimentoPessoa)</strong>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(m => m.nascimentoPessoa) 
+            @Html.EditorFor(m => m.nascimentoPessoa)
             @Html.ValidationMessageFor(m => m.nascimentoPessoa)
         </div>
-
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.Idestado)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Idestado)
+            @Html.ValidationMessageFor(m => m.Idestado)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.Idcidade)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Idcidade)
+            @Html.ValidationMessageFor(m => m.Idcidade)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.idSexo)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.idSexo)
+            @Html.ValidationMessageFor(m => m.idSexo)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.idOlho)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.idOlho)
+            @Html.ValidationMessageFor(m => m.idOlho)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.idCabelo)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.idCabelo)
+            @Html.ValidationMessageFor(m => m.idCabelo)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.idEtinia)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.idEtinia)
+            @Html.ValidationMessageFor(m => m.idEtinia)
+        </div>
+        <div class="editor-label">
+            <strong>@Html.LabelFor(m => m.idEstadoCivil)</strong>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.idEstadoCivil)
+            @Html.ValidationMessageFor(m => m.idEstadoCivil)
+        </div>
         <a href="#" onclick="$('#form_@(ViewContext.RouteData.Values["controller"].ToString())').submit();" >
-            <span class="button">Salvar</span>
-        </a>
+            <span class="button">Salvar</span> </a>
     </div>
 }

@@ -9,11 +9,11 @@ using System.ComponentModel;
 using NHibernate.Criterion;
 using System.Collections;
 using NHibernate.Metadata;
-using PontoEncontro.Infrastructure.Filter;
-using PontoEncontro.Infrastructure.Order;
-using PontoEncontro.Infrastructure.Enum;
+using Axis.Infrastructure.Filter;
+using Axis.Infrastructure.Order;
+using Axis.Infrastructure.Enum;
 
-namespace PontoEncontro.Domain
+namespace Axis.Domain
 {
     /// <summary>
     /// Oferece acesso e manipulação dos dados existentes na entidade com NHibernate.

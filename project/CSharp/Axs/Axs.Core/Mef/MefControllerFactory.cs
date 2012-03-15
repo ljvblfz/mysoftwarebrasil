@@ -14,9 +14,9 @@ using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
-using PontoEncontro.Infrastructure.Mef.Contracts;
+using Axis.Infrastructure.Mef.Contracts;
 
-namespace PontoEncontro.Infrastructure.Mef
+namespace Axis.Infrastructure.Mef
 {
     /// <summary>
     /// Construtor de Controladores em MEF

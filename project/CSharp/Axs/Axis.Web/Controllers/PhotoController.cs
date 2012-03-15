@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure.MVC;
-using PontoEncontro.Models;
-using PontoEncontro.Adapter;
+using Axis.Infrastructure.MVC;
+using Axis.Models;
+using Axis.Adapter;
 
-namespace PontoEncontro.Controllers
+namespace Axis.Controllers
 {
     public class PhotoController : BaseController
     {

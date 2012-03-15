@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using PontoEncontro.Domain;
+using Axis.Domain;
 
-namespace PontoEncontro.Application.Validate
+namespace Axis.Application.Validate
 {
     /// <summary>
     ///  Validation de verificação de integridade

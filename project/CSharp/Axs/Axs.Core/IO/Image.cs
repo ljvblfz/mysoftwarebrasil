@@ -6,7 +6,7 @@ using System.IO;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.IO
+namespace Axis.Infrastructure.IO
 {
     /// <summary>
     /// Classe de manipulação de imagem
@@ -20,11 +20,15 @@ namespace PontoEncontro.Infrastructure.IO
         /// <returns>string imagem em base64</returns>
         public static string GetBase64Image(string path)
         {
-            FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            byte[] data = new byte[(int)fileStream.Length];
-            fileStream.Read(data, 0, data.Length);
-
-            return Convert.ToBase64String(data);
+            if (new FileInfo(path).Exists)
+            {
+                FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                byte[] data = new byte[(int)fileStream.Length];
+                fileStream.Read(data, 0, data.Length);
+                return Convert.ToBase64String(data);
+            }
+            else
+                return String.Empty;
         }
 
         /// <summary>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using System.Linq.Expressions;
-using PontoEncontro.Infrastructure.Linq;
+using Axis.Infrastructure.Linq;
 
 namespace Lms.API.Infrastructure.MVC.Extensions
 {
@@ -34,10 +34,8 @@ namespace Lms.API.Infrastructure.MVC.Extensions
                                     Value = LambdaExpressionBase.GetValue(s, value).ToString(),
 
                                     // verifica se o objeto e o que foi selecionado <select> 
-                                    Selected = (
-                                                LambdaExpressionBase.GetValue(s, value).ToString()
-                                                .Equals(selectValue)
-                                               )
+                                    Selected = (LambdaExpressionBase.GetValue(s, value).ToString() == selectValue.ToString())
+
                                 }).AsEnumerable<SelectListItem>();
          }
     }

@@ -11,7 +11,7 @@
 
 using System.ComponentModel;
 
-namespace PontoEncontro.Infrastructure.Order
+namespace Axis.Infrastructure.Order
 {
     /// <summary>
     ///  Classe que responsavel pela ordenação

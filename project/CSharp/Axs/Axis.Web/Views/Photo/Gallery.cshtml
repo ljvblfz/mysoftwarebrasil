@@ -1,4 +1,4 @@
-﻿@model IList<PontoEncontro.Domain.Foto>
+﻿@model IList<Axis.Domain.Foto>
            
 <!-- Ativando o jQuery lightBox plugin -->
 <script type="text/javascript">
@@ -40,8 +40,8 @@
     <ul>
         @foreach (var item in Model)
         {
-            var dir = PontoEncontro.Infrastructure.IO.Image.GetVirtualPath(item.pathFoto + "\\" + item.nameFoto);
-            var img = PontoEncontro.Infrastructure.IO.Image.GetBase64Image(item.pathFoto + "\\" + item.nameFoto);
+            var dir = Axis.Infrastructure.IO.Image.GetVirtualPath(item.pathFoto + "\\" + item.nameFoto);
+            var img = Axis.Infrastructure.IO.Image.GetBase64Image(item.pathFoto + "\\" + item.nameFoto);
             <li><a href="@dir" title="">
                 <img src="data:image/gif;base64,@img" width="72" height="72" alt="" />
             </a></li>

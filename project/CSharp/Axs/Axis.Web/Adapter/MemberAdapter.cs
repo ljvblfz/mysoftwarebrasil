@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections;
-using PontoEncontro.Domain;
+using Axis.Domain;
 using System.Web.Mvc;
-using PontoEncontro.Infrastructure.Linq;
+using Axis.Infrastructure.Linq;
 
-namespace PontoEncontro.Adapter
+namespace Axis.Adapter
 {
     public class MemberAdapter
     {

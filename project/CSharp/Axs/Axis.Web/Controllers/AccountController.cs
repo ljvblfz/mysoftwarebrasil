@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using PontoEncontro.Models;
-using PontoEncontro.Infrastructure.MVC.Security;
-using PontoEncontro.Domain;
-using PontoEncontro.Infrastructure;
-using PontoEncontro.Infrastructure.MVC;
+using Axis.Models;
+using Axis.Infrastructure.MVC.Security;
+using Axis.Domain;
+using Axis.Infrastructure;
+using Axis.Infrastructure.MVC;
 
-namespace PontoEncontro.Controllers
+namespace Axis.Controllers
 {
     public class AccountController : BaseController
     {

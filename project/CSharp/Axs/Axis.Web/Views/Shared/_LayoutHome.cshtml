@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Sexlog - Fotolog de Sexo. Relacionamento adulto entre casais, swing e fotos eróticas. Envio de vídeos, comentários e fotos pornô.">
+    <meta name="keywords" content="sexlog, sexo, sex log, swing, casais, troca de casais, fotos eroticas, adulto, video log, videolog, porno, transa, foda, sacanagem, sexo caseiro, sexo amador, amadoras">
+    <meta name="author" content="Alexis Moura">
+    <title>@ViewBag.Title</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.ui.datepicker-pt-BR.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.lightbox-0.5.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/slides.min.jquery.js")" type="text/javascript"></script>
+    <style type="text/css">
+        body { font: 12px arial; background-color: #a00000; }
+        td { font: 12px arial; }
+        .nav_bg { background: url(images/nav.jpg); }
+        .nav { font: 12px arial; color: #FFFFFF; padding: 10px;}
+        .content { text-align: left; background: #FFFFFF; border: 0px solid #888888; }
+        .search { }
+        .search_text { font: 12px arial; }
+        .line_break { font: 8px arial; }
+        .footer {width: 900px; background: url(images/foot_bg.jpg); text-align: center; color: #CCCCCC; }
+        .logo {background-color: #000000; }
+        .company {font: 30px times new romance; color: #FFFFFF; padding: 20px;}
+        .slogan {font: 12px arial; color: #FFFFFF; padding-left: 20px;}
+        .row { border: 1px dotted #CCCCCC;}
+        .bt, .button { background: url(Content/themes/base/images/bt.jpg); border: 0px; color: #FFFFFF; padding: 6px; font: 12px arial; }
+        .top{width: 749px; height: 502px; background-image: url(Content/themes/base/images/search_bg.jpg);}
+        h3 { color: #a00000; }
+        .button {
+                    background-color: #FC8507;
+                    border-radius: 5px 5px 5px 5px;
+                    color: white;
+                    cursor: pointer;
+                    display: inline-block;
+                    float: left;
+                    font: 14px/100% Arial,Helvetica,sans-serif;
+                    height: 16px;
+                    margin-top: 12px;
+                    padding: 9px;
+                    position: relative;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 80px;
+                }
+        a, p a {
+                    color: white;
+                    text-decoration: none;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div class="top">
+                <div style="width: 289px; background-image: url(Content/themes/base/images/search_bg_png.png); position: relative;
+                    left: 210px; top: 100px;">
+                    <div style="font: 25px times new roman; color: #FFFFFF; padding: 10px;">
+                        Ponto Encontro</div>
+                    <div style="padding: 10px;">
+                        <div style="background-color: #FFFFFF;">
+                            @Html.Partial("_LogOnPartial")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 749px; color: #FFFFFF; padding: 20px; text-align: left;">
+                Find all of the swingers clubs in your area. Meet local swingers in your Swing Town.
+                Our friendly swinger personals and our local swingers group can be very useful in
+                locating an adult date. If you enjoy local threesomes use our adult dating service
+                at Swinger Dating.com today. What's happening? Who's happening? How do I get in
+                on the fun?
+                <p>
+                    Swinger Dating starts your journey into the Swinger Lifestyle with the latest Forum
+                    postings from our most active Groups.Every time you log-in, you'll have the opportunity
+                    to state your opinion, share a laugh, enjoy a video, ask a question, or find out
+                    where to meet up with the friendliest Swingers on the planet. 500,000 swinging friends
+                    have a lot to say. We hope you will add your voice to our growing family.
+                    <p>
+                We love our Groups and know you will too! And you will have the opportunity to start
+                your own Group with your own flavor. So, Come on In! Welcome to your Swinger Neighborhood!
+                Click to Join for FREE!
+                @RenderBody()
+            </div>
+        </center>
+    </div>
+</body>
+</html>

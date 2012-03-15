@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Telerik.Web.Mvc.UI;
 using System.Collections;
 using Telerik.Web.Mvc.UI.Fluent;
-using PontoEncontro.Infrastructure.MVC.DataAnnotations;
+using Axis.Infrastructure.MVC.DataAnnotations;
 
-namespace PontoEncontro.Infrastructure.MVC.Helper.DropDown
+namespace Axis.Infrastructure.MVC.Helper.DropDown
 {
     /// <summary>
     ///  Classe Helper que cria um DropDown Defaut configurado

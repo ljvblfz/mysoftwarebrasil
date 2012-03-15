@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PontoEncontro.Domain;
-using PontoEncontro.Infrastructure;
+using Axis.Domain;
+using Axis.Infrastructure;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Adapter
+namespace Axis.Adapter
 {
     /// <summary>
     ///  Adaptador de segurança

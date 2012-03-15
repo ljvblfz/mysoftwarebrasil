@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PontoEncontro.Infrastructure.MVC.DataAnnotations
+namespace Axis.Infrastructure.MVC.DataAnnotations
 {
     /// <summary>
     ///  Classe que implementa atributo do campo de pesquisa de formularios Ajax

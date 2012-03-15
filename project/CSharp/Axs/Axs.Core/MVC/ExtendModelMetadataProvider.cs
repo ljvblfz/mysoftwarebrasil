@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace PontoEncontro.Infrastructure.MVC
+namespace Axis.Infrastructure.MVC
 {
     /// <summary>
     ///  Classe extendida que reimplementa provedor padrão de metadados do ModelView para ASP.NET MVC.

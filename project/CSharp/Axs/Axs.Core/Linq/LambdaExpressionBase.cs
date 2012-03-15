@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace PontoEncontro.Infrastructure.Linq
+namespace Axis.Infrastructure.Linq
 {
     /// <summary>
     /// Classe de manipulação de expressão lambda.
