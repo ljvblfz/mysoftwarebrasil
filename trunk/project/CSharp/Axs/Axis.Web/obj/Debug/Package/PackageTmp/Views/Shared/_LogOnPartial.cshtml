@@ -1,0 +1,8 @@
+﻿@if (Axis.Infrastructure.Aplication.IsAuthenticated())
+{
+   @Html.Partial("Menu")
+}
+else if (ViewContext.RouteData.Values["controller"].ToString() == "Home")
+{
+    @Html.Action("LogOn", "Account")
+}

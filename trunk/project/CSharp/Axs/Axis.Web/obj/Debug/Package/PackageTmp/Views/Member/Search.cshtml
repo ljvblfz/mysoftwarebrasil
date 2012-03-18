@@ -1,0 +1,66 @@
+﻿@model Axis.Models.MemberModel
+<script type="text/javascript">
+    $(function () {
+        $("#Idestado")
+        .bind("change", function () {
+            $.ajax({
+                type: "POST",
+                url: "/Register/GetCity",
+                data: "idEstado=" + $(this).val(),
+                success: function (myOptions) {
+                    var dados = myOptions;
+                    var options = $('#Idcidade').prop('options');
+                    options[options.length] = new Option('Selecione', '0', true, true);
+                    $.each(dados, function (val, text) {
+                        options[options.length] = new Option(text.Text, text.Value, false, false);
+                    });
+                },
+                erro: function (msg) {
+                    $('.right').html(msg);
+                }
+            });
+        });
+    });
+</script>
+<div>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Buscar membros</legend>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.loginMembro) <br />
+                @Html.EditorFor(Model => Model.loginMembro)
+            </div>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.Idestado) <br />
+                @Html.EditorFor(Model => Model.Idestado)
+            </div>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.Idcidade) <br />
+                @Html.EditorFor(Model => Model.Idcidade)
+            </div>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.Age) <br />
+                @Html.EditorFor(Model => Model.Age)
+            </div>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.LastAccessed) <br />
+                @Html.EditorFor(Model => Model.LastAccessed)
+            </div>
+            <div class="fieldLinha3">
+                @Html.LabelFor(Model => Model.LastUpdate) <br />
+                @Html.EditorFor(Model => Model.LastUpdate)
+            </div>
+            <div class="fieldLinha">
+                <p>
+                    <input type="submit" value="Buscar" />
+                </p>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="fieldLinha">
+                @Html.EditorFor(Model => Model.Membros)
+            </div>
+        </fieldset>
+    }
+</div>
