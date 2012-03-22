@@ -9,11 +9,15 @@ using Axis.Infrastructure.Linq;
 using Axis.Domain;
 using AutoMapper;
 using Axis.Adapter;
+using Lms.API.Infrastructure.MVC.Extensions;
 
 namespace Axis.Models
 {
     public class PanelControlModel
     {
+        public int idPerfil { get; set; }
+        public int idEndereco { get; set; }
+
         [Display(Name = "Nome")]
         public string loginMembro { get; set; }
 
@@ -60,11 +64,11 @@ namespace Axis.Models
         [Display(Name = "Etnia")]
         public IEnumerable<SelectListItem> idEtinia { get; set; }
 
-        [Required]
         [UIHint("DropDown")]
         [Display(Name = "Estado civil")]
         public IEnumerable<SelectListItem> idEstadoCivil { get; set; }
 
+       
         public PanelControlModel()
         {
         }
@@ -81,8 +85,33 @@ namespace Axis.Models
             this.Idestado = AddressAdapter.GetListState(membro.pessoa.perfil.endereco.cidade.idEstado);
             this.Idcidade = AddressAdapter.GetListCity(membro.pessoa.perfil.endereco.cidade.idEstado,
                                                         membro.pessoa.perfil.endereco.idCidade);
-            var profile = new ProfileModel();
-            this.idSexo = profile.idSexo;
+            this.idPerfil = membro.pessoa.perfil.idPerfil;
+            this.idEndereco = membro.pessoa.perfil.idEndereco;
+            this.idSexo = EnumerableExtensions.CreateSelectListItem<Sexo>(
+                                new SexoRepository().ListAll(),
+                                t => t.nameSexo,
+                                v => v.idSexo,
+                                membro.pessoa.perfil.idSexo);
+            this.idOlho = EnumerableExtensions.CreateSelectListItem<Olho>(
+                                new OlhoRepository().ListAll(),
+                                t => t.nameOlho,
+                                v => v.idOlho,
+                                membro.pessoa.perfil.idOlho);
+            this.idEtinia = EnumerableExtensions.CreateSelectListItem<Etinia>(
+                                new EtiniaRepository().ListAll(),
+                                t => t.nameEtinia,
+                                v => v.idEtinia,
+                                membro.pessoa.perfil.idEtinia);
+            this.idEstadoCivil = EnumerableExtensions.CreateSelectListItem<EstadoCivil>(
+                                new EstadocivilRepository().ListAll(),
+                                t => t.nameEstadoCivil,
+                                v => v.idEstadoCivil,
+                                membro.pessoa.perfil.idEstadoCivil);
+            this.idCabelo = EnumerableExtensions.CreateSelectListItem<Cabelo>(
+                                new CabeloRepository().ListAll(),
+                                t => t.nameCabelo,
+                                v => v.idCabelo,
+                                membro.pessoa.perfil.idCabelo); 
         }
     }
 }

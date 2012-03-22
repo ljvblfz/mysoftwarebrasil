@@ -32,6 +32,8 @@
                           ))
 {
     <div class="fieldLinha">
+        @Html.TextBox("idPerfil", Model.idPerfil, new { @style = "display : none;" })
+        @Html.TextBox("idEndereco", Model.idEndereco, new { @style = "display : none;" })
         <div class="editor-label">
             <strong>@Html.LabelFor(m => m.loginMembro)</strong>
         </div>
