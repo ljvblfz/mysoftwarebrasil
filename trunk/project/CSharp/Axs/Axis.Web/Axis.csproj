@@ -122,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter\AddressAdapter.cs.cs" />
+    <Compile Include="Adapter\CabeloAdapter.cs" />
+    <Compile Include="Adapter\PerfilAdapter.cs" />
+    <Compile Include="Adapter\EstadoCivilAdapter.cs" />
+    <Compile Include="Adapter\EtiniaAdapter.cs" />
+    <Compile Include="Adapter\OlhoAdapter.cs" />
+    <Compile Include="Adapter\SexoAdapter.cs" />
     <Compile Include="Adapter\MemberAdapter.cs" />
     <Compile Include="Adapter\PhotoAdapter.cs" />
     <Compile Include="Adapter\SecurityAdapter.cs" />

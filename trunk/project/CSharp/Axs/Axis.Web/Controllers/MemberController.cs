@@ -58,11 +58,12 @@ namespace Axis.Controllers
         // POST: /Member/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(RegisterModel modelView, Membro model)
+        public ActionResult Edit(RegisterModel modelView, Membro model,Perfil perfil)
         {
             if (!String.IsNullOrEmpty(model.loginMembro))
             {
                 SecurityAdapter.UpdateMember(model);
+                PerfilAdapter.UpdatePerfil(perfil);
                 AddMessage("Membro atualizado com sucesso.");
                 return RedirectToAction("Index","Member");
             }
