@@ -14,7 +14,7 @@
     <AssemblyName>Axis</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -153,7 +153,6 @@
     <Content Include="Content\themes\base\images\banner1.png" />
     <Content Include="Content\themes\base\images\bg.png" />
     <Content Include="Content\themes\base\images\contact-us.png" />
-    <Content Include="Content\themes\base\images\footer.png" />
     <Content Include="Content\themes\base\images\icon1.png" />
     <Content Include="Content\themes\base\images\icon2.png" />
     <Content Include="Content\themes\base\images\icon3.png" />
@@ -398,6 +397,9 @@
   <ItemGroup>
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Member\Details.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -413,12 +415,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>24421</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:24421/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
