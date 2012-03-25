@@ -1,0 +1,41 @@
+﻿@model Axis.Infrastructure.Linq.Dynamic
+@using Axis.Infrastructure
+@using Axis.Infrastructure.IO
+@{
+    ViewBag.Title = "Details";
+    var item = Model.ListObjects[0] as Dictionary<Type, object>;
+    var membro = item[typeof(Axis.Domain.Membro)] as Axis.Domain.Membro;
+    var photo = item[typeof(Axis.Domain.Foto)] as Axis.Domain.Foto;
+    var img = Image.GetBase64Image(photo.pathFoto + "\\" + photo.nameFoto);
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Membro</legend>
+
+    <div class="display-label">idMembro</div>
+    <div class="display-field">
+        @membro.loginMembro
+    </div>
+
+    <div class="display-label">loginMembro</div>
+    <div class="display-field">
+        @membro.idRole
+    </div>
+
+    <div class="display-label">senhaMembro</div>
+    <div class="display-field">
+        @membro.loginMembro
+    </div>
+
+    <div class="display-label">idPessoa</div>
+    <div class="display-field">
+        @membro.loginMembro
+    </div>
+
+    <div class="display-label">idRole</div>
+    <div class="display-field">
+        @membro.loginMembro
+    </div>
+</fieldset>

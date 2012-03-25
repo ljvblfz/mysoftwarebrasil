@@ -1,4 +1,6 @@
 ﻿
+@import "themes/base/jquery.ui.all.css";
+@import "themes/base/jquery.lightbox-0.5.css";
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
@@ -416,7 +418,6 @@ footer{
 	height:300px;
 	clear:both;
 	width:100%;
-	background-image:url(themes/base/images/footer.png);
 	background-position:left top;
 	background-repeat:repeat-x;
 	background-color:#333333;

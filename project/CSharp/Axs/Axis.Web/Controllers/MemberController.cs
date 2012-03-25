@@ -89,9 +89,10 @@ namespace Axis.Controllers
         }
 
         [Anonymous]
-        public ActionResult Details(string id)
+        public ActionResult Details(string login)
         {
-            return View();
+            var result = MemberAdapter.Get(login);
+            return View(result);
         }
     }
 }

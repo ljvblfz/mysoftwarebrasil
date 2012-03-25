@@ -11,7 +11,7 @@
             var img = Image.GetBase64Image(photo.pathFoto + "\\" + photo.nameFoto);
             <text>
              <div>
-                <fieldset>
+                <fieldset onclick="javascript:window.location.href='Details?login=@membro.loginMembro';" style="cursor:pointer">
                     <div class="fieldLinha3">
                         <img src="data:image/gif;base64,@img" height="100" width="100" alt="" />
                     </div>
