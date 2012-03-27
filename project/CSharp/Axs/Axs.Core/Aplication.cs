@@ -65,7 +65,16 @@ namespace Axis.Infrastructure
             FormsAuthenticationTicket ticket = null;
             HttpCookie ticketCookie = System.Web.HttpContext.Current.Request.Cookies["Ticket"];
             if (ticketCookie != null)
-                ticket = FormsAuthentication.Decrypt(new TicketCompressor().Decompress(ticketCookie.Value));
+            {
+                try
+                {
+                    ticket = FormsAuthentication.Decrypt(new TicketCompressor().Decompress(ticketCookie.Value));
+                }
+                catch (Exception ex)
+                {
+                    DestroyTicket();
+                }
+            }
             return ticket;
         }
 

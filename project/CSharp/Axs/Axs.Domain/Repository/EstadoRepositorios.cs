@@ -11,6 +11,18 @@ namespace Axis.Domain
 {
     public class EstadoRepository : GenericRepository<Estado>
     {
+        /// <summary>
+        /// Construtor
+        /// </summary>
+        public EstadoRepository()
+            : base()
+        {
+        }
 
+        public override IList<Estado> ListAll()
+        {
+            var list = Estado.List();
+            return list;
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace Axis.Application
         /// <returns></returns>
         public static IList<Estado> GetListState()
         {
+            //new EstadoRepository().Save(Estado.List());
+            //new CidadeRepository().Save(Cidade.List());
             return new EstadoRepository().ListAll();
         }
 

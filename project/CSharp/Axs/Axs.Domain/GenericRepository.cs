@@ -142,7 +142,6 @@ namespace Axis.Domain
             }
         }
 
-
         /// <summary>
         ///  Obtem um lista de dados apartir de uma entidade e os seu filtros
         /// </summary>
