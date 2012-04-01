@@ -7,6 +7,7 @@ using System.Web.Routing;
 using Axis.Infrastructure.MVC.Security;
 using Axis.Infrastructure.Log;
 using Axis.Infrastructure.MVC;
+using Axis.Application;
 
 namespace Axis
 {
@@ -42,9 +43,11 @@ namespace Axis
         {
             AreaRegistration.RegisterAllAreas();
 
+            InitialChargeApplication.Start();
+
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
+            //AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

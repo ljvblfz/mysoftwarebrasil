@@ -36,7 +36,8 @@ namespace Axis.Adapter
 
             var address = new Endereco()
             {
-                idCidade = idCidade
+                idCidade = idCidade,
+                idBairro = 1
             };
             Aplication.AddCookie(address, "Address");
             Aplication.AddCookie(person, "Person");
@@ -69,7 +70,7 @@ namespace Axis.Adapter
             var address = Aplication.GetCookie(typeof(Endereco), "Address") as Endereco;
             var member = Aplication.GetCookie(typeof(Membro), "Member") as Membro;
             var person = Aplication.GetCookie(typeof(Pessoa), "Person") as Pessoa;
-            var profile = Aplication.GetCookie(typeof(Pessoa), "Profile") as Perfil;
+            var profile = Aplication.GetCookie(typeof(Perfil), "Profile") as Perfil;
             return new MembroRepository().Register(member, profile, address, person);
         }
 

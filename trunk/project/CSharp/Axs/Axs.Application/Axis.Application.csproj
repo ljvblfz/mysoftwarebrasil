@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Service\AddressApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\InitialChargeApplication.cs" />
     <Compile Include="Validation\CheckIntegrit.cs" />
     <Compile Include="Validation\IValidate.cs" />
     <Compile Include="Validation\NotEmpty.cs" />

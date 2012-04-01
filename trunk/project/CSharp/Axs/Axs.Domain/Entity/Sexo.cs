@@ -41,5 +41,26 @@ namespace Axis.Domain
             }
    
         #endregion
+
+        /// <summary>
+        ///  Lista os sexos
+        /// </summary>
+        /// <returns></returns>
+        public static IList<Sexo> List()
+        {
+            return new List<Sexo>()
+            {
+                new Sexo()
+                {
+                    idSexo = 1,
+                    nameSexo = "Masculino"
+                },
+                                new Sexo()
+                {
+                    idSexo = 2,
+                    nameSexo = "Feminino"
+                },
+            };
+        }
     }
 }

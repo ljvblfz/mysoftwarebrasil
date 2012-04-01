@@ -67,7 +67,6 @@ namespace Axis.Controllers
             {
                 SecurityAdapter.RegisterProfile(form);
                 SecurityAdapter.CompleteRecordUser();
-                ModelState.AddModelError("", "Conta criada com sucesso.");
                 AddMessage("Cadastro concluido");
                 return RedirectToAction("LogOn", "Account");
             }

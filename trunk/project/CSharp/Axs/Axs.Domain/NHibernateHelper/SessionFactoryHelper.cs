@@ -82,10 +82,16 @@ namespace Axis.Domain
             }
         }
 
-        private static void BuildSchema(Configuration cfg)
+        /// <summary>
+        ///  Cria o banco de dados
+        ///  (CUIDADO APAGA O BANCO)
+        /// </summary>
+        /// <param name="config">objeto de configuração do NHibernate</param>
+        private static void BuildSchema(Configuration config)
         {
-            new SchemaExport(cfg)
-              .Create(false, true);
+            var schema = new SchemaExport(config);
+            schema.Drop(false, true);
+            schema.Create(false, true);
         }
 
         private static void CreateSqlCeDatabaseFile(Configuration cfg)
