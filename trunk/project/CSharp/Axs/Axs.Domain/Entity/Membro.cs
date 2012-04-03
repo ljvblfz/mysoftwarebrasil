@@ -50,7 +50,11 @@ namespace Axis.Domain
             ///  Pessoa
             /// </summary>
             public virtual Pessoa pessoa { get; set; }
-                       
+            
+            /// <summary>
+            ///  Foto
+            /// </summary>
+            public virtual ICollection<Foto> Foto { get; set; }
 
         #endregion
         

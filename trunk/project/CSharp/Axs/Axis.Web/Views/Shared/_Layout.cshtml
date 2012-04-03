@@ -15,17 +15,22 @@
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.lightbox-0.5.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/slides.min.jquery.js")" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#slides').slides({
-                preload: true,
-                preloadImage: '../../Content/themes/base/images/loading.gif',
-                play: 5000,
-                pause: 2500,
-                hoverPause: true
-            });
-        });
-    </script>
+    @(Html.Telerik().ScriptRegistrar()
+            .DefaultGroup(group => group
+                    .Add("telerik.all.min.js")
+                    //.Add("telerik.grid.filtering.min.js")
+                    .Compress(true)
+                )
+    )
+    @(Html.Telerik().StyleSheetRegistrar()
+                        .DefaultGroup(group => group
+                            .Add("telerik.common.css")
+                            .Add("telerik.office2010blue.min.css")
+                            .Add("telerik.rtl.css")
+                            .Combined(true)
+                            .Compress(true))
+                        )
+    @RenderSection("HeadContent", required: false)
 </head>
 <body>
     <div class="container">

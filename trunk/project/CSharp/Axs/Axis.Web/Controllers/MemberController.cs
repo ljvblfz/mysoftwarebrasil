@@ -9,6 +9,7 @@ using Axis.Adapter;
 using Axis.Infrastructure.MVC;
 using Axis.Infrastructure;
 using Axis.Infrastructure.MVC.Security;
+using Telerik.Web.Mvc;
 
 namespace Axis.Controllers
 {
@@ -70,21 +71,44 @@ namespace Axis.Controllers
             return View(modelView);
         }
 
-        public ActionResult Search()
+        [GridAction]
+        public ActionResult Search(GridCommand command)
         {
             var memberModel = new MemberModel();
+
+            TempData["Idestado"] = 0;
+            TempData["Idcidade"] = 0;
+            TempData["loginMembro"] = 0;
+            TempData["LastAccessed"] = 0;
+            TempData["LastUpdate"] = 0;
+
             memberModel.Idestado = AddressAdapter.GetListState();
             memberModel.Age = MemberAdapter.GetAge();
+            memberModel.Membros = MemberAdapter.List(command);
+            return View(memberModel);
+        }
+
+        [GridAction]
+        public ActionResult List(GridCommand command)
+        {
+            var memberModel = MemberAdapter.List(command);
             return View(memberModel);
         }
 
         [HttpPost]
-        public ActionResult Search(MemberModel model, FormCollection form)
+        public ActionResult Search(GridCommand command,MemberModel model, FormCollection form
+         , int? idestado)
         {
+            TempData["Idestado"] = idestado ?? 0;
+            TempData["Idcidade"] = model.Idcidade;
+            TempData["loginMembro"] = model.loginMembro;
+            TempData["LastAccessed"] = model.LastAccessed;
+            TempData["LastUpdate"] = model.LastUpdate;
+
             var memberModel = new MemberModel();
             memberModel.Idestado = AddressAdapter.GetListState();
             memberModel.Age = MemberAdapter.GetAge();
-            memberModel.Membros = MemberAdapter.ListMember(form);
+            memberModel.Membros = MemberAdapter.List(command);
             return View(memberModel);
         }
 

@@ -1,33 +1,50 @@
-﻿@model Axis.Infrastructure.Linq.Dynamic
-@using Axis.Infrastructure
+﻿@model Telerik.Web.Mvc.GridModel<Axis.Domain.Membro>
 @using Axis.Infrastructure.IO
+@using Axis.Infrastructure
+
 @{
-    if (Model != null && Model.ListObjects.Count > 0)
-    {
-        foreach (Dictionary<Type, object> item in Model.ListObjects)
+    Html.Telerik().Grid(Model.Data)
+        .Name("Grid")
+        .EnableCustomBinding(true)
+        .PrefixUrlParameters(false)
+        .Columns(columns =>
         {
-            var membro = item[typeof(Axis.Domain.Membro)] as Axis.Domain.Membro;
-            var photo = item[typeof(Axis.Domain.Foto)] as Axis.Domain.Foto;
-            var img = Image.GetBase64Image(photo.pathFoto + "\\" + photo.nameFoto);
-            <text>
-             <div>
-                <fieldset onclick="javascript:window.location.href='Details?login=@membro.loginMembro';" style="cursor:pointer">
-                    <div class="fieldLinha3">
-                        <img src="data:image/gif;base64,@img" height="100" width="100" alt="" />
-                    </div>
-                    <div class="fieldLinha3">
-                        <strong>@membro.loginMembro</strong>
-                        <span>@Date.GetAge(membro.pessoa.nascimentoPessoa)</span><br />
-                        <span>
-                                @membro.pessoa.perfil.endereco.cidade.nameCidade ,
-                                @membro.pessoa.perfil.endereco.cidade.estado.SiglaEstado  ,
-                                Brasil
-                        </span>                                                                  
-                    </div>
-                    <div class="fieldLinha3"></div>
-                </fieldset>
-             </div>
-            </text>
-        }
+            columns.Template(
+                
+                @<text>
+                    <img src="data:image/gif;base64,@Image.GetBase64Image(item.Foto.ToArray()[0].pathFoto+ @"\\" +@item.Foto.ToArray()[0].nameFoto)"
+                    height="100" width="100" alt=""/>
+                </text>
+            );
+            columns.Template(
+                @<text>
+                <div class="fieldLinha3">
+                    <strong>@item.loginMembro</strong>
+                    <span>@Date.GetAge(item.pessoa.nascimentoPessoa)</span><br />
+                    <span>
+                            @item.pessoa.perfil.endereco.cidade.nameCidade ,
+                            @item.pessoa.perfil.endereco.cidade.estado.SiglaEstado  ,
+                            Brasil
+                    </span>                                                                  
+                </div>
+                </text>
+            );
+            columns.Command(commands => commands.Select()).Title("Ver Perfil");
+            columns.Bound(o => o.pessoa.nascimentoPessoa).Hidden();
+            columns.Bound(o => o.loginMembro).Hidden();
+            columns.Bound(o => o.pessoa.e_MailPessoa).Hidden();
+            columns.Bound(o => o.pessoa.perfil.idCabelo).Hidden();
+            columns.Bound(o => o.pessoa.perfil.idOlho).Hidden();
+            columns.Bound(o => o.pessoa.perfil.idSexo).Hidden();
+            columns.Bound(o => o.pessoa.perfil.idEtinia).Hidden();
+            columns.Bound(o => o.pessoa.perfil.idEstadoCivil).Hidden();
+            columns.Bound(o => o.pessoa.perfil.endereco.bairro).Hidden();
+            columns.Bound(o => o.pessoa.perfil.endereco.CEP).Hidden();
+            columns.Bound(o => o.pessoa.perfil.endereco.cidade).Hidden();
+            columns.Bound(o => o.pessoa.perfil.endereco.cidade.idCidade).Hidden();
+            columns.Bound(o => o.pessoa.perfil.endereco.cidade.idEstado).Hidden();
+        })
+        .DataKeys(keys => keys.Add(c => c.idMembro))
+        .Pageable(paging => paging.Total(Model.Total).PageSize(10))
+        .Render();  
     }
-}
