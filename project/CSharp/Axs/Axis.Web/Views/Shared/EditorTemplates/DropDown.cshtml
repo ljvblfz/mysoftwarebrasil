@@ -1,8 +1,20 @@
 ﻿@*@model IEnumerable<SelectListItem>*@
 @{
     if (Model is IEnumerable<SelectListItem>){
-        @Html.DropDownList("", Model as IEnumerable<SelectListItem>, "Selecione")
+       Html.Telerik().ComboBox()
+            .Name(ViewData.ModelMetadata.PropertyName)
+            .BindTo(Model as IEnumerable<SelectListItem>)
+            .HtmlAttributes(new { style = "width:100px" })
+            .Filterable()
+            .Placeholder("Selecione")
+            .Render();
+         
     }else{
-        @Html.DropDownList("", new List<SelectListItem>(), "Selecione")
+        Html.Telerik().ComboBox()
+            .Name(ViewData.ModelMetadata.PropertyName)
+            .BindTo(new List<SelectListItem>())
+            .HtmlAttributes(new { style = "width:100px" })
+            .Filterable()
+            .Render();
     }
 }

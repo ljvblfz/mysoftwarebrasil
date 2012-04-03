@@ -1,6 +1,8 @@
 ﻿@if (ViewContext.RouteData.Values["controller"].ToString() == "Home"
     && ViewContext.RouteData.Values["action"].ToString() == "Index"
-    && !Axis.Infrastructure.Aplication.IsAuthenticated())
+    && !Axis.Infrastructure.Aplication.IsAuthenticated()
+    && false
+    )
 {
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }

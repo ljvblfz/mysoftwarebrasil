@@ -35,6 +35,12 @@ namespace Axis.Domain.Mapping
                 .Not.Update()
                 .Not.LazyLoad()
                 .Cascade.All();
+
+            HasMany(x => x.Foto)
+                .Inverse()
+                .KeyColumn("idFoto")
+                .Not.LazyLoad()
+                .Cascade.All();
         }
     }
 }

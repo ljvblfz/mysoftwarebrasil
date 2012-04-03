@@ -8,6 +8,7 @@ using System.Collections;
 using Axis.Infrastructure.Linq;
 using Axis.Domain;
 using AutoMapper;
+using Telerik.Web.Mvc;
 
 namespace Axis.Models
 {
@@ -35,7 +36,7 @@ namespace Axis.Models
         public bool LastAccessed { get; set; }
 
         [UIHint("ListMembros")]
-        public Dynamic Membros { get; set; }
+        public GridModel<Axis.Domain.Membro> Membros { get; set; }
 
         public MemberModel()
         {

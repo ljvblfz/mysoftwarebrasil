@@ -6,11 +6,34 @@ using System.Collections;
 using Axis.Domain;
 using System.Web.Mvc;
 using Axis.Infrastructure.Linq;
+using Telerik.Web.Mvc;
+using Axis.Infrastructure.Filter;
+using Axis.Infrastructure.Order;
+using Axis.Infrastructure.MVC.Helper.Grid;
 
 namespace Axis.Adapter
 {
     public class MemberAdapter
     {
+        /// <summary>
+        /// Lista os dados
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        public static GridModel<Membro> List(GridCommand command)
+        {
+            int total = 0;
+            var repo = new MembroRepository();
+            var data = repo.List(
+                            command.Page - 1,
+                            (command.PageSize > 0 ? command.PageSize : 10),
+                            OrderTelerik.ChangeOrder(command).ToArray(),
+                            FilterTelerik.ChangeFilter(command).ToArray(),
+                            out total);
+
+            return GridTelerik<Membro>.MountGrid(data.ToArray(), total);
+        }
+
         public static Dynamic ListMember(FormCollection form)
         {
             var idCidade = 0;
@@ -24,6 +47,7 @@ namespace Axis.Adapter
                       ).ToArray<int>();
             var lastUpdate = bool.Parse(form["lastUpdate"]);
             var lastAccessed = bool.Parse(form["LastAccessed"]);
+            var list = new MembroRepository().ListAll();
             return new MembroRepository().ListMember(idEstado, idCidade, loginMembro, age, lastUpdate, lastAccessed);
         }
 

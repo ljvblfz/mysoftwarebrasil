@@ -150,18 +150,18 @@ namespace Axis.Domain
                                         join e in session.Query<Endereco>() on pe.idEndereco equals e.idEndereco
                                         join c in session.Query<Cidade>() on e.idCidade equals c.idCidade
                                         join f in session.Query<Foto>() on m.idMembro equals f.idMembro
-                                        where
-                                            c.idEstado == (idEstado == 0 ? c.idEstado : idEstado)
-                                            &&
-                                            c.idCidade == (idCidade == 0 ? c.idCidade : idCidade)
-                                            &&
-                                            m.loginMembro.Contains(
-                                                (String.IsNullOrEmpty(loginMembro) ? m.loginMembro : loginMembro)
-                                            )
-                                            &&
-                                            p.nascimentoPessoa.Year > (age.Count() > 1 ? age[1] :  0)
-                                            &&
-                                            p.nascimentoPessoa.Year < (age.Count() > 1 ? age[0] : 10000)
+                                        //where
+                                        //    c.idEstado == (idEstado == 0 ? c.idEstado : idEstado)
+                                        //    &&
+                                        //    c.idCidade == (idCidade == 0 ? c.idCidade : idCidade)
+                                        //    &&
+                                        //    m.loginMembro.Contains(
+                                        //        (String.IsNullOrEmpty(loginMembro) ? m.loginMembro : loginMembro)
+                                        //    )
+                                        //    &&
+                                        //    p.nascimentoPessoa.Year > (age.Count() > 1 ? age[1] :  0)
+                                        //    &&
+                                        //    p.nascimentoPessoa.Year < (age.Count() > 1 ? age[0] : 10000)
                                         select new { membro = m, foto = f }
                                      ).Take(10).Skip(page).ToList();
                         session.Flush();

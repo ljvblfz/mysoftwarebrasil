@@ -1,7 +1,7 @@
 ﻿@model Axis.Models.MemberModel
 <script type="text/javascript">
     $(function () {
-        $("#Idestado")
+        $("#Idestado-input")
         .bind("change", function () {
             $.ajax({
                 type: "POST",
@@ -28,38 +28,38 @@
         <fieldset>
             <legend>Buscar membros</legend>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.loginMembro) <br />
-                @Html.EditorFor(Model => Model.loginMembro)
+                @Html.LabelFor(model => model.loginMembro) <br />
+                @Html.EditorFor(model => model.loginMembro)
             </div>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.Idestado) <br />
-                @Html.EditorFor(Model => Model.Idestado)
+                @Html.LabelFor(model => model.Idestado) <br />
+                @Html.EditorFor(model => model.Idestado)
             </div>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.Idcidade) <br />
-                @Html.EditorFor(Model => Model.Idcidade)
+                @Html.LabelFor(model => model.Idcidade) <br />
+                @Html.EditorFor(model => model.Idcidade)
             </div>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.Age) <br />
-                @Html.EditorFor(Model => Model.Age)
+                @Html.LabelFor(model => model.Age) <br />
+                @Html.EditorFor(model => model.Age)
             </div>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.LastAccessed) <br />
-                @Html.EditorFor(Model => Model.LastAccessed)
+                @Html.LabelFor(model => model.LastAccessed) <br />
+                @Html.EditorFor(model => model.LastAccessed)
             </div>
             <div class="fieldLinha3">
-                @Html.LabelFor(Model => Model.LastUpdate) <br />
-                @Html.EditorFor(Model => Model.LastUpdate)
+                @Html.LabelFor(model => model.LastUpdate) <br />
+                @Html.EditorFor(model => model.LastUpdate)
             </div>
             <div class="fieldLinha">
                 <p>
-                    <input type="submit" value="Buscar" />
+                    <input class="t-button t-grid-select" type="submit" value="Buscar" />
                 </p>
             </div>
         </fieldset>
         <fieldset>
             <div class="fieldLinha">
-                @Html.EditorFor(Model => Model.Membros)
+                @Html.EditorFor(model => model.Membros)
             </div>
         </fieldset>
     }
